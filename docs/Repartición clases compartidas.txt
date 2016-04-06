@@ -4,15 +4,15 @@
     Búsqueda simple: Marc
     
  Grupo 2: Clases relacionadas con grafo
-    Grafo:
-    Nodo:
-    Autor:
-    Paper:
-    Temática:
-    Conferencia:
-    Term:
-    Relación:
-    Arista:
+    Grafo: Guillermo  
+    Nodo: Sergi
+    Autor: Sergi
+    Paper: Sergi
+    Temática: Sergi
+    Conferencia: Sergi
+    Term: Sergi
+    Relación: Javier
+    Arista: Gerard
  
  Grupo 3: Clases relacionadas con la persistencia
     Controlador de persistancia:
