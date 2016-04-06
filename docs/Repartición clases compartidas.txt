@@ -29,7 +29,7 @@
     Búsqueda relacional: Gonzalo    
     BúsquedaOrigen: David
     BúsquedaOrigenDestino: Magí
-    BúsquedaLibre:Daniel
+    BúsquedaLibre: Daniel
  
  
  De forma muy colaborativa realizaremos la clase Grafo, ya que es el núcleo de todo.
