@@ -1,7 +1,7 @@
  Grupo 1: Clases relacionadas con las búsquedas (1)
-    Estructura de relaciones:
-    Búsqueda:
-    Búsqueda simple:
+    Estructura de relaciones: Adrià
+    Búsqueda: David
+    Búsqueda simple: Marc
     
  Grupo 2: Clases relacionadas con grafo
     Grafo:
