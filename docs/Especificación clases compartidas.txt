@@ -124,3 +124,13 @@ Cardinalidad: 1 por búsqueda por relaciones.
 Atributos: Ninguno
 Relaciones:
 * Agregación con la clase Relación. Las relaciones agregadas y su ordenación indicará la estructura con la que se realizará una búsqueda.
+
+
+Especificación de clases del persistencia
+
+Nombre:
+Descripción:
+Cardinalidad:
+Atributos:
+Relaciones:
+

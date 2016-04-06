@@ -1,0 +1,35 @@
+ Grupo 1: Clases relacionadas con las búsquedas (1)
+    Estructura de relaciones:
+    Búsqueda:
+    Búsqueda simple:
+    
+ Grupo 2: Clases relacionadas con grafo
+    Grafo:
+    Nodo:
+    Autor:
+    Paper:
+    Temática:
+    Conferencia:
+    Term:
+    Relación:
+    Arista:
+ 
+ Grupo 3: Clases relacionadas con la persistencia
+    Controlador de persistancia:
+    Serializador:
+    Serializador Nodos:
+    Serializador Aristas:
+    Serializador Paper:
+    Serializador Temática:
+    Serializador Conferencia:
+    Serializador Term:
+    Serializador Autor:
+ 
+ Grupo 3bis: Clases relacionadas con las búsquedas (2)
+    Búsqueda relacional: Gonzalo    
+    BúsquedaOrigen: David
+    BúsquedaOrigenDestino: Magí
+    BúsquedaLibre:Daniel
+ 
+ 
+ De forma muy colaborativa realizaremos la clase Grafo, ya que es el núcleo de todo.
