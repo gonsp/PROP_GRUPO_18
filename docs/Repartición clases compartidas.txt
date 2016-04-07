@@ -15,15 +15,15 @@
     Arista: Gerard
  
  Grupo 3: Clases relacionadas con la persistencia
-    Controlador de persistancia:
-    Serializador:
-    Serializador Nodos:
-    Serializador Aristas:
-    Serializador Paper:
-    Serializador Temática:
-    Serializador Conferencia:
-    Serializador Term:
-    Serializador Autor:
+    Controlador de persistancia: Pau
+    Serializador: Pau
+    Serializador Nodos: Carlos
+    Serializador Aristas: Carlos 
+    Serializador Paper: Víctor
+    Serializador Temática: Víctor
+    Serializador Conferencia: Víctor
+    Serializador Term: Carlota
+    Serializador Autor: Carlota
  
  Grupo 3bis: Clases relacionadas con las búsquedas (2)
     Búsqueda relacional: Gonzalo    

@@ -126,11 +126,78 @@ Relaciones:
 * Agregación con la clase Relación. Las relaciones agregadas y su ordenación indicará la estructura con la que se realizará una búsqueda.
 
 
-Especificación de clases del persistencia
 
-Nombre:
-Descripción:
-Cardinalidad:
-Atributos:
+Especificación de clases de persistencia
+
+
+Nombre: Controlador de persistencia
+Descripción: Capa intermedia entre la memoria y el disco. Se comunica con el resto del programa para la importación/exportación de datos y usa los serializadores para convertir los mismos.
+Cardinalidad: 1 por sesión del programa.
+Atributos: Path dónde se encuentran los archivos con los que va a trabajar el programa.
+Relaciones: 
+* Agregación con la clase Serializador.
+
+
+Nombre: Serializador
+Descripción: Clase abstracta que implementa los métodos básicos para serializar (interpretar) los datos en los dos sentidos (exportación e importación). 
+Cardinalidad: Muchos. Al haber varios tipos de datos, se usará un tipo de serializador específico para cada uno de ellos.
+Atributos: Datos crudos y datos procesados.
+Relaciones: 
+* Clase de la que heredan el resto de serializadores.
+
+
+Nombre: Serializador Nodos
+Descripción: Clase abstracta que implementa los métodos para serializar un nodo genérico.
+Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
+Atributos: Ninguno.
+Relaciones: 
+* Clase de la que heredan las implementaciones de los distintos tipos de nodos.
+* Hereda los métodos de Serializador.
+
+
+Nombre: Serializador Arestas
+Descripción: Serializa las relaciones "arestas". Es capaz de serializar tanto los tipos predefinidos como los especificados por los usuarios.
+Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
+Atributos: Nombre de relación.
+Relaciones: 
+* Hereda los métodos de Serializador.
+
+
+Nombre: Serializador Conferencia
+Descripción: Implementación específica para el tipo de datos Conferencia. 
+Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
+Atributos: Ninguno.
 Relaciones:
+* Hereda los métodos de Serializador Nodos.
 
+
+Nombre: Serializador Término
+Descripción: Implementación específica para el tipo de datos Término. 
+Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
+Atributos: Ninguno.
+Relaciones:
+* Hereda los métodos de Serializador Nodos.
+
+
+Nombre: Serializador Autor
+Descripción: Implementación específica para el tipo de datos Autor. 
+Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
+Atributos: Ninguno.
+Relaciones:
+* Hereda los métodos de Serializador Nodos.
+
+
+Nombre: Serializador Paper
+Descripción: Implementación específica para el tipo de datos Paper. 
+Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
+Atributos: Ninguno.
+Relaciones:
+* Hereda los métodos de Serializador Nodos.
+
+
+Nombre: Serializador Temática
+Descripción: Implementación específica para el tipo de datos Temática. 
+Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
+Atributos: Ninguno.
+Relaciones:
+* Hereda los métodos de Serializador Nodos.
