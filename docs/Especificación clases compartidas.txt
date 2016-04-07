@@ -24,35 +24,35 @@ Nombre: Conferencia
 Descripción: Subclase de la clase nodo. Representa un elemento de tipo conferencia de nuestra base de datos.
 Cardinalidad: Muchos. Se instanciará una vez por elemento de tipo conferencia.
 Atributos: Ninguno.
-Relaciones: Ninguna
+Relaciones: Ninguna.
 
 
 Nombre: Término
 Descripción: Subclase de la clase nodo. Representa un elemento de tipo término de nuestra base de datos.
 Cardinalidad: Muchos. Se instanciará una vez por cada palabra diferente presente en los valores de nodos de los demás tipos pertenecientes al grafo, excluyendo palabras genéricas como “at”, “how”, “on”, “the”, etc.
 Atributos: Ninguno.
-Relaciones: Ninguna
+Relaciones: Ninguna.
 
 
 Nombre: Autor
 Descripción: Subclase de la clase nodo. Representa un elemento de tipo autor de nuestra base de datos.
 Cardinalidad: Muchos. Se instanciará una vez por cada elemento autor de nuestra base de datos.
-Atributos: Ninguno
-Relaciones: Ninguna
+Atributos: Ninguno.
+Relaciones: Ninguna.
 
 
 Nombre: Paper
 Descripción: Subclase de la clase nodo. Representa un elemento de tipo paper de nuestra base de datos.
 Cardinalidad: Muchos. Se instanciará una vez por cada elemento paper de nuestra base de datos.
-Atributos: Ninguno
-Relaciones: Ninguna
+Atributos: Ninguno.
+Relaciones: Ninguna.
 
 
 Nombre: Temática
 Descripción: Subclase de la clase nodo. Representa un elemento de tipo temática de nuestra base de datos.
 Cardinalidad: Muchos. Se instanciará una vez por cada temática de nuestra base de datos.
-Atributos: Ninguno
-Relaciones: Ninguna
+Atributos: Ninguno.
+Relaciones: Ninguna.
 
 
 Nombre: Relación
@@ -65,14 +65,14 @@ Relaciones:
 Nombre: Arista
 Descripción: Clase que representa una relación entre dos instancias de Nodos, relacionadas mediante un Tipo de relación.
 Cardinalidad: Muchos: Se instanciará una vez por cada relación que haya entre dos instancias de nodos del grafo.
-Atributos: Ninguno
-Relaciones: Ninguna
+Atributos: Ninguno.
+Relaciones: Ninguna.
 
 
 Nombre: Búsqueda
 Descripción: Clase abstracta que representa una búsqueda en la base de datos (representada en el grafo). Se instanciarán sus subclases dependiendo del tipo de búsqueda. Extraerá una lista de elementos que cumplen con las condiciones de búsqueda.
 Cardinalidad: Al ser abstracta, 0. Sus subclases se instanciarán una cada vez que se realice una búsqueda.
-Atributos: Ninguno
+Atributos: Ninguno.
 Relaciones: 
 * Asociación con la clase Grafo: Indica sobre qué datos se realiza la búsqueda.
 
@@ -88,7 +88,7 @@ Relaciones:
 Nombre: Búsqueda de relaciones
 Descripción: Subclase abstracta de la clase Búsqueda. Representa una búsqueda que sigue una estructura de relación determinada. Dependiendo de si se especifica un nodo de origen y destino, tenemos otras 3 subclases.
 Cardinalidad: Al ser abstracta, 0.
-Atributos: Ninguno
+Atributos: Ninguno.
 Relaciones: 
 * Dependencia con la clase HeteSim. La utilizará para calcular el nivel de relación entre los elementos del grafo al que está relacionada.
 * Asociación con la clase Estructura de relaciones. Será lo que defina qué estructura de relación seguirá al buscar los elementos.
@@ -97,14 +97,14 @@ Relaciones:
 Nombre: Búsqueda libre
 Descripción: Subclase de la clase Búsqueda por relaciones. Representa una búsqueda en la que no se especifica desde qué elemento sale la relación definida por una Estructura de relaciones. Buscará todos los elementos del último tipo de la estructura relacionados con todos los elementos del primero.
 Cardinalidad: 1. Se instanciará cada vez que se realice una búsqueda libre.
-Atributos: Ninguno
-Relaciones: Ninguna
+Atributos: Ninguno.
+Relaciones: Ninguna.
 
 
 Nombre: Búsqueda origen
 Descripción: Subclase de Búsqueda por relaciones. Representa una búsqueda en la que se especifica un nodo de origen. Esto significa que buscará todos los nodos que estén relacionados con el de origen que cumplan con la Estructura de relaciones y condiciones de la búsqueda.
 Cardinalidad: 1. Se instanciará cada vez que se realice una búsqueda con origen fijado.
-Atributos: Ninguno
+Atributos: Ninguno.
 Relaciones: 
 * Asociación con la clase Nodo. Indica de qué instancia parte la Estructura de relaciones.
 
@@ -112,7 +112,7 @@ Relaciones:
 Nombre: Búsqueda origen destino
 Descripción: Subclase de Búsqueda por relaciones. Representa una búsqueda en la que se especifica un nodo de origen y otro de destino. Básicamente encuentra el nivel de relación entre los dos elementos especificados (HeteSim) en el grafo en el que se busca.
 Cardinalidad: 1. Se instanciará cada vez que se realice una búsqueda con origen y destino fijados.
-Atributos: Ninguno
+Atributos: Ninguno.
 Relaciones:
 * Asociación con la clase Nodo. Indica de qué instancia parte la Estructura de relaciones.
 * Asociación con la clase Nodo. Indica en qué instancia termina la Estructura de relaciones.
@@ -133,7 +133,7 @@ Especificación de clases de persistencia
 Nombre: Controlador de persistencia
 Descripción: Capa intermedia entre la memoria y el disco. Se comunica con el resto del programa para la importación/exportación de datos y usa los serializadores para convertir los mismos.
 Cardinalidad: 1 por sesión del programa.
-Atributos: Path dónde se encuentran los archivos con los que va a trabajar el programa.
+Atributos: Dirección donde se encuentran los archivos con los que va a trabajar el programa (path, no-static).
 Relaciones: 
 * Agregación con la clase Serializador.
 
@@ -141,63 +141,53 @@ Relaciones:
 Nombre: Serializador
 Descripción: Clase abstracta que implementa los métodos básicos para serializar (interpretar) los datos en los dos sentidos (exportación e importación). 
 Cardinalidad: Muchos. Al haber varios tipos de datos, se usará un tipo de serializador específico para cada uno de ellos.
-Atributos: Datos crudos y datos procesados.
-Relaciones: 
-* Clase de la que heredan el resto de serializadores.
+Atributos: Nnguno
+Relaciones: Ninguna.
 
 
 Nombre: Serializador Nodos
 Descripción: Clase abstracta que implementa los métodos para serializar un nodo genérico.
 Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
 Atributos: Ninguno.
-Relaciones: 
-* Clase de la que heredan las implementaciones de los distintos tipos de nodos.
-* Hereda los métodos de Serializador.
-
+Relaciones: Ninguna.
 
 Nombre: Serializador Arestas
 Descripción: Serializa las relaciones "arestas". Es capaz de serializar tanto los tipos predefinidos como los especificados por los usuarios.
 Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
-Atributos: Nombre de relación.
-Relaciones: 
-* Hereda los métodos de Serializador.
+Atributos: Ninguno.
+Relaciones: Ninguna.
 
 
 Nombre: Serializador Conferencia
 Descripción: Implementación específica para el tipo de datos Conferencia. 
 Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
 Atributos: Ninguno.
-Relaciones:
-* Hereda los métodos de Serializador Nodos.
+Relaciones: Ninguna.
 
 
 Nombre: Serializador Término
 Descripción: Implementación específica para el tipo de datos Término. 
 Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
 Atributos: Ninguno.
-Relaciones:
-* Hereda los métodos de Serializador Nodos.
+Relaciones: Ninguna.
 
 
 Nombre: Serializador Autor
 Descripción: Implementación específica para el tipo de datos Autor. 
 Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
 Atributos: Ninguno.
-Relaciones:
-* Hereda los métodos de Serializador Nodos.
+Relaciones: Ninguna.
 
 
 Nombre: Serializador Paper
 Descripción: Implementación específica para el tipo de datos Paper. 
 Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
 Atributos: Ninguno.
-Relaciones:
-* Hereda los métodos de Serializador Nodos.
+Relaciones: Ninguna.
 
 
 Nombre: Serializador Temática
 Descripción: Implementación específica para el tipo de datos Temática. 
 Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
 Atributos: Ninguno.
-Relaciones:
-* Hereda los métodos de Serializador Nodos.
+Relaciones: Ninguna.
