@@ -114,6 +114,9 @@ Cardinalidad: 1. Se instanciará cada vez que se realice una búsqueda simple.
 Atributos: Filtro con el que se realiza la búsqueda (filtro, no static).
 Relaciones:
 * Asociación con la clase Nodo (en realidad, subclases de Nodo). Indica qué tipos de elementos se van a buscar. Ej: autores.
+Métodos:
+- Node busqueda_simple(NodeType type, String nombre)
+Devuelve un nodo del tipo type que tenga como contenido 'nombre'. Si no existe devuelve null.
 
 
 Nombre: Búsqueda de relaciones
