@@ -87,6 +87,25 @@ Cardinalidad: Muchos. Se instanciará una vez por cada tipo de relación present
 Atributos: Tipo de relación entre los nodos.
 Relaciones:
 * Asociación ternaria con la clase Nodo i Nodo. Indica la relación entre dos elementos y el tipo de esta.
+Métodos: 
+- Relation()
+Constructor para crear instancias de la clase Relation
+- void createRelation(NodeType node_out, NodeType node_in, String name)
+Crea un nuevo tipo de relación con un determinado nombre y que va de un tipo de nodo de entrada a un tipo de nodo de salida
+- void removeRelation()
+Elimina el tipo de relación.
+- void setName(String name)
+Cambia el nombre de la relación por el nombre especificado en el parámetro.
+- void setNodeIn(NodeType node_in)
+Cambia el tipo de nodo de entrada de la relación
+- void setNodeOut(NodeType node_out)
+Cambia el tipo de nodo de salida de la relación
+- String getName()
+Retorna el nombre de la relación.
+- NodeType getNodeIn()
+Retorna el tipo de nodo de entrada de la relación.
+- NodeType getNodeOut()
+Retorna el tipo de nodo de salida de la relación.
                           
 Nombre: Arista
 Descripción: Clase que representa una relación entre dos instancias de Nodos, relacionadas mediante un Tipo de relación.
