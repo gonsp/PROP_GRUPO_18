@@ -5,7 +5,7 @@ Especificación de clases del dominio
 Nombre: Grafo
 Descripción: Clase que representa un grafo heterogéneo en el que sus nodos se relacionan mediante relaciones bilaterales.
 Cardinalidad: 1. Aunque el usuario podrá almacenar varios grafos, solo se podrá tratar uno a la vez.
-Atributos: Nombre con el que se identificará el grafo (name, no static).
+Atributos: Map<Author> authors, Map<Paper> papers, Map<Conference> conferences, Map<Term> terms, Map<Subject> subjects.
 Relaciones:
 * Agregación con la clase Nodo.
 * Agregación con la clase Arista, que son las relaciones ternarias Nodo-Nodo-Relación.
@@ -14,23 +14,36 @@ Métodos:
 Constructor para crear instancias de la clase graph.
 -int getSizeOf(NodeType type)
 Retorna la cantidad de nodos de tipo type que tiene el grafo.
--void addNewNode(Node node)
+-void addNode(Node node)
 Añade al grafo el nodo pasado como parámetro. Le asigna el siguiente identificador disponible.
--void addNewNode(Node node, int Id)
+-void addNode(Node node, int id)
 Añade al grafo el nodo pasado como parámetro. Le asigna el Id pasado com parámetro siempre y cuando no haya sido usado.
--void removeNode(int key, NodeType type)
+-void removeNode(int id, NodeType type)
 Elimina el nodo correspondiente al Id = key dentro de los nodos del tipo type.
--Node getNode(int key, NodeType type)
+-Node getNode(int id, NodeType type)
 Retorna el nodo correspondiente al Id = key dentro de los nodos del tipo type.
 
 
 Nombre: Nodo
 Descripción: Clase abstracta que representa un elemento de nuestra base de datos.
 Cardinalidad: Al ser abstracta, 0. El número conjunto de instancias de sus subclases será equivalente al número de elementos presentes en nuestra base de datos.
-Atributos: Número identificador del nodo será único dentro del grafo al que pertenece (id, no static). Valor contenido del elemento que variará en función del tipo de nodo (value, no static).
+Atributos: Valor contenido del elemento que variará en función del tipo de nodo (value, no static).
 Relaciones:
-* Asociación ternaria con la clase Nodo i Relación. Indica con qué elementos se relaciona y de qué manera.
+* Asociación ternaria con la clase Nodo y Relación. Indica con qué elementos se relaciona y de qué manera.
 * Asociación con todo Nodo mediante la clase asociativa HeteSim. Indica el nivel de relación con ese nodo en función de una estructura de relaciones.
+Metodos:
+-Node(string name, int Id)
+Constructora que crea una instancia de la clase node.
+-setValue(string value)
+Permite establecer el valor de la instancia.
+-addRelation(int relationID, int nodeId)
+Permite añadir una nueva relacion  para el nodo.
+-removeRelation(int relationID, int nodeId)
+Permite borrar una relación.
+-isRelated(int TypeId, int nodeId)
+Permite ver si la instancia de node está relacionada con un determinado nodo.
+-ArrayList<int> getRelations(int relationID)
+Devuelve todas sus relaciones (arestas) de un tipo de relación.
 
 
 Nombre: Conferencia
@@ -85,9 +98,14 @@ Relaciones: Ninguna.
 Nombre: Búsqueda
 Descripción: Clase abstracta que representa una búsqueda en la base de datos (representada en el grafo). Se instanciarán sus subclases dependiendo del tipo de búsqueda. Extraerá una lista de elementos que cumplen con las condiciones de búsqueda.
 Cardinalidad: Al ser abstracta, 0. Sus subclases se instanciarán una cada vez que se realice una búsqueda.
-Atributos: Ninguno.
+Atributos: ArrayList<Result> results.
 Relaciones: 
 * Asociación con la clase Grafo: Indica sobre qué datos se realiza la búsqueda.
+Métodos:
+-abstract void search()
+Realiza la búsqueda
+-ArrayList<Result> getResults()
+Devuelve una lista de los resultados de la búsqueda.
 
 
 Nombre: Búsqueda simple
@@ -101,11 +119,13 @@ Relaciones:
 Nombre: Búsqueda de relaciones
 Descripción: Subclase abstracta de la clase Búsqueda. Representa una búsqueda que sigue una estructura de relación determinada. Dependiendo de si se especifica un nodo de origen y destino, tenemos otras 3 subclases.
 Cardinalidad: Al ser abstracta, 0.
-Atributos: Ninguno.
+Atributos: Re.
 Relaciones: 
 * Dependencia con la clase HeteSim. La utilizará para calcular el nivel de relación entre los elementos del grafo al que está relacionada.
 * Asociación con la clase Estructura de relaciones. Será lo que defina qué estructura de relación seguirá al buscar los elementos.
-
+Métodos:
+-BusquedaRelacional(EstructuraRelaciones estructura)
+Constructor de una búsqueda relacional, a la que se le pasa la estructura de relaciones.
 
 Nombre: Búsqueda libre
 Descripción: Subclase de la clase Búsqueda por relaciones. Representa una búsqueda en la que no se especifica desde qué elemento sale la relación definida por una Estructura de relaciones. Buscará todos los elementos del último tipo de la estructura relacionados con todos los elementos del primero.
@@ -117,28 +137,43 @@ Relaciones: Ninguna.
 Nombre: Búsqueda origen
 Descripción: Subclase de Búsqueda por relaciones. Representa una búsqueda en la que se especifica un nodo de origen. Esto significa que buscará todos los nodos que estén relacionados con el de origen que cumplan con la Estructura de relaciones y condiciones de la búsqueda.
 Cardinalidad: 1. Se instanciará cada vez que se realice una búsqueda con origen fijado.
-Atributos: Ninguno.
+Atributos: Node from.
 Relaciones: 
 * Asociación con la clase Nodo. Indica de qué instancia parte la Estructura de relaciones.
+Métodos:
+-BusquedaOrigen(EstructuraRelaciones estructura, Nodo from)
+Llama al constructor de la super clase pasándole la estructura y guarda desde qué nodo sale la búsqueda.
 
 
 Nombre: Búsqueda origen destino
 Descripción: Subclase de Búsqueda por relaciones. Representa una búsqueda en la que se especifica un nodo de origen y otro de destino. Básicamente encuentra el nivel de relación entre los dos elementos especificados (HeteSim) en el grafo en el que se busca.
 Cardinalidad: 1. Se instanciará cada vez que se realice una búsqueda con origen y destino fijados.
-Atributos: Ninguno.
+Atributos: Nodo from, Nodo to.
 Relaciones:
 * Asociación con la clase Nodo. Indica de qué instancia parte la Estructura de relaciones.
 * Asociación con la clase Nodo. Indica en qué instancia termina la Estructura de relaciones.
+Métodos:
+-BúsquedaOrigenDestino(EstructuraRelaciones estructura, Nodo from, Nodo to)
 
+Nombre: Result
+Descripción: Clase que representa un ítem de la salida de una búsqueda. Es decir, representa a un elemento que cumple con la busqueda realizada.
+Cardinalidad: Muchos por cada resultado de una búsqueda.
+Atributos: int id_from, int id_to, int hetesim.
+Cardinalidad:
+* Agregación con la clase Búsqueda
 
 Nombre: Estructura de relaciones
-Descripción: Clase que representa una secuencia de tipos de nodos y relaciones en la que se basará la mayoría de tipos de búsqueda. Será la forma de especificar la estructura de relaciones del grafo que se quiere contemplar en una búsqueda por relaciones.
+Descripción: Clase que representa una secuencia de tipos de nodos y relaciones en la que se basará la mayoría de tipos de búsqueda. Será la forma de especificar la estructura de relaciones del grafo que se quiere contemplar en una búsqueda por relaciones. También se encarga de insertar un tipo de nodo "nulo" en el medi de estructuras pares para poder realizar búsquedas relacionales sobre el hetesim.
 Cardinalidad: 1 por búsqueda por relaciones.
-Atributos: Ninguno
+Atributos: ArrayList<Relacion> estructura
 Relaciones:
 * Agregación con la clase Relación. Las relaciones agregadas y su ordenación indicará la estructura con la que se realizará una búsqueda.
-
-
+Llama al constructor de la super clase pasándole la estructura y guarda desde qué nodo sale y acaba la búsqueda.
+Métodos:
+-EstructuraRelaciones(ArrayList<Relacion>)
+Constructor de la clase. Inserta el tipo "nulo" en medio de las estructuras pares.
+-Relacion getRelation(int i)
+Devuelve la relación en la posición i
 
 Especificación de clases de persistencia
 
