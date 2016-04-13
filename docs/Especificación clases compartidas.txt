@@ -84,7 +84,7 @@ Relaciones: Ninguna.
 Nombre: Relación
 Descripción: Clase que representa un tipo de relación entre dos tipos de nodos.
 Cardinalidad: Muchos. Se instanciará una vez por cada tipo de relación presente en el grafo.
-Atributos: Tipo de relación entre los nodos.
+Atributos: Tipo de nodo (NodeType) de entrada, tipo de nodo (NodeType) de salida y nombre del tipo de relación.
 Relaciones:
 * Asociación ternaria con la clase Nodo i Nodo. Indica la relación entre dos elementos y el tipo de esta.
 Métodos: 
