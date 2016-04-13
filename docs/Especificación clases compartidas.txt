@@ -1,4 +1,4 @@
-﻿Especificación de clases del dominio
+Especificación de clases del dominio
 
 
                           
@@ -9,6 +9,27 @@ Atributos: Nombre con el que se identificará el grafo (name, no static).
 Relaciones:
 * Agregación con la clase Nodo.
 * Agregación con la clase Arista, que son las relaciones ternarias Nodo-Nodo-Relación.
+Métodos:
+-Graph()
+Constructor para crear instancias de la clase graph.
+-double getAuthorsSize()
+Retorna la cantidad de autores que tiene el grafo.
+-double getPaperSize()
+Retorna la cantidad de articulos que tiene el grafo.
+-double getTermsSize()
+Retorna la cantidad de términos que tiene el grafo.
+-double getLabelsSize()
+Retorna la cantidad de etiquetas que tiene el grafo.
+-double getConferencesSize()
+Retorna la cantidad de conferencias que tiene el grafo.
+-void addNewNode(Node node)
+Añade al grafo el nodo pasado como parámetro. Le asigna el siguiente identificador disponible.
+-void addNewNode(Node node, int Id)
+Añade al grafo el nodo pasado como parámetro. Le asigna el Id pasado com parámetro siempre y cuando no haya sido usado.
+-void removeNode(int key, NodeType type)
+Elimina el nodo correspondiente al Id = key dentro de los nodos del tipo type.
+-Node getNode(int key, NodeType type)
+Retorna el nodo correspondiente al Id = key dentro de los nodos del tipo type.
 
 
 Nombre: Nodo
