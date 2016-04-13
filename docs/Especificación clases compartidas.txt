@@ -12,15 +12,15 @@ Relaciones:
 Métodos:
 -Graph()
 Constructor para crear instancias de la clase graph.
--double getAuthorsSize()
+-int getAuthorsSize()
 Retorna la cantidad de autores que tiene el grafo.
--double getPaperSize()
+-int getPaperSize()
 Retorna la cantidad de articulos que tiene el grafo.
--double getTermsSize()
+-int getTermsSize()
 Retorna la cantidad de términos que tiene el grafo.
--double getLabelsSize()
+-int getLabelsSize()
 Retorna la cantidad de etiquetas que tiene el grafo.
--double getConferencesSize()
+-int getConferencesSize()
 Retorna la cantidad de conferencias que tiene el grafo.
 -void addNewNode(Node node)
 Añade al grafo el nodo pasado como parámetro. Le asigna el siguiente identificador disponible.
