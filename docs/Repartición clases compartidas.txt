@@ -1,5 +1,5 @@
  Grupo 1: Clases relacionadas con las búsquedas (1)
-    Estructura de relaciones: Adrià
+    Estructura de relaciones: Adrià i Joel
     Búsqueda: David
     Búsqueda simple: Marc
     
