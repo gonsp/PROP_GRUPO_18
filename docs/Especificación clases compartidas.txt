@@ -12,16 +12,8 @@ Relaciones:
 Métodos:
 -Graph()
 Constructor para crear instancias de la clase graph.
--int getAuthorsSize()
-Retorna la cantidad de autores que tiene el grafo.
--int getPaperSize()
-Retorna la cantidad de articulos que tiene el grafo.
--int getTermsSize()
-Retorna la cantidad de términos que tiene el grafo.
--int getLabelsSize()
-Retorna la cantidad de etiquetas que tiene el grafo.
--int getConferencesSize()
-Retorna la cantidad de conferencias que tiene el grafo.
+-int getSizeOf(NodeType type)
+Retorna la cantidad de nodos de tipo type que tiene el grafo.
 -void addNewNode(Node node)
 Añade al grafo el nodo pasado como parámetro. Le asigna el siguiente identificador disponible.
 -void addNewNode(Node node, int Id)
