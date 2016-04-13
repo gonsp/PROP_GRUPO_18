@@ -200,12 +200,19 @@ Devuelve la relación en la posición i
 Especificación de clases de persistencia
 
 
-Nombre: Controlador de persistencia
+Nombre: PersistenceController
 Descripción: Capa intermedia entre la memoria y el disco. Se comunica con el resto del programa para la importación/exportación de datos y usa los serializadores para convertir los mismos.
 Cardinalidad: 1 por sesión del programa.
-Atributos: Dirección donde se encuentran los archivos con los que va a trabajar el programa (path, no-static).
+Atributos: Grago graph, String path
 Relaciones: 
 * Agregación con la clase Serializador.
+Métodos:
+-PersistenceController(Grafo graph)
+Constructor inicial de la clase, que la asocia a un grafo.
+-Void import(String path)
+Método para importar los datos del fichero zip
+-Void export(String path)
+Método para guardar los datos en un fichero zip
 
 
 Nombre: Serializador
