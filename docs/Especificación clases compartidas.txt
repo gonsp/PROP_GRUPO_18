@@ -115,8 +115,8 @@ Atributos: Filtro con el que se realiza la búsqueda (filtro, no static).
 Relaciones:
 * Asociación con la clase Nodo (en realidad, subclases de Nodo). Indica qué tipos de elementos se van a buscar. Ej: autores.
 Métodos:
-- Node busqueda_simple(NodeType type, String nombre)
-Devuelve un nodo del tipo type que tenga como contenido 'nombre'. Si no existe devuelve null.
+- BusquedaSimple(string filtro)
+Constructor de la clase que obtiene el filtro con el que realizará la búsqueda simple.
 
 
 Nombre: Búsqueda de relaciones
