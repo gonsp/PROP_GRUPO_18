@@ -45,6 +45,9 @@ Permite ver si la instancia de node está relacionada con un determinado nodo.
 -ArrayList<int> getRelations(int relationID)
 Devuelve todas sus relaciones (arestas) de un tipo de relación.
 
+Nombre: NodeType
+Descripción: Enumeración de los 5 tipos de nodos que pueden existir en el grafo.
+Elementos: Author, Paper, Conference, Subject, Term
 
 Nombre: Conferencia
 Descripción: Subclase de la clase nodo. Representa un elemento de tipo conferencia de nuestra base de datos.
@@ -84,14 +87,12 @@ Relaciones: Ninguna.
 Nombre: Relación
 Descripción: Clase que representa un tipo de relación entre dos tipos de nodos.
 Cardinalidad: Muchos. Se instanciará una vez por cada tipo de relación presente en el grafo.
-Atributos: Tipo de nodo (NodeType) de entrada, tipo de nodo (NodeType) de salida y nombre del tipo de relación.
+Atributos: NodeType from, NodeType to, String name (nombre del tipo de relación).
 Relaciones:
 * Asociación ternaria con la clase Nodo i Nodo. Indica la relación entre dos elementos y el tipo de esta.
 Métodos: 
-- Relation()
-Constructor para crear instancias de la clase Relation
-- void createRelation(NodeType node_out, NodeType node_in, String name)
-Crea un nuevo tipo de relación con un determinado nombre y que va de un tipo de nodo de entrada a un tipo de nodo de salida
+- void Relation(NodeType node_out, NodeType node_in, String name)
+Constructor que crea un nuevo tipo de relación con un determinado nombre y que va de un tipo de nodo de entrada a un tipo de nodo de salida
 - void removeRelation()
 Elimina el tipo de relación.
 - void setName(String name)
@@ -112,6 +113,7 @@ Descripción: Clase que representa una relación entre dos instancias de Nodos, 
 Cardinalidad: Muchos: Se instanciará una vez por cada relación que haya entre dos instancias de nodos del grafo.
 Atributos: Ninguno.
 Relaciones: Ninguna.
+Nota: Esta clase tiene sentido solo a nivel conceptual. A la hora de la implementación en Java, esta relación se representa de forma indirecta mediante las listas de id's de los nodos.
 
 
 Nombre: Búsqueda
@@ -141,7 +143,7 @@ Constructor de la clase que obtiene el filtro con el que realizará la búsqueda
 Nombre: Búsqueda de relaciones
 Descripción: Subclase abstracta de la clase Búsqueda. Representa una búsqueda que sigue una estructura de relación determinada. Dependiendo de si se especifica un nodo de origen y destino, tenemos otras 3 subclases.
 Cardinalidad: Al ser abstracta, 0.
-Atributos: Re.
+Atributos: EstructuraRelaciones estructura
 Relaciones: 
 * Dependencia con la clase HeteSim. La utilizará para calcular el nivel de relación entre los elementos del grafo al que está relacionada.
 * Asociación con la clase Estructura de relaciones. Será lo que defina qué estructura de relación seguirá al buscar los elementos.
