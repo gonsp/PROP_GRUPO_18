@@ -15,9 +15,5 @@ public class GraphException extends Exception {
 
 }
 
-public enum GraphExceptionError {
-    ID_USED, ID_INVALID, ID_NOT_EXISTS
-}
-
 
 
