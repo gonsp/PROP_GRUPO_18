@@ -3,193 +3,95 @@ package domain;
 import java.util.HashMap;
 
 public class Graph {
-	//Variables
+        //Atributos
 	private String name;
-	private int lastAuthorId = 0, lastPaperId = 0, lastTermId = 0;
-	private int lastLabelId = 0, lastConferenceId = 0;
-	private HashMap<Integer, Node> authors;
-	private HashMap<Integer, Node> papers;
-	private HashMap<Integer, Node> terms;
-	private HashMap<Integer, Node> labels;
-	private HashMap<Integer, Node> conferences;
+
+        private NodeContainer authors;
+        private NodeContainer papers;
+        private NodeContainer terms;
+        private NodeContainer labels;
+        private NodeContainer conferences;
 	
 	//Constructors
-	protected Graph() {
-		authors = new HashMap<Integer, Node>();
-		papers = new HashMap<Integer, Node>();
-		terms = new HashMap<Integer, Node>();
-		labels = new HashMap<Integer, Node>();
-		conferences = new HashMap<Integer, Node>();
+        public Graph() {
+                authors = new NodeContainer();
+                papers = new NodeContainer();
+                terms = new NodeContainer();
+                labels = new NodeContainer();
+                conferences = new NodeContainer();
 	}
 	
-	protected Graph(String name) {
+        public Graph(String name) {
 		this.name = name;
-		authors = new HashMap<Integer, Node>();
-		papers = new HashMap<Integer, Node>();
-		terms = new HashMap<Integer, Node>();
-		labels = new HashMap<Integer, Node>();
-		conferences = new HashMap<Integer, Node>();
+		Graph();
 	}
 	
 	//Get & Set
-	protected String getName() {
+        public String getName() {
 		return name;
 	}
 	
-	protected void setName(String name) {
+        public void setName(String name) {
 		this.name = name;
 	}
 	
-	protected void setLastId(int lastUsed, NodeType type) {
-		switch(type) {
-			case AUTHOR:
-				lastAuthorId = lastUsed;
-				break;
-			case PAPER:
-				lastPaperId = lastUsed;
-				break;
-			case TERM:
-				lastTermId = lastUsed;
-				break;
-			case LABEL:
-				lastLabelId = lastUsed;
-				break;
-			case CONFERENCE:
-				lastConferenceId = lastUsed;
-				break;
-		}
+        public void setLastId(int lastUsed, NodeType type) throws GraphException {
+                getNodeContainerFromNodeType(type).setLastID(ID);
 	}
 	
-	protected int getNodesSize(NodeType type) {
-		int size;
-		switch(type) {
-			case AUTHOR:
-				size = authors.size();
-				break;
-			case PAPER:
-				size = papers.size();
-				break;
-			case TERM:
-				size = terms.size();
-				break;
-			case LABEL:
-				size = labels.size();
-				break;
-			case CONFERENCE:
-				size = conferences.size();
-				break;
-			default: size = -1;
-		}
-		return size;
+        public int getSize(NodeType type) throws GraphException {
+		return getNodeContainerFromNodeType(type).getSize();
 	}
 	
 	//Graph Edition
-	protected void addNode(Node node, NodeType type) {
-		switch(type) {
-			case AUTHOR:
-				authors.put(lastAuthorId + 1, node);
-				break;
-			case PAPER:
-				papers.put(lastPaperId + 1, node);
-				break;
-			case TERM:
-				terms.put(lastTermId + 1, node);
-				break;
-			case LABEL:
-				labels.put(lastLabelId + 1, node);
-				break;
-			case CONFERENCE:
-				conferences.put(lastConferenceId + 1, node);
-				break;
-		}
+        public void addNode(Node node) {
+                getNodeContainerFromNodeType(getNodeTypeFromNode(node)).addNode(node);
 	}
 	
-	protected void addNode(Node node, NodeType type, int id) {
-		switch(type) {
-			case AUTHOR:
-				authors.put(id, node);
-				break;
-			case PAPER:
-				papers.put(id, node);
-				break;
-			case TERM:
-				terms.put(id, node);
-				break;
-			case LABEL:
-				labels.put(id, node);
-				break;
-			case CONFERENCE:
-				conferences.put(id, node);
-				break;
-		}
+        public void addNode(Node node, int id) throws GraphException {
+                getNodeContainerFromNodeType(getNodeTypeFromNode(node)).addNode(node, id);
 	}
 	
-	protected void removeNode(NodeType type, int id) { /*TODO: Exceptions*/ 
-		switch(type) {
-			case AUTHOR:
-				authors.remove(id);
-				break;
-			case PAPER:
-				papers.remove(id);
-				break;
-			case TERM:
-				terms.remove(id);
-				break;
-			case LABEL:
-				labels.remove(id);
-				break;
-			case CONFERENCE:
-				conferences.remove(id);
-				break;
-		}
+        public void removeNode(NodeType type, int id) throws GraphException {
+		getNodeContainerFromNodeType(type).removeNode(id);
 	}
 
 	//Queries
-	protected Node getNode(int id, NodeType type) throws Exception { /*TODO: Exceptions*/ 
-		Node n;
-		switch(type) {
+        public Node getNode(NodeType type, int id) throws GraphException {
+		return getNodeContainerFromNodeType(type).getNode(id);
+	}
+	
+	private NodeType getNodeTypeFromNode(Node node) {
+                if(node instanceof Author) {
+                        return AUTHOR;
+                } else if(node instanceof Paper) {
+                        return PAPER;
+                } else if(node instanceof Term) {
+                        return TERM;
+                } else if(node instanceof Label) {
+                        return LABEL;
+                } else {
+                        return CONFERENCE
+                }
+        }
+	
+        private NodeContainer getNodeContainerFromNodeType(NodeType type) {
+                switch(type) {
 			case AUTHOR:
-				if (authors.containsKey(id)) {
-					n = authors.get(id);
-				} else {
-					Exception e = new Exception();
-					n = null;
-				}
+				return authors;
 				break;
 			case PAPER:
-				if (papers.containsKey(id)) {
-					n = papers.get(id);
-				} else {
-					Exception e = new Exception();
-					n = null;
-				}
-				break;
+                                return papers;
+                                break;
 			case TERM:
-				if (terms.containsKey(id)) {
-					n = terms.get(id);
-				} else {
-					Exception e = new Exception();
-					n = null;
-				}
+				return terms;
 				break;
 			case LABEL:
-				if (labels.containsKey(id)) {
-					n = labels.get(id);
-				} else {
-					Exception e = new Exception();
-					n = null;
-				}
+				return labels;
 				break;
 			case CONFERENCE:
-				if (conferences.containsKey(id)) {
-					n = conferences.get(id);
-				} else {
-					Exception e = new Exception();
-					n = null;
-				}
+				return conferences;
 				break;
-			default: n = null;
 		}
-		return n;
-	}
+        }
 }
