@@ -1,21 +1,19 @@
 package domain;
 
 import java.util.HashMap;
-import domain.Node;
 
 public class NodeContainer {
 
     private int lastID;
-    private HashMap<int, Node> nodes;
+    private HashMap<Integer, Node> nodes;
 
     public NodeContainer() {
         lastID = 1;
     }
 
-    public void setLastID(int ID) {
+    public void setLastID(int ID) throws GraphException {
         if(!checkID(ID)) {
-            GraphException e = new GraphException(ID_INVALID);
-            throw e;
+            throw new GraphException(GraphExceptionError.ID_INVALID);
         } else {
             lastID = ID;
         }
@@ -25,16 +23,16 @@ public class NodeContainer {
         return nodes.size();
     }
 
-    public void getLastID()
+    public int getLastID() {
         return lastID;
     }
 
     public void addNode(Node n) {
-        nodes.put(lastID++, n);
+        nodes.put(++lastID, n);
     }
 
     public void addNode(Node n, int ID) throws GraphException {
-        if(!checkID()) {
+        if(!checkID(ID)) {
             GraphException e = new GraphException(ID_INVALID);
             throw e;
         } else if(nodes.find(ID)) { //TODO fix this to work with hashmap
@@ -52,19 +50,19 @@ public class NodeContainer {
             throw e;
         } else if(nodes.find(ID)) {
             nodes.remove(ID);
-            //TODO si no existía:
+            //TODO si no existï¿½a:
             //GraphException e = new GraphException(ID_NOT_EXISTS);
             //throw e;
         }
     }
 
-    public void getNode(int ID) {
+    public Node getNode(int ID) {
         if(!checkID(ID)) {
             GraphException e = new GraphException(ID_INVALID);
             throw e;
         } else if(nodes.find(ID)) {
             return nodo; //TODO implementar bien todo esto
-            //TODO si no existía:
+            //TODO si no existï¿½a:
             //GraphException e = new GraphException(ID_NOT_EXISTS);
             //throw e;
         }
