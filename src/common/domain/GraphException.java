@@ -12,7 +12,6 @@ public class GraphException extends Exception {
     public GraphExceptionError getError() {
         return error;
     }
-
 }
 
 
