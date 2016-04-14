@@ -1,5 +1,5 @@
 package domain;
 
 public enum NodeType {
-	AUTHOR, PAPER, TERM, LABEL, CONFERENCE;
+        AUTHOR, PAPER, TERM, LABEL, CONFERENCE
 }
