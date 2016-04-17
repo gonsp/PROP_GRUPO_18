@@ -1,6 +1,7 @@
-package common;
+package common.persistence;
 
 public class PersistenceController {
 
-    public PersistenceController();
+    //public PersistenceController();
+
 }

@@ -1,10 +1,11 @@
-package persistence;
+package common.persistence;
 
 import java.io.Serializable;
 
 
 public abstract class NodeSerializer implements Serializable {
 
+    /*
     private Node node = null;
     private String data = null;
 
@@ -24,4 +25,6 @@ public abstract class NodeSerializer implements Serializable {
     }
 
     public String deflate();
+    */
+
 }
