@@ -1,5 +1,6 @@
-package domini;
+package common.domain;
 
-public class Author extends node {
+
+public class Author extends Node {
 
 }

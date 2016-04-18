@@ -1,4 +1,6 @@
-package domini;
+package common.domain;
 
-public class Term extends node{
+
+public class Term extends Node {
+
 }

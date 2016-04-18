@@ -1,5 +1,6 @@
-package domini;
+package common.domain;
 
-public class Paper extends node{
+
+public class Paper extends Node {
 
 }

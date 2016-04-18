@@ -1,5 +1,6 @@
-package domini;
+package common.domain;
 
-public class Label extends node{
+
+public class Label extends Node {
 
 }

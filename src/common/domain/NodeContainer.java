@@ -2,6 +2,7 @@ package common.domain;
 
 import java.util.HashMap;
 
+
 public class NodeContainer {
 
     private int lastID;

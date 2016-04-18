@@ -1,5 +1,6 @@
 package common.domain;
 
+
 public class GraphException extends Exception {
 
     private GraphExceptionError error;
