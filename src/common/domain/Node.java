@@ -1,10 +1,9 @@
-package domini;
+package common.domain;
 
 import java.util.List;
 import java.util.HashMap;
 
-
-public abstract class node {
+public abstract class Node {
 	//Attributes
 	private String name;
 	private int nodeID;
@@ -13,9 +12,9 @@ public abstract class node {
 	
 	
 	//Constructors
-	public node(){
+	public Node(){
 	}
-	public node(String name, int nodeID){
+	public Node(String name, int nodeID){
 		this.name = name;
 		this.nodeID = nodeID;
 	}
