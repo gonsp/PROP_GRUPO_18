@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class RelationStructure implements Iterable<Relation>
 {
 	private ArrayList<Relation> st;
-	private int size = 0;
+	private int size;
 
 	// Creates an empty RelationStructure
 	public RelationStructure()
