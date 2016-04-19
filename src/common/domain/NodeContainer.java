@@ -5,22 +5,16 @@ import java.util.Set;
 
 
 public class NodeContainer {
-
+	//Attributes
     private int lastID;
     private HashMap<Integer, Node> nodes;
 
+    //Constructors
     public NodeContainer() {
-        lastID = 1;
+        lastID = 0;
     }
 
-    public void setLastID(int ID) throws GraphException {
-        if (!checkID(ID)) {
-            throw new GraphException(GraphExceptionError.ID_INVALID);
-        } else {
-            lastID = ID;
-        }
-    }
-
+    //Set & Get
     public int getSize() {
         return nodes.size();
     }
@@ -28,26 +22,26 @@ public class NodeContainer {
     public int getLastID() {
         return lastID;
     }
-
-    public HashMap<Integer,Node> getHashMap(){
-        return nodes;
-    }
-
+    
+    
+    
+    //???
     public Set<Integer> getKeySet(){
         return nodes.keySet();
     }
-
+    
+    
+    
+    //Container Edition
     public void addNode(Node n) {
         nodes.put(++lastID, n);
     }
 
     public void addNode(Node n, int ID) throws GraphException {
-        if (!checkID(ID)) {
-            GraphException e = new GraphException(ID_INVALID);
-            throw e;
-        } else if (nodes.find(ID)) { //TODO fix this to work with hashmap
-            GraphException e = new GraphException(ID_USED);
-            throw e;
+        if (!checkNewID(ID)) {
+        	throw new GraphException(GraphExceptionError.ID_INVALID);
+        } else if (nodes.containsKey(ID)) {
+        	throw new GraphException(GraphExceptionError.ID_USED);
         } else {
             lastID = ID;
             addNode(n);
@@ -56,30 +50,31 @@ public class NodeContainer {
 
     public void removeNode(int ID) throws GraphException {
         if (!checkID(ID)) {
-            GraphException e = new GraphException(ID_INVALID);
-            throw e;
-        } else if (nodes.find(ID)) {
+        	throw new GraphException(GraphExceptionError.ID_INVALID);
+        } else if (nodes.containsKey(ID)) {
             nodes.remove(ID);
-            //TODO si no existia:
-            //GraphException e = new GraphException(ID_NOT_EXISTS);
-            //throw e;
+        } else {
+        	throw new GraphException(GraphExceptionError.ID_NONEXISTENT);
         }
     }
 
-    public Node getNode(int ID) {
+    //Queries
+    public Node getNode(int ID) throws GraphException {
         if (!checkID(ID)) {
-            GraphException e = new GraphException(ID_INVALID);
-            throw e;
-        } else if (nodes.find(ID)) {
-            return nodo; //TODO implementar bien todo esto
-            //TODO si no existia:
-            //GraphException e = new GraphException(ID_NOT_EXISTS);
-            //throw e;
+        	throw new GraphException(GraphExceptionError.ID_INVALID);
+        } else if (nodes.containsKey(ID)) {
+            return nodes.get(ID);
+        } else {
+        	throw new GraphException(GraphExceptionError.ID_NONEXISTENT);
         }
     }
 
     private boolean checkID(int ID) {
-        return ID >= 0 && ID > lastID;
+    	return ID > 0;
+    }
+    
+    private boolean checkNewID(int ID) {
+    	return ID > lastID;
     }
 }
  
