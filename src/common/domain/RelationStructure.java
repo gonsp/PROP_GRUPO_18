@@ -4,13 +4,15 @@ import java.util.ArrayList;
 
 public class RelationStructure
 {
-	private ArrayList<Relation> st;
+
+    //private ArrayList<Relation> st;
 
 	// TODO
 	public RelationStructure()
 	{
 	}
 
+	/*
 	// TODO
 	// Returns the relation at position i
 	public Relation getRelation(int i) throws IndexOutOfBoundsException
@@ -20,4 +22,6 @@ public class RelationStructure
 					"of range");
 		return st[i];
 	}
+	*/
+
 }
