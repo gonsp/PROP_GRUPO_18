@@ -1,4 +1,4 @@
-76	Souad Hadjres
+76  Souad Hadjres
 124	Yan Zhang
 192	David Hogg
 226	Martial Hebert
@@ -117,7 +117,7 @@
 2102	Tharam S. Dillon
 2159	Li Gao
 2183	Yang Xiang
-2219	J¨²lio C. Nievola
+2219	Jï¿½ï¿½lio C. Nievola
 2237	Junho Shim
 2243	Joonho Kwon
 2245	Sukho Lee
@@ -154,7 +154,7 @@
 2839	Takao Terano
 2898	Hiroshi Mizoguchi
 2948	Ling Chen
-3017	Elisabeth Andr¨¦
+3017	Elisabeth Andrï¿½ï¿½
 3043	Hiroshi Yasuda
 3050	Philippe Golle
 3100	Kristian J. Hammond
@@ -259,7 +259,7 @@
 4681	Timothy W. Finin
 4682	Anupam Joshi
 4683	Yelena Yesha
-4688	Oliver G¨¹nther
+4688	Oliver Gï¿½ï¿½nther
 4701	Takahira Yamaguchi
 4730	Yongmei Liu
 4746	Georg Lausen
@@ -363,7 +363,7 @@
 6400	Kien A. Hua
 6449	Victor O. K. Li
 6461	Catharine M. Wyss
-6525	Eduardo B. Fern¨¢ndez
+6525	Eduardo B. Fernï¿½ï¿½ndez
 6545	Peter L. Stanchev
 6565	Shuting Xu
 6613	Xin Xu
@@ -731,7 +731,7 @@
 12729	Jayant Kalagnanam
 12744	Zhao Xu
 12755	Jian Yu
-12772	Hakan Hacig¨¹m¨¹s
+12772	Hakan Hacigï¿½ï¿½mï¿½ï¿½s
 12773	James Rhodes
 12790	Deepak S. Turaga
 12801	Nirmit Desai
@@ -801,7 +801,7 @@
 13249	Alkis Simitsis
 13250	Timos K. Sellis
 13255	David W. Embley
-13264	Zo¨¦ Lacroix
+13264	Zoï¿½ï¿½ Lacroix
 13276	Wolfgang Lehner
 13279	Albert Maier
 13287	Mark Brodie
@@ -885,7 +885,7 @@
 14236	Tore Risch
 14238	Akhil Sahai
 14252	Kirk Scott
-14286	Val¨¦rie Issarny
+14286	Valï¿½ï¿½rie Issarny
 14340	Lan Lin
 14374	Derick Wood
 14390	Ullrich Hustadt
@@ -893,16 +893,16 @@
 14408	Sadok Ben Yahia
 14480	Yahya Slimani
 14481	Maarten Marx
-14490	Ivo D¨¹ntsch
+14490	Ivo Dï¿½ï¿½ntsch
 14496	Martine De Cock
 14498	Etienne E. Kerre
-14510	Claudio Guti¨¦rrez
-14511	Petr H¨¢jek
+14510	Claudio Gutiï¿½ï¿½rrez
+14511	Petr Hï¿½ï¿½jek
 14513	Jan Rauch
 14537	Andrea Formisano
 14572	Andrzej Szalas
 14573	Jerzy Tyszkiewicz
-14583	Jos¨¦ Meseguer
+14583	Josï¿½ï¿½ Meseguer
 14692	Hong Shen
 14696	Jian Chen
 14729	Eunok Paek
@@ -953,7 +953,7 @@
 15212	Dimitris Achlioptas
 15213	Carla P. Gomes
 15214	Henry A. Kautz
-15215	Jos¨¦ Luis Ambite
+15215	Josï¿½ï¿½ Luis Ambite
 15216	Craig A. Knoblock
 15217	Haixia Jia
 15218	Cristopher Moore
@@ -985,17 +985,17 @@
 15266	Fabrizio Angiulli
 15267	Luigia Carlucci Aiello
 15272	Janice S. Aikins
-15273	Carlos Ans¨®tegui
-15274	Ram¨®n B¨¦jar
-15275	C¨¨sar Fern¨¢ndez
+15273	Carlos Ansï¿½ï¿½tegui
+15274	Ramï¿½ï¿½n Bï¿½ï¿½jar
+15275	Cï¿½ï¿½sar Fernï¿½ï¿½ndez
 15276	Carles Mateu
 15277	Frederick Hayes-Roth
 15278	John P. McDermott
 15279	Herbert Schorr
 15280	Reid G. Smith
 15283	Alvaro del Val
-15284	Iv¨¢n Dot¨²
-15285	Felip Many¨¤
+15284	Ivï¿½ï¿½n Dotï¿½ï¿½
+15285	Felip Manyï¿½ï¿½
 15290	Grigoris Antoniou
 15291	Venkat Ajjanagadde
 15292	David Billington
@@ -1019,7 +1019,7 @@
 15329	Piergiorgio Bertoli
 15330	Chiara Ghidini
 15331	Luciano Serafini
-15332	Chidanand Apt¨¦
+15332	Chidanand Aptï¿½ï¿½
 15333	Se June Hong
 15334	Agustin A. Araya
 15337	Erann Gat
@@ -1065,7 +1065,7 @@
 15410	Richard Fikes
 15411	Jessica Jenkins
 15412	Sunil Mishra
-15413	Tom¨¢s E. Uribe
+15413	Tomï¿½ï¿½s E. Uribe
 15414	Guizhen Yang
 15419	Jeffrey Van Baalen
 15420	Randall Davis
@@ -1146,7 +1146,7 @@
 15520	Yuh-Jyh Hu
 15521	Dennis F. Kibler
 15524	Delbert D. Bailey
-15525	V¨ªctor Dalmau
+15525	Vï¿½ï¿½ctor Dalmau
 15526	Phokion G. Kolaitis
 15527	Sergei Nirenburg
 15530	J. Christopher Beck
@@ -1182,7 +1182,7 @@
 15587	Anoop Gupta
 15588	Didier Dubois
 15592	Chitta Baral
-15593	J¨¦r?me Lang
+15593	Jï¿½ï¿½r?me Lang
 15594	Alessandro Saffiotti
 15596	Thomas Eiter
 15597	Jicheng Zhao
@@ -1233,11 +1233,11 @@
 15693	Piero P. Bonissone
 15694	Rene Quiniou
 15696	Anthony J. Bonner
-15698	Christian Bessi¨¨re
+15698	Christian Bessiï¿½ï¿½re
 15700	Gary C. Borchardt
 15701	Marie-Odile Cordier
 15702	Remi Coletta
-15703	Fr¨¦d¨¦ric Koriche
+15703	Frï¿½ï¿½dï¿½ï¿½ric Koriche
 15704	Barry O'Sullivan
 15705	Lucas Bordeaux
 15706	Marco Cadoli
@@ -1268,7 +1268,7 @@
 15747	Marie A. Bienkowski
 15748	Louis J. Hoebel
 15749	Antonis Bikakis
-15750	Ver¨®nica Becher
+15750	Verï¿½ï¿½nica Becher
 15751	Mikhail Bilenko
 15752	Ronen I. Brafman
 15753	Darse Billings
@@ -1276,7 +1276,7 @@
 15756	Duane Szafron
 15757	Richard Dearden
 15759	Nir Friedman
-15763	Mois¨¦s Goldszmidt
+15763	Moisï¿½ï¿½s Goldszmidt
 15764	Arnold Binas
 15765	David Poole
 15768	Raymond Reiter
@@ -1432,8 +1432,8 @@
 16067	Leslie Pack Kaelbling
 16074	Laurent Catach
 16075	Ruggiero Cavallo
-16078	Jes¨²s Cerquides
-16079	Ramon L¨®pez de M¨¢ntaras
+16078	Jesï¿½ï¿½s Cerquides
+16079	Ramon Lï¿½ï¿½pez de Mï¿½ï¿½ntaras
 16080	Amedeo Cesta
 16081	Angelo Oddi
 16082	Stephen F. Smith
@@ -1542,7 +1542,7 @@
 16312	Daniel Le Berre
 16313	Florian Letombe
 16314	Caroline Devred
-16315	S¨¦bastien Konieczny
+16315	Sï¿½ï¿½bastien Konieczny
 16316	Marie-Christine Lagasquie-Schiex
 16317	Tom Costello
 16318	Paul Cotter
@@ -1556,7 +1556,7 @@
 16332	Dayne Freitag
 16333	Tom M. Mitchell
 16334	Kamal Nigam
-16335	Se¨¢n Slattery
+16335	Seï¿½ï¿½n Slattery
 16336	Susan Craw
 16338	James M. Crawford
 16339	Larry D. Auton
@@ -1731,8 +1731,8 @@
 16651	V. S. Subrahmanian
 16652	Larry J. Eshelman
 16653	Kave Eshghi
-16660	Josep Llu¨ªs Arcos
-16661	Juan A. Rodr¨ªguez-Aguilar
+16660	Josep Lluï¿½ï¿½s Arcos
+16661	Juan A. Rodrï¿½ï¿½guez-Aguilar
 16663	Alexander Gray
 16666	Rebecca Casta?o
 16667	Eric Mjolsness
@@ -1764,7 +1764,7 @@
 16703	Jimmy Ho-Man Lee
 16704	Peter J. Stuckey
 16705	Wheeler Ruml
-16706	H¨¦l¨¨ne Fargier
+16706	Hï¿½ï¿½lï¿½ï¿½ne Fargier
 16707	Thomas Schiex
 16708	Robert G. Farrell
 16709	John R. Anderson
@@ -1842,7 +1842,7 @@
 16850	Wolfgang Nejdl
 16855	Daniel Frost
 16856	Irina Rish
-16857	Llu¨ªs Vila
+16857	Lluï¿½ï¿½s Vila
 16859	Michael J. Swain
 16865	Akinori Fujino
 16866	Naonori Ueda
@@ -1856,7 +1856,7 @@
 16891	Ya'akov Gal
 16892	Francesca Marzo
 16893	Barbara J. Grosz
-16894	Herv¨¦ Gallaire
+16894	Hervï¿½ï¿½ Gallaire
 16895	Michel Galley
 16896	Thomas Y. Galloway
 16897	Antony Galton
@@ -1995,7 +1995,7 @@
 17192	Gail Haddock
 17195	Henrik Reif Andersen
 17196	Udo Hahn
-17197	Korn¨¦l G. Mark¨®
+17197	Kornï¿½ï¿½l G. Markï¿½ï¿½
 17198	Stefan Schulz
 17199	Klemens Schnattinger
 17201	Karen Zita Haigh
@@ -2057,7 +2057,7 @@
 17285	Eric Horvitz
 17287	Jochen Heinsohn
 17288	Bernhard Nebel
-17289	Hans-J¨¹rgen Profitlich
+17289	Hans-Jï¿½ï¿½rgen Profitlich
 17302	Joseph L. Hellerstein
 17303	T. S. Jayram
 17308	Lawrence J. Henschen
@@ -2202,7 +2202,7 @@
 17574	Kurt Konolige
 17577	Olivier Lhomme
 17578	Armita Kaboli
-17579	Petr Mus¨ªlek
+17579	Petr Musï¿½ï¿½lek
 17580	Thomas Kaczmarek
 17583	John Seely Brown
 17584	Thomas W. Malone
@@ -2247,7 +2247,7 @@
 17680	Roni Khardon
 17687	Masayuki Numao
 17689	Philip Kilby
-17690	Sylvie Thi¨¦baux
+17690	Sylvie Thiï¿½ï¿½baux
 17693	Kee-Eung Kim
 17694	Wook Chang
 17695	Sung-Jung Cho
@@ -2272,7 +2272,7 @@
 17727	Henry G. Goldberg
 17728	Ping Shyr
 17729	Jeffrey D. Kirtner
-17731	Martin M¨¹ller 0003
+17731	Martin Mï¿½ï¿½ller 0003
 17739	David McArthur
 17750	George F. Luger
 17752	Matthew Klenk
@@ -2379,7 +2379,7 @@
 18005	Jacek Leszczylowski
 18006	Julie Letchner
 18007	Anthony LaMarca
-18010	Sylvain L¨¦tourneau
+18010	Sylvain Lï¿½ï¿½tourneau
 18012	Arwen Twinkle Lettkeman
 18013	Simone Stumpf
 18014	Jed Irvine
@@ -2393,7 +2393,7 @@
 18027	Marie-Christine Rousset
 18028	Anand Rajaraman
 18029	Joann J. Ordille
-18031	Jean-Charles R¨¦gin
+18031	Jean-Charles Rï¿½ï¿½gin
 18032	Pascal Poupart
 18035	Hui Li
 18036	Xuejun Liao
@@ -2449,7 +2449,7 @@
 18126	Ailing Ni
 18127	Shichao Zhang
 18130	Gary Livingston
-18132	Alejandro L¨®pez-Ortiz
+18132	Alejandro Lï¿½ï¿½pez-Ortiz
 18135	Lucian Vlad Lita
 18136	Andrew Hazen Schlaikjer
 18137	WeiChang Hong
@@ -2467,11 +2467,11 @@
 18163	John D. Lowrance
 18164	Thomas M. Strat
 18165	Dimitri Marinakis
-18168	Tom¨¢s Lozano-P¨¦rez
+18168	Tomï¿½ï¿½s Lozano-Pï¿½ï¿½rez
 18171	Filippo Menczer
 18175	Ehud Reiter
 18182	Marc Luria
-18183	In¨ºs Lynce
+18183	Inï¿½ï¿½s Lynce
 18188	T. Anthony Marsland
 18190	Robert R. Burridge
 18191	Bhaskara Marthi
@@ -2556,7 +2556,7 @@
 18324	Jeffrey Shulman
 18325	Timothy Weinrich
 18326	Jacques Robin
-18327	Dor¨¦e D. Seligmann
+18327	Dorï¿½ï¿½e D. Seligmann
 18328	Michael Tanenblatt
 18329	Judith Klavans
 18330	Vasileios Hatzivassiloglou
@@ -2569,7 +2569,7 @@
 18349	Mark Kantrowitz
 18350	Jade Goldstein
 18354	Johanna D. Moore
-18355	C¨¦cile Paris
+18355	Cï¿½ï¿½cile Paris
 18356	James R. Meehan
 18360	Bamshad Mobasher
 18362	Bhaskar Mehta
@@ -2608,7 +2608,7 @@
 18447	Kenneth Moorman
 18451	Tsoline Mikaelian
 18452	Martin Sachenbacher
-18453	Seraf¨ªn Moral
+18453	Serafï¿½ï¿½n Moral
 18454	Nic Wilson
 18461	David P. Miller
 18464	John Loch
@@ -2620,7 +2620,7 @@
 18490	M. Bernardine Dias
 18491	Robert Milne
 18492	Yoshua Bengio
-18493	R¨¦gis Cardin
+18493	Rï¿½ï¿½gis Cardin
 18495	Nicola Muscettola
 18496	Robert Nado
 18501	Srinivas Narayanan
@@ -2629,11 +2629,11 @@
 18508	Marina Sokolova
 18517	Stephen Muggleton
 18526	Peter W. Mullarkey
-18528	R¨¦mi Munos
+18528	Rï¿½ï¿½mi Munos
 18529	Megan Nance
 18530	Adam Vogel
 18531	Lisa F. Rau
-18532	H¨¦ctor Mu?oz-Avila
+18532	Hï¿½ï¿½ctor Mu?oz-Avila
 18533	Len Breslow
 18541	Hiroshi Murase
 18546	Casimir A. Kulikowski
@@ -2648,7 +2648,7 @@
 18580	XuanLong Nguyen
 18583	Thomas J. Lee
 18585	Robert Niewiadomski
-18586	Jos¨¦ Nelson Amaral
+18586	Josï¿½ï¿½ Nelson Amaral
 18598	David C. Noelle
 18600	Melanie Chams
 18602	Sanguk Noh
@@ -2673,7 +2673,7 @@
 18636	Slawomir Nowaczyk
 18640	Bernard Nudel
 18652	Matthew D. Schmill
-18653	R¨¹diger Oehlmann
+18653	Rï¿½ï¿½diger Oehlmann
 18654	Derek H. Sleeman
 18655	Peter Edwards
 18659	Sang Min Oh
@@ -2824,7 +2824,7 @@
 18979	Manfred K. Warmuth
 18980	Achim Rettinger
 18981	Martin Zinkevich
-18989	Ren¨¦ Reboh
+18989	Renï¿½ï¿½ Reboh
 18990	Elaine Rich
 18993	Jim Barnett
 18994	Kent Wittenburg
@@ -2866,7 +2866,7 @@
 19062	David Rosenthal
 19063	Ken Samuel
 19064	Michael G. Ross
-19072	¨®scar Mart¨ªnez Mozos
+19072	ï¿½ï¿½scar Martï¿½ï¿½nez Mozos
 19074	Michel de Rougemont
 19076	Bon K. Sy
 19082	Subhash Suri
@@ -2889,7 +2889,7 @@
 19119	Randall D. Beer
 19122	Fernando De la Torre
 19123	Raju Patil
-19124	Carlos Vallesp¨ª
+19124	Carlos Vallespï¿½ï¿½
 19125	Michael D. Rychener
 19127	Martha L. Farinacci
 19129	Tobias Scheffer
@@ -2918,7 +2918,7 @@
 19184	C. Bruce Fraser
 19185	William Wechtenhiser
 19186	David Crabbe
-19187	Zelal G¨¹ng?rd¨¹
+19187	Zelal Gï¿½ï¿½ng?rdï¿½ï¿½
 19188	John Jantos
 19189	Todd Hughes
 19190	Larry Lefkowitz
@@ -2963,7 +2963,7 @@
 19251	Eric V. Siegel
 19252	Meinolf Sellmann
 19257	Vishal Sikka
-19258	Laurent Sikl¨®ssy
+19258	Laurent Siklï¿½ï¿½ssy
 19278	Teddy Candale
 19279	Susnata Basak
 19280	John Hale
@@ -2976,7 +2976,7 @@
 19304	Shyjan Mahamud
 19305	Joseph O'Sullivan
 19306	Evangelos Simoudis
-19312	?zg¨¹r Simsek
+19312	?zgï¿½ï¿½r Simsek
 19313	Bryan Singer
 19315	Moninder Singh
 19317	Simon Parsons
@@ -3066,7 +3066,7 @@
 19543	Richard M. Tong
 19544	Daniel G. Shapiro
 19545	Jeffrey S. Dean
-19546	Luz Abril Torres-M¨¦ndez
+19546	Luz Abril Torres-Mï¿½ï¿½ndez
 19547	Frederich N. Tou
 19548	Michael D. Williams
 19550	Ethan J. Tira-Thompson
@@ -3103,7 +3103,7 @@
 19629	Mohammed Maniruzzaman
 19630	Richard D. Sisson Jr.
 19633	C. Vasudevan
-19634	Juan D. Vel¨¢squez
+19634	Juan D. Velï¿½ï¿½squez
 19635	Jon A. Webb
 19639	Wei Wei
 19640	Jordan Erenrich
@@ -3246,7 +3246,7 @@
 19959	Jieming Zhu
 19960	Abul Hussam
 19962	Anika Schumann
-19963	Yannick Pencol¨¦
+19963	Yannick Pencolï¿½ï¿½
 19964	Gang Luo
 19968	Priyang Rathod
 19971	Emma Rollon
@@ -3331,8 +3331,8 @@
 20104	Xenofon D. Koutsoukos
 20105	Yi-Dong Shen
 20106	Jia-Huai You
-20119	Nicol¨¢s D. Rotstein
-20120	Alejandro Javier Garc¨ªa
+20119	Nicolï¿½ï¿½s D. Rotstein
+20120	Alejandro Javier Garcï¿½ï¿½a
 20121	Guillermo Ricardo Simari
 20122	Laurence A. Kramer
 20125	Rui Wang
@@ -3377,7 +3377,7 @@
 20188	Maureen Donnelly
 20189	Christian Meilicke
 20190	Andrei Tamilin
-20193	Lu¨ªs C. Lamb
+20193	Luï¿½ï¿½s C. Lamb
 20194	Rafael V. Borges
 20196	Dara Curran
 20197	Colm O'Riordan
@@ -3395,9 +3395,9 @@
 20232	Bas R. Steunebrink
 20233	Mehdi Dastani
 20234	John-Jules Ch. Meyer
-20238	Tom¨¢s Singliar
+20238	Tomï¿½ï¿½s Singliar
 20239	Christophe Lecoutre
-20240	S¨¦bastien Tabary
+20240	Sï¿½ï¿½bastien Tabary
 20241	Kristen Grauman
 20242	Markus Kr?tzsch
 20243	Sebastian Rudolph
@@ -3449,7 +3449,7 @@
 20337	William Thompson
 20338	Kevin Livingston
 20339	Abhishek Sharma
-20344	St¨¦phane Cardon
+20344	Stï¿½ï¿½phane Cardon
 20345	Julien Vion
 20346	Mark W. Schmidt
 20347	Alexandru Niculescu-Mizil
@@ -3518,7 +3518,7 @@
 20469	Weiming Liu
 20470	Sanjiang Li
 20471	Praveen Paruchuri
-20472	Fernando Ord¨®?ez
+20472	Fernando Ordï¿½ï¿½?ez
 20473	Zhiwu Lu
 20474	Yuxin Peng
 20475	Jianguo Xiao
@@ -3541,13 +3541,13 @@
 20506	Hannaneh Hajishirzi
 20507	Scott Helmer
 20508	David Meger
-20509	Per-Erik Forss¨¦n
+20509	Per-Erik Forssï¿½ï¿½n
 20510	Tristram Southey
 20511	Sancho McCann
 20512	Pooyan Fazli
 20513	Philip Hendrix
 20515	Frank Hutter
-20516	Thomas St¨¹tzle
+20516	Thomas Stï¿½ï¿½tzle
 20517	Nicholas Lambert
 20522	Shihao Ji
 20523	Yi Jin
@@ -3564,7 +3564,7 @@
 20534	Petr Skobelev
 20535	Pavel Klinov
 20536	Ralf Krestel
-20537	Ren¨¦ Witte
+20537	Renï¿½ï¿½ Witte
 20538	Prashant Gandhi
 20539	Barbara Rosario
 20540	Nilesh Shah
@@ -3591,14 +3591,14 @@
 20581	Robert A. Morris
 20583	Lina Khatib
 20587	Neha Sugandh
-20588	Santiago Onta?¨®n
+20588	Santiago Onta?ï¿½ï¿½n
 20589	Chia-chun Lian
 20590	Guohua Liu
 20591	Paul Taele
 20592	Sven Seuken
 20599	Akshat Kumar
 20607	Martin C. Cooper
-20608	Mart¨ª S¨¢nchez
+20608	Martï¿½ï¿½ Sï¿½ï¿½nchez
 20609	Matthias Zytnicki
 20610	Mark Austin
 20611	Matthew Kelly
@@ -3630,7 +3630,7 @@
 20662	Arthur Guez
 20663	Robert D. Vincent
 20664	Massimo Avoli
-20669	Mart¨ªn O. Moguillansky
+20669	Martï¿½ï¿½n O. Moguillansky
 20670	Marcelo A. Falappa
 20674	Ravi Kothari
 20678	Hyeong Seop Sim
@@ -3687,7 +3687,7 @@
 20775	Yonatan Aumann
 20776	Daisuke Ikeda
 20777	Hiroya Takamura
-20778	J?rg P¨¹hrer
+20778	J?rg Pï¿½ï¿½hrer
 20779	Mike Zang
 20780	Erik G. Schultink
 20781	Rong Hu
@@ -3712,15 +3712,15 @@
 20842	Steven N. Furtwangler
 20843	Alan J. Vayda
 20844	Razvan Voicu
-20848	Manuel Cebri¨¢n
+20848	Manuel Cebriï¿½ï¿½n
 20850	Dan Morris
 20851	Ian Simon
 20852	Sumit Basu
 20853	John Thangarajah
 20854	Michael Winikoff
-20858	S¨¦bastien Lahaie
+20858	Sï¿½ï¿½bastien Lahaie
 20859	Xu-Lei Wang
-20860	Robert Mattm¨¹ller
+20860	Robert Mattmï¿½ï¿½ller
 20861	Evan Wei Xiang
 20862	Ian Porteous
 20864	Max Welling
@@ -3751,7 +3751,7 @@
 20941	Suresh Manandhar
 21023	Dean Allemang
 21084	Luca Console
-21085	Daniele Theseider Dupr¨¦
+21085	Daniele Theseider Duprï¿½ï¿½
 21087	Geoffrey I. Webb
 21128	Thomas R. Gross
 21142	Gabriel Somlo
@@ -3783,7 +3783,7 @@
 22205	Wolfgang Bibel
 22206	Franz J. Kurfess
 22221	Sergio Bittanti
-22241	L¨¦on Bottou
+22241	Lï¿½ï¿½on Bottou
 22275	Ivan Bratko
 22303	Rod M. Burstall
 22304	Joseph A. Goguen
@@ -3803,9 +3803,9 @@
 22570	Jean-Pierre Jouannaud
 22579	Giovanni Semeraro
 22588	Butler W. Lampson
-22589	H¨¦l¨¨ne Kirchner
+22589	Hï¿½ï¿½lï¿½ï¿½ne Kirchner
 22597	Yves Kodratoff
-22616	G¨¦rard Le Lann
+22616	Gï¿½ï¿½rard Le Lann
 22628	Barbara Liskov
 22640	Jochen Ludewig
 22674	Clarence A. Ellis
@@ -3947,7 +3947,7 @@
 26171	Liliana Ardissono
 26174	Steven Bird
 26175	Shlomo Argamon
-26190	Hinrich Sch¨¹tze
+26190	Hinrich Schï¿½ï¿½tze
 26193	Salim Roukos
 26197	Necip Fazil Ayan
 26201	Gert Smolka
@@ -3995,14 +3995,14 @@
 26477	Alon Itai
 26479	Lillian Lee
 26480	Fernando C. N. Pereira
-26488	Hal Daum¨¦ III
+26488	Hal Daumï¿½ï¿½ III
 26490	James Davidson
 26491	S. Jerrold Kaplan
 26494	K. Vijay-Shanker
 26504	Dina Demner-Fushman
 26505	Jimmy J. Lin
 26529	Changning Huang
-26546	Pablo Ariel Dubou¨¦
+26546	Pablo Ariel Dubouï¿½ï¿½
 26562	Stephanie Elzer
 26563	Daniel Chester
 26564	Seniz Demir
@@ -4021,7 +4021,7 @@
 26657	Guihong Cao
 26660	Bin Yu
 26664	Xinsong Xia
-26682	¨¦ric Gaussier
+26682	ï¿½ï¿½ric Gaussier
 26683	Jean-Michel Renders
 26684	Irina Matveeva
 26685	Cyril Goutte
@@ -4092,7 +4092,7 @@
 27104	Keith Vander Linden
 27109	Christina Lioma
 27110	Iadh Ounis
-27113	V¨¦ronique Hoste
+27113	Vï¿½ï¿½ronique Hoste
 27115	William A. Martin
 27123	Takuya Matsuzaki
 27124	Yusuke Miyao
@@ -4153,7 +4153,7 @@
 27569	Frank A. Smadja
 27595	Kyoung-Soo Han
 27609	Mark Seligman
-27631	Fr¨¦d¨¦ric Kaplan
+27631	Frï¿½ï¿½dï¿½ï¿½ric Kaplan
 27633	Mark Stevenson
 27640	Jin Wang
 27641	G. Bowden Wise
@@ -4292,7 +4292,7 @@
 29676	Fu Tong
 29691	Matthias Jarke
 29693	Yannis Vassiliou
-29700	?zg¨¹r Ulusoy
+29700	?zgï¿½ï¿½r Ulusoy
 29735	Abraham Waksman
 29750	Y. Richard Wang
 29751	Qiang Wang
@@ -4331,7 +4331,7 @@
 30266	Soumyadeb Mitra
 30277	Shakil M. Khan
 30341	Ladjel Bellatreche
-30346	Andr¨¦ Flory
+30346	Andrï¿½ï¿½ Flory
 30359	Luc Bouganim
 30360	Daniela Florescu
 30361	Beno?t Dageville
@@ -4413,7 +4413,7 @@
 32710	Ramarathnam Venkatesan
 32753	Xiaoyun Wu
 32772	Malcolm P. Atkinson
-33000	eva K¨¹hn
+33000	eva Kï¿½ï¿½hn
 33016	Alex Delis
 33093	Martin Gogolla
 33366	Leemon C. Baird III
@@ -4441,7 +4441,7 @@
 33538	Philippe De Smedt
 33539	Jurgen Annevelink
 33546	Thomas C. Rakow
-33553	Mosh¨¦ M. Zloof
+33553	Moshï¿½ï¿½ M. Zloof
 33554	Ravi Krishnamurthy
 33557	Yannis Manolopoulos
 33574	Joachim Biskup
@@ -4466,7 +4466,7 @@
 33620	Pasquale Savino
 33626	Gilles Hubert
 33635	Theo H?rder
-33638	Ulrich G¨¹ntzer
+33638	Ulrich Gï¿½ï¿½ntzer
 33639	Omran A. Bukhres
 33644	Paolo Atzeni
 33647	Christoph Bussler
@@ -4475,7 +4475,7 @@
 33665	Caetano Traina Jr.
 33666	Agma J. M. Traina
 33671	Nieves R. Brisaboa
-33672	Jos¨¦ R. Param¨¢
+33672	Josï¿½ï¿½ R. Paramï¿½ï¿½
 33677	Myra Spiliopoulou
 33693	Julie Basu
 33694	Arthur M. Keller
@@ -4487,7 +4487,7 @@
 33740	Michael Vassilakopoulos
 33742	Johann Christoph Freytag
 33745	Yannis Theodoridis
-33746	B¨¦atrice Finance
+33746	Bï¿½ï¿½atrice Finance
 33763	Anna Formica
 33764	Maria Grazia Fugini
 33765	Michele Missikoff
@@ -4518,9 +4518,9 @@
 33882	C. K. Kim
 33886	Sang Kyun Cha
 33887	Antonella Guzzo
-33888	Domenico Sacc¨¤
+33888	Domenico Saccï¿½ï¿½
 33889	Michael Novak
-33892	Fernando V¨¦lez
+33892	Fernando Vï¿½ï¿½lez
 33909	Wolfgang Klas
 33910	William I. Grosky
 33917	Oliver Haase
@@ -4549,7 +4549,7 @@
 33994	Ralf Rantzau
 33995	Yannis E. Ioannidis
 34003	Vanja Josifovski
-34017	Manuel Barrena Garc¨ªa
+34017	Manuel Barrena Garcï¿½ï¿½a
 34027	Rada Chirkova
 34029	Jixue Liu
 34034	J?rgen L?land
@@ -4593,12 +4593,12 @@
 34195	Roger Weber
 34199	Richard C. H. Connor
 34203	Rene Schult
-34206	Can T¨¹rker
+34206	Can Tï¿½ï¿½rker
 34224	Giedrius Slivinskas
 34236	Christos Doulkeridis
 34240	Kostas Stefanidis
 34241	Panos Vassiliadis
-34247	St¨¦phane Bressan
+34247	Stï¿½ï¿½phane Bressan
 34248	Jin Song Dong
 34255	Andrew C. Jones
 34270	Chabane Oussalah
@@ -4776,7 +4776,7 @@
 35449	Terence R. Smith
 35461	Andreas Myka
 35463	Christian B?hm
-35464	Bernhard Braunm¨¹ller
+35464	Bernhard Braunmï¿½ï¿½ller
 35465	Hans-Peter Kriegel
 35466	Matthias Schubert
 35468	Sourav S. Bhowmick
@@ -4848,7 +4848,7 @@
 35869	Dingyi Han
 35872	David R. Hardoon
 35873	Craig Saunders
-35874	S¨¢ndor Szedm¨¢k
+35874	Sï¿½ï¿½ndor Szedmï¿½ï¿½k
 35875	John Shawe-Taylor
 35880	Olfa Nasraoui
 35886	Shanshan Wang
@@ -4894,7 +4894,7 @@
 36337	Li Yu
 36342	Xiaoyong Du
 36383	Piero Cosi
-36436	Francesc Al¨ªas
+36436	Francesc Alï¿½ï¿½as
 36459	Dean Jacobs
 36461	Angi Vo?
 36468	Hans-J?rg Kreowski
@@ -4902,9 +4902,9 @@
 36482	Hans-Dieter Ehrich
 36488	Klaus Drosten
 36491	M. R. Sadler
-36492	Am¨ªlcar Sernadas
+36492	Amï¿½ï¿½lcar Sernadas
 36493	Cristina Sernadas
-36518	G¨¦rard D. Guiho
+36518	Gï¿½ï¿½rard D. Guiho
 36535	Jean-Luc Remy
 36559	Mohamed Quafafou
 36560	Fausto Rabitti
@@ -4920,15 +4920,15 @@
 36858	Jan Vanthienen
 36926	Anthony J. Bagnall
 36935	Hugo de Garis
-36942	Fr¨¦d¨¦ric Saubion
-36943	Fr¨¦d¨¦ric Lardeux
+36942	Frï¿½ï¿½dï¿½ï¿½ric Saubion
+36943	Frï¿½ï¿½dï¿½ï¿½ric Lardeux
 36962	Bertrand Braunschweig
 37007	Alex Alves Freitas
 37034	Kenneth A. De Jong
 37060	Dirk Thierens
-37074	Mich¨¨le Sebag
+37074	Michï¿½ï¿½le Sebag
 37082	Marco Dorigo
-37115	Louise Trav¨¦-Massuy¨¨s
+37115	Louise Travï¿½ï¿½-Massuyï¿½ï¿½s
 37273	Donald D. Chamberlin
 37276	Michael Stonebraker
 37277	Eugene Wong
@@ -5047,7 +5047,7 @@
 39202	Philippe Picouet
 39219	Wilfred Ng
 39233	Maurice Coyle
-39259	Oscar D¨ªaz
+39259	Oscar Dï¿½ï¿½az
 39268	Michael Sintek
 39288	Carole A. Goble
 39304	Keith Waters
@@ -5070,7 +5070,7 @@
 39551	John O'Donovan
 39552	John Dunnion
 39583	Daniela Petrelli
-39587	Herv¨¦ Martin
+39587	Hervï¿½ï¿½ Martin
 39596	Joemon M. Jose
 39609	Xin Zhou
 39639	Chris Staff
@@ -5085,7 +5085,7 @@
 39787	Ahmed Amrani
 39789	Oriane Matte-Tailliez
 39792	Aijun An
-39793	Carlos Iv¨¢n Ches?evar
+39793	Carlos Ivï¿½ï¿½n Ches?evar
 39796	Xiangji Huang
 39810	Mohamed S. Kamel
 39838	Brock Barber
@@ -5101,15 +5101,15 @@
 39921	Fuchun Peng
 39922	Pawan Lingras
 39936	H. Dominic Covvey
-39948	Diego C. Mart¨ªnez
+39948	Diego C. Martï¿½ï¿½nez
 39968	Kamran Karimi
 39971	J?rg Sander
 39972	Mark Schmidt
 40029	Snehasis Mukhopadhyay
 40044	Malcolm R. K. Ryan
-40046	Eduardo P¨¦rez
+40046	Eduardo Pï¿½ï¿½rez
 40048	Yuhong Yan
-40069	St¨¦phane Ross
+40069	Stï¿½ï¿½phane Ross
 40090	Juichi Miyamichi
 40097	Engelbert Mephu Nguifo
 40101	Hong Yao
@@ -5143,9 +5143,9 @@
 40765	Kritsada Sriphaew
 40807	Pericles A. Mitkas
 41001	Spiros Likothanassis
-41042	Youn¨¨s Bennani
+41042	Younï¿½ï¿½s Bennani
 41206	Muhammad Jaseemuddin
-41258	Jos¨¦ Fernando Rodrigues Jr.
+41258	Josï¿½ï¿½ Fernando Rodrigues Jr.
 41279	Yale N. Patt
 41288	Mohamed A. Sharaf
 41289	Alexandros Labrinidis
@@ -5170,7 +5170,7 @@
 42129	Yeali S. Sun
 42174	Petteri Nurmi
 42206	Rim Moussa
-42285	Bienvenido V¨¦lez
+42285	Bienvenido Vï¿½ï¿½lez
 42315	Giuseppe Sindoni
 42316	Leonardo Tininini
 42458	David W. Jacobs
@@ -5187,7 +5187,7 @@
 42538	Randy Goebel
 42545	Setsuo Arikawa
 42548	Manfred Kerber
-42549	Marta Franov¨¢
+42549	Marta Franovï¿½ï¿½
 42601	Claudio Bettini
 42604	Gianni Amati
 42610	Alessandro Micarelli
@@ -5245,12 +5245,12 @@
 43229	Peter Antal
 43230	Geert Fannes
 43231	Bart De Moor
-43235	Bruno Cr¨¦milleux
+43235	Bruno Crï¿½ï¿½milleux
 43380	Michel C. A. Klein
 43411	Volker Tresp
 43429	Francesca Demichelis
 43445	Aleks Jakulin
-43459	¨¦lisa Fromont
+43459	ï¿½ï¿½lisa Fromont
 43502	Bojan Cestnik
 43512	David G. Lindsay
 43513	Sian Cox
@@ -5290,7 +5290,7 @@
 44267	Nathalie Hernandez
 44297	Antonis C. Kakas
 44303	Heinz Marburger
-44315	Hans J¨¹rgen Ohlbach
+44315	Hans Jï¿½ï¿½rgen Ohlbach
 44337	Milos Kovacevic
 44338	Michelangelo Diligenti
 44418	Joseph Davis
@@ -5358,12 +5358,12 @@
 47330	Baw-Jhiune Liu
 47349	Kurt Rothermel
 47352	Hung-Yu Kao
-47447	Pedro Jos¨¦ Marr¨®n
+47447	Pedro Josï¿½ï¿½ Marrï¿½ï¿½n
 47460	Shou-Chih Lo
 47553	Toshikazu Kato
 47632	Tsutomu Terada
 47683	Ji Zhang
-47714	Elisabeth M¨¦tais
+47714	Elisabeth Mï¿½ï¿½tais
 47747	Yanfang Ye
 47764	Hayato Yamana
 47794	Kazuo Hashimoto
@@ -5381,7 +5381,7 @@
 48461	V. Richard Benjamins
 48468	Yannis Dimopoulos
 48481	Denise Draper
-48495	Ari K. J¨®nsson
+48495	Ari K. Jï¿½ï¿½nsson
 48499	Philippe Laborie
 48510	Cristina Versino
 48512	Malik Ghallab
@@ -5480,11 +5480,11 @@
 49167	Ju-Hong Lee
 49182	Pavlos Peppas
 49268	Min-Woo Lee
-49378	Patrik Flor¨¦en
+49378	Patrik Florï¿½ï¿½en
 49399	Xiaoyue Wang
 49403	Hillol Kargupta
 49427	Mark Last
-49434	St¨¦phane Airiau
+49434	Stï¿½ï¿½phane Airiau
 49440	Ning Zhong
 49443	Victor J. Rayward-Smith
 49462	Jim Smith
@@ -5521,8 +5521,8 @@
 50136	Juha K?rkk?inen
 50149	Rakesh K. Sinha
 50160	Giuseppe Di Battista
-50193	Herv¨¦ Br?nnimann
-50196	Joseph J¨¢J¨¢
+50193	Hervï¿½ï¿½ Br?nnimann
+50196	Joseph Jï¿½ï¿½Jï¿½ï¿½
 50200	Pankaj K. Agarwal
 50201	Sariel Har-Peled
 50208	Suresh Venkatasubramanian
@@ -5534,7 +5534,7 @@
 50301	Ramesh Govindan
 50302	Rajeev Motwani
 50382	Seth R. Goldman
-50393	Heribert Sch¨¹tz
+50393	Heribert Schï¿½ï¿½tz
 50394	Hassan A?t-Kaci
 50409	Catherine Lassez
 50424	Paul Soper
@@ -5563,7 +5563,7 @@
 50609	N. V. Vinodchandran
 50622	Maria-Florina Balcan
 50623	Avrim Blum
-50628	Ricard Gavald¨¤
+50628	Ricard Gavaldï¿½ï¿½
 50629	Yang Dai
 50634	Rohan A. Baxter
 50635	Jonathan J. Oliver
@@ -5654,7 +5654,7 @@
 51769	Enrico H. Gerding
 51772	Radu Jurca
 51774	Yaneer Bar-Yam
-51785	J¨¢nos A. Csirik
+51785	Jï¿½ï¿½nos A. Csirik
 51793	Lluis Godo
 51798	Dean P. Foster
 51803	Xiaoyang Tan
@@ -5690,15 +5690,15 @@
 52171	Gary Marchionini
 52175	Peter Knees
 52176	Eugen Popovici
-52177	Gildas M¨¦nier
-52178	Stefan M. R¨¹ger
+52177	Gildas Mï¿½ï¿½nier
+52178	Stefan M. Rï¿½ï¿½ger
 52180	Hari Sundaram
 52187	Thijs Westerveld
 52188	Arjen P. de Vries
-52189	Georgina Ram¨ªrez
+52189	Georgina Ramï¿½ï¿½rez
 52199	Akrivi Vlachou
 52200	Dimitrios Mavroeidis
-52203	Wolfgang M¨¹ller 0002
+52203	Wolfgang Mï¿½ï¿½ller 0002
 52208	Martin Eisenhardt
 52222	Stefano Berretti
 52223	Pietro Pala
@@ -5819,10 +5819,10 @@
 56091	Arthur Zimek
 56099	Thomas Lengauer
 56129	Sudarshan Murthy
-56150	R¨¦gis Saint-Paul
+56150	Rï¿½ï¿½gis Saint-Paul
 56151	Stefano Spaccapietra
 56153	John Galloway
-56156	Esteban Zim¨¢nyi
+56156	Esteban Zimï¿½ï¿½nyi
 56162	Hamid R. Motahari Nezhad
 56171	Jing Sun
 56212	Jun Rekimoto
@@ -5835,7 +5835,7 @@
 56482	Raja Bose
 56567	Martin K?hler
 56573	Jianyong Wang
-56584	Daniel Barbar¨¢
+56584	Daniel Barbarï¿½ï¿½
 56605	Jun Luo
 56613	Mikio Takagi
 56626	Pascal Faudemay
@@ -5848,7 +5848,7 @@
 57164	Siau-Cheng Khoo
 57235	Konstantinos F. Sagonas
 57432	Cosimo Anglano
-57575	St¨¦phane Lafortune
+57575	Stï¿½ï¿½phane Lafortune
 57624	Carlos A. Heuser
 57830	Herbert Weber
 58120	Atsushi Yoshida
@@ -6014,14 +6014,14 @@
 62372	Thomas Bergstraesser
 62408	Uwe M. Borghoff
 62492	Manfred Glesner
-62677	Klaus K¨¹spert
+62677	Klaus Kï¿½ï¿½spert
 62754	Andreas Reuter
 62782	Richard R. Muntz
 62916	Rapha?l Chand
 63096	Souhila Kaci
 63113	Mathieu Serrurier
-63118	Jean-Marc Th¨¦venin
-63132	Tom¨¢s Lang
+63118	Jean-Marc Thï¿½ï¿½venin
+63132	Tomï¿½ï¿½s Lang
 63186	Shuzo Yajima
 63323	Ramesh C. Agarwal
 63439	Sara Comai
@@ -6061,7 +6061,7 @@
 65946	Salvatore Rinzivillo
 65962	Stephen Wright
 66019	Thomas Linke
-66020	Andr¨¦ Neumann
+66020	Andrï¿½ï¿½ Neumann
 66046	Pinar Koksal
 66048	Ismail Hakki Toroslu
 66153	Fadi A. Aloul
@@ -6094,7 +6094,7 @@
 68972	Richard M. Karp
 68982	Khalil Amiri
 68987	Erik Riedel
-69001	Tim R¨¹hl
+69001	Tim Rï¿½ï¿½hl
 69030	Peter B. Danzig
 69047	Gordon V. Cormack
 69054	William E. Weihl
@@ -6178,7 +6178,7 @@
 71394	Carlos Eisenberg
 71411	Faruk Polat
 71475	Stefan Holland
-71528	Leandro Chaves R¨ºgo
+71528	Leandro Chaves Rï¿½ï¿½go
 71564	Kiyoshi Izumi
 71592	Verena Kantere
 71593	Aris Tsois
@@ -6190,7 +6190,7 @@
 71711	Tod Milam
 71727	W. Nick Street
 71786	Hideyuki Nakashima
-71799	Lu¨ªs Sarmento
+71799	Luï¿½ï¿½s Sarmento
 71855	Donovan Artz
 71861	Maria Silvia Pini
 71877	John Rachlin
@@ -6261,7 +6261,7 @@
 74505	Simon Hawkins
 74506	Chris Kelman
 74541	Guangquan Zhang
-74550	Fran?ois Br¨¦mond
+74550	Fran?ois Brï¿½ï¿½mond
 74558	Dorian Suc
 74559	Ning Shan
 74568	Zhexue Huang
@@ -6356,7 +6356,7 @@
 76965	Riad I. Hammoud
 76973	Hugh F. Durrant-Whyte
 77073	Carlos A. Hurtado
-77103	Jos¨¦ Manuel Pe?a
+77103	Josï¿½ï¿½ Manuel Pe?a
 77107	Junjie Wu
 77149	Lei Gao
 77192	Jiajin Huang
@@ -6379,7 +6379,7 @@
 77758	Philippe Pucheral
 77763	Michel Scholl
 77766	Zohra Bellahsene
-77769	Michel L¨¦onard
+77769	Michel Lï¿½ï¿½onard
 77775	Nicolas Anciaux
 77782	Bernd Amann
 77783	Sophie Cluet
@@ -6392,7 +6392,7 @@
 77799	Philippe Richard
 77800	Georges Gardarin
 77801	Benjamin Nguyen
-77806	St¨¦phane Grumbach
+77806	Stï¿½ï¿½phane Grumbach
 77808	Emmanuel Waller
 77809	Nicoleta Preda
 77815	Claude Delobel
@@ -6414,13 +6414,13 @@
 77869	Christophe Bobineau
 77875	Philippe Bonnet
 77881	Hermann Steffen
-77899	Laurent Dayn¨¨s
+77899	Laurent Daynï¿½ï¿½s
 77900	Peter Buneman
 77915	Thierry Coupaye
 77918	Alain Casali
 77919	Rosine Cicchetti
 77921	Christophe Damier
-77925	St¨¦phane Lopes
+77925	Stï¿½ï¿½phane Lopes
 77927	Fabien De Marchi
 77934	Corine Cauvet
 77935	Jean-Yves Lingat
@@ -6431,10 +6431,10 @@
 77955	Jean-Pierre Cheiney
 77956	Vincent Oria
 77975	Christian Esculier
-77979	J¨¦r?me Sim¨¦on
-77990	Am¨¦lie Marian
+77979	Jï¿½ï¿½r?me Simï¿½ï¿½on
+77990	Amï¿½ï¿½lie Marian
 77994	T. Svensen
-78004	Mary F. Fern¨¢ndez
+78004	Mary F. Fernï¿½ï¿½ndez
 78005	Juan Carlos Corrales
 78006	Jaewoo Kang
 78010	Helena Galhardas
@@ -6442,7 +6442,7 @@
 78012	Sa?da Medjdoub
 78014	Khaled Yagoub
 78015	Donald Kossmann
-78017	Fr¨¦d¨¦ric Flouvat
+78017	Frï¿½ï¿½dï¿½ï¿½ric Flouvat
 78018	Odile Foucaut
 78021	M. Galibourg
 78027	Hubert Naacke
@@ -6454,14 +6454,14 @@
 78042	Christophe de Maindreville
 78044	Fernando Machuca
 78046	Fei Sha
-78050	Dani¨¨le Gardy
-78051	Laurent N¨¦mirovski
+78050	Daniï¿½ï¿½le Gardy
+78051	Laurent Nï¿½ï¿½mirovski
 78065	Marc Junet
 78075	Leonid Libkin
 78077	Guillaume Raschia
-78085	Alejandro Guti¨¦rrez
+78085	Alejandro Gutiï¿½ï¿½rrez
 78086	Viet Phan Luong
-78096	Georges H¨¦brail
+78096	Georges Hï¿½ï¿½brail
 78098	Laurent Herr
 78101	Michel Schneider
 78108	Andrei Arion
@@ -6473,19 +6473,19 @@
 78118	Gregory Karvounarakis
 78119	Sofia Alexaki
 78121	Laurent Mignet
-78124	S¨¦bastien Ailleret
+78124	Sï¿½ï¿½bastien Ailleret
 78133	Brahim Medjahed
-78136	C¨¦dric du Mouza
+78136	Cï¿½ï¿½dric du Mouza
 78139	Philippe Mulhem
 78140	Marie-France Bruandet
-78143	M. Cr¨¦hange
+78143	M. Crï¿½ï¿½hange
 78144	Marcin Skubiszewski
 78149	ZhaoHui Tang
 78156	Christine Parent
 78160	Dan Vodislav
 78170	Peter Pistor
-78180	Beat W¨¹thrich
-78199	Daniel A. Menasc¨¦
+78180	Beat Wï¿½ï¿½thrich
+78199	Daniel A. Menascï¿½ï¿½
 78203	Nathan Goodman
 78205	Maurice J. Bach
 78207	Michael M. Kaplan
@@ -6609,7 +6609,7 @@
 82235	Sangeeta Doraiswamy
 82246	Raimund Seidel
 82270	Rosalba Giugno
-82275	Marcos Andr¨¦ Gon?alves
+82275	Marcos Andrï¿½ï¿½ Gon?alves
 82310	Dina Q. Goldin
 82333	Susanne E. Hambrusch
 82345	Lars Schmidt-Thieme
@@ -6653,7 +6653,7 @@
 83853	Eveline Hoekx
 83863	Gilad Mishne
 83865	Edwin D. de Jong
-83880	Peter Gr¨¹nwald
+83880	Peter Grï¿½ï¿½nwald
 83881	Petri Myllym?ki
 83890	Rainer Gemulla
 83901	Peter M. Stocker
@@ -6672,7 +6672,7 @@
 84030	?ystein Torbj?rnsen
 84031	Henrik Engstr?m
 84032	Brian Lings
-84037	Mal¨² Castellanos
+84037	Malï¿½ï¿½ Castellanos
 84049	Michal Ceresna
 84052	Marcus Herzog
 84057	Maria L. Barja
@@ -6720,7 +6720,7 @@
 84278	Maurice A. W. Houtsma
 84279	Adriano Veloso
 84280	Bruno Gusm?o Rocha
-84281	M¨¢rcio de Carvalho
+84281	Mï¿½ï¿½rcio de Carvalho
 84282	Raphael Volz
 84294	Peter T. Wood
 84298	Chenyi Xia
@@ -6749,7 +6749,7 @@
 85559	Hua Zhu
 85564	Purushottam Kulkarni
 85732	Celso A. A. Kaestner
-85767	J¨¹rgen Frohn
+85767	Jï¿½ï¿½rgen Frohn
 85770	Michael Gesmann
 85771	Michael Gillmann
 85772	Peter Muth
@@ -6758,7 +6758,7 @@
 85778	Stefan Seltzsam
 85802	Michael Cammert
 85805	Christoph Heinz
-85806	J¨¹rgen Kr?mer
+85806	Jï¿½ï¿½rgen Kr?mer
 85807	Bernhard Seeger
 85811	Norbert Fuhr
 85812	Gerhard Knorz
@@ -6776,7 +6776,7 @@
 85842	Jack A. Orenstein
 85843	Arnon Rosenthal
 85846	Uwe Deppisch
-85847	J¨¹rgen G¨¹nauer
+85847	Jï¿½ï¿½rgen Gï¿½ï¿½nauer
 85848	Georg Walch
 85852	Anand Deshpande
 85853	Dirk Van Gucht
@@ -6802,7 +6802,7 @@
 85918	Xiaowei Xu
 85927	Bj?rn Blohsfeld
 85936	Susanne Boll
-85946	J¨¹rgen Zimmermann
+85946	Jï¿½ï¿½rgen Zimmermann
 85957	Stefan Brecheisen
 85960	Ramana Yerneni
 85965	Goetz Graefe
@@ -6835,7 +6835,7 @@
 86118	Mary Tork Roth
 86132	Rainer Melchert
 86133	Sergey Melnik
-86135	G¨¹nter Sauter
+86135	Gï¿½ï¿½nter Sauter
 86143	Michael Gertz
 86148	Stefanie Scherzinger
 86154	Rainer Zieschang
@@ -6852,7 +6852,7 @@
 86201	Klaus Elhardt
 86202	Robert Fenk
 86203	Anja Theobald
-86212	Norbert S¨¹dkamp
+86212	Norbert Sï¿½ï¿½dkamp
 86217	Hansj?rg Zeller
 86222	Thomas Tesch
 86230	M. Rieskamp
@@ -6868,7 +6868,7 @@
 86264	Bernhard Zeller
 86272	Stefan Krompass
 86273	Stefan Aulbach
-86305	Emmanuel M¨¹ller
+86305	Emmanuel Mï¿½ï¿½ller
 86320	Tobias Scholl
 86321	Richard Kuntschke
 86322	Daniel Weber
@@ -6887,12 +6887,12 @@
 86366	Gjergji Kasneci
 86367	Jens-Peter Dittrich
 86368	Lukas Blunschi
-86370	Olivier Ren¨¦ Girard
+86370	Olivier Renï¿½ï¿½ Girard
 86371	Shant Kirakos Karakashian
 86372	Marcos Antonio Vaz Salles
 86373	Elke Achtert
 86388	U. Pr?del
-86391	Till W. Truckenm¨¹ller
+86391	Till W. Truckenmï¿½ï¿½ller
 86398	Tomer Hertz
 86473	Hyuk Cho
 86729	Dmitry Lenkov
@@ -6909,7 +6909,7 @@
 87456	Giorgio Ghelli
 87481	Jennifer Widom
 87672	Jutta G?ers
-87820	J?rg W¨¹rtz
+87820	J?rg Wï¿½ï¿½rtz
 87825	Karl-Hans Bl?sius
 87848	Siva Anantharaman
 87907	Shaun Cooper
@@ -6979,9 +6979,9 @@
 90529	Daniela Berardi
 90548	Amihai Motro
 90554	Jutta Willamowski
-90604	Jean-S¨¦bastien Brunner
+90604	Jean-Sï¿½ï¿½bastien Brunner
 90610	Luca Cabibbo
-90616	Andrea Cal¨¬
+90616	Andrea Calï¿½ï¿½
 90619	Marco Ruzzi
 90642	Mehmet Sayal
 90658	C. Proix
@@ -7004,7 +7004,7 @@
 90849	Stavros Christodoulakis
 90856	Nikos Pappas
 90866	Chin-Wan Chung
-90874	J¨¹rgen W?sch
+90874	Jï¿½ï¿½rgen W?sch
 90888	Hyoseop Shin
 90889	Raman Chandrasekar
 90913	Xiaoyang Sean Wang
@@ -7083,7 +7083,7 @@
 95027	Ming-Ling Lo
 95048	Gene Fuh
 95049	Brian T. Tran
-95077	Jos¨¦ E. Moreira
+95077	Josï¿½ï¿½ E. Moreira
 95082	Jenny Chiang
 95083	Sonny Han Seng Chee
 95087	Wan Gong
@@ -7136,7 +7136,7 @@
 96712	Oh-Woog Kwon
 96971	Rubens N. Melo
 96982	Jin Chen
-97005	Bich-Li¨ºn Doan
+97005	Bich-Liï¿½ï¿½n Doan
 97044	Suhit Gupta
 97061	Harry Keeling
 97121	Alan S. Willsky
@@ -7152,7 +7152,7 @@
 97623	Rani Nelken
 97687	Alexander Aiken
 97705	Roberto Cavada
-97865	Andr¨¦ G. R. Balan
+97865	Andrï¿½ï¿½ G. R. Balan
 97945	Sudarshan S. Chawathe
 97986	Krishnamoorthy Sivakumar
 98016	Vincent S. Tseng
@@ -7205,7 +7205,7 @@
 100760	Nathan S. Netanyahu
 100761	Christine D. Piatko
 100777	Leonidas Palios
-100800	Ralf Hartmut G¨¹ting
+100800	Ralf Hartmut Gï¿½ï¿½ting
 100842	Yunyue Zhu
 100852	Jeff M. Phillips
 100957	Win Bausch
@@ -7215,7 +7215,7 @@
 101199	Wei-keng Liao
 101243	Richard J. White
 101290	Ashish Gupta
-101309	¨¹mit V. ?ataly¨¹rek
+101309	ï¿½ï¿½mit V. ?atalyï¿½ï¿½rek
 101320	Thomas Heinis
 101401	Yi Huang
 101422	Johan A. Pouwelse
@@ -7258,7 +7258,7 @@
 102874	Jaideep Vaidya
 102910	Bo Luo
 102919	Hui Xiong
-102934	Ralf K¨¹sters
+102934	Ralf Kï¿½ï¿½sters
 102935	Thomas Wilke
 102942	Daniel Zinn
 103003	YounSun Cho
@@ -7287,11 +7287,11 @@
 103910	Hu Cao
 104096	Tom W. Keller
 104200	Zhi-Pei Liang
-104280	J¨¦r¨¦my Besson
-104281	C¨¦line Robardet
-104292	J¨¦r?me Fuselier
-104295	J¨¦r¨¦mie Mary
-104316	Antoine Cornu¨¦jols
+104280	Jï¿½ï¿½rï¿½ï¿½my Besson
+104281	Cï¿½ï¿½line Robardet
+104292	Jï¿½ï¿½r?me Fuselier
+104295	Jï¿½ï¿½rï¿½ï¿½mie Mary
+104316	Antoine Cornuï¿½ï¿½jols
 104321	Ghada Gasmi
 104361	Terence Schauenberg
 104392	Martin Mozina
@@ -7447,7 +7447,7 @@
 111431	Micha Hofri
 111850	Deok-Hwan Kim
 111938	Eduardo F. Morales
-111956	J¨¦r¨¦my Clech
+111956	Jï¿½ï¿½rï¿½ï¿½my Clech
 112140	Brett W. Bader
 112341	Xin Yao
 112353	Robert Rees
@@ -7472,9 +7472,9 @@
 113154	Leonard J. Seligman
 113155	Christopher Olston
 113156	Amit Manjhi
-113157	S¨¢ndor H¨¦man
+113157	Sï¿½ï¿½ndor Hï¿½ï¿½man
 113158	Marcin Zukowski
-113160	Ren¨¦ M¨¹ller
+113160	Renï¿½ï¿½ Mï¿½ï¿½ller
 113161	Sanjay Agrawal
 113162	Surajit Chaudhuri
 113168	Zaiqing Nie
@@ -7517,7 +7517,7 @@
 113219	Christopher Re
 113227	Cristian Duda
 113228	David A. Graf
-113229	Andreas Gr¨¹nhagen
+113229	Andreas Grï¿½ï¿½nhagen
 113232	Xin Luna Dong
 113233	Roger S. Barga
 113234	Jonathan Goldstein
@@ -7641,7 +7641,7 @@
 113674	Markus M. Breunig
 113675	Ao Feng
 113676	Alvaro Bolivar
-113677	Adrian M¨¹ller
+113677	Adrian Mï¿½ï¿½ller
 113678	Victor Lavrenko
 113682	John Schalow
 113683	Jeffrey A. Bloom
@@ -7672,13 +7672,13 @@
 113718	Jeanette Bruno
 113722	Jaana Kek?l?inen
 113723	Katya Pelekhov
-113730	Stefan B¨¹ttcher
+113730	Stefan Bï¿½ï¿½ttcher
 113731	Cyrus Azarbod
 113733	Lijuan Cai
 113735	Ben He
 113737	C. J. van Rijsbergen
 113738	Jing Bai
-113739	P¨¢vel Calado
+113739	Pï¿½ï¿½vel Calado
 113740	Marco Cristo
 113741	Edleno Silva de Moura
 113742	Nivio Ziviani
@@ -7792,7 +7792,7 @@
 113898	Richard Fritzson
 113899	Robin McEntire
 113903	Francisco M. Couto
-113904	M¨¢rio J. Silva
+113904	Mï¿½ï¿½rio J. Silva
 113905	Pedro Coutinho
 113909	Stephen Cronen-Townsend
 113910	Yun Zhou
@@ -8018,7 +8018,7 @@
 114267	Young S. Han
 114271	Peter Scheuermann
 114274	Dimitris Fragoudis
-114275	Sabine Rabas¨¦da
+114275	Sabine Rabasï¿½ï¿½da
 114277	Yingbo Miao
 114278	Tim T. Y. Wai
 114279	Vojkan Mihajlovic
@@ -8156,7 +8156,7 @@
 114470	Xinyu Guo
 114471	Hua Lu
 114472	Lane Warshaw
-114475	J¨¹rg Bolliger
+114475	Jï¿½ï¿½rg Bolliger
 114476	Jahna Otterbacher
 114477	Michael Mlivoncic
 114479	Ryen White
@@ -8214,7 +8214,7 @@
 114564	Andrew MacFarlane
 114566	Paul Thomas
 114570	Se Jung Shin
-114571	Jos¨¦ Mar¨ªa G¨®mez Hidalgo
+114571	Josï¿½ï¿½ Marï¿½ï¿½a Gï¿½ï¿½mez Hidalgo
 114572	Enrique Puertas Sanz
 114573	Xiajiong Shen
 114580	Kevin J. Lang
@@ -8247,7 +8247,7 @@
 114618	Yu Xu
 114619	Marcos R. Vieira
 114620	Adriano S. Arantes
-114621	Javier Garc¨ªa-Garc¨ªa
+114621	Javier Garcï¿½ï¿½a-Garcï¿½ï¿½a
 114622	Sameep Mehta
 114623	Nicholas J. Pioch
 114626	Evangelos Dellis
@@ -8271,7 +8271,7 @@
 114651	Christian A. Lang
 114652	Yu Nie
 114653	Guozheng Xiao
-114654	Ois¨ªn Boydell
+114654	Oisï¿½ï¿½n Boydell
 114658	Shubha U. Nabar
 114662	Sarvjeet Singh
 114663	Rahul Shah
@@ -8340,7 +8340,7 @@
 114794	Maria Soledad Pera
 114795	Desislava Petkova
 114797	Reasey Praing
-114800	Jorge-Arnulfo Quian¨¦-Ruiz
+114800	Jorge-Arnulfo Quianï¿½ï¿½-Ruiz
 114801	Philippe Lamarre
 114802	Ozgur Turetken
 114821	Bj?rn Bringmann
@@ -8457,7 +8457,7 @@
 117452	Ray R. Larson
 117470	Dolf Trieschnigg
 117480	Mitchell Bowden
-117535	St¨¦phane Clinchant
+117535	Stï¿½ï¿½phane Clinchant
 117559	Prasenjit Majumder
 117560	Mandar Mitra
 117561	Dipasree Pal
@@ -8598,7 +8598,7 @@
 124281	Andrew B. Nobel
 124285	Scott Weinstein
 124294	Sebastian Mika
-124296	Klaus-Robert M¨¹ller
+124296	Klaus-Robert Mï¿½ï¿½ller
 124308	Nathan Srebro
 124312	Xing Sun
 124333	Nimrod Megiddo
@@ -8733,7 +8733,7 @@
 130079	Sibel Adali
 130080	Corey Bufi
 130087	Rafi Ahmed
-130091	Roger G¨¹nth?r
+130091	Roger Gï¿½ï¿½nth?r
 130092	Mohan Kamath
 130122	Antonio Badia
 130188	Eduard C. Dragut
@@ -8742,7 +8742,7 @@
 130224	Helen P. Yeung
 130253	Andreas Koeller
 130255	David Konopnicki
-130273	Peter Bert¨®k
+130273	Peter Bertï¿½ï¿½k
 130287	Song Liu
 130331	Michael Minock
 130338	Feng Tao
@@ -8765,10 +8765,10 @@
 130908	Olivier Verscheure
 130969	Andrzej Duda
 131104	Julien Bidot
-131114	Fr¨¦d¨¦ric Boussemart
+131114	Frï¿½ï¿½dï¿½ï¿½ric Boussemart
 131115	Fred Hemery
 131169	Andrei A. Krokhin
-131177	J¨¦r?me Fortin
+131177	Jï¿½ï¿½r?me Fortin
 131207	Michel Van Caneghem
 131209	Michel Vasquez
 131226	Barry O'Callaghan
@@ -8820,7 +8820,7 @@
 133305	Orhan ?amoglu
 133343	M. Erdem Kurul
 133349	Dechang Chen
-133406	Mehmet Koyut¨¹rk
+133406	Mehmet Koyutï¿½ï¿½rk
 133407	Ananth Grama
 133431	Torgeir R. Hvidsten
 133432	Henryk Jan Komorowski
@@ -8866,7 +8866,7 @@
 135513	Feng Yan
 135521	Vanessa P. Braganholo
 135642	John S. Robinson
-136157	Pablo Barcel¨®
+136157	Pablo Barcelï¿½ï¿½
 136184	Balder ten Cate
 136219	Mirco Nanni
 136228	Nicole Schweikardt
@@ -8897,7 +8897,7 @@
 138397	Vassil Chatalbashev
 138424	Pierre Breton
 138477	M?rten Bj?rkman
-138479	Tib¨¦rio S. Caetano
+138479	Tibï¿½ï¿½rio S. Caetano
 138487	Yuri A. Ivanov
 138489	Jeremy S. De Bonet
 138503	Michael Boshra
@@ -8913,7 +8913,7 @@
 138606	Fabio Gagliardi Cozman
 138609	Antonio Colmenarez
 138620	Thomas P. Minka
-138626	Fran?ois B¨¦rard
+138626	Fran?ois Bï¿½ï¿½rard
 138637	Madirakshi Das
 138647	Jonathan Deutscher
 138660	Carlotta Domeniconi
@@ -8930,7 +8930,7 @@
 138766	Yoram Leedan
 138775	Ying Shan
 138777	Jiayuan Huang
-138796	Salih Burak G?kt¨¹rk
+138796	Salih Burak G?ktï¿½ï¿½rk
 138806	Huazhong Ning
 138819	Nicolas Y. Dano
 138823	Horst W. Haussecker
@@ -8950,7 +8950,7 @@
 138949	Hee-Joong Kang
 139020	Martin H. C. Law
 139025	Rolf Lak?mper
-139028	Yves B¨¦rub¨¦ Lauzi¨¨re
+139028	Yves Bï¿½ï¿½rubï¿½ï¿½ Lauziï¿½ï¿½re
 139066	Dahua Lin
 139067	J. Li
 139071	Charles T. Loop
@@ -9015,7 +9015,7 @@
 139702	Guo-Jun Qi
 139703	Jinhui Tang
 139710	Ankur Chattopadhyay
-139720	Ciar¨¢n O. Conaire
+139720	Ciarï¿½ï¿½n O. Conaire
 139733	Kuang-chih Lee
 139734	Baris Sumengen
 139740	Zheng Zhao
@@ -9100,7 +9100,7 @@
 146982	Michael D. Soo
 147023	Alin Deutsch
 147084	Krishnaprasad Thirunarayan
-147177	Zolt¨¢n Mikl¨®s
+147177	Zoltï¿½ï¿½n Miklï¿½ï¿½s
 147178	David Sontag
 147179	Daniel L. Ong
 147180	Andrey Kolobov
@@ -9135,7 +9135,7 @@
 148906	Yasuhiro Fujiwara
 148918	Yi-Hung Wu
 148924	Byron Choi
-148925	Yann Vi¨¦mont
+148925	Yann Viï¿½ï¿½mont
 148926	Zhihong Chong
 148928	Josephine M. Cheng
 148933	Guy Ferran
@@ -9184,7 +9184,7 @@
 149200	KayLiang Ong
 149202	C. Unnikrishnan
 149211	Shuai Ma
-149239	C¨¦sar A. Galindo-Legaria
+149239	Cï¿½ï¿½sar A. Galindo-Legaria
 149241	K. P. Tan
 149246	Martin Hardwick
 149256	Jonathan P. Gilbert
@@ -9219,7 +9219,7 @@
 149399	Yiping Ke
 149400	Judice L. Y. Koh
 149415	Zhihui Wang
-149433	Ina M¨¹ller-Gorman
+149433	Ina Mï¿½ï¿½ller-Gorman
 149435	Lijun Chen
 149439	Hanyu Li
 149441	Ji-Won Byun
@@ -9246,7 +9246,7 @@
 152069	Daniele Braga
 152070	Alessandro Campi
 152071	Filippo Furfaro
-152076	Gy?z? Gid¨®falvi
+152076	Gy?z? Gidï¿½ï¿½falvi
 152100	Taneli Mielik?inen
 152106	Ming Hua
 152107	Kuo-Zui Lin
@@ -9322,7 +9322,7 @@
 152579	David Beech
 152581	Mary F. Fernandez
 152582	Lucian Popa
-152585	Jos¨¦ A. Blakeley
+152585	Josï¿½ï¿½ A. Blakeley
 152586	J. Nathan Foster
 152593	Carmem S. Hara
 152594	Wang Chiew Tan
@@ -9347,7 +9347,7 @@
 152631	Rajesh Bordawekar
 152634	Jacob Stein
 152635	T. Lougenia Anderson
-152637	Christopher R¨¦
+152637	Christopher Rï¿½ï¿½
 152639	Ted Briggs
 152640	Nicola Onose
 152641	Wouter Gelade
@@ -9366,7 +9366,7 @@
 152927	William F. Cody
 152988	Simeon Warner
 153022	Stuart A. Sutton
-153056	Joaqu¨ªn Adiego
+153056	Joaquï¿½ï¿½n Adiego
 153064	M. Bauer
 153135	Greg J. Badros
 153259	W. J. Teahan
@@ -9408,7 +9408,7 @@
 154798	Peter J. Brown
 154825	R. R. Amin
 154832	G. Barbara Demo
-154833	Concepci¨®n P¨¦rez de C¨¦lis
+154833	Concepciï¿½ï¿½n Pï¿½ï¿½rez de Cï¿½ï¿½lis
 154835	Witold Staniszkis
 154841	K. C. Toth
 154873	Ivana Podnar Zarko
@@ -9422,7 +9422,7 @@
 154946	Shalom Tsur
 154947	Frank Olken
 154959	Tong Lu
-154966	Jos¨¦ Alberto Fern¨¢ndez
+154966	Josï¿½ï¿½ Alberto Fernï¿½ï¿½ndez
 154967	Eddie C. Shek
 155003	Fidel Cacheda
 155005	Victor Carneiro
@@ -9436,7 +9436,7 @@
 155385	Clifford A. Lynch
 156115	Melliyal Annamalai
 156119	Tadashi Araki
-156129	Jos¨¦ Mauro Volkmer de Castilho
+156129	Josï¿½ï¿½ Mauro Volkmer de Castilho
 156173	Manish Bhide
 156174	Mukul Joshi
 156183	Quanzhong Li
@@ -9452,7 +9452,7 @@
 156265	Fabrizio Ferrandina
 156273	Kan Hu
 156301	Martin Choquette
-156308	Mar¨ªa Jos¨¦ Aramburu Cabo
+156308	Marï¿½ï¿½a Josï¿½ï¿½ Aramburu Cabo
 156332	Scott C. Deerwester
 156334	Keith Waclena
 156335	Andreas Dehmel
@@ -9475,7 +9475,7 @@
 156458	Ranabir Gupta
 156482	Dirk D?beritz
 156496	Wen K. Lee
-156497	Klaus H¨¹lsmann
+156497	Klaus Hï¿½ï¿½lsmann
 156502	Y. H. Chin
 156515	Sue M. Brandt
 156518	Mira Balaban
@@ -9485,14 +9485,14 @@
 156591	Takeshi Kurashima
 156629	Woo-Cheol Kim
 156643	Y. Y. Yao
-156656	Juan Manuel P¨¦rez
+156656	Juan Manuel Pï¿½ï¿½rez
 156666	Dan Smith
 156670	Ian A. Macleod
 156680	Alvaro Barreiro
 156721	Mirella Moura Moro
 156761	Itaru Nishizawa
 156764	Georgios Evangelidis
-156769	Mar¨ªa Jos¨¦ Aramburu
+156769	Marï¿½ï¿½a Josï¿½ï¿½ Aramburu
 156780	Max V?lkel
 156806	Navneet Panda
 156823	Chen Qun
@@ -9505,17 +9505,17 @@
 156987	Eve Wilson
 157031	Jianting Zhang
 157048	Dirk Van den Poel
-157052	Fernando Farf¨¢n
+157052	Fernando Farfï¿½ï¿½n
 157069	Lee Wang
 157074	Gabriel Ghinita
 157123	Bi-Ru Dai
 157136	Sherif Sakr
-157200	¨¢lvaro R. Pereira Jr.
-157273	¨¢ngel Vi?a
+157200	ï¿½ï¿½lvaro R. Pereira Jr.
+157273	ï¿½ï¿½ngel Vi?a
 157285	Vinod Anupam
 157345	Rachel Pottinger
 157386	Luis M. de Campos
-157387	Juan M. Fern¨¢ndez-Luna
+157387	Juan M. Fernï¿½ï¿½ndez-Luna
 157388	Juan F. Huete
 157409	Alberto Lerner
 157424	Anna Maddalena
@@ -9523,7 +9523,7 @@
 157516	Robert Engels
 157555	Timm Euler
 157624	Mark Girolami
-157625	Ata Kab¨¢n
+157625	Ata Kabï¿½ï¿½n
 157689	Yin-Huei Loh
 157724	Zheng Huang
 157740	Yasuhiko Kanemasa
@@ -9550,7 +9550,7 @@
 158460	Albert Bifet
 158461	Paolo Garza
 158471	Wilma Penzo
-158496	Miriam Fern¨¢ndez
+158496	Miriam Fernï¿½ï¿½ndez
 158577	Marco Pagani
 158589	Siegfried Handschuh
 158661	Jonathan Mamou
@@ -9612,13 +9612,13 @@
 162314	Andreas Karwath
 162317	Amanda Clare
 162334	Fabrice Muhlenbach
-162335	St¨¦phane Lallich
+162335	Stï¿½ï¿½phane Lallich
 162346	Rudy Setiono
 162351	Mineichi Kudo
 162378	Tadashi Horiuchi
 162382	Naohide Arai
 162416	Rita Ribeiro
-162417	Lu¨ªs Torgo
+162417	Luï¿½ï¿½s Torgo
 162431	Christopher Potter
 162433	Steven A. Klooster
 162446	Shijun Wang
@@ -9626,7 +9626,7 @@
 162474	Shinsuke Sugaya
 162477	Teruyuki Kondo
 162480	Shiliang Sun
-162488	Andr¨¢s Kocsor
+162488	Andrï¿½ï¿½s Kocsor
 162507	Luc Dehaspe
 162725	Kin-Hong Lee
 162770	Gaston H. Gonnet
@@ -9649,16 +9649,16 @@
 163068	Ralf Molitor
 163074	Baris Sertkaya
 163075	David DeHaan
-163091	Fran?ois Goasdou¨¦
+163091	Fran?ois Goasdouï¿½ï¿½
 163101	Philipp Hanschke
-163124	V¨¦ronique Ventos
+163124	Vï¿½ï¿½ronique Ventos
 163135	Giorgos B. Stamou
 163136	Giorgos Stoilos
 163146	Roman Schindlauer
 163155	Shengping Liu
 163168	Vladimir Kolovski
 163170	Christian Halaschek-Wiener
-163171	Ren¨¦e J. Miller
+163171	Renï¿½ï¿½e J. Miller
 163195	Bernhard Ganter
 163323	Ashish Rastogi
 163426	Martin Nilsson
@@ -9724,7 +9724,7 @@
 164392	Igor Timko
 164399	Dimitris Sacharidis
 164402	Maddalena Garzetti
-164406	Sabine Loudcher Rabas¨¦da
+164406	Sabine Loudcher Rabasï¿½ï¿½da
 164415	Nabil I. Hachem
 164436	Christoph Breitner
 164442	Chee Chin Low
@@ -9766,7 +9766,7 @@
 165859	Bianca Schroeder
 166056	Ram Keralapura
 166197	Qinyi Wu
-166593	Andreas M¨¹ller
+166593	Andreas Mï¿½ï¿½ller
 166949	Peter Z. Kunszt
 167367	Mark W. Davis
 167395	Uwe Reyle
@@ -9800,7 +9800,7 @@
 168310	Franz Lackinger
 168327	Sertan Girgin
 168348	Conor Hayes
-168373	Ir¨¨ne Grosclaude
+168373	Irï¿½ï¿½ne Grosclaude
 168379	Anthony I. Hinxman
 168407	Angelika Leeb
 168408	Harald Smetana
@@ -9883,13 +9883,13 @@
 171229	Ross Purves
 171230	Sebastian Marius Kirsch
 171231	Melanie Gnasa
-171234	Christian Kohlsch¨¹tter
+171234	Christian Kohlschï¿½ï¿½tter
 171238	Raija Lehtokangas
 171239	Shao Fen Liang
 171245	Irmina Masowska
 171248	Craig J. A. McEwan
 171250	Colum Mooney
-171251	Miche¨¢l Scully
+171251	Micheï¿½ï¿½l Scully
 171252	Pio Nardiello
 171255	T. W. C. Huibers
 171256	David Parapar
@@ -9902,14 +9902,14 @@
 171280	Guomao Xin
 171292	Pertti Vakkari
 171293	Olga Vechtomova
-171294	Jes¨²s Vegas
+171294	Jesï¿½ï¿½s Vegas
 171297	Vishwa Vinay
 171298	Lei Wen
 171302	Forbes Gibb
 171303	Jizhi Wang
 171309	Xavier Sevillano
-171310	Germ¨¢n Cobo
-171311	Joan Claudi Socor¨®
+171310	Germï¿½ï¿½n Cobo
+171311	Joan Claudi Socorï¿½ï¿½
 171312	Jason Skomorowski
 171315	Jie Peng
 171316	Andreas Merkel
@@ -9937,15 +9937,15 @@
 171358	Chotirat Ann Ratanamahatana
 171359	Nelleke Oostdijk
 171360	Peter-Arno Coppen
-171361	Jos¨¦ M. Casanova
+171361	Josï¿½ï¿½ M. Casanova
 171362	Manuel A. Presedo Quindimil
 171365	Franco Crivellari
 171366	Simon Read
 171371	Paul N. Bennett
-171373	Andr¨¦s R. Masegosa
+171373	Andrï¿½ï¿½s R. Masegosa
 171374	Shai Erera
 171375	Jennifer Marlow
-171376	Juan Cigarr¨¢n Recuero
+171376	Juan Cigarrï¿½ï¿½n Recuero
 171387	Yang Sun
 171389	Zuobing Xu
 171390	Ram Akella
@@ -9969,7 +9969,7 @@
 173210	Jason V. Davis
 173219	Uwe Dick
 173220	Ulf Brefeld
-173221	Christoph B¨¹scher
+173221	Christoph Bï¿½ï¿½scher
 173224	Stephane Lapointe
 173228	Dietrich Wettschereck
 173231	Avivit Bercovici-Boden
@@ -9989,7 +9989,7 @@
 173289	George Forman
 173290	Anthony G. Francis Jr.
 173295	Byron J. Gao
-173302	Grzegorz G¨®ra
+173302	Grzegorz Gï¿½ï¿½ra
 173303	Arkadiusz Wojna
 173313	Eizyu Hirowatari
 173318	Aloak Kapoor
@@ -10019,13 +10019,13 @@
 173407	Stefan Raeymaekers
 173410	Carsten Riggelsen
 173412	Rolf Rossius
-173413	G¨¦rard Zenker
+173413	Gï¿½ï¿½rard Zenker
 173414	Andreas Ittner
 173416	Luh Yen
 173418	Kai Puolam?ki
 173431	Surendra K. Singhi
 173434	Hendrik Skubch
-173436	R¨¹diger Wirth
+173436	Rï¿½ï¿½diger Wirth
 173438	Jan Struyf
 173439	Yuk Lai Suen
 173440	Naijiang Lu
@@ -10035,11 +10035,11 @@
 173449	Boon Toh Low
 173451	Kari Torkkola
 173453	Ronan Trepos
-173454	V¨¦ronique Masson
+173454	Vï¿½ï¿½ronique Masson
 173455	Chantal Gascuel
 173456	Petroula Tsampouka
 173457	Ivor W. Tsang
-173461	Jos¨¦e Bloemer
+173461	Josï¿½ï¿½e Bloemer
 173462	K. Pauwels
 173467	Gunnar Blix
 173471	Yuji Niwa
@@ -10059,7 +10059,7 @@
 173551	Daria Sorokina
 173555	Takenao Ohkawa
 173560	Ronnie Bathoorn
-173701	Walter L. H¨¹rsch
+173701	Walter L. Hï¿½ï¿½rsch
 173721	Liuba Shrira
 173722	Mary E. S. Loomis
 173727	Vineet Singh
@@ -10071,7 +10071,7 @@
 174633	Silvia Acid
 174687	Dimiter Driankov
 174701	Kazuo J. Ezawa
-174743	Guy-Blaise Douanya Nguets¨¦
+174743	Guy-Blaise Douanya Nguetsï¿½ï¿½
 174744	Pierre Hansen
 174762	Johan Schubert
 174788	Miguel A. Rueda-Morales
@@ -10130,7 +10130,7 @@
 175542	Sivakumar Harinath
 175543	Xun Xue
 175544	Sadique Syed
-175545	Tom¨¢s Isakowitz
+175545	Tomï¿½ï¿½s Isakowitz
 175547	George P. Copeland
 175549	Howard R. Turtle
 175552	Nico Lavarini
@@ -10142,13 +10142,13 @@
 175563	Nishant Mehta
 175565	Alin Dobra
 175573	Mohamed G. Elfeky
-175581	R¨¹diger Wittmann
+175581	Rï¿½ï¿½diger Wittmann
 175584	Holger Kache
 175586	Karin Kailing
 175590	Zheng Zhang 0002
 175592	Sheldon J. Finkelstein
 175593	Eric Lemoine
-175594	Ren¨¦ Lenaers
+175594	Renï¿½ï¿½ Lenaers
 175597	Takeshi Fukuda
 175598	Hirofumi Matsuzawa
 175599	Kaushik Chakrabarti
@@ -10314,7 +10314,7 @@
 180845	Ole Oren
 180861	Mingxi Wu
 180862	Oguzhan Topsakal
-180871	Patricia Rodr¨ªguez-Gianolli
+180871	Patricia Rodrï¿½ï¿½guez-Gianolli
 180886	Tatiana Semenova
 180983	Masaaki Tsubaki
 181039	Adam Yeh
@@ -10380,7 +10380,7 @@
 184898	Robert Baumgartner
 184902	Sam Chapman
 184903	Stephan Grimm
-184915	Matthias Palm¨¦r
+184915	Matthias Palmï¿½ï¿½r
 184937	Zoi Kaoudi
 184946	Steffen Rendle
 184968	Boanerges Aleman-Meza
@@ -10416,7 +10416,7 @@
 191490	Nicky Kern
 192247	Rosina Weber
 192307	John M. Rosenberg
-192341	Maria Salam¨®
+192341	Maria Salamï¿½ï¿½
 192499	S. Vazzana
 192650	Georges Dupret
 192651	Magdalini Eirinaki
@@ -10437,7 +10437,7 @@
 193706	Niraj Tolia
 193716	John A. Tomlin
 193740	Benjamin Reed
-193856	J¨¹rgen Schneider
+193856	Jï¿½ï¿½rgen Schneider
 193864	Brian Beckman
 193933	Nathan Good
 194516	Gongyi Wu
@@ -10595,7 +10595,7 @@
 210521	Mario Winter
 211105	Robert Pasley
 211108	Benjamin Rey
-211114	G¨ªsli R. Hjaltason
+211114	Gï¿½ï¿½sli R. Hjaltason
 211135	Petko Bakalov
 211149	Eliyahu Safra
 211184	Silvia Nittel
@@ -10926,7 +10926,7 @@
 260228	S. Teoh
 260239	Gustavo O. Arocena
 260241	Subramanian Arumugam
-260242	Sedat Aky¨¹rek
+260242	Sedat Akyï¿½ï¿½rek
 260244	Arthur Toya
 260245	Jens Tellefsen
 260246	Rosemary Walsh
@@ -10991,7 +10991,7 @@
 260343	Yandong Cai
 260344	Wendy Chang
 260345	Deepak Murthy
-260352	Joachim Sch¨¹
+260352	Joachim Schï¿½ï¿½
 260354	Tobias Riemenschneider
 260355	Maxim Schwarzkopf
 260356	Alexander Zeiss
@@ -11116,7 +11116,7 @@
 260584	Goutam Sinha
 260589	Stephen Hayne
 260590	Junyi Xie
-260594	Mauricio A. Hern¨¢ndez
+260594	Mauricio A. Hernï¿½ï¿½ndez
 260596	Markus Wawryniuk
 260605	Bruce M. Horowitz
 260606	Gideon L. V. Schipper
@@ -11147,7 +11147,7 @@
 260663	Mimi Kao
 260668	Hisashi Kashima
 260669	Tadashi Tsumura
-260670	Tsuyoshi Id¨¦
+260670	Tsuyoshi Idï¿½ï¿½
 260671	Takahide Nogayama
 260672	Ryo Hirade
 260673	Rui Zhang 0003
@@ -11295,7 +11295,7 @@
 261003	Jeff Sidell
 261004	Adam Sah
 261005	Andrew Yu
-261011	Aliekber G¨¹rel
+261011	Aliekber Gï¿½ï¿½rel
 261018	R. Venkatasubrahmanian
 261023	Michael A. Milicia
 261027	Konstantinos Stathatos
@@ -11618,7 +11618,7 @@
 261706	Boriana L. Milenova
 261707	Marcos M. Campos
 261708	Claudia Perlich
-261713	Jos¨¦ A. Taboada
+261713	Josï¿½ï¿½ A. Taboada
 261714	C. David Cooke
 261715	Elizabeth Krawczynska
 261716	Pekka Uronen
@@ -11748,7 +11748,7 @@
 262035	S. Phineas Upham
 262036	Mosab Hassaan
 262037	Hans-Henning Gabriel
-262038	Andr¨¨ Gohr
+262038	Andrï¿½ï¿½ Gohr
 262041	Adam Roberts
 262042	David Threadgill
 262043	Stephen B. Pope
@@ -11876,7 +11876,7 @@
 282889	Jinseog Kim
 282890	Nir Krause
 282902	Brian Kulis
-282903	M¨¢ty¨¢s Sustik
+282903	Mï¿½ï¿½tyï¿½ï¿½s Sustik
 282909	Bruce L. Lambert
 282910	David K. Tcheng
 282913	Stephanie Sage
@@ -11966,7 +11966,7 @@
 283151	Novi Quadrianto
 283158	Sourangshu Bhattacharya
 283159	Nagasuma Chandra
-283160	Michael Br¨¹ckner
+283160	Michael Brï¿½ï¿½ckner
 283164	Wenjie Fu
 283168	Fuxin Li
 283170	Christopher Painter-Wakefield
@@ -11974,7 +11974,7 @@
 283173	Gabriel Wachman
 283177	Yisong Yue
 283185	Guillermo Cecchi
-283196	Andr¨¦s Corrada-Emmanuel
+283196	Andrï¿½ï¿½s Corrada-Emmanuel
 283197	Emily B. Fox
 283198	Raghu Meka
 283202	Gavin Taylor
@@ -12083,7 +12083,7 @@
 304859	Qi-Cai He
 305047	Eric Louie
 305071	Kimberly M. James
-305136	Ilm¨¦rio Silva
+305136	Ilmï¿½ï¿½rio Silva
 305195	Mark Anthony F. Mateo
 305326	Geoffrey P. Ellis
 305327	A. Steven Pollitt
@@ -12434,7 +12434,7 @@
 317073	Alberto Ingenito
 317075	Kshitij Judah
 317076	Michael Holmes
-317077	Juan Carlos Santamar¨ªa
+317077	Juan Carlos Santamarï¿½ï¿½a
 317078	Yejin Choi
 317079	Richard Schmidt
 317083	Louis-Xavier Storme
@@ -12442,7 +12442,7 @@
 317087	Marko Krema
 317089	Qin Iris Wang
 317090	Pradeep Natarajan
-317091	Romain G¨¦rard
+317091	Romain Gï¿½ï¿½rard
 317092	Pranjal Awasthi
 317094	Patrick Eyerich
 317095	Tuan A. Nguyen
@@ -12560,7 +12560,7 @@
 359602	Changwen Yang
 359613	Maeve O'Brien
 360005	Almira Karabeg
-361178	Harald H¨¹ning
+361178	Harald Hï¿½ï¿½ning
 361866	Mahesh Kumar
 361925	Rajiv Jauhari
 361926	M. Muralikrishna
@@ -12594,7 +12594,7 @@
 366094	David A. Ferrucci
 366178	Andrew Connolly
 366179	Christian Elsen
-366180	S¨¦bastien Augier
+366180	Sï¿½ï¿½bastien Augier
 366185	Jay Ayres
 366194	Naval K. Verma
 366195	Robert Schroko
@@ -12650,7 +12650,7 @@
 366276	Subramanyam Mallela
 366277	Anjali Dhond
 366278	Sanjeev Vadhavkar
-366279	Jos¨¦ C. Pinheiro
+366279	Josï¿½ï¿½ C. Pinheiro
 366281	Benjamin W. Tam
 366282	D. Gershkovich
 366283	N. Liusternik
@@ -12677,7 +12677,7 @@
 366322	Vince Poor
 366323	Jasmine Novak
 366324	Jonathan Stoppi
-366326	?zden G¨¹r-Ali
+366326	?zden Gï¿½ï¿½r-Ali
 366328	Stephane Chiocchetti
 366329	Jaap Suermondt
 366331	Henry Schwarz
@@ -12905,8 +12905,8 @@
 374599	Zhexuan Song
 374660	Rico Wind
 374705	Philipp Kranen
-375347	Andr¨¦ Hernich
-375378	Lubor Koll¨¢r
+375347	Andrï¿½ï¿½ Hernich
+375378	Lubor Kollï¿½ï¿½r
 375510	Shai Geva
 375570	Somnath Banerjee
 378515	Doron Cohen
@@ -12969,7 +12969,7 @@
 391082	Weiping Ge
 391088	Ramanathan Balachandran
 391089	Srihari Padmanabhan
-391095	Renaud Bass¨¦e
+391095	Renaud Bassï¿½ï¿½e
 391098	Glen Pringle
 391100	Ramji Beera
 391101	Russell T. Edwards
@@ -12998,7 +12998,7 @@
 391147	Farhad Hussain
 391148	Ying-Han Liu
 391152	Kouhei Kumasawa
-391156	Arthur Lim¨¨re
+391156	Arthur Limï¿½ï¿½re
 391163	K. L. Lee
 391169	Jiye Li
 391170	Zhiheng Li
@@ -13063,7 +13063,7 @@
 397062	Richard Tibbetts
 398080	Paul W. Purdom
 398082	Terje L?ken
-398086	Henrik Andr¨¦-J?nsson
+398086	Henrik Andrï¿½ï¿½-J?nsson
 398094	Maurizio Mazza
 398096	Yaron Ben-Yehuda
 398097	David Landau
@@ -13173,7 +13173,7 @@
 408613	Sergio M. Savaresi
 408803	Yuefen Wang
 408977	Yuval Merhav
-410540	Andr¨¦ Luiz da Costa Carvalho
+410540	Andrï¿½ï¿½ Luiz da Costa Carvalho
 412164	Jonathan Koren
 413369	David Littau
 413372	Sreangsu Acharyya
@@ -13235,7 +13235,7 @@
 421024	Yolla Polity
 421025	Jeffery Antoniuk
 421026	Avi Arampatzis
-421027	Andr¨¦ van Hameren
+421027	Andrï¿½ï¿½ van Hameren
 421028	G. Sohn
 421031	Roberto Colotti
 421032	Girolamo Gradenigo
@@ -13276,7 +13276,7 @@
 421077	Jukka Kuusisto
 421078	M. J. Blosseville
 421079	M. G. Monteil
-421080	N. P¨¦not
+421080	N. Pï¿½ï¿½not
 421081	Krystle Kocik
 421082	Peter Bollmann
 421084	U. Reiner
@@ -13408,7 +13408,7 @@
 421271	Vijay Deepak Dollu
 421273	Salah A. Khairy
 421274	George C. Miller
-421275	An¨ªsio Lacerda
+421275	Anï¿½ï¿½sio Lacerda
 421278	Yu-Hwan Kim
 421279	Shang-Yoon Hahn
 421280	Eric Lagergren
@@ -13502,7 +13502,7 @@
 421405	Hong-Pao Shi
 421406	Encarnacion Rancitelli
 421407	Marden S. Neubert
-421410	Ralf L¨¹beck
+421410	Ralf Lï¿½ï¿½beck
 421412	Mari Saito
 421413	Tomoharu Kokubu
 421414	Maria Smith
@@ -13590,7 +13590,7 @@
 421523	Jie Hong
 421524	Ian Bugeja
 421527	Michael Hochster
-421528	Ronald T. Fern¨¢ndez
+421528	Ronald T. Fernï¿½ï¿½ndez
 421531	Shady Elbassuoni
 421532	Erik Elgersma
 421534	Rianne Kaptein
@@ -13827,7 +13827,7 @@
 422404	Nicholas Gerner
 422409	Junjie Guo
 422410	Linqi Liu
-422413	Fr¨¦d¨¦ric Gingras
+422413	Frï¿½ï¿½dï¿½ï¿½ric Gingras
 422419	Sankar Subramanian
 422420	Srikanth Bellamkonda
 422421	Nathan Folkert
@@ -13949,7 +13949,7 @@
 422655	C. R. Spath
 422660	Thomas G. Price
 422666	Gayatri Sathe
-422667	Fr¨¦d¨¦ic Vincent
+422667	Frï¿½ï¿½dï¿½ï¿½ic Vincent
 422669	Mark Paskin
 422670	Siddhesh Bhobe
 422671	W. Bradley Rubenstein
@@ -13974,7 +13974,7 @@
 422709	Ronghao Zhuang
 422713	Nitin Thaper
 422720	Clenn Thompson
-422721	R¨¦my Amouroux
+422721	Rï¿½ï¿½my Amouroux
 422722	Erika Anderson
 422723	Kenn Gardels
 422724	Jeff Meredith
@@ -14067,7 +14067,7 @@
 430309	D. I. Howells
 430503	Randall Salas
 432577	Philippe Penny
-433531	P¨¦ter Pesti
+433531	Pï¿½ï¿½ter Pesti
 433606	Gordana Pavlovic-Lazetic
 436244	Caroline Paxson
 437674	Nobuko Nathan
@@ -14076,9 +14076,9 @@
 438120	J. P. Armisen
 438121	J. Y. Caleca
 438122	J?rg Schuler
-438123	Fr¨¦d¨¦ric Hubert
+438123	Frï¿½ï¿½dï¿½ï¿½ric Hubert
 438124	Bruno Tessier
-438126	J¨¦r?me Baumgarten
+438126	Jï¿½ï¿½r?me Baumgarten
 438127	Enrico Zimuel
 438129	Amit Somani
 438130	Allison Lee
@@ -14175,7 +14175,7 @@
 438314	Deborah Downs
 438317	Fang Du
 438320	Krishna B. Kumar
-438321	Andr¨¦ Eickler
+438321	Andrï¿½ï¿½ Eickler
 438322	Raphael Chan
 438323	M. T. Fang
 438324	Gilles Farley
@@ -14183,7 +14183,7 @@
 438327	Jo?lle Madec
 438328	C. Fields
 438329	Kevin Fitzgerald
-438331	Herv¨¦ Stora
+438331	Hervï¿½ï¿½ Stora
 438332	Chris Hillery
 438333	Paul Lucas
 438334	Geetika Agrawal
@@ -14202,7 +14202,7 @@
 438353	Chiu Tsang
 438355	Ross Bunker
 438356	Jungchul Woo
-438359	Zolt¨¢n Gy?ngyi
+438359	Zoltï¿½ï¿½n Gy?ngyi
 438360	Ioana Ursu
 438362	Christian Hage
 438365	Christoffer Hall
@@ -14422,7 +14422,7 @@
 453384	Stephen E. Levy
 453392	Yuanzhi Zhang
 453401	Tomoyuki Nanno
-453415	C¨¦lia Francisca dos Santos
+453415	Cï¿½ï¿½lia Francisca dos Santos
 453416	Daniel R. Fernandes
 453431	Allan Hollander
 453448	Timothy D. Heilman

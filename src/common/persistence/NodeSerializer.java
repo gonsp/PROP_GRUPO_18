@@ -10,13 +10,13 @@ public abstract class NodeSerializer implements Serializable {
     private Node node = null;
     private String data = null;
 
-    private int nodeId;
+    private int nodeID;
     private String name;
     
     protected void inflate(String text) {
         if (node == null) {
             int m = text.indexOf('\t');
-            nodeId = Integer.parseInt(text.substring(0,m-1));
+            nodeID = Integer.parseInt(text.substring(0,m-1));
             name = text.substring(m+1);
         }
     }    
@@ -24,9 +24,9 @@ public abstract class NodeSerializer implements Serializable {
     protected void deflate() {
         if (data == null) {
             data = new String();
-            data.concat(node.nodeId.toString());
+            data.concat(node.getNodeID().toString());
             data.concat("\t");
-            data.concat(node.name);
+            data.concat(node.getName());
         }
     }
 
