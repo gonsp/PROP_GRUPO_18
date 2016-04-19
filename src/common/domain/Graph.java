@@ -1,7 +1,6 @@
 package common.domain;
 
-import java.util.HashMap;
-
+import java.util.Set;
 
 public class Graph {
     //Attributes
@@ -39,10 +38,6 @@ public class Graph {
         this.name = name;
     }
 
-    public void setLastId(int lastUsed, NodeType type) throws GraphException {
-        getNodeContainer(type).setLastID(lastUsed);
-    }
-
     public int getSize(NodeType type) throws GraphException {
         return getNodeContainer(type).getSize();
     }
@@ -59,11 +54,25 @@ public class Graph {
     public void removeNode(NodeType type, int id) throws GraphException {
         getNodeContainer(type).removeNode(id);
     }
+    
+    public void addRelation() {
+    	//TODO dfvfdddfvvdddfveqrrthrhrvdfbdfbsdfbsdfbdfb
+    }
 
     //Queries
     public Node getNode(NodeType type, int id) throws GraphException {
         return getNodeContainer(type).getNode(id);
     }
+    
+    
+    
+    //???
+    public Set<Integer> getTypeKeySet(NodeType type) throws GraphException {
+        return getNodeContainer(type).getKeySet();
+    }
+    
+    
+    
 
     private NodeType getNodeType(Node node) {
         if (node instanceof Author) {
