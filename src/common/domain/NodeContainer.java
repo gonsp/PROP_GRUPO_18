@@ -1,6 +1,7 @@
 package common.domain;
 
 import java.util.HashMap;
+import java.util.Set;
 
 
 public class NodeContainer {
@@ -26,6 +27,14 @@ public class NodeContainer {
 
     public int getLastID() {
         return lastID;
+    }
+
+    public HashMap<Integer,Node> getHashMap(){
+        return nodes;
+    }
+
+    public Set<Integer> getKeySet(){
+        return nodes.keySet();
     }
 
     public void addNode(Node n) {
