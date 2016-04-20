@@ -33,7 +33,7 @@ public abstract class Node {
 		
 	}
 	public void removeRelation (int relationID,int nodeID){
-		//otropen
+	
 		map.get(relationID).remove(nodeID);
 	}
 	public Boolean isRelated (int relationID, int nodeID){
@@ -45,11 +45,4 @@ public abstract class Node {
 	
 }
 
-
-//node(string name, int Id) constructora
-//setValue(string value) establecer el valor de la instancia
-//addRelation(int relationID, int nodeID)
-//removeRelation(int relationID, int nodeID)
-//isRelated(int TypeID, int nodeID)
-//List<int> get Relations(int relationID)
 
