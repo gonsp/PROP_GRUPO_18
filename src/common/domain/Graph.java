@@ -2,6 +2,7 @@ package common.domain;
 
 import java.util.Set;
 
+
 public class Graph {
     //Attributes
     private String name;
@@ -56,7 +57,7 @@ public class Graph {
     }
     
     public void addRelation() {
-    	//TODO dfvfdddfvvdddfveqrrthrhrvdfbdfbsdfbsdfbdfb
+    	//TODO Relation
     }
 
     //Queries
@@ -64,16 +65,10 @@ public class Graph {
         return getNodeContainer(type).getNode(id);
     }
     
-    
-    
-    //???
     public Set<Integer> getTypeKeySet(NodeType type) throws GraphException {
         return getNodeContainer(type).getKeySet();
     }
     
-    
-    
-
     private NodeType getNodeType(Node node) {
         if (node instanceof Author) {
             return NodeType.AUTHOR;
