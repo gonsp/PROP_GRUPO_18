@@ -45,8 +45,7 @@ public class RelationStructure implements Iterable<Relation>
 			@Override
 			public void remove()
 			{
-				// FIXME Implement or not?
-				throw new UnsupportedOperationException();
+				st.remove(pos);
 			}
 		};
 		return it;
