@@ -1,6 +1,7 @@
 package common.persistence;
 
 
+import common.domain.Conference;
 import common.domain.Node;
 
 public class ConferenceSerializer extends NodeSerializer {
@@ -9,8 +10,12 @@ public class ConferenceSerializer extends NodeSerializer {
         super(node);
     }
 
+    public ConferenceSerializer(String data) { super (data); }
+
     @Override
-    public Node getNode() {
-        return null;
+    public Conference getNode(){
+        this.inflate();
+        node = new Conference(nodeId,name);
+        return ((Conference)node);
     }
 }
