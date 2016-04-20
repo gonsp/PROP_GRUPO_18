@@ -13,9 +13,11 @@ public class AuthorSerializer extends NodeSerializer {
         super(data);
     }
 
-    public Author getNode(){
-        Author a = node;
-        return a;
+    @Override
+    public Author getNode() {
+        this.inflate();
+        node = new Author(nodeId, name);
+        return ((Author)node);
     }
 
 }
