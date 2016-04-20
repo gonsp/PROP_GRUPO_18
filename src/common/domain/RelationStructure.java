@@ -3,7 +3,7 @@ package common.domain;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-// The Iterable implementation is based on http://stackoverflow.com/a/5849625
+// Iterable implementation based on http://stackoverflow.com/a/5849625
 public class RelationStructure implements Iterable<Relation>
 {
 	private ArrayList<Relation> st;
@@ -12,7 +12,7 @@ public class RelationStructure implements Iterable<Relation>
 	// Creates an empty RelationStructure
 	public RelationStructure()
 	{
-		st = new ArrayList<Relation>;
+		st = new ArrayList<Relation>();
 		size = 0;
 	}
 
@@ -33,13 +33,13 @@ public class RelationStructure implements Iterable<Relation>
 			@Override
 			public boolean hasNext()
 			{
-				return pos < size && st[pos] != null;
+				return pos < size && st.get(pos) != null;
 			}
 
 			@Override
 			public Relation next()
 			{
-				return st[++pos];
+				return st.get(++pos);
 			}
 
 			@Override
@@ -48,7 +48,7 @@ public class RelationStructure implements Iterable<Relation>
 				// FIXME Implement or not?
 				throw new UnsupportedOperationException();
 			}
-		}
+		};
 		return it;
 	}
 
@@ -60,7 +60,7 @@ public class RelationStructure implements Iterable<Relation>
 			throw new IndexOutOfBoundsException("getRelation: index is out " +
 					"of range");
 		// TODO Implement NullPointerException if position is null?
-		return st[i];
+		return st.get(i);
 	}
 
 	// Returns the size of the array
