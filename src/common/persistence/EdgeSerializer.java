@@ -1,6 +1,8 @@
 package common.persistence;
 
-public class EdgeSerializer {
+import java.io.Serializable;
+
+public class EdgeSerializer implements Serializable {
 
 
 }
