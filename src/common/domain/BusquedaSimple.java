@@ -1,24 +1,30 @@
 package common.domain;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Set;
 
-public class BusquedaSimple {
+public class BusquedaSimple{
 
-    private HashMap<Integer,Node> hashMap;
+    private ArrayList<Integer> result;
 
     public BusquedaSimple(NodeContainer nodeContainer, String filtro) throws GraphException {
-        //buscar(nodeContainer.getKeySet(),filtro);
-    }
-
-    public ArrayList<Integer> buscar(Set<Integer> keySet, String filtro){
-        ArrayList<Integer> result = new ArrayList<>();
-        for (Integer i : keySet) {
-            if (hashMap.get(i).getName().equals(filtro)) {
+        result = new ArrayList<>();
+        for (Integer i : nodeContainer.getKeySet()) {
+            if (nodeContainer.getNode(i).getName().equalsIgnoreCase(filtro)) {
                 result.add(i);
             }
         }
+    }
+
+    public BusquedaSimple(Graph graph, NodeType nodeType, String filtro) throws GraphException {
+        result = new ArrayList<>();
+        for (Integer i : graph.getTypeKeySet(nodeType)) {
+            if (graph.getNode(nodeType,i).getName().equalsIgnoreCase(filtro)) {
+                result.add(i);
+            }
+        }
+    }
+
+    public ArrayList<Integer> getResult(){
         return result;
     }
 }
