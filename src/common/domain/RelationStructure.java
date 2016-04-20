@@ -52,14 +52,23 @@ public class RelationStructure implements Iterable<Relation>
 	}
 
 	// Returns the relation at position i
-	// FIXME Use IndexOutOfBoundsException or create new Exception?
 	public Relation getRelation(int i) throws IndexOutOfBoundsException
 	{
 		if (i >= st.size())
 			throw new IndexOutOfBoundsException("getRelation: index is out " +
 					"of range");
-		// TODO Implement NullPointerException if position is null?
 		return st.get(i);
+	}
+
+	// Removes the relation at position i
+	// (ArrayList: every preceding element is shifted to the left)
+	public void removeRelation(int i) throws IndexOutOfBoundsException
+	{
+		if (i >= st.size())
+			throw new IndexOutOfBoundsException("removeRelation: index is " +
+					"out of range");
+		st.remove(i);
+		size--;
 	}
 
 	// Returns the size of the array
