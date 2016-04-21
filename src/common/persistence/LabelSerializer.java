@@ -7,9 +7,13 @@ public class LabelSerializer extends NodeSerializer {
 
     private int labelId;
 
-    public LabelSerializer(Label node) { super(node); }
+    public LabelSerializer(Label node) {
+        super(node);
+    }
 
-    public LabelSerializer(String data) { super(data); }
+    public LabelSerializer(String data) {
+        super(data);
+    }
 
     @Override
     public void inflate() {
