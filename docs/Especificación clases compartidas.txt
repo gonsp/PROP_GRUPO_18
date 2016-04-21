@@ -32,7 +32,7 @@ Relaciones:
 * Asociación ternaria con la clase Nodo y Relación. Indica con qué elementos se relaciona y de qué manera.
 * Asociación con todo Nodo mediante la clase asociativa HeteSim. Indica el nivel de relación con ese nodo en función de una estructura de relaciones.
 Metodos:
--Node(string name, int Id)
+-Node(string value, int Id)
 Constructora que crea una instancia de la clase node.
 -setValue(string value)
 Permite establecer el valor de la instancia.
@@ -87,15 +87,15 @@ Relaciones: Ninguna.
 Nombre: Relación
 Descripción: Clase que representa un tipo de relación entre dos tipos de nodos.
 Cardinalidad: Muchos. Se instanciará una vez por cada tipo de relación presente en el grafo.
-Atributos: NodeType from, NodeType to, String name (nombre del tipo de relación).
+Atributos: NodeType from, NodeType to, String value (nombre del tipo de relación).
 Relaciones:
 * Asociación ternaria con la clase Nodo i Nodo. Indica la relación entre dos elementos y el tipo de esta.
 Métodos: 
-- void Relation(NodeType node_out, NodeType node_in, String name)
+- void Relation(NodeType node_out, NodeType node_in, String value)
 Constructor que crea un nuevo tipo de relación con un determinado nombre y que va de un tipo de nodo de entrada a un tipo de nodo de salida
 - void removeRelation()
 Elimina el tipo de relación.
-- void setName(String name)
+- void setName(String value)
 Cambia el nombre de la relación por el nombre especificado en el parámetro.
 - void setNodeIn(NodeType node_in)
 Cambia el tipo de nodo de entrada de la relación

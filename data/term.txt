@@ -2145,7 +2145,7 @@
 2369	packing
 2370	webpage
 2371	url
-2372	name
+2372	value
 2373	japanese
 2374	establishing
 2375	field

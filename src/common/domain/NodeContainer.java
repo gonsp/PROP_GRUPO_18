@@ -1,7 +1,8 @@
 package common.domain;
 
 import java.util.HashMap;
-import java.util.Set;
+import java.util.Iterator;
+import java.util.Map;
 
 
 public class NodeContainer {
@@ -11,7 +12,8 @@ public class NodeContainer {
 
     //Constructors
     public NodeContainer() {
-        lastID = 0;
+        nodes = new HashMap<Integer, Node>();
+        lastID = 1;
     }
 
     //Set & Get
@@ -23,13 +25,14 @@ public class NodeContainer {
         return lastID;
     }
 
-    public Set<Integer> getKeySet(){
-        return nodes.keySet();
+    public NodeContainerIterator getIterator() {
+        return new Node;
     }
-    
-    //Container Edition
+
+    //Queries
     public void addNode(Node n) {
-        nodes.put(++lastID, n);
+        n.setID(lastID);
+        nodes.put(lastID++, n);
     }
 
     public void addNode(Node n, int ID) throws GraphException {
@@ -53,7 +56,6 @@ public class NodeContainer {
         }
     }
 
-    //Queries
     public Node getNode(int ID) throws GraphException {
         if (!checkID(ID)) {
         	throw new GraphException(GraphExceptionError.ID_INVALID);
@@ -65,11 +67,31 @@ public class NodeContainer {
     }
 
     private boolean checkID(int ID) {
-    	return ID > 0;
+    	return ID > 0 && ID < lastID;
     }
     
     private boolean checkNewID(int ID) {
-    	return ID > lastID;
+    	return ID >= lastID;
     }
+
+    public class NodeContainerIterator implements Iterator<Map.Entry<Integer, Node>> {
+
+        private Iterator<Map.Entry<Integer, Node>> iterator;
+
+        private NodeContainerIterator(NodeContainer nodeContainer) {
+            iterator = nodeContainer.nodes.entrySet().iterator();
+        }
+
+        @Override
+        public boolean hasNext() {
+            return iterator.hasNext();
+        }
+
+        @Override
+        public Map.Entry<Integer, Node> next() {
+            return iterator.next();
+        }
+    }
+
 }
  

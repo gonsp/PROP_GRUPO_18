@@ -2,15 +2,17 @@ package common.domain;
 
 public class Relation {
 	//Attributes
-	private NodeType from;
-	private NodeType to;
+	private NodeType A;
+	private NodeType B;
 	private String name;
+	private int id;
 	
 	//Constructors
-	public Relation(NodeType node_out, NodeType node_in, String name) {
-		from = node_out;
-		to = node_in;
+	public Relation(NodeType A, NodeType B, String name, int id) {
+		this.A = A;
+		this.B = B;
 		this.name = name;
+		this.id = id;
 	}
 	
 	//Get & Set
@@ -22,21 +24,19 @@ public class Relation {
 		this.name = name;
 	}
 	
-	public NodeType getNodeFrom() {
-		return from;
+	public NodeType getNodeA() {
+		return A;
 	}
 	
-	public void setNodeFrom(NodeType from) {
-		this.from = from;
+	public void setNodeA(NodeType A) {
+		this.A = A;
 	}
 	
-	public NodeType getNodeTo() {
-		return to;
+	public NodeType getNodeB() {
+		return B;
 	}
 	
-	public void setNodeTo(NodeType to) {
-		this.to = to;
+	public void setNodeB(NodeType B) {
+		this.B = B;
 	}
-	
-
 }

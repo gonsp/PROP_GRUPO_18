@@ -26,7 +26,7 @@ public abstract class NodeSerializer implements Serializable {
             data = new String();
             data.concat(String.valueOf(node.getId()));
             data.concat(" ");
-            data.concat(node.getName());
+            data.concat(node.getValue());
         }
     }
 

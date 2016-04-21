@@ -17,13 +17,13 @@ The areas of researchers are manually labeled by Jing Gao (jinggao3@gmail.com) a
 CONTENT
 
 Files of four types of objects: author.txt, conf.txt, paper.txt, term.txt; 
-file format: "id \t name" in each line.
+file format: "id \t value" in each line.
 
 Files of three types of link relationships: paper_author.txt, paper_conf.txt, paper_term.txt; 
 file format: "id_of_object_type_i \t id_of_object_type_j" in each line denoting two linked objects in type i and type j.
 
 Files of labels: author_label.txt, conf_label.txt, paper_label.txt; 
-file format: "id \t label \t name" in each line;
+file format: "id \t label \t value" in each line;
 meaning of the labels: 0: Database; 1: Data Mining; 2: AI; 3: Information Retrieval;
 
 

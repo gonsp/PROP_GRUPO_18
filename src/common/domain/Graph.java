@@ -1,33 +1,26 @@
 package common.domain;
 
-import java.util.Set;
 
+import java.util.HashMap;
 
 public class Graph {
     //Attributes
     private String name;
-    private NodeContainer authors;
-    private NodeContainer papers;
-    private NodeContainer terms;
-    private NodeContainer labels;
-    private NodeContainer conferences;
+    private HashMap<NodeType, NodeContainer> containters;
 
     //Constructors
     public Graph() {
-        authors = new NodeContainer();
-        papers = new NodeContainer();
-        terms = new NodeContainer();
-        labels = new NodeContainer();
-        conferences = new NodeContainer();
+        this("-1");
     }
 
     public Graph(String name) {
         this.name = name;
-        authors = new NodeContainer();
-        papers = new NodeContainer();
-        terms = new NodeContainer();
-        labels = new NodeContainer();
-        conferences = new NodeContainer();
+        containters = new HashMap<NodeType, NodeContainer>();
+        containters.put(NodeType.AUTHOR, new NodeContainer());
+        containters.put(NodeType.PAPER, new NodeContainer());
+        containters.put(NodeType.LABEL, new NodeContainer());
+        containters.put(NodeType.CONFERENCE, new NodeContainer());
+        containters.put(NodeType.TERM, new NodeContainer());
     }
 
     //Get & Set
@@ -55,18 +48,34 @@ public class Graph {
     public void removeNode(NodeType type, int id) throws GraphException {
         getNodeContainer(type).removeNode(id);
     }
-    
-    public void addRelation() {
-    	//TODO Relation
-    }
 
-    //Queries
     public Node getNode(NodeType type, int id) throws GraphException {
         return getNodeContainer(type).getNode(id);
     }
-    
-    public Set<Integer> getTypeKeySet(NodeType type) throws GraphException {
-        return getNodeContainer(type).getKeySet();
+
+    public void addRelation(int idRelation, Node a, Node b) {
+        a.addRelation(idRelation, b.getId());
+        b.addRelation(idRelation, a.getId());
+    }
+
+    public void addRelation(int idRelation, NodeType typeA, int idA, NodeType typeB, int idB) throws GraphException {
+        if(typeA == typeB && idA == idB) {
+            throw new GraphException(GraphExceptionError.ID_EQUAL);
+        }
+        addRelation(idRelation, getNodeContainer(typeA).getNode(idA), getNodeContainer(typeB).getNode(idB));
+    }
+
+    public void removeRelation(int idRelation, Node a, Node b) {
+        a.removeRelation(idRelation, b.getId());
+        b.removeRelation(idRelation, a.getId());
+    }
+
+    public void removeRelation(int idRelation, NodeType typeA, int idA, NodeType typeB, int idB) throws GraphException {
+        removeRelation(idRelation, getNodeContainer(typeA).getNode(idA), getNodeContainer(typeB).getNode(idB));
+    }
+
+    public NodeContainer.NodeContainerIterator getIterator(NodeType type) throws GraphException {
+        return getNodeContainer(type).getIterator();
     }
     
     private NodeType getNodeType(Node node) {
@@ -83,20 +92,7 @@ public class Graph {
         }
     }
 
-    private NodeContainer getNodeContainer(NodeType type) throws GraphException {
-        switch (type) {
-            case AUTHOR:
-                return authors;
-            case PAPER:
-                return papers;
-            case TERM:
-                return terms;
-            case LABEL:
-                return labels;
-            case CONFERENCE:
-                return conferences;
-            default:
-                throw new GraphException(GraphExceptionError.TYPE_INVALID);
-        }
+    private NodeContainer getNodeContainer(NodeType type) {
+        return containters.get(type);
     }
 }

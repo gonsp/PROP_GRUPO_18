@@ -1,21 +1,27 @@
 package common.domain;
 
-import java.util.List;
 import java.util.HashMap;
+import java.util.Set;
 
 public abstract class Node {
     //Attributes
-    private String name;
+    private String value;
     private int nodeID;
-    private HashMap<Integer, List<Integer>> map;
+    private HashMap<Integer, Set<Integer>> relations;
 
     //Constructors
-    public Node() {
 
+    public Node() {
+        this.nodeID = -1;
+        this.value = "-1";
     }
 
-    public Node(String name, int nodeID) {
-        this.name = name;
+    public Node(String value) {
+        this.nodeID = -1;
+    }
+
+    public Node(int nodeID, String value) {
+        this.value = value;
         this.nodeID = nodeID;
     }
 
@@ -23,33 +29,33 @@ public abstract class Node {
         return nodeID;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setValue(String value) {
+        this.value = value;
     }
 
-    public String getName() {
-        return name;
+    public String getValue() {
+        return value;
     }
 
     public void addRelation(int relationID, int nodeID) {
-
-        map.get(relationID).add(nodeID);
-
+        relations.get(relationID).add(nodeID);
     }
 
     public void removeRelation(int relationID, int nodeID) {
-
-        map.get(relationID).remove(nodeID);
+        relations.get(relationID).remove(nodeID);
     }
 
     public Boolean isRelated(int relationID, int nodeID) {
-        return map.get(relationID).contains(nodeID);
+        return relations.get(relationID).contains(nodeID);
     }
 
-    public List<Integer> getRelations(int relationID) {
-        return map.get(relationID);
+    public Set<Integer> getRelations(int relationID) {
+        return relations.get(relationID);
     }
 
+    public void setID(int nodeID) {
+        this.nodeID = nodeID;
+    }
 }
 
 

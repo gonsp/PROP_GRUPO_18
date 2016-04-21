@@ -1255,7 +1255,7 @@
 11677	Computing Optimal Subsets.
 11678	Scaling Up: Solving POMDPs through Value Based Clustering.
 11679	A Unification of Extensive-Form Games and Markov Decision Processes.
-11680	The ¨¹bercruncher: Concept Formation by Analogy Discovery.
+11680	The ï¿½ï¿½bercruncher: Concept Formation by Analogy Discovery.
 11681	Learning and Inference for Hierarchically Split PCFGs.
 11682	The Modal Logic S4F, the Default Logic, and the Logic Here-and-There.
 11683	Towards Large Scale Argumentation Support on the Semantic Web.
@@ -1701,7 +1701,7 @@
 85810	Estimating Nested Selectivity in Object-Oriented Databases.
 85811	Learning Bayesian Classification Rules through Genetic Algorithms.
 85813	Locating Passages Using a Case-Based of Excerpts.
-85815	A mapping mechanism to support bitmap index and other auxiliary structures on tables stored as primary B¡Àtrees.
+85815	A mapping mechanism to support bitmap index and other auxiliary structures on tables stored as primary Bï¿½ï¿½trees.
 85816	Alternative Representations and Abstractions for Moving Sensors Databases.
 85817	The verity federated infrastructure.
 85818	An Efficient and Reliable Reservation Algorithm for Mobile Transactions.
@@ -2283,7 +2283,7 @@
 86867	Nugget discovery in visual exploration environments by query consolidation.
 86869	Ranking very many typed entities on wikipedia.
 86870	Recognition and classification of noun phrases in queries for effective retrieval.
-86871	A constraint-based probabilistic framework for name disambiguation.
+86871	A constraint-based probabilistic framework for value disambiguation.
 86872	An efficient algorithm for approximate biased quantile computation in data streams.
 86873	Boolean representation based data-adaptive correlation analysis over time series streams.
 86874	Opinion retrieval from blogs.
@@ -2452,7 +2452,7 @@
 117830	Arbitrary View Position and Direction Rendering for Large-Scale Scenes.
 117832	Low-Cost Interactive Active Monocular Range Finder.
 117850	Connected Vibrations: A Modal Analysis Approach for Non-Rigid Motion Tracking.
-117851	Explanation-Based Facial Motion Tracking Using a Piecewise B¨¦zier Volume Deformation Model.
+117851	Explanation-Based Facial Motion Tracking Using a Piecewise Bï¿½ï¿½zier Volume Deformation Model.
 117882	Recognizing Upper Face Action Units for Facial Expression Analysis.
 117886	Boosting Image Retrieval.
 117963	Shape and Motion Carving in 6D.
@@ -2557,7 +2557,7 @@
 156744	Compressing Semistructured Text Databases.
 156748	Morphological Variation of Arabic Queries.
 156752	Exploring Cost-Effective Approaches to Human Evaluation of Search Engine Relevance.
-156763	F¨ªsr¨¦al: A Low Cost Terabyte Search Engine.
+156763	Fï¿½ï¿½srï¿½ï¿½al: A Low Cost Terabyte Search Engine.
 156765	Probabilistic Score Normalization for Rank Aggregation.
 156769	Genre Classification and Domain Transfer for Information Filtering.
 156770	An Efficient Computation of the Multiple-Bernoulli Language Model.
@@ -3839,7 +3839,7 @@
 276208	Similarity Search for Multidimensional Data Sequences.
 276209	Personalization of Queries in Database Systems.
 276211	Personalized Queries under a Generalized Preference Model.
-276213	Pr¨¦cis: The Essence of a Query Answer.
+276213	Prï¿½ï¿½cis: The Essence of a Query Answer.
 276215	Towards Eliminating Random I/O in Hash Joins.
 276217	Semantic Query Optimization in Recursive Databases.
 276218	Tape-Disk Join Strategies under Disk Contention.
@@ -4393,14 +4393,14 @@
 277411	SKYPEER: Efficient Subspace Skyline Computation over Distributed Data.
 277412	SpADe: On Shape-based Pattern Detection in Streaming Time Series.
 277413	Lira: Lightweight, Region-aware Load Shedding in Mobile CQ Systems.
-277416	Generalized Pr¨¦cis Queries for Logical Database Subset Creation.
+277416	Generalized Prï¿½ï¿½cis Queries for Logical Database Subset Creation.
 277418	Creating Nested Mappings with Clio.
-277419	¦ÌBE: User Guided Source Selection and Schema Mediation for Internet Scale Data Integration.
+277419	ï¿½ï¿½BE: User Guided Source Selection and Schema Mediation for Internet Scale Data Integration.
 277420	The New Casper: A Privacy-Aware Location-Based Database Server.
 277421	Conditional Functional Dependencies for Data Cleaning.
 277422	Hiding in the Crowd: Privacy Preservation on Evolving Streams through Correlation Tracking.
 277423	Odysseus: a High-Performance ORDBMS Tightly-Coupled with Spatial Database Features.
-277425	¦ÌBE: User Guided Source Selection and Schema Mediation for Internet Scale Data Integration.
+277425	ï¿½ï¿½BE: User Guided Source Selection and Schema Mediation for Internet Scale Data Integration.
 277427	FireStream: Sensor Stream Processing for Monitoring Fire Spread.
 277429	SPRITE: A Learning-Based Text Retrieval System in DHT Networks.
 277430	Worst-Case Background Knowledge for Privacy-Preserving Data Publishing.
@@ -10483,7 +10483,7 @@
 551674	Introduction and Perspectives for the 1971 ACM Information Storage and Retrieval Symposium.
 551676	KWIC of the 1971 ACM Information Storage and Retrieval Symposium.
 551677	A practical hypertext categorization method using links and incrementally available class information.
-551678	Contextual search and name disambiguation in email using graphs.
+551678	Contextual search and value disambiguation in email using graphs.
 551680	Developing of the BDS Online Information Retrieval System.
 551684	An Optical System for Full Text Search.
 551685	Fast Object Partitioning Using Stochastic Learning Automata.
@@ -10564,7 +10564,7 @@
 551806	A Performance Evaluation of Similarity Measures, Document Term Weighting Schemes and Representations in a Boolean Environment.
 551807	Dependency relation matching for answer selection.
 551809	Advanced Search Technologies for Unfamiliar Metadata (demonstration abstract).
-551810	Uexk¨¹ll: an interactive visual user interface for document retrieval in vector space.
+551810	Uexkï¿½ï¿½ll: an interactive visual user interface for document retrieval in vector space.
 551812	Optimizing Query Evaluation in n-gram Indexing.
 551813	Compressed Inverted Files with Reduced Decoding Overheads.
 551816	Collaborative filing in a document repository.
@@ -11469,7 +11469,7 @@
 554543	An Implementation Model for Reasoning with Complex Objects.
 554544	Query Optimization In Compressed Database Systems.
 554545	Improving Index Performance through Prefetching.
-554546	Fractal prefetching B¡ÀTrees: optimizing both cache and disk performance.
+554546	Fractal prefetching Bï¿½ï¿½Trees: optimizing both cache and disk performance.
 554549	Combining Relational and Network Retrieval Methods.
 554551	On Boosting Holism in XML Twig Pattern Matching using Structural Indexing Techniques.
 554553	Robust and Fast Similarity Search for Moving Object Trajectories.
@@ -13214,7 +13214,7 @@
 596404	On Indexing Line Segments.
 596405	Optimal Histograms with Quality Guarantees.
 596406	Multi-Dimensional Substring Selectivity Estimation.
-596407	Dal¨ª: A High Performance Main Memory Storage Manager.
+596407	Dalï¿½ï¿½: A High Performance Main Memory Storage Manager.
 596408	What can Hierarchies do for Data Warehouses?
 596409	Semantic Compression and Pattern Extraction with Fascicles.
 596410	Incremental Organization for Data Recording and Warehousing.
@@ -14243,7 +14243,7 @@
 626866	Causal relation of queries from temporal logs.
 626867	Exploring in the weblog space by detecting informative and affective articles.
 626876	Bayesian network based sentence retrieval model.
-626881	Generative models for name disambiguation.
+626881	Generative models for value disambiguation.
 626882	Exploit sequencing views in semantic cache to accelerate xpath query evaluation.
 626888	Just the right amount: extracting modules from ontologies.
 626894	Web projections: learning from contextual subgraphs of the web.
@@ -14351,7 +14351,7 @@
 627242	Race: finding and ranking compact connected trees for keyword proximity search over xml documents.
 627245	Xml data dissemination using automata on top of structured overlay networks.
 627246	Efficiently querying rdf data in triple stores.
-627247	A unified framework for name disambiguation.
+627247	A unified framework for value disambiguation.
 627248	A graph-theoretic approach to webpage segmentation.
 627250	iRobot: an intelligent crawler for web forums.
 627252	Efficient similarity joins for near duplicate detection.
@@ -14370,7 +14370,7 @@
 654259	Can social bookmarking improve web search?
 654260	Collaboration over time: characterizing and modeling network evolution.
 654263	Entropy of search logs: how hard is search? with personalization? with backoff?
-654266	Personal name classification in web queries.
+654266	Personal value classification in web queries.
 654267	SoftRank: optimizing non-smooth rank metrics.
 654268	On ranking controversies in wikipedia: models and evaluation.
 654269	Deep classifier: automatically categorizing search results into large-scale hierarchies.
