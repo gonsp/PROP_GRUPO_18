@@ -62,12 +62,13 @@ public class PersistenceController {
     public void importEdges(Graph g, String path, String ntype1, String ntype2) throws GraphException {
         List<String> strings = readFile(path);
         for (String s : strings) {
-            EdgeSerializer serializer = null;
+            String etype = null;
             if (ntype1.equals("Author") && ntype2.equals("Label")) {
-
+                etype = "AuthorLabel";
             } else if (ntype1.equals("Conference") && ntype2.equals("Label")){
-
-            }
+                etype = "ConferenceLabel";
+            } // so on...
+            EdgeSerializer serializer = new EdgeSerializer(s, etype);
         }
     }
 
