@@ -11,6 +11,7 @@ public abstract class Node {
 
     //Constructors
     public Node() {
+
     }
 
     public Node(String name, int nodeID) {

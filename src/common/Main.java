@@ -11,7 +11,7 @@ public class Main {
 
         Graph g = new Graph();
         PersistenceController pc = new PersistenceController();
-        pc.importNode(g, "data/author.txt", "Author");
+        pc.importNodes(g, "data/author.txt", "Author");
 
     }
 
