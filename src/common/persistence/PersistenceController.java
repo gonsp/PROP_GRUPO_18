@@ -51,7 +51,7 @@ public class PersistenceController {
                     break;
                 case LABEL:
                     serializer = new LabelSerializer(s);
-                    break;A
+                    break;
                 case PAPER:
                     serializer = new PaperSerializer(s);
                     break;
