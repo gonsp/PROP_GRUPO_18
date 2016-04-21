@@ -25,7 +25,7 @@ public class PersistenceController {
 
             while ((sCurrentLine = br.readLine()) != null) {
                 NodeSerializer serializer = null;
-                switch (ntype){
+                switch (ntype) {
                     case "Author":
                         serializer = new AuthorSerializer(sCurrentLine);
                         break;
@@ -40,7 +40,7 @@ public class PersistenceController {
                         break;
                 }
                 Node node = serializer.getNode();
-                g.addNode(node, serializer.getId());
+                //g.addNode(node, serializer.getId());
                 System.out.println(sCurrentLine);
             }
 
