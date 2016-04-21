@@ -1,4 +1,4 @@
-package common.domain;
+package common.domain.search;
 
 import common.domain.graph.*;
 
