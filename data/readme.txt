@@ -1,6 +1,6 @@
 This package contains the data sets used in the experiments of the following paper:
 
-Ming Ji, Yizhou Sun, Marina Danilevsky, Jiawei Han, and Jing Gao, ¡°Graph Regularized Transductive Classification on Heterogeneous Information Networks", Proc. 2010 European Conf. on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECMLPKDD'10), Barcelona, Spain, Sept. 2010.
+Ming Ji, Yizhou Sun, Marina Danilevsky, Jiawei Han, and Jing Gao, ï¿½ï¿½Graph Regularized Transductive Classification on Heterogeneous Information Networks", Proc. 2010 European Conf. on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECMLPKDD'10), Barcelona, Spain, Sept. 2010.
 
 
 
@@ -25,7 +25,6 @@ file format: "id_of_object_type_i \t id_of_object_type_j" in each line denoting 
 Files of labels: author_label.txt, conf_label.txt, paper_label.txt; 
 file format: "id \t label \t name" in each line;
 meaning of the labels: 0: Database; 1: Data Mining; 2: AI; 3: Information Retrieval;
-
 
 
 
