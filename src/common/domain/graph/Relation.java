@@ -1,44 +1,39 @@
 package common.domain.graph;
 
-import common.domain.graph.NodeType;
-
-public class Relation {
+public class Relation extends Element{
 	//Attributes
 	private NodeType A;
 	private NodeType B;
-	private String name;
-	private int id;
 	
 	//Constructors
 	public Relation(NodeType A, NodeType B, String name, int id) {
+        super(id, name);
 		this.A = A;
 		this.B = B;
-		this.name = name;
-		this.id = id;
 	}
 	
 	//Get & Set
 	public String getName() {
-		return name;
+		return value;
 	}
 	
 	public void setName(String name) {
-		this.name = name;
+		value = name;
 	}
 	
-	public NodeType getNodeA() {
+	public NodeType getNodeTypeA() {
 		return A;
 	}
 	
-	public void setNodeA(NodeType A) {
+	public void setNodeTypeA(NodeType A) {
 		this.A = A;
 	}
 	
-	public NodeType getNodeB() {
+	public NodeType getNodeTypeB() {
 		return B;
 	}
 	
-	public void setNodeB(NodeType B) {
+	public void setNodeTypeB(NodeType B) {
 		this.B = B;
 	}
 }

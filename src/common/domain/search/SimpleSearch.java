@@ -12,12 +12,9 @@ public class SimpleSearch {
     public SimpleSearch(Graph graph, NodeType nodeType, String filtro) throws GraphException {
         filtro = filtro.toLowerCase();
         result = new ArrayList<>();
-        NodeContainer.NodeContainerIterator iterator = graph.getIterator(nodeType);
+        Container<Node>.ContainerIterator iterator = graph.getNodeIterator(nodeType);
         while(iterator.hasNext()) {
             Node aux = iterator.next().getValue();
-            if(aux.getValue() == null) {
-                System.out.println("nullllllll");
-            }
             if(aux.getValue().toLowerCase().contains(filtro)) {
                 result.add(aux);
             }

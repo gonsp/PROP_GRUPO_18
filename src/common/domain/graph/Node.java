@@ -2,48 +2,31 @@ package common.domain.graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Set;
+import java.util.HashSet;
 
-public abstract class Node {
+public abstract class Node extends Element{
     //Attributes
-    private String value;
-    private int nodeID;
-    private HashMap<Integer, Set<Integer>> relations;
+    private HashMap<Integer, HashSet<Integer>> relations;
 
     //Constructors
 
     public Node() {
-        this.nodeID = -1;
-        this.value = "-1";
+        super();
     }
 
     public Node(String value) {
-        this.nodeID = -1;
-        this.value = value;
+        super(value);
     }
 
     public Node(int nodeID, String value) {
-        this.nodeID = nodeID;
-        this.value = value;
+        super(nodeID, value);
     }
 
-    public int getId() {
-        return nodeID;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    protected void addRelation(int relationID, int nodeID) {
+    protected void addEdge(int relationID, int nodeID) {
         relations.get(relationID).add(nodeID);
     }
 
-    protected void removeRelation(int relationID, int nodeID) {
+    protected void removeEdge(int relationID, int nodeID) {
         relations.get(relationID).remove(nodeID);
     }
 
@@ -55,14 +38,18 @@ public abstract class Node {
         return relations.get(relationID).contains(node.getId());
     }
 
-    protected ArrayList<Integer> getRelations(int relationID) {
+    protected ArrayList<Integer> getEdges(int relationID) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         result.addAll(relations.get(relationID));
         return result;
     }
 
-    public void setID(int nodeID) {
-        this.nodeID = nodeID;
+    protected void addRelation(Relation relation) {
+        relations.put(relation.getId(), new HashSet<Integer>());
+    }
+
+    protected void removeRelation(Relation relation) {
+        relations.remove(relation.getId());
     }
 }
 
