@@ -1,6 +1,6 @@
 package common.persistence;
 
-import common.domain.Label;
+import common.domain.graph.Label;
 
 
 public class LabelSerializer extends NodeSerializer {
@@ -20,7 +20,6 @@ public class LabelSerializer extends NodeSerializer {
         if(data != null){
             int m = data.indexOf(" ");
             nodeId = Integer.parseInt(data.substring(0, m-1));
-            labelId = Integer.parseInt(data.substring(m+1,m+1));
             name = data.substring(m + 3, data.length() - 1).trim();
         }
     }
@@ -28,7 +27,7 @@ public class LabelSerializer extends NodeSerializer {
     @Override
     public Label getNode(){
         this.inflate();
-        node = new Label(nodeId, labelId, name);
+        node = new Label(nodeId, name);
         return ((Label)node);
     }
 }

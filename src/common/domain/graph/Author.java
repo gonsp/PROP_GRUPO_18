@@ -1,4 +1,4 @@
-package common.domain;
+package common.domain.graph;
 
 
 public class Author extends Node {
