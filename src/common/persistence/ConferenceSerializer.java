@@ -10,7 +10,9 @@ public class ConferenceSerializer extends NodeSerializer {
         super(node);
     }
 
-    public ConferenceSerializer(String data) { super (data); }
+    public ConferenceSerializer(String data) {
+        super (data);
+    }
 
     @Override
     public Conference getNode(){

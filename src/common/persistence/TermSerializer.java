@@ -10,7 +10,9 @@ public class TermSerializer extends NodeSerializer {
         super(node);
     }
 
-    public TermSerializer(String data) { super(data); }
+    public TermSerializer(String data) {
+        super(data);
+    }
 
     @Override
     public Term getNode() {
