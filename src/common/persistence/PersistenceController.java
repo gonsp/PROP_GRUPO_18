@@ -10,6 +10,8 @@ import java.util.List;
 import common.domain.Graph;
 import common.domain.GraphException;
 import common.domain.Node;
+import common.domain.NodeType;
+
 
 public class PersistenceController {
 
@@ -36,21 +38,21 @@ public class PersistenceController {
         return toReturn;
     }
 
-    public void importNodes(Graph g, String path, String ntype) throws GraphException {
+    public void importNodes(Graph g, String path, NodeType type) throws GraphException {
         List<String> strings = readFile(path);
         for (String s : strings) {
             NodeSerializer serializer = null;
-            switch (ntype) {
-                case "Author":
+            switch (type) {
+                case AUTHOR:
                     serializer = new AuthorSerializer(s);
                     break;
-                case "Conference":
+                case CONFERENCE:
                     serializer = new ConferenceSerializer(s);
                     break;
-                case "Paper":
+                case PAPER:
                     serializer = new PaperSerializer(s);
                     break;
-                case "Term":
+                case TERM:
                     serializer = new TermSerializer(s);
                     break;
             }
@@ -59,16 +61,27 @@ public class PersistenceController {
         }
     }
 
-    public void importEdges(Graph g, String path, String ntype1, String ntype2) throws GraphException {
+    public void importEdges(Graph g, String path, NodeType type1, NodeType type2) throws GraphException {
         List<String> strings = readFile(path);
         for (String s : strings) {
             String etype = null;
-            if (ntype1.equals("Author") && ntype2.equals("Label")) {
+            if (type1.equals(NodeType.AUTHOR) && type2.equals(NodeType.LABEL)) {
                 etype = "AuthorLabel";
-            } else if (ntype1.equals("Conference") && ntype2.equals("Label")){
+            } else if (type1.equals(NodeType.CONFERENCE) && type2.equals(NodeType.LABEL)) {
                 etype = "ConferenceLabel";
-            } // so on...
-            EdgeSerializer serializer = new EdgeSerializer(s, etype);
+            } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.AUTHOR)) {
+                etype = "PaperAuthor";
+            } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.CONFERENCE)) {
+                etype = "PaperConference";
+            } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.LABEL)) {
+                etype = "PaperLabel";
+            } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.TERM)) {
+                etype = "PaperTerm";
+            }
+            EdgeSerializer serializer = new EdgeSerializer(g, s, etype, type1, type2);
+            Node node1 = serializer.getNode1();
+            Node node2 = serializer.getNode2();
+            //g.addRelation()
         }
     }
 

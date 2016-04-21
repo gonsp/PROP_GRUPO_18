@@ -14,7 +14,7 @@ public abstract class NodeSerializer implements Serializable {
     protected String name;
 
     protected void inflate() {
-        if (data != null) {
+        if (node == null && data != null) {
             int m = data.indexOf(" ");
             nodeId = Integer.parseInt(data.substring(0, m - 1));
             name = data.substring(m + 1, data.length() - 1).trim();
@@ -22,7 +22,7 @@ public abstract class NodeSerializer implements Serializable {
     }
 
     protected void deflate() {
-        if (node != null) {
+        if (data == null && node != null) {
             data = new String();
             data.concat(String.valueOf(node.getId()));
             data.concat(" ");
@@ -38,7 +38,6 @@ public abstract class NodeSerializer implements Serializable {
         this.data = data;
     }
 
-    // TODO: Handle exception when it does not have data
     public String getData() {
         this.deflate();
         return data;
