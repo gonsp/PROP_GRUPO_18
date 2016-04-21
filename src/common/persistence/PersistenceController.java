@@ -1,9 +1,6 @@
 package common.persistence;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +33,21 @@ public class PersistenceController {
             }
         }
         return toReturn;
+    }
+
+    private void writeFile(String path){
+        PrintWriter writer = null;
+        try {
+            String filePath = new File(path).getAbsolutePath();
+            writer = new PrintWriter(filePath, "UTF-8");
+            writer.println("The first line");
+            writer.println("The second line");
+            writer.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 
     public void importNodes(Graph g, String path, NodeType type) throws GraphException {
@@ -86,6 +98,19 @@ public class PersistenceController {
             Node node2 = serializer.getNode2();
             //g.addRelation()
         }
+    }
+
+    public void exportNodes(Graph g, String path){
+
+    }
+
+    public void exportEdges(Graph g, String path){
+
+    }
+
+    public void exportGraph(Graph g, String path){
+        exportNodes(g, path);
+        exportEdges(g, path);
     }
 
 }
