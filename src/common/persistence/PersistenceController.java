@@ -49,6 +49,9 @@ public class PersistenceController {
                 case CONFERENCE:
                     serializer = new ConferenceSerializer(s);
                     break;
+                case LABEL:
+                    serializer = new LabelSerializer(s);
+                    break;A
                 case PAPER:
                     serializer = new PaperSerializer(s);
                     break;
