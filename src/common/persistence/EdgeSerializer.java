@@ -1,9 +1,9 @@
 package common.persistence;
 
-import common.domain.Graph;
-import common.domain.GraphException;
-import common.domain.Node;
-import common.domain.NodeType;
+import common.domain.graph.Graph;
+import common.domain.graph.GraphException;
+import common.domain.graph.Node;
+import common.domain.graph.NodeType;
 
 import java.io.Serializable;
 

@@ -1,5 +1,7 @@
 package common.domain;
 
+import common.domain.graph.*;
+
 import java.util.ArrayList;
 
 

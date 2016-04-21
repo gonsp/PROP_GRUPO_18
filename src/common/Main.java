@@ -1,7 +1,7 @@
 package common;
 
-import common.domain.Graph;
-import common.domain.GraphException;
+import common.domain.graph.Graph;
+import common.domain.graph.GraphException;
 import common.persistence.PersistenceController;
 
 

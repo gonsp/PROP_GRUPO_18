@@ -11,31 +11,31 @@ public class NodeContainer {
     private HashMap<Integer, Node> nodes;
 
     //Constructors
-    public NodeContainer() {
+    protected NodeContainer() {
         nodes = new HashMap<Integer, Node>();
         lastID = 1;
     }
 
     //Set & Get
-    public int getSize() {
+    protected int getSize() {
         return nodes.size();
     }
 
-    public int getLastID() {
+    protected int getLastID() {
         return lastID;
     }
 
-    public NodeContainerIterator getIterator() {
-        return new Node;
+    protected NodeContainerIterator getIterator() {
+        return new NodeContainerIterator(this);
     }
 
     //Queries
-    public void addNode(Node n) {
+    protected void addNode(Node n) {
         n.setID(lastID);
         nodes.put(lastID++, n);
     }
 
-    public void addNode(Node n, int ID) throws GraphException {
+    protected void addNode(Node n, int ID) throws GraphException {
         if (!checkNewID(ID)) {
         	throw new GraphException(GraphExceptionError.ID_INVALID);
         } else if (nodes.containsKey(ID)) {
@@ -46,7 +46,7 @@ public class NodeContainer {
         }
     }
 
-    public void removeNode(int ID) throws GraphException {
+    protected void removeNode(int ID) throws GraphException {
         if (!checkID(ID)) {
         	throw new GraphException(GraphExceptionError.ID_INVALID);
         } else if (nodes.containsKey(ID)) {
@@ -56,7 +56,7 @@ public class NodeContainer {
         }
     }
 
-    public Node getNode(int ID) throws GraphException {
+    protected Node getNode(int ID) throws GraphException {
         if (!checkID(ID)) {
         	throw new GraphException(GraphExceptionError.ID_INVALID);
         } else if (nodes.containsKey(ID)) {

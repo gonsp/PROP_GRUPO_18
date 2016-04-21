@@ -1,8 +1,8 @@
 package common.persistence;
 
 
-import common.domain.Node;
-import common.domain.Term;
+import common.domain.graph.Node;
+import common.domain.graph.Term;
 
 public class TermSerializer extends NodeSerializer {
 

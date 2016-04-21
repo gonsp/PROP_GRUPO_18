@@ -37,11 +37,11 @@ public abstract class Node {
         return value;
     }
 
-    public void addRelation(int relationID, int nodeID) {
+    protected void addRelation(int relationID, int nodeID) {
         relations.get(relationID).add(nodeID);
     }
 
-    public void removeRelation(int relationID, int nodeID) {
+    protected void removeRelation(int relationID, int nodeID) {
         relations.get(relationID).remove(nodeID);
     }
 
