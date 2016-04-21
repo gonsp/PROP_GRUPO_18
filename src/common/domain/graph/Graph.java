@@ -1,12 +1,15 @@
 package common.domain.graph;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Graph {
     //Attributes
     private String name;
     private HashMap<NodeType, NodeContainer> containters;
+    private HashMap<Integer, Relation> relations;
+    private
 
     //Constructors
     public Graph() {
@@ -53,25 +56,38 @@ public class Graph {
         return getNodeContainer(type).getNode(id);
     }
 
-    public void addRelation(int idRelation, Node a, Node b) {
-        a.addRelation(idRelation, b.getId());
-        b.addRelation(idRelation, a.getId());
+    public ArrayList<Node> getRelations(int relationID, Node node) {
+        ArrayList<Integer> relations = node.getRelations(relationID);
+        ArrayList<Node> result = new ArrayList<Node>();
+        for(int i = 0; i < relations.size(); ++i) {
+            result.add(getNode(getNodeType()));
+        }
+        return result;
     }
 
-    public void addRelation(int idRelation, NodeType typeA, int idA, NodeType typeB, int idB) throws GraphException {
+    public ArrayList<Node> getRelations(int relationID, NodeType type, int id) throws GraphException {
+        return getRelations(relationID, getNode(type, id));
+    }
+
+    public void addRelation(int relationID, Node a, Node b) {
+        a.addRelation(relationID, b.getId());
+        b.addRelation(relationID, a.getId());
+    }
+
+    public void addRelation(int relationID, NodeType typeA, int idA, NodeType typeB, int idB) throws GraphException {
         if(typeA == typeB && idA == idB) {
             throw new GraphException(GraphExceptionError.ID_EQUAL);
         }
-        addRelation(idRelation, getNodeContainer(typeA).getNode(idA), getNodeContainer(typeB).getNode(idB));
+        addRelation(relationID, getNodeContainer(typeA).getNode(idA), getNodeContainer(typeB).getNode(idB));
     }
 
-    public void removeRelation(int idRelation, Node a, Node b) {
-        a.removeRelation(idRelation, b.getId());
-        b.removeRelation(idRelation, a.getId());
+    public void removeRelation(int relationID, Node a, Node b) {
+        a.removeRelation(relationID, b.getId());
+        b.removeRelation(relationID, a.getId());
     }
 
-    public void removeRelation(int idRelation, NodeType typeA, int idA, NodeType typeB, int idB) throws GraphException {
-        removeRelation(idRelation, getNodeContainer(typeA).getNode(idA), getNodeContainer(typeB).getNode(idB));
+    public void removeRelation(int relationID, NodeType typeA, int idA, NodeType typeB, int idB) throws GraphException {
+        removeRelation(relationID, getNodeContainer(typeA).getNode(idA), getNodeContainer(typeB).getNode(idB));
     }
 
     public NodeContainer.NodeContainerIterator getIterator(NodeType type) throws GraphException {

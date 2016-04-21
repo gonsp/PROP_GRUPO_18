@@ -1,5 +1,6 @@
 package common.domain.graph;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -18,11 +19,12 @@ public abstract class Node {
 
     public Node(String value) {
         this.nodeID = -1;
+        this.value = value;
     }
 
     public Node(int nodeID, String value) {
-        this.value = value;
         this.nodeID = nodeID;
+        this.value = value;
     }
 
     public int getId() {
@@ -45,12 +47,18 @@ public abstract class Node {
         relations.get(relationID).remove(nodeID);
     }
 
-    public Boolean isRelated(int relationID, int nodeID) {
+    public boolean isRelated(int relationID, int nodeID) {
         return relations.get(relationID).contains(nodeID);
     }
 
-    public Set<Integer> getRelations(int relationID) {
-        return relations.get(relationID);
+    public boolean isRelated(int relationID, Node node) {
+        return relations.get(relationID).contains(node.getId());
+    }
+
+    protected ArrayList<Integer> getRelations(int relationID) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        result.addAll(relations.get(relationID));
+        return result;
     }
 
     public void setID(int nodeID) {

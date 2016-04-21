@@ -1,5 +1,7 @@
 package common.domain.search;
 
+import common.domain.graph.Relation;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 

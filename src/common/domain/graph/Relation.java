@@ -1,4 +1,4 @@
-package common.domain.search;
+package common.domain.graph;
 
 import common.domain.graph.NodeType;
 

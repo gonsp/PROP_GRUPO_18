@@ -15,6 +15,9 @@ public class SimpleSearch {
         NodeContainer.NodeContainerIterator iterator = graph.getIterator(nodeType);
         while(iterator.hasNext()) {
             Node aux = iterator.next().getValue();
+            if(aux.getValue() == null) {
+                System.out.println("nullllllll");
+            }
             if(aux.getValue().toLowerCase().contains(filtro)) {
                 result.add(aux);
             }

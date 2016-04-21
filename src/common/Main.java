@@ -1,8 +1,10 @@
 package common;
 
-import common.domain.graph.Graph;
-import common.domain.graph.GraphException;
+import common.domain.graph.*;
+import common.domain.search.SimpleSearch;
 import common.persistence.PersistenceController;
+
+import java.util.ArrayList;
 
 
 public class Main {
@@ -11,6 +13,17 @@ public class Main {
 
         Graph g = new Graph();
         PersistenceController pc = new PersistenceController();
+
+        Author test = new Author("pepe");
+
+        g.addNode(test);
+
+        SimpleSearch search = new SimpleSearch(g, NodeType.AUTHOR, "pep");
+        ArrayList<Node> result = search.getResult();
+        for(int i = 0; i < result.size(); ++i) {
+            System.out.println(result.get(i).getValue());
+        }
+
         //pc.importNodes(g, "data/author.txt", "Author");
         //pc.importEdges(g, "data/author_label.txt", "Author", "Label");
 
