@@ -7,8 +7,6 @@ import common.domain.Node;
 
 public abstract class NodeSerializer implements Serializable {
 
-    // TODO: Controlar a inflate/defalte quan no hi ha data o node
-
     protected Node node = null;
     protected String data = null;
 
@@ -16,7 +14,7 @@ public abstract class NodeSerializer implements Serializable {
     protected String name;
 
     protected void inflate() {
-        if (node == null) {
+        if (node == null && data != null) {
             int m = data.indexOf('\t');
             nodeId = Integer.parseInt(data.substring(0,m-1));
             name = data.substring(m+1);
@@ -24,9 +22,9 @@ public abstract class NodeSerializer implements Serializable {
     }    
 
     protected void deflate() {
-        if (data == null) {
+        if (data == null && node != null) {
             data = new String();
-            data.concat(node.getNodeId().toString());
+            data.concat(String.valueOf(node.getId()));
             data.concat("\t");
             data.concat(node.getName());
         }
