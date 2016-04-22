@@ -1,4 +1,4 @@
-package common.domain.graph;
+package common.domain;
 
 public class Relation extends Element{
 	//Attributes
@@ -21,19 +21,19 @@ public class Relation extends Element{
 		value = name;
 	}
 	
-	public NodeType getNodeTypeA() {
+	protected NodeType getNodeTypeA() {
 		return A;
 	}
-	
-	public void setNodeTypeA(NodeType A) {
+
+	protected void setNodeTypeA(NodeType A) {
 		this.A = A;
 	}
-	
-	public NodeType getNodeTypeB() {
+
+	protected NodeType getNodeTypeB() {
 		return B;
 	}
-	
-	public void setNodeTypeB(NodeType B) {
+
+	protected void setNodeTypeB(NodeType B) {
 		this.B = B;
 	}
 }

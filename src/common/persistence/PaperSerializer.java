@@ -1,8 +1,8 @@
 package common.persistence;
 
 
-import common.domain.graph.Node;
-import common.domain.graph.Paper;
+import common.domain.Node;
+import common.domain.Paper;
 
 public class PaperSerializer extends NodeSerializer {
 

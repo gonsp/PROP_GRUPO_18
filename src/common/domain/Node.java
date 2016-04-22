@@ -1,4 +1,4 @@
-package common.domain.graph;
+package common.domain;
 
 import java.util.ArrayList;
 import java.util.HashMap;

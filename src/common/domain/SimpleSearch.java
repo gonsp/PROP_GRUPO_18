@@ -1,6 +1,4 @@
-package common.domain.search;
-
-import common.domain.graph.*;
+package common.domain;
 
 import java.util.ArrayList;
 

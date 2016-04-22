@@ -4,10 +4,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import common.domain.graph.Graph;
-import common.domain.graph.GraphException;
-import common.domain.graph.Node;
-import common.domain.graph.NodeType;
+import common.domain.Graph;
+import common.domain.GraphException;
+import common.domain.Node;
+import common.domain.NodeType;
 
 
 public class PersistenceController {

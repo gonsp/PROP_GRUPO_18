@@ -1,4 +1,4 @@
-package common.domain.graph;
+package common.domain;
 
 
 public enum NodeType {

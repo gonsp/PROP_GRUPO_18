@@ -1,8 +1,8 @@
 package common.persistence;
 
 
-import common.domain.graph.Conference;
-import common.domain.graph.Node;
+import common.domain.Conference;
+import common.domain.Node;
 
 public class ConferenceSerializer extends NodeSerializer {
 

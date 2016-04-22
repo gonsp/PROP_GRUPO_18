@@ -1,6 +1,6 @@
 package common.persistence;
 
-import common.domain.graph.Label;
+import common.domain.Label;
 
 
 public class LabelSerializer extends NodeSerializer {

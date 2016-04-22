@@ -1,6 +1,6 @@
 package common.persistence;
 
-import common.domain.graph.Author;
+import common.domain.Author;
 
 
 public class AuthorSerializer extends NodeSerializer {

@@ -1,4 +1,4 @@
-package common.domain.graph;
+package common.domain;
 
 public abstract class Element {
 
@@ -24,7 +24,7 @@ public abstract class Element {
         return id;
     }
 
-    public void setId(int id) {
+    protected void setId(int id) {
         this.id = id;
     }
 

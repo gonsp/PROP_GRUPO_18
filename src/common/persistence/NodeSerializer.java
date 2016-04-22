@@ -2,7 +2,7 @@ package common.persistence;
 
 import java.io.Serializable;
 
-import common.domain.graph.Node;
+import common.domain.Node;
 
 
 public abstract class NodeSerializer implements Serializable {
