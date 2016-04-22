@@ -18,9 +18,10 @@ public class RelationalSearch {
     private DoubleMatrix getNormalizedMatrix(Relation relation, boolean normalize_rows) {
         DoubleMatrix matrix = DoubleMatrix.zeros(graph.getSize(relation.getNodeTypeA()), graph.getSize(relation.getNodeTypeB()));
         Container<Node>.ContainerIterator iteratorA = graph.getNodeIterator(relation.getNodeTypeA());
-        Container<Node>.ContainerIterator iteratorB = graph.getNodeIterator(relation.getNodeTypeB());
+        Container<Node>.ContainerIterator iteratorB;
         for(int i = 0; i < matrix.getRows(); ++i) {
             Node a = iteratorA.next().getValue();
+            iteratorB = graph.getNodeIterator(relation.getNodeTypeB());
             for(int j = 0; j < matrix.getColumns(); ++j) {
                 Node b = iteratorB.next().getValue();
                 if(a.isRelated(relation.getId(), b)) {
