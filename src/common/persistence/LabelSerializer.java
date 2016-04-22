@@ -5,8 +5,6 @@ import common.domain.graph.Label;
 
 public class LabelSerializer extends NodeSerializer {
 
-    private int labelId;
-
     public LabelSerializer(Label node) {
         super(node);
     }
@@ -18,7 +16,10 @@ public class LabelSerializer extends NodeSerializer {
     @Override
     public void inflate() {
         if(data != null){
-            int m = data.indexOf(" ");
+            int m = data.indexOf("\t");
+            if (m == -1) {
+                m = data.indexOf(" ");
+            }
             nodeId = Integer.parseInt(data.substring(0, m-1));
             name = data.substring(m + 3, data.length() - 1).trim();
         }
