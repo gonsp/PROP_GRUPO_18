@@ -20,7 +20,7 @@ public abstract class NodeSerializer implements Serializable {
                 m = data.indexOf(" ");
             }
             nodeId = Integer.parseInt(data.substring(0, m));
-            name = data.substring(m + 1, data.length());
+            name = data.substring(m + 1, data.length()).trim();
         }
     }
 

@@ -28,6 +28,9 @@ public class Main {
         DoubleMatrix m = new DoubleMatrix(10, 10);
 
         pc.importNodes(g, "data/author.txt", NodeType.AUTHOR);
+        pc.importNodes(g, "data/conf.txt", NodeType.CONFERENCE);
+        pc.importNodes(g, "data/paper.txt", NodeType.PAPER);
+        pc.importNodes(g, "data/term.txt", NodeType.TERM);
         //pc.importEdges(g, "data/author_label.txt", "Author", "Label");
 
     }
