@@ -25,11 +25,9 @@ public class Main {
             System.out.println(result.get(i).getValue());
         }
 
-
         DoubleMatrix m = new DoubleMatrix(10, 10);
 
-
-        //pc.importNodes(g, "data/author.txt", "Author");
+        pc.importNodes(g, "data/author.txt", NodeType.AUTHOR);
         //pc.importEdges(g, "data/author_label.txt", "Author", "Label");
 
     }
