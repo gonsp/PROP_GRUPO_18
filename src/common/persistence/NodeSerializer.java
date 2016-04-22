@@ -15,9 +15,12 @@ public abstract class NodeSerializer implements Serializable {
 
     protected void inflate() {
         if (node == null && data != null) {
-            int m = data.indexOf(" ");
-            nodeId = Integer.parseInt(data.substring(0, m - 1));
-            name = data.substring(m + 1, data.length() - 1).trim();
+            int m = data.indexOf("\t");
+            if(m == -1){
+                m = data.indexOf(" ");
+            }
+            nodeId = Integer.parseInt(data.substring(0, m));
+            name = data.substring(m + 1, data.length()).trim();
         }
     }
 
@@ -25,7 +28,7 @@ public abstract class NodeSerializer implements Serializable {
         if (data == null && node != null) {
             data = new String();
             data.concat(String.valueOf(node.getId()));
-            data.concat(" ");
+            data.concat("\t");
             data.concat(node.getValue());
         }
     }

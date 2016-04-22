@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public abstract class Node extends Element{
+public abstract class Node extends Element {
     //Attributes
     private HashMap<Integer, HashSet<Integer>> relations;
 

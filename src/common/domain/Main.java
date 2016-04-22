@@ -23,11 +23,12 @@ public class Main {
             System.out.println(result.get(i).getValue());
         }
 
-
         DoubleMatrix m = new DoubleMatrix(10, 10);
 
-
-        //pc.importNodes(g, "data/author.txt", "Author");
+        pc.importNodes(g, "data/author.txt", NodeType.AUTHOR);
+        pc.importNodes(g, "data/conf.txt", NodeType.CONFERENCE);
+        pc.importNodes(g, "data/paper.txt", NodeType.PAPER);
+        pc.importNodes(g, "data/term.txt", NodeType.TERM);
         //pc.importEdges(g, "data/author_label.txt", "Author", "Label");
         //TODO implementar relation nula en medio de relationStructure cuando es impar
         //TODO método públio en grafo para acceder a getIdFromValue de container

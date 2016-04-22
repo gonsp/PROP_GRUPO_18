@@ -72,7 +72,7 @@ public class PersistenceController {
                     break;
             }
             Node node = serializer.getNode();
-            //g.addNode(node, serializer.getId());
+            g.addNode(node, serializer.getId());
         }
     }
 
