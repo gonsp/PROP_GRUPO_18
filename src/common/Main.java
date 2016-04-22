@@ -1,5 +1,6 @@
-package common.domain;
+package common;
 
+import common.domain.*;
 import common.persistence.PersistenceController;
 import org.jblas.DoubleMatrix;
 

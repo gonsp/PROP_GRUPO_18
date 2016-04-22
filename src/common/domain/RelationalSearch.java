@@ -15,6 +15,7 @@ public class RelationalSearch {
     public RelationalSearch(Graph graph, RelationStructure rs) {
         this.graph = graph;
         this.rs = rs;
+        results = new ArrayList<Result>();
         edgesID = new HashMap<String, Integer>();
     }
 
@@ -37,7 +38,19 @@ public class RelationalSearch {
     }
 
     public void search() {
-        DoubleMatrix res = hetesim();
+        DoubleMatrix matrix = hetesim();
+        //TODO normalize hetesim
+        Container<Node>.ContainerIterator iteratorA = graph.getNodeIterator(rs.get(0).getNodeTypeA());
+        for(int i = 0; i < matrix.getRows(); ++i) {
+            Node nodeA = iteratorA.next().getValue();
+            Container<Node>.ContainerIterator iteratorB = graph.getNodeIterator(rs.get(rs.size()-1).getNodeTypeB());
+            for(int j = 0; j < matrix.getColumns(); ++j) {
+                Node nodeB = iteratorB.next().getValue();
+                if(matrix.get(i, j) > 0) {
+                    results.add(new Result(nodeA, nodeB, matrix.get(i, j)));
+                }
+            }
+        }
     }
 
     private DoubleMatrix getNormalizedMatrix(Relation relation, boolean normalize_rows) {
@@ -65,27 +78,44 @@ public class RelationalSearch {
 
     private DoubleMatrix getNormalizedEdgeLeftMatrix(Relation edgeRelation) {
         DoubleMatrix edgeMatrixA = DoubleMatrix.zeros(graph.getSize(edgeRelation.getNodeTypeA()), getColumnsEdgeMatrix(edgeRelation));
-        int i = 0;
-        int j = 0;
-        Container<Node>.ContainerIterator iteratorA = graph.getNodeIterator(edgeRelation.getNodeTypeA());
-        while(iteratorA.hasNext()) {
-            Node nodeA = iteratorA.next().getValue();
-            Container<Node>.ContainerIterator iteratorB = graph.getNodeIterator(edgeRelation.getNodeTypeB()); //TODO MAAAAAAAL
-            for(int k = 0; k < nodeA.getSizeEdges(edgeRelation.getId()); ++k) {
-                Node nodeB = iteratorB.next().getValue();
-                edgesID.put(String.valueOf(nodeA.getId()).concat(String.valueOf(nodeB.getId())), j);
-                edgeMatrixA.put(i, j, 1./nodeA.getSizeEdges(edgeRelation.getId()));
-                ++j;
+        try {
+            int i = 0;
+            int j = 0;
+            Container<Node>.ContainerIterator iteratorA = graph.getNodeIterator(edgeRelation.getNodeTypeA());
+            while(iteratorA.hasNext()) {
+                Node nodeA = iteratorA.next().getValue();
+                ArrayList<Node> connected = graph.getEdges(edgeRelation.getId(), nodeA);
+                for(int iteratorB = 0; iteratorB < nodeA.getSizeEdges(edgeRelation.getId()); ++iteratorB) {
+                    Node nodeB = connected.get(iteratorB);
+                    edgesID.put(String.valueOf(nodeA.getId()).concat(String.valueOf(nodeB.getId())), j);
+                    edgeMatrixA.put(i, j, 1./nodeA.getSizeEdges(edgeRelation.getId()));
+                    ++j;
+                }
+                ++i;
             }
-            ++i;
+        } catch (GraphException e) {
+            e.printStackTrace();
         }
         return edgeMatrixA;
     }
 
     private DoubleMatrix getNormalizedEdgeRightMatrix(Relation edgeRelation) {
         DoubleMatrix edgeMatrixB = DoubleMatrix.zeros(edgesID.size(), graph.getSize(edgeRelation.getNodeTypeB()));
-        Container<Node>.ContainerIterator iteratorB = graph.getNodeIterator(edgeRelation.getNodeTypeB());
-        //TODO ACABAAAAAAR
+        try {
+            Container<Node>.ContainerIterator iteratorB = graph.getNodeIterator(edgeRelation.getNodeTypeB());
+            int j = 0;
+            while(iteratorB.hasNext()) {
+                Node nodeB = iteratorB.next().getValue();
+                ArrayList<Node> connected = graph.getEdges(edgeRelation.getId(), nodeB);
+                for(int iteratorA = 0; iteratorA < nodeB.getSizeEdges(edgeRelation.getId()); ++iteratorA) {
+                    Node nodeA = connected.get(iteratorA);
+                    edgeMatrixB.put(edgesID.get(String.valueOf(nodeA.getId()).concat(String.valueOf(nodeB.getId()))), j, 1./nodeB.getSizeEdges(edgeRelation.getId()));
+                }
+                ++j;
+            }
+        } catch(GraphException e) {
+            e.printStackTrace();
+        }
         return edgeMatrixB;
     }
 

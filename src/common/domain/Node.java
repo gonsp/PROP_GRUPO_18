@@ -3,6 +3,7 @@ package common.domain;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 
 public abstract class Node extends Element {
     //Attributes
@@ -38,7 +39,7 @@ public abstract class Node extends Element {
         return relations.get(relationID).contains(node.getId());
     }
 
-    protected ArrayList<Integer> getEdges(int relationID) {
+    protected ArrayList<Integer> getEdges(int relationID) { //TODO sustituir esto por getIterator(). Más eficiente
         ArrayList<Integer> result = new ArrayList<Integer>();
         result.addAll(relations.get(relationID));
         return result;
