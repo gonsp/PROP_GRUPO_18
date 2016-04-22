@@ -44,6 +44,10 @@ public abstract class Node extends Element {
         return result;
     }
 
+    public int getSizeEdges(int relationID) {
+        return relations.get(relationID).size();
+    }
+
     protected void addRelation(Relation relation) {
         relations.put(relation.getId(), new HashSet<Integer>());
     }

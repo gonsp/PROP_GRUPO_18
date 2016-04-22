@@ -35,7 +35,7 @@ public class Graph {
         this.name = name;
     }
 
-    public int getSize(NodeType type) throws GraphException {
+    public int getSize(NodeType type) {
         return getNodeContainer(type).getSize();
     }
 

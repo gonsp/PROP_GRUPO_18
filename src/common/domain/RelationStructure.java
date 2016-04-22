@@ -15,13 +15,13 @@ public class RelationStructure extends ArrayList<Relation> {
         }
 	}
 
-	public RelationStructure(NodeType A, Relation[] r, NodeType B) throws RelationStructureException {
-		this(A, (ArrayList<Relation>)Arrays.asList(r), B);
+	public RelationStructure(NodeType from, Relation[] r, NodeType to) throws RelationStructureException {
+		this(from, (ArrayList<Relation>)Arrays.asList(r), to);
 	}
 
-    /*public RelationStructure(Graph graph, int[] ids) throws RelationStructureException {
-        this(getArrayList(graph, ids));
-    }*/
+    public RelationStructure(Graph graph, NodeType from, int[] ids, NodeType to) throws RelationStructureException {
+        this(from, getArrayList(graph, ids), to);
+    }
 
     private boolean setOrder(NodeType from, int i, NodeType to) {
         if(i == size()) {
@@ -53,5 +53,4 @@ public class RelationStructure extends ArrayList<Relation> {
         }
         return relations;
     }
-
 }
