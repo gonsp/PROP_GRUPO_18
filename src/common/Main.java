@@ -19,11 +19,11 @@ public class Main {
         pc.importNodes("data/paper.txt", NodeType.PAPER);
         pc.importNodes("data/term.txt", NodeType.TERM);
         pc.importEdges("data/author_label.txt", NodeType.AUTHOR, NodeType.LABEL);
-        //pc.importEdges("data/conf_label.txt", NodeType.CONFERENCE, NodeType.LABEL);
-        //pc.importEdges("data/paper_author.txt", NodeType.PAPER, NodeType.AUTHOR);
-        //pc.importEdges("data/paper_conf.txt", NodeType.PAPER, NodeType.CONFERENCE);
-        //pc.importEdges("data/paper_label.txt", NodeType.PAPER, NodeType.LABEL);
-        //pc.importEdges("data/paper_term.txt", NodeType.PAPER, NodeType.TERM);
+        pc.importEdges("data/conf_label.txt", NodeType.CONFERENCE, NodeType.LABEL);
+        pc.importEdges("data/paper_author.txt", NodeType.PAPER, NodeType.AUTHOR);
+        pc.importEdges("data/paper_conf.txt", NodeType.PAPER, NodeType.CONFERENCE);
+        pc.importEdges("data/paper_label.txt", NodeType.PAPER, NodeType.LABEL);
+        pc.importEdges("data/paper_term.txt", NodeType.PAPER, NodeType.TERM);
         //pc.exportNodes("out/");
 
 
@@ -53,7 +53,7 @@ public class Main {
         g.addEdge(AP.getId(), a2, p2);
         g.addEdge(AP.getId(), a2, p3);
         g.addEdge(AP.getId(), a2, p4);
-        g.addEdge(AP.getId(), a3, p4);*/
+        g.addEdge(AP.getId(), a3, p4);*//*
 
         Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
 
@@ -71,7 +71,7 @@ public class Main {
             }
         } catch (RelationStructureException e) {
             e.printStackTrace();
-        }
+        }*/
 
 
 

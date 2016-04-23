@@ -71,55 +71,60 @@ public class PersistenceController {
                 case AUTHOR:
                     AuthorSerializer as = new AuthorSerializer(s);
                     Author author = (Author) graph.createNode(type, as.getId(), as.getName());
-                    graph.addNode(author);
+                    graph.addNode(author, as.getId());
                     break;
                 case CONFERENCE:
                     ConferenceSerializer cs = new ConferenceSerializer(s);
                     Conference conference = (Conference) graph.createNode(type, cs.getId(), cs.getName());
-                    graph.addNode(conference);
+                    graph.addNode(conference, cs.getId());
                     break;
                 case PAPER:
                     PaperSerializer ps = new PaperSerializer(s);
                     Paper paper = (Paper) graph.createNode(type, ps.getId(), ps.getName());
-                    graph.addNode(paper);
+                    graph.addNode(paper, ps.getId());
                     break;
                 case TERM:
                     TermSerializer ts = new TermSerializer(s);
                     Term term = (Term) graph.createNode(type, ts.getId(), ts.getName());
-                    graph.addNode(term);
+                    graph.addNode(term, ts.getId());
                     break;
             }
         }
     }
 
-    public void importEdges(String path, NodeType type1, NodeType type2) throws GraphException {
+    public void importEdges(String path, NodeType type1, NodeType type2) {
         List<String> strings = readFile(path);
         for (String s : strings) {
             int relId = -1;
             EdgeSerializer serializer = null;
             if (type1.equals(NodeType.AUTHOR) && type2.equals(NodeType.LABEL)) {
-                relId = 4;
+                relId = 3;
                 serializer = new LabelSerializer(graph, s, type1, type2);
             } else if (type1.equals(NodeType.CONFERENCE) && type2.equals(NodeType.LABEL)) {
-                relId = 6;
-                serializer = new LabelSerializer(graph, s, type1, type2);
-            } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.AUTHOR)) {
-                relId = 1;
-                serializer = new EdgeSerializer(graph, s, type1, type2);
-            } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.CONFERENCE)) {
-                relId = 2;
-                serializer = new EdgeSerializer(graph, s, type1, type2);
-            } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.LABEL)) {
                 relId = 5;
                 serializer = new LabelSerializer(graph, s, type1, type2);
+            } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.AUTHOR)) {
+                relId = 0;
+                serializer = new EdgeSerializer(graph, s, type1, type2);
+            } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.CONFERENCE)) {
+                relId = 1;
+                serializer = new EdgeSerializer(graph, s, type1, type2);
+            } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.LABEL)) {
+                relId = 4;
+                serializer = new LabelSerializer(graph, s, type1, type2);
             } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.TERM)) {
-                relId = 3;
+                relId = 2;
                 serializer = new EdgeSerializer(graph, s, type1, type2);
             }
-            Node node1 = serializer.getNode1();
-            Node node2 = serializer.getNode2();
-            graph.addEdge(relId, node1, node2);
+            try {
+                Node node1 = serializer.getNode1();
+                Node node2 = serializer.getNode2();
+                graph.addEdge(relId, node1, node2);
+            } catch (GraphException e) {
+                e.printStackTrace();
+            }
         }
+        System.out.println("Hola");
     }
 
     public void exportNodes(String path) {

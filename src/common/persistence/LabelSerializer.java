@@ -11,7 +11,7 @@ public class LabelSerializer extends EdgeSerializer {
     }
 
     @Override
-    protected void inflate() throws GraphException {
+    protected void inflate() {
         if (graph != null && data != null) {
             int m = data.indexOf("\t");
             if (m == -1) {
@@ -19,8 +19,12 @@ public class LabelSerializer extends EdgeSerializer {
             }
             int id1 = Integer.parseInt(data.substring(0, m));
             int id2 = Integer.parseInt(data.substring(m + 1, m + 2));
-            node1 = graph.getNode(ntype1, id1);
-            node2 = graph.getNode(ntype2, id2);
+            try {
+                node1 = graph.getNode(ntype1, id1);
+                node2 = graph.getNode(ntype2, id2);
+            } catch (GraphException e) {
+                e.printStackTrace();
+            }
         }
     }
 
