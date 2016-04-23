@@ -15,6 +15,7 @@ public class Matrix {
     public double get(int i, int j) {
         if(i >= 0 && i < n && j > 0 && j < m) {
             return 0;
+            //int res = binarySearch();
         } else {
             return -1;
         }
@@ -27,6 +28,10 @@ public class Matrix {
     public int getColumns() {
         return m;
     }
+/*
+    private int binarySearch(ArrayList<Cell> row, int j) {
+
+    }*/
 
 
     private class Cell {
