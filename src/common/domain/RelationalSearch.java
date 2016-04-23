@@ -1,7 +1,5 @@
 package common.domain;
 
-import org.jblas.DoubleMatrix;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -19,30 +17,34 @@ public class RelationalSearch {
         edgesID = new HashMap<String, Integer>();
     }
 
-    private DoubleMatrix i_hetesim(int i, int j, boolean normalize_rows) {
+    private Matrix i_hetesim(int i, int j, boolean normalize_rows) {
         if(i >= j) {
             return getNormalizedMatrix(rs.get(i), normalize_rows);
         } else {
             int m = (j-i+1)/2;
-            return i_hetesim(0, m-1, normalize_rows).mmul(i_hetesim(m, rs.size()-1, normalize_rows));
+            return i_hetesim(0, m-1, normalize_rows).mul(i_hetesim(m, rs.size()-1, normalize_rows));
         }
     }
 
-    private DoubleMatrix hetesim() {
+    private Matrix hetesim() {
         int m = rs.size()/2;
         if(rs.size()%2 == 0) {
-            return i_hetesim(0, m-1, true).mmul(i_hetesim(m, rs.size()-1, false));
+            return i_hetesim(0, m-1, true).mul(i_hetesim(m, rs.size()-1, false));
         } else {
             if(rs.size() == 1) {
-                return getNormalizedEdgeLeftMatrix(rs.get(m)).mmul(getNormalizedEdgeRightMatrix(rs.get(m)));
+                Matrix left = getNormalizedEdgeLeftMatrix(rs.get(m));
+                Matrix right = getNormalizedEdgeRightMatrix(rs.get(m));
+                Matrix res = left.mul(right);
+                return res;
+                //return getNormalizedEdgeLeftMatrix(rs.get(m)).mul(getNormalizedEdgeRightMatrix(rs.get(m)));
             } else {
-                return i_hetesim(0, m-1, true).mmul(getNormalizedEdgeLeftMatrix(rs.get(m))).mmul(getNormalizedEdgeRightMatrix(rs.get(m))).mmul(i_hetesim(m, rs.size()-1, false));
+                return i_hetesim(0, m-1, true).mul(getNormalizedEdgeLeftMatrix(rs.get(m))).mul(getNormalizedEdgeRightMatrix(rs.get(m))).mul(i_hetesim(m, rs.size()-1, false));
             }
         }
     }
 
     public void search() {
-        DoubleMatrix matrix = hetesim();
+        Matrix matrix = hetesim();
         //TODO normalize hetesim
         Container<Node>.ContainerIterator iteratorA = graph.getNodeIterator(rs.get(0).getNodeTypeA());
         for(int i = 0; i < matrix.getRows(); ++i) {
@@ -57,8 +59,8 @@ public class RelationalSearch {
         }
     }
 
-    private DoubleMatrix getNormalizedMatrix(Relation relation, boolean normalize_rows) {
-        DoubleMatrix matrix = DoubleMatrix.zeros(graph.getSize(relation.getNodeTypeA()), graph.getSize(relation.getNodeTypeB()));
+    private Matrix getNormalizedMatrix(Relation relation, boolean normalize_rows) {
+        Matrix matrix = new Matrix(graph.getSize(relation.getNodeTypeA()), graph.getSize(relation.getNodeTypeB()));
         Container<Node>.ContainerIterator iteratorA = graph.getNodeIterator(relation.getNodeTypeA());
         Container<Node>.ContainerIterator iteratorB;
         for(int i = 0; i < matrix.getRows(); ++i) {
@@ -80,8 +82,8 @@ public class RelationalSearch {
         return matrix;
     }
 
-    private DoubleMatrix getNormalizedEdgeLeftMatrix(Relation edgeRelation) {
-        DoubleMatrix edgeMatrixA = DoubleMatrix.zeros(graph.getSize(edgeRelation.getNodeTypeA()), getColumnsEdgeMatrix(edgeRelation));
+    private Matrix getNormalizedEdgeLeftMatrix(Relation edgeRelation) {
+        Matrix edgeMatrixA = new Matrix(graph.getSize(edgeRelation.getNodeTypeA()), getColumnsEdgeMatrix(edgeRelation));
         try {
             int i = 0;
             int j = 0;
@@ -103,8 +105,8 @@ public class RelationalSearch {
         return edgeMatrixA;
     }
 
-    private DoubleMatrix getNormalizedEdgeRightMatrix(Relation edgeRelation) {
-        DoubleMatrix edgeMatrixB = DoubleMatrix.zeros(edgesID.size(), graph.getSize(edgeRelation.getNodeTypeB()));
+    private Matrix getNormalizedEdgeRightMatrix(Relation edgeRelation) {
+        Matrix edgeMatrixB = new Matrix(edgesID.size(), graph.getSize(edgeRelation.getNodeTypeB()));
         try {
             Container<Node>.ContainerIterator iteratorB = graph.getNodeIterator(edgeRelation.getNodeTypeB());
             int j = 0;

@@ -12,6 +12,11 @@ public class Matrix {
 
     public Matrix(int n, int m) {
         rows = new ArrayList[n];
+        for(int i = 0; i < n; ++i) {
+            rows[i] = new ArrayList<Cell>();
+        }
+        this.n = n;
+        this.m = m;
     }
 
     public double get(int i, int j) {
@@ -84,7 +89,7 @@ public class Matrix {
     }
 
     private boolean checkPos(int i, int j) {
-        return i >= 0 && i < n && j > 0 && j < m;
+        return i >= 0 && i < n && j >= 0 && j < m;
     }
 
     private class Cell {
