@@ -36,7 +36,7 @@ public class PersistenceController {
         try {
             String absolutePath = new File(path).getAbsolutePath();
             File file = new File(absolutePath);
-            if(!file.exists()){
+            if (!file.exists()) {
                 file.getParentFile().mkdirs();
                 file.createNewFile();
             }
@@ -64,9 +64,6 @@ public class PersistenceController {
                     break;
                 case CONFERENCE:
                     serializer = new ConferenceSerializer(s);
-                    break;
-                case LABEL:
-                    serializer = new LabelSerializer(s);
                     break;
                 case PAPER:
                     serializer = new PaperSerializer(s);
@@ -122,11 +119,6 @@ public class PersistenceController {
                         Conference con = (Conference) iterator.next().getValue();
                         serializer = new ConferenceSerializer(con);
                         filename = "conference";
-                        break;
-                    case LABEL:
-                        Label lab = (Label) iterator.next().getValue();
-                        serializer = new LabelSerializer(lab);
-                        filename = "label";
                         break;
                     case PAPER:
                         Paper pap = (Paper) iterator.next().getValue();
