@@ -3,10 +3,6 @@ package common.domain;
 
 public class Term extends Node {
 
-    public Term() {
-        super();
-    }
-
     public Term(String value) {
         super(value);
     }

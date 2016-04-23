@@ -14,10 +14,4 @@ public class PaperSerializer extends NodeSerializer {
         super(data);
     }
 
-    @Override
-    public Paper getNode() {
-        this.inflate();
-        node = new Paper(nodeId, name);
-        return ((Paper)node);
-    }
 }

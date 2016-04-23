@@ -9,6 +9,8 @@ import common.domain.*;
 
 public class PersistenceController {
 
+    private Graph graph;
+
     private List<String> readFile(String path) {
         List<String> toReturn = new ArrayList<>();
         BufferedReader br = null;
@@ -54,7 +56,11 @@ public class PersistenceController {
         }
     }
 
-    public void importNodes(Graph g, String path, NodeType type) throws GraphException {
+    public PersistenceController(Graph graph){
+        this.graph = graph;
+    }
+
+    public void importNodes(String path, NodeType type) throws GraphException {
         List<String> strings = readFile(path);
         for (String s : strings) {
             NodeSerializer serializer = null;
@@ -72,12 +78,12 @@ public class PersistenceController {
                     serializer = new TermSerializer(s);
                     break;
             }
-            Node node = serializer.getNode();
-            g.addNode(node, serializer.getId());
+            Node node = graph.createNode(type, serializer.getId(), serializer.getName());
+            graph.addNode(node);
         }
     }
 
-    public void importEdges(Graph g, String path, NodeType type1, NodeType type2) throws GraphException {
+    public void importEdges(String path, NodeType type1, NodeType type2) throws GraphException {
         List<String> strings = readFile(path);
         for (String s : strings) {
             String etype = null;
@@ -94,7 +100,7 @@ public class PersistenceController {
             } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.TERM)) {
                 etype = "PaperTerm";
             }
-            EdgeSerializer serializer = new EdgeSerializer(g, s, type1, type2);
+            EdgeSerializer serializer = new EdgeSerializer(graph, s, type1, type2);
             Node node1 = serializer.getNode1();
             Node node2 = serializer.getNode2();
             //Relation relation = new Relation(type1, type2, etype);
@@ -103,9 +109,9 @@ public class PersistenceController {
         }
     }
 
-    public void exportNodes(Graph g, String path) {
+    public void exportNodes(String path) {
         for (NodeType n : NodeType.values()) {
-            Container<Node>.ContainerIterator iterator = g.getNodeIterator(n);
+            Container<Node>.ContainerIterator iterator = graph.getNodeIterator(n);
             while (iterator.hasNext()) {
                 NodeSerializer serializer = null;
                 String filename = null;
@@ -138,13 +144,13 @@ public class PersistenceController {
         }
     }
 
-    public void exportEdges(Graph g, String path) {
+    public void exportEdges(String path) {
 
     }
 
-    public void exportGraph(Graph g, String path) {
-        exportNodes(g, path);
-        exportEdges(g, path);
+    public void exportGraph(String path) {
+        exportNodes(path);
+        exportEdges(path);
     }
 
 }

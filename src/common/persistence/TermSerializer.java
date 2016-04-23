@@ -14,10 +14,4 @@ public class TermSerializer extends NodeSerializer {
         super(data);
     }
 
-    @Override
-    public Term getNode() {
-        this.inflate();
-        node = new Term(nodeId,name);
-        return ((Term)node);
-    }
 }

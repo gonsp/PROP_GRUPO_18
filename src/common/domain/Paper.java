@@ -3,10 +3,6 @@ package common.domain;
 
 public class Paper extends Node {
 
-    public Paper() {
-        super();
-    }
-
     public Paper(String value) {
         super(value);
     }

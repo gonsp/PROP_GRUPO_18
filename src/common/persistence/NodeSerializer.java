@@ -49,6 +49,8 @@ public abstract class NodeSerializer implements Serializable {
         return nodeId;
     }
 
-    public abstract Node getNode();
+    public String getName() {
+        return name;
+    }
 
 }

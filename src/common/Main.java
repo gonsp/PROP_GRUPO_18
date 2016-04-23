@@ -13,17 +13,17 @@ public class Main {
 
         Graph g = new Graph();
 
-        PersistenceController pc = new PersistenceController();
-        pc.importNodes(g, "data/author.txt", NodeType.AUTHOR);
-        pc.importNodes(g, "data/conf.txt", NodeType.CONFERENCE);
-        pc.importNodes(g, "data/paper.txt", NodeType.PAPER);
-        pc.importNodes(g, "data/term.txt", NodeType.TERM);
+        PersistenceController pc = new PersistenceController(g);
+        pc.importNodes("data/author.txt", NodeType.AUTHOR);
+        pc.importNodes("data/conf.txt", NodeType.CONFERENCE);
+        pc.importNodes("data/paper.txt", NodeType.PAPER);
+        pc.importNodes("data/term.txt", NodeType.TERM);
         //pc.importEdges(g, "data/author_label.txt", NodeType.AUTHOR, NodeType.LABEL);
         //pc.importEdges(g, "data/conf_label.txt", NodeType.CONFERENCE, NodeType.LABEL);
-        pc.importEdges(g, "data/paper_author.txt", NodeType.PAPER, NodeType.AUTHOR);
-        pc.importEdges(g, "data/paper_conf.txt", NodeType.PAPER, NodeType.CONFERENCE);
+        pc.importEdges("data/paper_author.txt", NodeType.PAPER, NodeType.AUTHOR);
+        pc.importEdges("data/paper_conf.txt", NodeType.PAPER, NodeType.CONFERENCE);
         //pc.importEdges(g, "data/paper_label.txt", NodeType.PAPER, NodeType.LABEL);
-        pc.importEdges(g, "data/paper_term.txt", NodeType.PAPER, NodeType.TERM);
+        pc.importEdges("data/paper_term.txt", NodeType.PAPER, NodeType.TERM);
         //pc.exportNodes(g, "out/");
 
         Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");

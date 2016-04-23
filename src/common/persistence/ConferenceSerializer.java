@@ -14,10 +14,4 @@ public class ConferenceSerializer extends NodeSerializer {
         super (data);
     }
 
-    @Override
-    public Conference getNode(){
-        this.inflate();
-        node = new Conference(nodeId,name);
-        return ((Conference)node);
-    }
 }
