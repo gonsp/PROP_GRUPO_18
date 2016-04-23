@@ -1,0 +1,6 @@
+package common.domain;
+
+
+public enum RelationType {
+    AUTHORLABEL, CONFERENCELABEL, PAPERAUTHOR, PAPERCONFERENCE, PAPERLABEL, PAPERTERM, CUSTOM;
+}
