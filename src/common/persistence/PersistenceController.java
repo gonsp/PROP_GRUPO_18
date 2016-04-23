@@ -94,7 +94,7 @@ public class PersistenceController {
             } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.TERM)) {
                 etype = "PaperTerm";
             }
-            EdgeSerializer serializer = new EdgeSerializer(g, s, etype, type1, type2);
+            EdgeSerializer serializer = new EdgeSerializer(g, s, type1, type2);
             Node node1 = serializer.getNode1();
             Node node2 = serializer.getNode2();
             //Relation relation = new Relation(type1, type2, etype);

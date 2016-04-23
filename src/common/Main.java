@@ -18,8 +18,13 @@ public class Main {
         pc.importNodes(g, "data/conf.txt", NodeType.CONFERENCE);
         pc.importNodes(g, "data/paper.txt", NodeType.PAPER);
         pc.importNodes(g, "data/term.txt", NodeType.TERM);
-        pc.exportNodes(g, "out/");
-        //pc.importEdges(g, "data/author_label.txt", "Author", "Label");
+        //pc.importEdges(g, "data/author_label.txt", NodeType.AUTHOR, NodeType.LABEL);
+        //pc.importEdges(g, "data/conf_label.txt", NodeType.CONFERENCE, NodeType.LABEL);
+        pc.importEdges(g, "data/paper_author.txt", NodeType.PAPER, NodeType.AUTHOR);
+        pc.importEdges(g, "data/paper_conf.txt", NodeType.PAPER, NodeType.CONFERENCE);
+        //pc.importEdges(g, "data/paper_label.txt", NodeType.PAPER, NodeType.LABEL);
+        pc.importEdges(g, "data/paper_term.txt", NodeType.PAPER, NodeType.TERM);
+        //pc.exportNodes(g, "out/");
 
 
         /*Author a1 = new Author("a1");
