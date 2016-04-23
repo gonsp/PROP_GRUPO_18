@@ -18,7 +18,7 @@ public class Main {
         pc.importNodes("data/conf.txt", NodeType.CONFERENCE);
         pc.importNodes("data/paper.txt", NodeType.PAPER);
         pc.importNodes("data/term.txt", NodeType.TERM);
-        //pc.importEdges("data/author_label.txt", NodeType.AUTHOR, NodeType.LABEL);
+        pc.importEdges("data/author_label.txt", NodeType.AUTHOR, NodeType.LABEL);
         //pc.importEdges("data/conf_label.txt", NodeType.CONFERENCE, NodeType.LABEL);
         //pc.importEdges("data/paper_author.txt", NodeType.PAPER, NodeType.AUTHOR);
         //pc.importEdges("data/paper_conf.txt", NodeType.PAPER, NodeType.CONFERENCE);
