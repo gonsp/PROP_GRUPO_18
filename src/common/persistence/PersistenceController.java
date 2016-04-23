@@ -91,26 +91,30 @@ public class PersistenceController {
     public void importEdges(String path, NodeType type1, NodeType type2) throws GraphException {
         List<String> strings = readFile(path);
         for (String s : strings) {
-            String etype = null;
+            int relId = -1;
+            EdgeSerializer serializer = null;
             if (type1.equals(NodeType.AUTHOR) && type2.equals(NodeType.LABEL)) {
-                etype = "AuthorLabel";
+                relId = 4;
+                serializer = new LabelSerializer(graph, s, type1, type2);
             } else if (type1.equals(NodeType.CONFERENCE) && type2.equals(NodeType.LABEL)) {
-                etype = "ConferenceLabel";
+                relId = 6;
+                serializer = new LabelSerializer(graph, s, type1, type2);
             } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.AUTHOR)) {
-                etype = "PaperAuthor";
+                relId = 1;
+                serializer = new EdgeSerializer(graph, s, type1, type2);
             } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.CONFERENCE)) {
-                etype = "PaperConference";
+                relId = 2;
+                serializer = new EdgeSerializer(graph, s, type1, type2);
             } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.LABEL)) {
-                etype = "PaperLabel";
+                relId = 5;
+                serializer = new LabelSerializer(graph, s, type1, type2);
             } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.TERM)) {
-                etype = "PaperTerm";
+                relId = 3;
+                serializer = new EdgeSerializer(graph, s, type1, type2);
             }
-            EdgeSerializer serializer = new EdgeSerializer(graph, s, type1, type2);
             Node node1 = serializer.getNode1();
             Node node2 = serializer.getNode2();
-            //Relation relation = new Relation(type1, type2, etype);
-            //g.addRelation(relation);
-            //g.addEdge(node1, node2);
+            graph.addEdge(relId, node1, node2);
         }
     }
 

@@ -7,8 +7,8 @@ import common.domain.Node;
 
 public abstract class NodeSerializer implements Serializable {
 
-    protected Node node = null;
-    protected String data = null;
+    protected Node node;
+    protected String data;
 
     protected int nodeId;
     protected String name;
@@ -46,10 +46,12 @@ public abstract class NodeSerializer implements Serializable {
     }
 
     public int getId() {
+        this.inflate();
         return nodeId;
     }
 
     public String getName() {
+        this.inflate();
         return name;
     }
 

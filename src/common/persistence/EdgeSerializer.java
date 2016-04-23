@@ -20,7 +20,7 @@ public class EdgeSerializer implements Serializable {
     protected void inflate() throws GraphException {
         if (graph != null && data != null) {
             int m = data.indexOf("\t");
-            if(m == -1){
+            if (m == -1) {
                 m = data.indexOf(" ");
             }
             int id1 = Integer.parseInt(data.substring(0, m));
@@ -35,7 +35,6 @@ public class EdgeSerializer implements Serializable {
             int node1Id = node1.getId();
             int node2Id = node2.getId();
             data = Integer.toString(node1Id) + "\t" + Integer.toString(node2Id);
-
         }
     }
 
