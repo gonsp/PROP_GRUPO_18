@@ -26,12 +26,6 @@ public class PersistenceController {
             }
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                if (br != null) br.close();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
         }
         return toReturn;
     }
