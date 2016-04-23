@@ -14,7 +14,7 @@ public class Matrix {
 
     public double get(int i, int j) {
         if(i >= 0 && i < n && j > 0 && j < m) {
-
+            return 0;
         } else {
             return -1;
         }
@@ -28,7 +28,6 @@ public class Matrix {
         return m;
     }
 
-    private int
 
     private class Cell {
 
