@@ -11,6 +11,7 @@ public class Main {
 
     public static void main(String[] args) throws GraphException {
 
+        System.out.println("Starts inicialization");
         Graph g = new Graph();
 
         PersistenceController pc = new PersistenceController(g);
@@ -26,8 +27,14 @@ public class Main {
         pc.importEdges("data/paper_term.txt", NodeType.PAPER, NodeType.TERM);
         //pc.exportGraph("out/");
 
+        System.out.println("Finish inicialization");
+        System.out.println("Starts search");
+
+
         Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
         g.addRelation(AP);
+
+        g.addEdge(AP.getId(), NodeType.AUTHOR, 76, NodeType.PAPER, 360544);
 
 /*      Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");
         Author a2 = (Author) g.createNode(NodeType.AUTHOR, "a2");
@@ -55,7 +62,7 @@ public class Main {
 */
         try {
             ArrayList<Relation> aux = new ArrayList<Relation>();
-            aux.add(AP);
+            aux.add(g.getRelation(0));
             //aux.add(AP);
             RelationStructure rs = new RelationStructure(NodeType.AUTHOR, aux, NodeType.PAPER);
             RelationalSearch relationalSearch = new RelationalSearch(g, rs);

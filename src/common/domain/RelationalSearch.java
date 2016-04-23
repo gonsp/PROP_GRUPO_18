@@ -32,11 +32,7 @@ public class RelationalSearch {
             return i_hetesim(0, m-1, true).mul(i_hetesim(m, rs.size()-1, false));
         } else {
             if(rs.size() == 1) {
-                Matrix left = getNormalizedEdgeLeftMatrix(rs.get(m));
-                Matrix right = getNormalizedEdgeRightMatrix(rs.get(m));
-                Matrix res = left.mul(right);
-                return res;
-                //return getNormalizedEdgeLeftMatrix(rs.get(m)).mul(getNormalizedEdgeRightMatrix(rs.get(m)));
+                return getNormalizedEdgeLeftMatrix(rs.get(m)).mul(getNormalizedEdgeRightMatrix(rs.get(m)));
             } else {
                 return i_hetesim(0, m-1, true).mul(getNormalizedEdgeLeftMatrix(rs.get(m))).mul(getNormalizedEdgeRightMatrix(rs.get(m))).mul(i_hetesim(m, rs.size()-1, false));
             }
