@@ -27,8 +27,9 @@ public class Main {
         //pc.exportGraph("out/");
 
         Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
+        g.addRelation(AP);
 
-/*        Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");
+/*      Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");
         Author a2 = (Author) g.createNode(NodeType.AUTHOR, "a2");
         Author a3 = (Author) g.createNode(NodeType.AUTHOR, "a3");
 
@@ -44,7 +45,6 @@ public class Main {
         g.addNode(p2);
         g.addNode(p3);
         g.addNode(p4);
-        g.addRelation(AP);
 
         g.addEdge(AP.getId(), a1, p1);
         g.addEdge(AP.getId(), a1, p2);
@@ -61,6 +61,7 @@ public class Main {
             RelationalSearch relationalSearch = new RelationalSearch(g, rs);
             relationalSearch.search();
             ArrayList<RelationalSearch.Result> results = relationalSearch.getResults();
+            System.out.println(results.size());
             for(int i = 0; i < results.size(); ++i) {
                 results.get(i).print();
             }
