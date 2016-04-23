@@ -17,6 +17,12 @@ public class Relation extends Element{
 		this.A = A;
 		this.B = B;
 	}
+
+	public Relation(Relation r) {
+		super(r);
+		this.A = r.A;
+		this.B = r.B;
+	}
 	
 	//Get & Set
 	public String getName() {

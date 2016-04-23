@@ -5,13 +5,24 @@ import java.util.Arrays;
 
 public class RelationStructure extends ArrayList<Relation> {
 
+    private static ArrayList<Relation> cloneArrayList(ArrayList<Relation> r) {
+        ArrayList<Relation> result = new ArrayList<Relation>();
+        for(int i = 0; i < r.size(); ++i) {
+            result.add(new Relation(r.get(i)));
+        }
+        return result;
+    }
+
 	public RelationStructure(NodeType from, ArrayList<Relation> r, NodeType to) throws RelationStructureException {
-		super(r);
+		super(cloneArrayList(r));
 		if(size() == 0) {
 			throw new RelationStructureException(RelationStructureException.Error.EMPTY_STRUCTURE);
 		}
         if(!setOrder(from, 0, to)) {
             throw new RelationStructureException(RelationStructureException.Error.MALFORMED_STRUCTURE);
+        } else {
+            //TODO remove this
+            System.out.println(String.valueOf(get(0).getNodeTypeA())+get(0).getNodeTypeB()+get(1).getNodeTypeA()+get(1).getNodeTypeB());
         }
 	}
 
@@ -27,10 +38,9 @@ public class RelationStructure extends ArrayList<Relation> {
             if(from == relation.getNodeTypeA()) {
                 return setOrder(relation.getNodeTypeB(), i+1, to);
             } else if(from == relation.getNodeTypeB()) {
-                boolean aux = setOrder(relation.getNodeTypeA(), i+1, to);
                 relation.setNodeTypeB(relation.getNodeTypeA());
                 relation.setNodeTypeA(from);
-                return aux;
+                return setOrder(relation.getNodeTypeB(), i+1, to);
             } else {
                 return false;
             }

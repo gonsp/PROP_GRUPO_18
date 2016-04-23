@@ -54,7 +54,8 @@ public class Main {
         try {
             ArrayList<Relation> aux = new ArrayList<Relation>();
             aux.add(AP);
-            RelationStructure rs = new RelationStructure(NodeType.AUTHOR, aux, NodeType.PAPER);
+            aux.add(AP);
+            RelationStructure rs = new RelationStructure(NodeType.AUTHOR, aux, NodeType.AUTHOR);
             RelationalSearch relationalSearch = new RelationalSearch(g, rs);
             relationalSearch.search();
             ArrayList<RelationalSearch.Result> results = relationalSearch.getResults();

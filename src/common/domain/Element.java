@@ -20,6 +20,10 @@ public abstract class Element {
         this.value = value;
     }
 
+    public Element(Element e) {
+        this(e.getId(), e.getValue());
+    }
+
     public int getId() {
         return id;
     }

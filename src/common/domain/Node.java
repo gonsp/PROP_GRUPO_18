@@ -26,6 +26,11 @@ public abstract class Node extends Element {
         relations = new HashMap<>();
     }
 
+    public Node(Node n) {
+        super(n);
+        relations = (HashMap<Integer, HashSet<Integer> >) n.relations.clone();
+    }
+
     protected void addEdge(int relationID, int nodeID) throws GraphException {
         if(!relations.containsKey(relationID)) {
             throw new GraphException(GraphException.Error.ID_RELATION_NONEXISTENT);
