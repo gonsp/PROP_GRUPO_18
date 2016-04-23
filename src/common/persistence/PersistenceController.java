@@ -63,23 +63,28 @@ public class PersistenceController {
     public void importNodes(String path, NodeType type) throws GraphException {
         List<String> strings = readFile(path);
         for (String s : strings) {
-            NodeSerializer serializer = null;
             switch (type) {
                 case AUTHOR:
-                    serializer = new AuthorSerializer(s);
+                    AuthorSerializer as = new AuthorSerializer(s);
+                    Author author = (Author) graph.createNode(type, as.getId(), as.getName());
+                    graph.addNode(author);
                     break;
                 case CONFERENCE:
-                    serializer = new ConferenceSerializer(s);
+                    ConferenceSerializer cs = new ConferenceSerializer(s);
+                    Conference conference = (Conference) graph.createNode(type, cs.getId(), cs.getName());
+                    graph.addNode(conference);
                     break;
                 case PAPER:
-                    serializer = new PaperSerializer(s);
+                    PaperSerializer ps = new PaperSerializer(s);
+                    Paper paper = (Paper) graph.createNode(type, ps.getId(), ps.getName());
+                    graph.addNode(paper);
                     break;
                 case TERM:
-                    serializer = new TermSerializer(s);
+                    TermSerializer ts = new TermSerializer(s);
+                    Term term = (Term) graph.createNode(type, ts.getId(), ts.getName());
+                    graph.addNode(term);
                     break;
             }
-            Node node = graph.createNode(type, serializer.getId(), serializer.getName());
-            graph.addNode(node);
         }
     }
 

@@ -18,14 +18,15 @@ public class Main {
         pc.importNodes("data/conf.txt", NodeType.CONFERENCE);
         pc.importNodes("data/paper.txt", NodeType.PAPER);
         pc.importNodes("data/term.txt", NodeType.TERM);
-        //pc.importEdges(g, "data/author_label.txt", NodeType.AUTHOR, NodeType.LABEL);
-        //pc.importEdges(g, "data/conf_label.txt", NodeType.CONFERENCE, NodeType.LABEL);
-        pc.importEdges("data/paper_author.txt", NodeType.PAPER, NodeType.AUTHOR);
-        pc.importEdges("data/paper_conf.txt", NodeType.PAPER, NodeType.CONFERENCE);
-        //pc.importEdges(g, "data/paper_label.txt", NodeType.PAPER, NodeType.LABEL);
-        pc.importEdges("data/paper_term.txt", NodeType.PAPER, NodeType.TERM);
-        //pc.exportNodes(g, "out/");
+        //pc.importEdges("data/author_label.txt", NodeType.AUTHOR, NodeType.LABEL);
+        //pc.importEdges("data/conf_label.txt", NodeType.CONFERENCE, NodeType.LABEL);
+        //pc.importEdges("data/paper_author.txt", NodeType.PAPER, NodeType.AUTHOR);
+        //pc.importEdges("data/paper_conf.txt", NodeType.PAPER, NodeType.CONFERENCE);
+        //pc.importEdges("data/paper_label.txt", NodeType.PAPER, NodeType.LABEL);
+        //pc.importEdges("data/paper_term.txt", NodeType.PAPER, NodeType.TERM);
+        pc.exportNodes("out/");
 
+        /*
         Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");
         Author a2 = (Author) g.createNode(NodeType.AUTHOR, "a2");
         Author a3 = (Author) g.createNode(NodeType.AUTHOR, "a3");
@@ -70,6 +71,7 @@ public class Main {
         } catch (RelationStructureException e) {
             e.printStackTrace();
         }
+        */
 
 
         //TODO implementar relation nula en medio de relationStructure cuando es impar
