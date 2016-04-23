@@ -2,5 +2,5 @@ package common.domain;
 
 
 public enum NodeType {
-    AUTHOR, PAPER, LABEL, TERM, CONFERENCE;
+    AUTHOR, CONF, PAPER, LABEL, TERM;
 }

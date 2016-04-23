@@ -21,7 +21,7 @@ public class Graph {
         nodeContainers.put(NodeType.AUTHOR, new Container<Node>());
         nodeContainers.put(NodeType.PAPER, new Container<Node>());
         nodeContainers.put(NodeType.LABEL, new Container<Node>());
-        nodeContainers.put(NodeType.CONFERENCE, new Container<Node>());
+        nodeContainers.put(NodeType.CONF, new Container<Node>());
         nodeContainers.put(NodeType.TERM, new Container<Node>());
         relations = new Container<Relation>();
         addRelation(new AuthorPaper());
@@ -58,7 +58,7 @@ public class Graph {
         Node node;
         if(type == NodeType.AUTHOR) {
             node = new Author(nodeID, value);
-        } else if(type == NodeType.CONFERENCE) {
+        } else if(type == NodeType.CONF) {
             node = new Conference(nodeID, value);
         } else if(type == NodeType.PAPER) {
             node = new Paper(nodeID, value);
@@ -203,7 +203,7 @@ public class Graph {
         } else if (node instanceof Label) {
             return NodeType.LABEL;
         } else {
-            return NodeType.CONFERENCE;
+            return NodeType.CONF;
         }
     }
 

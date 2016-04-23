@@ -2,7 +2,6 @@ package common;
 
 import common.domain.*;
 import common.persistence.PersistenceController;
-import org.jblas.DoubleMatrix;
 
 import java.util.ArrayList;
 
@@ -16,16 +15,16 @@ public class Main {
 
         PersistenceController pc = new PersistenceController(g);
         pc.importNodes("data/author.txt", NodeType.AUTHOR);
-        pc.importNodes("data/conf.txt", NodeType.CONFERENCE);
+        pc.importNodes("data/conf.txt", NodeType.CONF);
         pc.importNodes("data/paper.txt", NodeType.PAPER);
         pc.importNodes("data/term.txt", NodeType.TERM);
         pc.importEdges("data/author_label.txt", NodeType.AUTHOR, NodeType.LABEL);
-        pc.importEdges("data/conf_label.txt", NodeType.CONFERENCE, NodeType.LABEL);
+        pc.importEdges("data/conf_label.txt", NodeType.CONF, NodeType.LABEL);
         pc.importEdges("data/paper_author.txt", NodeType.PAPER, NodeType.AUTHOR);
-        pc.importEdges("data/paper_conf.txt", NodeType.PAPER, NodeType.CONFERENCE);
+        pc.importEdges("data/paper_conf.txt", NodeType.PAPER, NodeType.CONF);
         pc.importEdges("data/paper_label.txt", NodeType.PAPER, NodeType.LABEL);
         pc.importEdges("data/paper_term.txt", NodeType.PAPER, NodeType.TERM);
-        //pc.exportGraph("out/");
+        pc.exportGraph("out/");
 
         System.out.println("Finish inicialization");
         System.out.println("Starts search");
@@ -33,10 +32,9 @@ public class Main {
 
         Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
         g.addRelation(AP);
-
         g.addEdge(AP.getId(), NodeType.AUTHOR, 76, NodeType.PAPER, 360544);
 
-/*      Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");
+        Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");
         Author a2 = (Author) g.createNode(NodeType.AUTHOR, "a2");
         Author a3 = (Author) g.createNode(NodeType.AUTHOR, "a3");
 
@@ -59,7 +57,7 @@ public class Main {
         g.addEdge(AP.getId(), a2, p3);
         g.addEdge(AP.getId(), a2, p4);
         g.addEdge(AP.getId(), a3, p4);
-*/
+
         try {
             ArrayList<Relation> aux = new ArrayList<Relation>();
             aux.add(g.getRelation(0));
@@ -75,7 +73,6 @@ public class Main {
         } catch (RelationStructureException e) {
             e.printStackTrace();
         }
-
 
 
         //TODO implementar relation nula en medio de relationStructure cuando es impar

@@ -1,15 +1,12 @@
 package common.persistence;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 import common.domain.*;
 
-import static common.domain.NodeType.AUTHOR;
-import static common.domain.NodeType.CONFERENCE;
-import static common.domain.NodeType.PAPER;
+import static common.domain.NodeType.*;
 
 
 public class PersistenceController {
@@ -29,12 +26,6 @@ public class PersistenceController {
             }
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                if (br != null) br.close();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
         }
         return toReturn;
     }
@@ -66,10 +57,10 @@ public class PersistenceController {
     public PersistenceController(Graph graph) {
         this.graph = graph;
         try {
-            graph.addNode(graph.createNode(NodeType.LABEL, 0, "Database"));
-            graph.addNode(graph.createNode(NodeType.LABEL, 1, "Data Mining"));
-            graph.addNode(graph.createNode(NodeType.LABEL, 2, "AI"));
-            graph.addNode(graph.createNode(NodeType.LABEL, 3, "Information Retreival"));
+            graph.addNode(graph.createNode(LABEL, 0, "Database"));
+            graph.addNode(graph.createNode(LABEL, 1, "Data Mining"));
+            graph.addNode(graph.createNode(LABEL, 2, "AI"));
+            graph.addNode(graph.createNode(LABEL, 3, "Information Retreival"));
         } catch (GraphException e) {
             e.printStackTrace();
         }
@@ -85,7 +76,7 @@ public class PersistenceController {
                     serializer = new AuthorSerializer(s);
                     node = (Author) graph.createNode(type, serializer.getId(), serializer.getName());
                     break;
-                case CONFERENCE:
+                case CONF:
                     serializer = new ConferenceSerializer(s);
                     node = (Conference) graph.createNode(type, serializer.getId(), serializer.getName());
                     break;
@@ -114,13 +105,13 @@ public class PersistenceController {
             if (type1.equals(AUTHOR) && type2.equals(NodeType.LABEL)) {
                 relId = 3;
                 serializer = new LabelSerializer(graph, s, type1, type2);
-            } else if (type1.equals(NodeType.CONFERENCE) && type2.equals(NodeType.LABEL)) {
+            } else if (type1.equals(NodeType.CONF) && type2.equals(NodeType.LABEL)) {
                 relId = 5;
                 serializer = new LabelSerializer(graph, s, type1, type2);
             } else if (type1.equals(NodeType.PAPER) && type2.equals(AUTHOR)) {
                 relId = 0;
                 serializer = new EdgeSerializer(graph, s, type1, type2);
-            } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.CONFERENCE)) {
+            } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.CONF)) {
                 relId = 1;
                 serializer = new EdgeSerializer(graph, s, type1, type2);
             } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.LABEL)) {
@@ -142,37 +133,15 @@ public class PersistenceController {
 
     public void exportNodes(String path) {
         for (NodeType n : NodeType.values()) {
-            if (n != NodeType.LABEL) {
+            if (n != LABEL) {
                 List<String> strings = new ArrayList<>();
-                String filename = null;
-                Container<Node>.ContainerIterator iterator = graph.getNodeIterator(n);
-                while (iterator.hasNext()) {
-                    NodeSerializer serializer = null;
-                    switch (n) {
-                        case AUTHOR:
-                            Author aut = (Author) iterator.next().getValue();
-                            serializer = new AuthorSerializer(aut);
-                            filename = "author";
-                            break;
-                        case CONFERENCE:
-                            Conference con = (Conference) iterator.next().getValue();
-                            serializer = new ConferenceSerializer(con);
-                            filename = "conf";
-                            break;
-                        case PAPER:
-                            Paper pap = (Paper) iterator.next().getValue();
-                            serializer = new PaperSerializer(pap);
-                            filename = "paper";
-                            break;
-                        case TERM:
-                            Term ter = (Term) iterator.next().getValue();
-                            serializer = new TermSerializer(ter);
-                            filename = "term";
-                            break;
-                    }
+                Container<Node>.ContainerIterator it = graph.getNodeIterator(n);
+                while (it.hasNext()) {
+                    Node node = it.next().getValue();
+                    NodeSerializer serializer = new NodeSerializer(node);
                     strings.add(serializer.getData());
                 }
-                String filepath = path + filename + ".txt";
+                String filepath = path + n.toString().toLowerCase() + ".txt";
                 writeFile(filepath, strings);
             }
         }
@@ -180,46 +149,44 @@ public class PersistenceController {
 
     public void exportEdges(String path) throws GraphException {
         for (NodeType n : NodeType.values()) {
-            if (n != NodeType.LABEL) {
+            if (n != LABEL && n != TERM) {
                 List<String> strings = new ArrayList<>();
                 String filename = null;
-                Container<Node>.ContainerIterator iterator = graph.getNodeIterator(n);
-                while (iterator.hasNext()) {
+                Container<Node>.ContainerIterator it = graph.getNodeIterator(n);
+                while (it.hasNext()) {
                     EdgeSerializer serializer = null;
                     ArrayList<Node> relation;
+                    Node node1 = it.next().getValue();
                     int size;
                     if (n == AUTHOR) {
-                        Node node1 = iterator.next().getValue();
                         relation = graph.getEdges(3, node1);
                         size = relation.size();
                         if (size != 0) {
                             for (int i = 0; i < size; ++i) {
                                 Node node2 = relation.get(i);
                                 serializer = new EdgeSerializer(node1, node2, "author_label");
-                                filename = "author_label";
                                 String d = serializer.getData();
                                 strings.add(d);
                             }
                         }
+                        filename = "author_label";
                         String filepath = path + filename + ".txt";
                         writeFile(filepath, strings);
-                    } else if (n == CONFERENCE) {
-                        Node node1 = iterator.next().getValue();
+                    } else if (n == CONF) {
                         relation = graph.getEdges(5, node1);
                         size = relation.size();
                         if (size != 0) {
                             for (int i = 0; i < size; ++i) {
                                 Node node2 = relation.get(i);
-                                serializer = new EdgeSerializer(node1, node2, "conference_label");
-                                filename = "conference_label";
+                                serializer = new EdgeSerializer(node1, node2, "conf_label");
                                 String d = serializer.getData();
                                 strings.add(d);
                             }
                         }
+                        filename = "conf_label";
                         String filepath = path + filename + ".txt";
                         writeFile(filepath, strings);
                     } else if (n == PAPER) {
-                        Node node1 = iterator.next().getValue();
                         relation = graph.getEdges(0, node1);
                         size = relation.size();
                         if (size != 0) {
@@ -237,8 +204,8 @@ public class PersistenceController {
                         if (size != 0) {
                             for (int i = 0; i < size; ++i) {
                                 Node node2 = relation.get(i);
-                                serializer = new EdgeSerializer(node1, node2, "paper_conference");
-                                filename = "paper_conference";
+                                serializer = new EdgeSerializer(node1, node2, "paper_conf");
+                                filename = "paper_conf";
                                 String d = serializer.getData();
                                 String filepath = path + filename + ".txt";
                                 strings.add(d);
