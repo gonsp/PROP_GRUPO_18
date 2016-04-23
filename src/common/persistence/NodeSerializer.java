@@ -5,7 +5,7 @@ import java.io.Serializable;
 import common.domain.Node;
 
 
-public abstract class NodeSerializer implements Serializable {
+public class NodeSerializer implements Serializable {
 
     protected Node node;
     protected String data;
