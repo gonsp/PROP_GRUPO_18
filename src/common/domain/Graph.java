@@ -11,7 +11,11 @@ public class Graph {
     private Container<Relation> relations;
 
     //Constructors
-    public Graph(String name) throws GraphException {
+    public Graph() {
+        this("-1");
+    }
+
+    public Graph(String name) {
         this.name = name;
         nodeContainers = new HashMap<NodeType, Container<Node>>();
         nodeContainers.put(NodeType.AUTHOR, new Container<Node>());
@@ -26,10 +30,6 @@ public class Graph {
         addRelation(new AuthorLabel());
         addRelation(new PaperLabel());
         addRelation(new ConferenceLabel());
-        addNode(new Label("Database"), 0);
-        addNode(new Label("Data Mining"), 1);
-        addNode(new Label("AI"), 2);
-        addNode(new Label("Information Retrieval"), 3);
     }
 
     //Get & Set

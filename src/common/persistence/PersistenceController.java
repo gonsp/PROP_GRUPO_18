@@ -56,8 +56,12 @@ public class PersistenceController {
         }
     }
 
-    public PersistenceController(Graph graph){
+    public PersistenceController(Graph graph) throws GraphException {
         this.graph = graph;
+        graph.addNode(graph.createNode(NodeType.LABEL, 0, "Database"));
+        graph.addNode(graph.createNode(NodeType.LABEL, 1, "Data Mining"));
+        graph.addNode(graph.createNode(NodeType.LABEL, 2, "AI"));
+        graph.addNode(graph.createNode(NodeType.LABEL, 3, "Information Retreival"));
     }
 
     public void importNodes(String path, NodeType type) throws GraphException {
