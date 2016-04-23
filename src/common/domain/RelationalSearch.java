@@ -31,11 +31,7 @@ public class RelationalSearch {
     private DoubleMatrix hetesim() {
         int m = rs.size()/2;
         if(rs.size()%2 == 0) {
-            DoubleMatrix matrixL = i_hetesim(0, m-1, true);
-            DoubleMatrix matrixR = i_hetesim(m, rs.size()-1, false);
-            System.out.println(String.valueOf(matrixL.getRows())+"x"+String.valueOf(matrixL.getColumns())+"*"+String.valueOf(matrixR.getRows())+"x"+String.valueOf(matrixR.getColumns()));
-            return matrixL.mmul(matrixR);
-            //return i_hetesim(0, m-1, true).mmul(i_hetesim(m, rs.size()-1, false));
+            return i_hetesim(0, m-1, true).mmul(i_hetesim(m, rs.size()-1, false));
         } else {
             if(rs.size() == 1) {
                 return getNormalizedEdgeLeftMatrix(rs.get(m)).mmul(getNormalizedEdgeRightMatrix(rs.get(m)));

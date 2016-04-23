@@ -42,6 +42,7 @@ public class Graph {
     }
 
     public int getSize(NodeType type) {
+        int test = getNodeContainer(type).getSize();
         return getNodeContainer(type).getSize();
     }
 
@@ -69,7 +70,10 @@ public class Graph {
         }
         Container<Relation>.ContainerIterator iterator = relations.getIterator();
         while(iterator.hasNext()) {
-            node.addRelation(iterator.next().getValue());
+            Relation relation = iterator.next().getValue();
+            if(relation.getNodeTypeA() == type || relation.getNodeTypeB() == type) {
+                node.addRelation(relation);
+            }
         }
         return node;
     }
