@@ -24,7 +24,7 @@ public class Main {
         pc.importEdges("data/paper_conf.txt", NodeType.PAPER, NodeType.CONFERENCE);
         pc.importEdges("data/paper_label.txt", NodeType.PAPER, NodeType.LABEL);
         pc.importEdges("data/paper_term.txt", NodeType.PAPER, NodeType.TERM);
-        //pc.exportNodes("out/");
+        pc.exportNodes("out/");
 
 
         /*Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");

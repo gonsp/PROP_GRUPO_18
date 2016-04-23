@@ -124,40 +124,41 @@ public class PersistenceController {
                 e.printStackTrace();
             }
         }
-        System.out.println("Hola");
     }
 
     public void exportNodes(String path) {
         for (NodeType n : NodeType.values()) {
-            Container<Node>.ContainerIterator iterator = graph.getNodeIterator(n);
-            while (iterator.hasNext()) {
-                NodeSerializer serializer = null;
-                String filename = null;
-                switch (n) {
-                    case AUTHOR:
-                        Author aut = (Author) iterator.next().getValue();
-                        serializer = new AuthorSerializer(aut);
-                        filename = "author";
-                        break;
-                    case CONFERENCE:
-                        Conference con = (Conference) iterator.next().getValue();
-                        serializer = new ConferenceSerializer(con);
-                        filename = "conference";
-                        break;
-                    case PAPER:
-                        Paper pap = (Paper) iterator.next().getValue();
-                        serializer = new PaperSerializer(pap);
-                        filename = "paper";
-                        break;
-                    case TERM:
-                        Term ter = (Term) iterator.next().getValue();
-                        serializer = new TermSerializer(ter);
-                        filename = "term";
-                        break;
+            if (n != NodeType.LABEL) {
+                Container<Node>.ContainerIterator iterator = graph.getNodeIterator(n);
+                while (iterator.hasNext()) {
+                    NodeSerializer serializer = null;
+                    String filename = null;
+                    switch (n) {
+                        case AUTHOR:
+                            Author aut = (Author) iterator.next().getValue();
+                            serializer = new AuthorSerializer(aut);
+                            filename = "author";
+                            break;
+                        case CONFERENCE:
+                            Conference con = (Conference) iterator.next().getValue();
+                            serializer = new ConferenceSerializer(con);
+                            filename = "conf";
+                            break;
+                        case PAPER:
+                            Paper pap = (Paper) iterator.next().getValue();
+                            serializer = new PaperSerializer(pap);
+                            filename = "paper";
+                            break;
+                        case TERM:
+                            Term ter = (Term) iterator.next().getValue();
+                            serializer = new TermSerializer(ter);
+                            filename = "term";
+                            break;
+                    }
+                    String d = serializer.getData();
+                    String filepath = path + filename + ".txt";
+                    writeFile(filepath, d);
                 }
-                String d = serializer.getData();
-                String filepath = path + filename + ".txt";
-                writeFile(filepath, d);
             }
         }
     }
