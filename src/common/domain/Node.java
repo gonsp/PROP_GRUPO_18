@@ -11,17 +11,12 @@ public abstract class Node extends Element {
 
     //Constructors
 
-    public Node() {
-        super();
-        relations = new HashMap<>();
-    }
-
-    public Node(String value) {
+    protected Node(String value) {
         super(value);
         relations = new HashMap<>();
     }
 
-    public Node(int nodeID, String value) {
+    protected Node(int nodeID, String value) {
         super(nodeID, value);
         relations = new HashMap<>();
     }

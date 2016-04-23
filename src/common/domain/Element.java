@@ -5,22 +5,17 @@ public abstract class Element {
     protected String value;
     protected int id;
 
-    public Element() {
-        id = -1;
-        value = "-1";
-    }
-
-    public Element(String value) {
+    protected Element(String value) {
         id = -1;
         this.value = value;
     }
 
-    public Element(int nodeID, String value) {
+    protected Element(int nodeID, String value) {
         this.id = nodeID;
         this.value = value;
     }
 
-    public Element(Element e) {
+    protected Element(Element e) {
         this(e.getId(), e.getValue());
     }
 

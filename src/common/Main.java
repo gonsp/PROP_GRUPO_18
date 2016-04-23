@@ -21,14 +21,14 @@ public class Main {
         //pc.importEdges(g, "data/author_label.txt", "Author", "Label");
         */
 
-        Author a1 = new Author("a1");
-        Author a2 = new Author("a2");
-        Author a3 = new Author("a3");
+        Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");
+        Author a2 = (Author) g.createNode(NodeType.AUTHOR, "a2");
+        Author a3 = (Author) g.createNode(NodeType.AUTHOR, "a3");
 
-        Paper p1 = new Paper("p1");
-        Paper p2 = new Paper("p2");
-        Paper p3 = new Paper("p3");
-        Paper p4 = new Paper("p4");
+        Paper p1 = (Paper) g.createNode(NodeType.PAPER, "p1");
+        Paper p2 = (Paper) g.createNode(NodeType.PAPER, "p2");
+        Paper p3 = (Paper) g.createNode(NodeType.PAPER, "p3");
+        Paper p4 = (Paper) g.createNode(NodeType.PAPER, "p4");
 
         Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
 

@@ -4,7 +4,8 @@ public class Relation extends Element{
 	//Attributes
 	private NodeType A;
 	private NodeType B;
-	
+	protected boolean isDefault = false;
+
 	//Constructors
 	public Relation(NodeType A, NodeType B, String name) {
 		super(name);
@@ -28,9 +29,9 @@ public class Relation extends Element{
 	public String getName() {
 		return value;
 	}
-	
-	public void setName(String name) {
-		value = name;
+
+	protected boolean isDefault() {
+		return isDefault;
 	}
 	
 	protected NodeType getNodeTypeA() {

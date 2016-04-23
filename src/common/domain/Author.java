@@ -3,15 +3,11 @@ package common.domain;
 
 public class Author extends Node {
 
-    public Author() {
-        super();
-    }
-
-    public Author(String value) {
+    protected Author(String value) {
         super(value);
     }
 
-    public Author(int nodeId, String value) {
+    protected Author(int nodeId, String value) {
         super(nodeId, value);
     }
 

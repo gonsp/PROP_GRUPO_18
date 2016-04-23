@@ -28,11 +28,13 @@ public class GraphException extends Exception {
             System.out.println("ID used");
         } else if(error == Error.ID_RELATION_NONEXISTENT) {
             System.out.println("relationID doesn't exist");
+        } else if(error == Error.RELATION_DEFAULT) {
+            System.out.println("A default relation type cannot be deleted!");
         }
     }
 
     public enum Error {
-        ID_INVALID, ID_USED, ID_NONEXISTENT, TYPE_INVALID, ID_EQUAL, ID_RELATION_NONEXISTENT;
+        ID_INVALID, ID_USED, ID_NONEXISTENT, TYPE_INVALID, ID_EQUAL, ID_RELATION_NONEXISTENT, RELATION_DEFAULT;
     }
 }
 

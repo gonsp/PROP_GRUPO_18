@@ -24,6 +24,12 @@ public class Graph {
         nodeContainers.put(NodeType.CONFERENCE, new Container<Node>());
         nodeContainers.put(NodeType.TERM, new Container<Node>());
         relations = new Container<Relation>();
+        addRelation(new AuthorPaper());
+        addRelation(new ConferencePaper());
+        addRelation(new TermPaper());
+        addRelation(new AuthorLabel());
+        addRelation(new PaperLabel());
+        addRelation(new ConferenceLabel());
     }
 
     //Get & Set
@@ -46,6 +52,30 @@ public class Graph {
 
     public void addNode(Node node, int id) throws GraphException {
         getNodeContainer(getNodeType(node)).addElement(node, id);
+    }
+
+    public Node createNode(NodeType type, int nodeID, String value) {
+        Node node;
+        if(type == NodeType.AUTHOR) {
+            node = new Author(nodeID, value);
+        } else if(type == NodeType.CONFERENCE) {
+            node = new Conference(nodeID, value);
+        } else if(type == NodeType.PAPER) {
+            node = new Paper(nodeID, value);
+        } else if(type == NodeType.TERM) {
+            node = new Term(nodeID, value);
+        } else {
+            node = new Label(nodeID, value);
+        }
+        Container<Relation>.ContainerIterator iterator = relations.getIterator();
+        while(iterator.hasNext()) {
+            node.addRelation(iterator.next().getValue());
+        }
+        return node;
+    }
+
+    public Node createNode(NodeType type, String value) {
+        return createNode(type, -1, value);
     }
 
     public void removeNode(NodeType type, int id) throws GraphException {
@@ -124,11 +154,15 @@ public class Graph {
         }
     }
 
-    private void i_removeRelation(Relation relation, NodeType type) {
-        Container<Node>.ContainerIterator iterator = getNodeIterator(type);
-        while(iterator.hasNext()) {
-            Node node = iterator.next().getValue();
-            node.removeRelation(relation);
+    private void i_removeRelation(Relation relation, NodeType type) throws GraphException {
+        if(!relation.isDefault()) {
+            Container<Node>.ContainerIterator iterator = getNodeIterator(type);
+            while(iterator.hasNext()) {
+                Node node = iterator.next().getValue();
+                node.removeRelation(relation);
+            }
+        } else {
+            throw new GraphException(GraphException.Error.RELATION_DEFAULT);
         }
     }
 
