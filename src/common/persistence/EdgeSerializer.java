@@ -17,7 +17,7 @@ public class EdgeSerializer implements Serializable {
     protected Node node1;
     protected Node node2;
 
-    protected void inflate() throws GraphException {
+    protected void inflate() {
         if (graph != null && data != null) {
             int m = data.indexOf("\t");
             if (m == -1) {
@@ -25,8 +25,12 @@ public class EdgeSerializer implements Serializable {
             }
             int id1 = Integer.parseInt(data.substring(0, m));
             int id2 = Integer.parseInt(data.substring(m + 1, data.length()));
-            node1 = graph.getNode(ntype1, id1);
-            node2 = graph.getNode(ntype2, id2);
+            try {
+                node1 = graph.getNode(ntype1, id1);
+                node2 = graph.getNode(ntype2, id2);
+            } catch (GraphException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -50,12 +54,12 @@ public class EdgeSerializer implements Serializable {
         this.node2 = node2;
     }
 
-    public Node getNode1() throws GraphException {
+    public Node getNode1() {
         this.inflate();
         return node1;
     }
 
-    public Node getNode2() throws GraphException {
+    public Node getNode2() {
         this.inflate();
         return node2;
     }

@@ -1,6 +1,7 @@
 package common.persistence;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,38 +57,45 @@ public class PersistenceController {
         }
     }
 
-    public PersistenceController(Graph graph) throws GraphException {
+    public PersistenceController(Graph graph) {
         this.graph = graph;
-        graph.addNode(graph.createNode(NodeType.LABEL, 0, "Database"));
-        graph.addNode(graph.createNode(NodeType.LABEL, 1, "Data Mining"));
-        graph.addNode(graph.createNode(NodeType.LABEL, 2, "AI"));
-        graph.addNode(graph.createNode(NodeType.LABEL, 3, "Information Retreival"));
+        try {
+            graph.addNode(graph.createNode(NodeType.LABEL, 0, "Database"));
+            graph.addNode(graph.createNode(NodeType.LABEL, 1, "Data Mining"));
+            graph.addNode(graph.createNode(NodeType.LABEL, 2, "AI"));
+            graph.addNode(graph.createNode(NodeType.LABEL, 3, "Information Retreival"));
+        } catch (GraphException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void importNodes(String path, NodeType type) throws GraphException {
+    public void importNodes(String path, NodeType type) {
         List<String> strings = readFile(path);
         for (String s : strings) {
+            NodeSerializer serializer = null;
+            Node node = null;
             switch (type) {
                 case AUTHOR:
-                    AuthorSerializer as = new AuthorSerializer(s);
-                    Author author = (Author) graph.createNode(type, as.getId(), as.getName());
-                    graph.addNode(author, as.getId());
+                    serializer = new AuthorSerializer(s);
+                    node = (Author) graph.createNode(type, serializer.getId(), serializer.getName());
                     break;
                 case CONFERENCE:
-                    ConferenceSerializer cs = new ConferenceSerializer(s);
-                    Conference conference = (Conference) graph.createNode(type, cs.getId(), cs.getName());
-                    graph.addNode(conference, cs.getId());
+                    serializer = new ConferenceSerializer(s);
+                    node = (Conference) graph.createNode(type, serializer.getId(), serializer.getName());
                     break;
                 case PAPER:
-                    PaperSerializer ps = new PaperSerializer(s);
-                    Paper paper = (Paper) graph.createNode(type, ps.getId(), ps.getName());
-                    graph.addNode(paper, ps.getId());
+                    serializer = new PaperSerializer(s);
+                    node = (Paper) graph.createNode(type, serializer.getId(), serializer.getName());
                     break;
                 case TERM:
-                    TermSerializer ts = new TermSerializer(s);
-                    Term term = (Term) graph.createNode(type, ts.getId(), ts.getName());
-                    graph.addNode(term, ts.getId());
+                    serializer = new TermSerializer(s);
+                    node = (Term) graph.createNode(type, serializer.getId(), serializer.getName());
                     break;
+            }
+            try {
+                graph.addNode(node, serializer.getId());
+            } catch (GraphException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -124,46 +132,54 @@ public class PersistenceController {
                 e.printStackTrace();
             }
         }
-        System.out.println("Hola");
     }
 
     public void exportNodes(String path) {
         for (NodeType n : NodeType.values()) {
-            Container<Node>.ContainerIterator iterator = graph.getNodeIterator(n);
-            while (iterator.hasNext()) {
-                NodeSerializer serializer = null;
-                String filename = null;
-                switch (n) {
-                    case AUTHOR:
-                        Author aut = (Author) iterator.next().getValue();
-                        serializer = new AuthorSerializer(aut);
-                        filename = "author";
-                        break;
-                    case CONFERENCE:
-                        Conference con = (Conference) iterator.next().getValue();
-                        serializer = new ConferenceSerializer(con);
-                        filename = "conference";
-                        break;
-                    case PAPER:
-                        Paper pap = (Paper) iterator.next().getValue();
-                        serializer = new PaperSerializer(pap);
-                        filename = "paper";
-                        break;
-                    case TERM:
-                        Term ter = (Term) iterator.next().getValue();
-                        serializer = new TermSerializer(ter);
-                        filename = "term";
-                        break;
+            if (n != NodeType.LABEL) {
+                Container<Node>.ContainerIterator iterator = graph.getNodeIterator(n);
+                while (iterator.hasNext()) {
+                    NodeSerializer serializer = null;
+                    String filename = null;
+                    switch (n) {
+                        case AUTHOR:
+                            Author aut = (Author) iterator.next().getValue();
+                            serializer = new AuthorSerializer(aut);
+                            filename = "author";
+                            break;
+                        case CONFERENCE:
+                            Conference con = (Conference) iterator.next().getValue();
+                            serializer = new ConferenceSerializer(con);
+                            filename = "conf";
+                            break;
+                        case PAPER:
+                            Paper pap = (Paper) iterator.next().getValue();
+                            serializer = new PaperSerializer(pap);
+                            filename = "paper";
+                            break;
+                        case TERM:
+                            Term ter = (Term) iterator.next().getValue();
+                            serializer = new TermSerializer(ter);
+                            filename = "term";
+                            break;
+                    }
+                    String d = serializer.getData();
+                    String filepath = path + filename + ".txt";
+                    writeFile(filepath, d);
                 }
-                String d = serializer.getData();
-                String filepath = path + filename + ".txt";
-                writeFile(filepath, d);
             }
         }
     }
 
     public void exportEdges(String path) {
+        for (NodeType n : NodeType.values()) {
+            if (n != NodeType.LABEL) {
+                Container<Node>.ContainerIterator iterator = graph.getNodeIterator(n);
+                while (iterator.hasNext()) {
 
+                }
+            }
+        }
     }
 
     public void exportGraph(String path) {
