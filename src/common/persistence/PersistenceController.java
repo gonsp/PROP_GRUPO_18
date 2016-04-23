@@ -7,6 +7,10 @@ import java.util.List;
 
 import common.domain.*;
 
+import static common.domain.NodeType.AUTHOR;
+import static common.domain.NodeType.CONFERENCE;
+import static common.domain.NodeType.PAPER;
+
 
 public class PersistenceController {
 
@@ -105,13 +109,13 @@ public class PersistenceController {
         for (String s : strings) {
             int relId = -1;
             EdgeSerializer serializer = null;
-            if (type1.equals(NodeType.AUTHOR) && type2.equals(NodeType.LABEL)) {
+            if (type1.equals(AUTHOR) && type2.equals(NodeType.LABEL)) {
                 relId = 3;
                 serializer = new LabelSerializer(graph, s, type1, type2);
             } else if (type1.equals(NodeType.CONFERENCE) && type2.equals(NodeType.LABEL)) {
                 relId = 5;
                 serializer = new LabelSerializer(graph, s, type1, type2);
-            } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.AUTHOR)) {
+            } else if (type1.equals(NodeType.PAPER) && type2.equals(AUTHOR)) {
                 relId = 0;
                 serializer = new EdgeSerializer(graph, s, type1, type2);
             } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.CONFERENCE)) {
@@ -171,18 +175,100 @@ public class PersistenceController {
         }
     }
 
-    public void exportEdges(String path) {
+    public void exportEdges(String path) throws GraphException {
         for (NodeType n : NodeType.values()) {
             if (n != NodeType.LABEL) {
                 Container<Node>.ContainerIterator iterator = graph.getNodeIterator(n);
                 while (iterator.hasNext()) {
-
+                    EdgeSerializer serializer = null;
+                    String filename = null;
+                    ArrayList<Node> relation;
+                    int size;
+                    if(n == AUTHOR) {
+                        Node node1 = iterator.next().getValue();
+                        relation = graph.getEdges(3, node1);
+                        size = relation.size();
+                        if(size != 0) {
+                            for(int i = 0; i < size; ++i) {
+                                Node node2 = relation.get(i);
+                                serializer = new EdgeSerializer(node1,node2,"author_label");
+                                filename = "author_label";
+                                String d = serializer.getData();
+                                String filepath = path + filename + ".txt";
+                                writeFile(filepath, d);
+                            }
+                        }
+                    } else if (n == CONFERENCE) {
+                        Node node1 = iterator.next().getValue();
+                        relation = graph.getEdges(5, node1);
+                        size = relation.size();
+                        if(size != 0) {
+                            for(int i = 0; i < size; ++i) {
+                                Node node2 = relation.get(i);
+                                serializer = new EdgeSerializer(node1,node2,"conference_label");
+                                filename = "conference_label";
+                                String d = serializer.getData();
+                                String filepath = path + filename + ".txt";
+                                writeFile(filepath, d);
+                            }
+                        }
+                    } else if (n == PAPER) {
+                        Node node1 = iterator.next().getValue();
+                        relation = graph.getEdges(0, node1);
+                        size = relation.size();
+                        if(size != 0) {
+                            for(int i = 0; i < size; ++i) {
+                                Node node2 = relation.get(i);
+                                serializer = new EdgeSerializer(node1,node2,"paper_author");
+                                filename = "paper_author";
+                                String d = serializer.getData();
+                                String filepath = path + filename + ".txt";
+                                writeFile(filepath, d);
+                            }
+                        }
+                        relation = graph.getEdges(1, node1);
+                        size = relation.size();
+                        if(size != 0) {
+                            for(int i = 0; i < size; ++i) {
+                                Node node2 = relation.get(i);
+                                serializer = new EdgeSerializer(node1,node2,"paper_conference");
+                                filename = "paper_conference";
+                                String d = serializer.getData();
+                                String filepath = path + filename + ".txt";
+                                writeFile(filepath, d);
+                            }
+                        }
+                        relation = graph.getEdges(4, node1);
+                        size = relation.size();
+                        if(size != 0) {
+                            for(int i = 0; i < size; ++i) {
+                                Node node2 = relation.get(i);
+                                serializer = new EdgeSerializer(node1,node2,"paper_label");
+                                filename = "paper_label";
+                                String d = serializer.getData();
+                                String filepath = path + filename + ".txt";
+                                writeFile(filepath, d);
+                            }
+                        }
+                        relation = graph.getEdges(2, node1);
+                        size = relation.size();
+                        if(size != 0) {
+                            for(int i = 0; i < size; ++i) {
+                                Node node2 = relation.get(i);
+                                serializer = new EdgeSerializer(node1,node2,"paper_term");
+                                filename = "paper_term";
+                                String d = serializer.getData();
+                                String filepath = path + filename + ".txt";
+                                writeFile(filepath, d);
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 
-    public void exportGraph(String path) {
+    public void exportGraph(String path) throws GraphException {
         exportNodes(path);
         exportEdges(path);
     }
