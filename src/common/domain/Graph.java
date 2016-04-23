@@ -42,7 +42,6 @@ public class Graph {
     }
 
     public int getSize(NodeType type) {
-        int test = getNodeContainer(type).getSize();
         return getNodeContainer(type).getSize();
     }
 
