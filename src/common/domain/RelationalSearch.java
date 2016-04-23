@@ -2,18 +2,16 @@ package common.domain;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
-public class RelationalSearch {
+public abstract class RelationalSearch extends GraphSearch {
 
-    private Graph graph;
     private RelationStructure rs;
-    private ArrayList<Result> results;
     private HashMap<String, Integer> edgesID;
 
     public RelationalSearch(Graph graph, RelationStructure rs) {
-        this.graph = graph;
+        super(graph);
         this.rs = rs;
-        results = new ArrayList<Result>();
         edgesID = new HashMap<String, Integer>();
     }
 
@@ -40,16 +38,21 @@ public class RelationalSearch {
     }
 
     public void search() {
-        Matrix matrix = hetesim();
-        //TODO normalize hetesim
-        Container<Node>.ContainerIterator iteratorA = graph.getNodeIterator(rs.get(0).getNodeTypeA());
-        for(int i = 0; i < matrix.getRows(); ++i) {
-            Node nodeA = iteratorA.next().getValue();
-            Container<Node>.ContainerIterator iteratorB = graph.getNodeIterator(rs.get(rs.size()-1).getNodeTypeB());
-            for(int j = 0; j < matrix.getColumns(); ++j) {
-                Node nodeB = iteratorB.next().getValue();
-                if(matrix.get(i, j) > 0) {
-                    results.add(new Result(nodeA, nodeB, matrix.get(i, j)));
+        if(!executed) {
+            executed = true;
+            Matrix matrix = hetesim();
+            //TODO normalize hetesim
+            //TODO order results
+            //TODO implement subclasses
+            Container<Node>.ContainerIterator iteratorA = graph.getNodeIterator(rs.get(0).getNodeTypeA());
+            for(int i = 0; i < matrix.getRows(); ++i) {
+                Node nodeA = iteratorA.next();
+                Container<Node>.ContainerIterator iteratorB = graph.getNodeIterator(rs.get(rs.size()-1).getNodeTypeB());
+                for(int j = 0; j < matrix.getColumns(); ++j) {
+                    Node nodeB = iteratorB.next();
+                    if(matrix.get(i, j) > 0) {
+                        results.add(new Result(nodeA, nodeB, matrix.get(i, j)));
+                    }
                 }
             }
         }
@@ -60,10 +63,10 @@ public class RelationalSearch {
         Container<Node>.ContainerIterator iteratorA = graph.getNodeIterator(relation.getNodeTypeA());
         Container<Node>.ContainerIterator iteratorB;
         for(int i = 0; i < matrix.getRows(); ++i) {
-            Node a = iteratorA.next().getValue();
+            Node a = iteratorA.next();
             iteratorB = graph.getNodeIterator(relation.getNodeTypeB());
             for(int j = 0; j < matrix.getColumns(); ++j) {
-                Node b = iteratorB.next().getValue();
+                Node b = iteratorB.next();
                 if(a.isRelated(relation.getId(), b)) {
                     double n;
                     if(normalize_rows) {
@@ -85,7 +88,7 @@ public class RelationalSearch {
             int j = 0;
             Container<Node>.ContainerIterator iteratorA = graph.getNodeIterator(edgeRelation.getNodeTypeA());
             while(iteratorA.hasNext()) {
-                Node nodeA = iteratorA.next().getValue();
+                Node nodeA = iteratorA.next();
                 ArrayList<Node> connected = graph.getEdges(edgeRelation.getId(), nodeA);
                 for(int iteratorB = 0; iteratorB < nodeA.getSizeEdges(edgeRelation.getId()); ++iteratorB) {
                     Node nodeB = connected.get(iteratorB);
@@ -107,7 +110,7 @@ public class RelationalSearch {
             Container<Node>.ContainerIterator iteratorB = graph.getNodeIterator(edgeRelation.getNodeTypeB());
             int j = 0;
             while(iteratorB.hasNext()) {
-                Node nodeB = iteratorB.next().getValue();
+                Node nodeB = iteratorB.next();
                 ArrayList<Node> connected = graph.getEdges(edgeRelation.getId(), nodeB);
                 for(int iteratorA = 0; iteratorA < nodeB.getSizeEdges(edgeRelation.getId()); ++iteratorA) {
                     Node nodeA = connected.get(iteratorA);
@@ -125,29 +128,9 @@ public class RelationalSearch {
         int columns = 0;
         Container<Node>.ContainerIterator iterator = graph.getNodeIterator(edgeRelation.getNodeTypeA());
         while(iterator.hasNext()) {
-            Node node = iterator.next().getValue();
+            Node node = iterator.next();
             columns += node.getSizeEdges(edgeRelation.getId());
         }
         return columns;
-    }
-
-    public ArrayList<Result> getResults() {
-        return results;
-    }
-
-    public class Result {
-        public Node from;
-        public Node to;
-        public double hetesim;
-
-        Result(Node from, Node to, double hetesim) {
-            this.from = from;
-            this.to = to;
-            this.hetesim = hetesim;
-        }
-
-        public void print() {
-            System.out.println(from.getValue() + " - " + to.getValue() + " - " + String.valueOf(hetesim));
-        }
     }
 }

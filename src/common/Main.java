@@ -32,7 +32,6 @@ public class Main {
 
         Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
         g.addRelation(AP);
-        g.addEdge(AP.getId(), NodeType.AUTHOR, 76, NodeType.PAPER, 360544);
 
         Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");
         Author a2 = (Author) g.createNode(NodeType.AUTHOR, "a2");
@@ -57,29 +56,21 @@ public class Main {
         g.addEdge(AP.getId(), a2, p3);
         g.addEdge(AP.getId(), a2, p4);
         g.addEdge(AP.getId(), a3, p4);
-
+/*
         try {
             ArrayList<Relation> aux = new ArrayList<Relation>();
-            aux.add(g.getRelation(0));
-            //aux.add(AP);
+            //aux.add(g.getRelation(0));
+            aux.add(AP);
             RelationStructure rs = new RelationStructure(NodeType.AUTHOR, aux, NodeType.PAPER);
             RelationalSearch relationalSearch = new RelationalSearch(g, rs);
             relationalSearch.search();
-            ArrayList<RelationalSearch.Result> results = relationalSearch.getResults();
-            System.out.println(results.size());
+            ArrayList<GraphSearch.Result> results = relationalSearch.getResults();
             for(int i = 0; i < results.size(); ++i) {
                 results.get(i).print();
             }
         } catch (RelationStructureException e) {
             e.printStackTrace();
         }
-
-
-        //TODO implementar relation nula en medio de relationStructure cuando es impar
-        //TODO método públio en grafo para acceder a getIdFromValue de container
-        //TODO Subclases de Relation para las relaciones predeterminadas
-        //TODO metodos en relationStructure para facilitar busqueda
-        //TODO removeRelation by name throws exception
+        */
     }
-
 }

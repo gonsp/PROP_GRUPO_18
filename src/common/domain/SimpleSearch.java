@@ -3,23 +3,25 @@ package common.domain;
 import java.util.ArrayList;
 
 
-public class SimpleSearch {
+public class SimpleSearch extends GraphSearch {
 
-    private ArrayList<Node> result;
+    private String filter;
+    private NodeType type;
 
-    public SimpleSearch(Graph graph, NodeType nodeType, String filtro) throws GraphException {
-        filtro = filtro.toLowerCase();
-        result = new ArrayList<>();
-        Container<Node>.ContainerIterator iterator = graph.getNodeIterator(nodeType);
-        while(iterator.hasNext()) {
-            Node aux = iterator.next().getValue();
-            if(aux.getValue().toLowerCase().contains(filtro)) {
-                result.add(aux);
-            }
-        }
+    public SimpleSearch(Graph graph, NodeType type, String filter) throws GraphException {
+        super(graph);
+        this.filter = filter.toLowerCase();
+        this.type = type;
     }
 
-    public ArrayList<Node> getResult(){
-        return result;
+    @Override
+    public void search() {
+        Container<Node>.ContainerIterator iterator = graph.getNodeIterator(type);
+        while(iterator.hasNext()) {
+            Node aux = iterator.next();
+            if(aux.getValue().toLowerCase().contains(filter)) {
+                results.add(new Result(aux, null, 0));
+            }
+        }
     }
 }

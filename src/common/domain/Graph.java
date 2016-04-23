@@ -69,7 +69,7 @@ public class Graph {
         }
         Container<Relation>.ContainerIterator iterator = relations.getIterator();
         while(iterator.hasNext()) {
-            Relation relation = iterator.next().getValue();
+            Relation relation = iterator.next();
             if(relation.getNodeTypeA() == type || relation.getNodeTypeB() == type) {
                 node.addRelation(relation);
             }
@@ -85,7 +85,7 @@ public class Graph {
         Node node = getNode(type, id);
         Container<Relation>.ContainerIterator iterator = relations.getIterator();
         while(iterator.hasNext()) {
-            Relation relation = iterator.next().getValue();
+            Relation relation = iterator.next();
             ArrayList<Node> connected = getEdges(relation.getId(), node);
             for(int i = 0; i < connected.size(); ++i) {
                 removeEdge(relation.getId(), node, connected.get(i));
@@ -144,7 +144,7 @@ public class Graph {
     private void i_addRelation(Relation relation, NodeType type) {
         Container<Node>.ContainerIterator iterator = getNodeIterator(type);
         while(iterator.hasNext()) {
-            Node node = iterator.next().getValue();
+            Node node = iterator.next();
             node.addRelation(relation);
         }
     }
@@ -161,7 +161,7 @@ public class Graph {
         if(!relation.isDefault()) {
             Container<Node>.ContainerIterator iterator = getNodeIterator(type);
             while(iterator.hasNext()) {
-                Node node = iterator.next().getValue();
+                Node node = iterator.next();
                 node.removeRelation(relation);
             }
         } else {
@@ -176,17 +176,6 @@ public class Graph {
             i_removeRelation(relation, relation.getNodeTypeB());
         }
         relations.removeElement(relationID);
-    }
-
-    public void removeRelation(String name) {
-        ArrayList<Integer> ids = relations.getIdFromValue(name);
-        for(int i = 0; i < ids.size(); ++i) {
-            try {
-                removeRelation(ids.get(i));
-            } catch(GraphException e) {
-                //No pasará nunca
-            }
-        }
     }
 
     public Relation getRelation(int relationID) throws GraphException {

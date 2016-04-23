@@ -70,7 +70,7 @@ public class Container<T extends  Element> {
         ArrayList<Integer> ids = new ArrayList<Integer>();
         ContainerIterator iterator = getIterator();
         while(iterator.hasNext()) {
-            Element aux = iterator.next().getValue();
+            Element aux = iterator.next();
             if(aux.getValue() != null && aux.getValue().equalsIgnoreCase(value)) {
                 ids.add(aux.getId());
             }
@@ -86,7 +86,7 @@ public class Container<T extends  Element> {
     	return ID >= lastID;
     }
 
-    public class ContainerIterator implements Iterator<Map.Entry<Integer, T>> {
+    public class ContainerIterator implements Iterator {
 
         private Iterator<Map.Entry<Integer, T>> iterator;
 
@@ -100,8 +100,8 @@ public class Container<T extends  Element> {
         }
 
         @Override
-        public Map.Entry<Integer, T> next() {
-            return iterator.next();
+        public T next() {
+            return iterator.next().getValue();
         }
     }
 

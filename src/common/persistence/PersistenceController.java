@@ -137,7 +137,7 @@ public class PersistenceController {
                 List<String> strings = new ArrayList<>();
                 Container<Node>.ContainerIterator it = graph.getNodeIterator(n);
                 while (it.hasNext()) {
-                    Node node = it.next().getValue();
+                    Node node = it.next();
                     NodeSerializer serializer = new NodeSerializer(node);
                     strings.add(serializer.getData());
                 }
@@ -156,7 +156,7 @@ public class PersistenceController {
                 while (it.hasNext()) {
                     EdgeSerializer serializer = null;
                     ArrayList<Node> relation;
-                    Node node1 = it.next().getValue();
+                    Node node1 = it.next();
                     int size;
                     if (n == AUTHOR) {
                         relation = graph.getEdges(3, node1);
