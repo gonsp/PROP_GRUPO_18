@@ -1,6 +1,7 @@
 package common.persistence;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -164,7 +165,14 @@ public class PersistenceController {
     }
 
     public void exportEdges(String path) {
+        for (NodeType n : NodeType.values()) {
+            if (n != NodeType.LABEL) {
+                Container<Node>.ContainerIterator iterator = graph.getNodeIterator(n);
+                while (iterator.hasNext()) {
 
+                }
+            }
+        }
     }
 
     public void exportGraph(String path) {
