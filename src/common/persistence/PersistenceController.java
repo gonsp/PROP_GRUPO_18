@@ -100,7 +100,9 @@ public class PersistenceController {
             EdgeSerializer serializer = new EdgeSerializer(g, s, etype, type1, type2);
             Node node1 = serializer.getNode1();
             Node node2 = serializer.getNode2();
-            //g.addRelation()
+            //Relation relation = new Relation(type1, type2, etype);
+            //g.addRelation(relation);
+            //g.addEdge(node1, node2);
         }
     }
 
