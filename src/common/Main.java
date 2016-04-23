@@ -13,15 +13,16 @@ public class Main {
 
         Graph g = new Graph();
 
-        /*PersistenceController pc = new PersistenceController();
+        PersistenceController pc = new PersistenceController();
         pc.importNodes(g, "data/author.txt", NodeType.AUTHOR);
         pc.importNodes(g, "data/conf.txt", NodeType.CONFERENCE);
         pc.importNodes(g, "data/paper.txt", NodeType.PAPER);
         pc.importNodes(g, "data/term.txt", NodeType.TERM);
+        pc.exportNodes(g, "exp/");
         //pc.importEdges(g, "data/author_label.txt", "Author", "Label");
-        */
 
-        Author a1 = new Author("a1");
+
+        /*Author a1 = new Author("a1");
         Author a2 = new Author("a2");
         Author a3 = new Author("a3");
 
@@ -64,7 +65,7 @@ public class Main {
             }
         } catch (RelationStructureException e) {
             e.printStackTrace();
-        }
+        }*/
 
 
         //TODO implementar relation nula en medio de relationStructure cuando es impar

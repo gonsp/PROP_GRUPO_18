@@ -20,8 +20,8 @@ public class LabelSerializer extends NodeSerializer {
             if (m == -1) {
                 m = data.indexOf(" ");
             }
-            nodeId = Integer.parseInt(data.substring(0, m-1));
-            name = data.substring(m + 3, data.length() - 1).trim();
+            nodeId = Integer.parseInt(data.substring(0, m));
+            name = data.substring(m + 3, data.length()).trim();
         }
     }
 
