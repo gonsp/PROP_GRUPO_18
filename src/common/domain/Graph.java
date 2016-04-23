@@ -10,6 +10,10 @@ public class Graph {
     private HashMap<NodeType, Container<Node>> nodeContainers;
     private Container<Relation> relations;
 
+    public Graph() throws GraphException {
+        this("-1");
+    }
+
     //Constructors
     public Graph(String name) throws GraphException {
         this.name = name;
