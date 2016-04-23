@@ -29,7 +29,11 @@ public class EdgeSerializer implements Serializable {
     }
 
     protected void deflate() {
-
+        if(data == null && node1 != null && node2 != null) {
+            int node1Id = node1.getId();
+            int node2Id = node2.getId();
+            data = Integer.toString(node1Id) + "\t" + Integer.toString(node2Id);
+        }
     }
 
     public EdgeSerializer(Graph graph, String data, String etype, NodeType ntype1, NodeType ntype2) {
@@ -58,6 +62,11 @@ public class EdgeSerializer implements Serializable {
 
     public String getType() {
         return etype;
+    }
+
+    public String getData() {
+        this.deflate();
+        return data;
     }
 
 }
