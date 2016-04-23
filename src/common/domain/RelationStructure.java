@@ -20,9 +20,6 @@ public class RelationStructure extends ArrayList<Relation> {
 		}
         if(!setOrder(from, 0, to)) {
             throw new RelationStructureException(RelationStructureException.Error.MALFORMED_STRUCTURE);
-        } else {
-            //TODO remove this
-            System.out.println(String.valueOf(get(0).getNodeTypeA())+get(0).getNodeTypeB()+get(1).getNodeTypeA()+get(1).getNodeTypeB());
         }
 	}
 
