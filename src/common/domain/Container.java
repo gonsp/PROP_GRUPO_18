@@ -37,9 +37,9 @@ public class Container<T extends  Element> {
 
     protected void addElement(T element, int ID) throws GraphException {
         if (!checkNewID(ID)) {
-        	throw new GraphException(GraphExceptionError.ID_INVALID);
+        	throw new GraphException(GraphException.Error.ID_INVALID);
         } else if (elements.containsKey(ID)) {
-        	throw new GraphException(GraphExceptionError.ID_USED);
+        	throw new GraphException(GraphException.Error.ID_USED);
         } else {
             lastID = ID;
             addElement(element);
@@ -48,21 +48,21 @@ public class Container<T extends  Element> {
 
     protected void removeElement(int ID) throws GraphException {
         if (!checkID(ID)) {
-        	throw new GraphException(GraphExceptionError.ID_INVALID);
+        	throw new GraphException(GraphException.Error.ID_INVALID);
         } else if (elements.containsKey(ID)) {
             elements.remove(ID);
         } else {
-        	throw new GraphException(GraphExceptionError.ID_NONEXISTENT);
+        	throw new GraphException(GraphException.Error.ID_NONEXISTENT);
         }
     }
 
     protected T getElement(int ID) throws GraphException {
         if (!checkID(ID)) {
-        	throw new GraphException(GraphExceptionError.ID_INVALID);
+        	throw new GraphException(GraphException.Error.ID_INVALID);
         } else if (elements.containsKey(ID)) {
             return elements.get(ID);
         } else {
-        	throw new GraphException(GraphExceptionError.ID_NONEXISTENT);
+        	throw new GraphException(GraphException.Error.ID_NONEXISTENT);
         }
     }
 

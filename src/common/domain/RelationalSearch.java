@@ -33,7 +33,12 @@ public class RelationalSearch {
         if(rs.size()%2 == 0) {
             return i_hetesim(0, m-1, true).mmul(i_hetesim(m, rs.size()-1, false));
         } else {
-            return i_hetesim(0, m-1, true).mmul(getNormalizedEdgeLeftMatrix(rs.get(m))).mmul(getNormalizedEdgeRightMatrix(rs.get(m))).mmul(i_hetesim(m, rs.size()-1, false));
+            if(rs.size() == 1) {
+                DoubleMatrix result = getNormalizedEdgeLeftMatrix(rs.get(m)).mmul(getNormalizedEdgeRightMatrix(rs.get(m)));
+                return result;
+            } else {
+                return i_hetesim(0, m-1, true).mmul(getNormalizedEdgeLeftMatrix(rs.get(m))).mmul(getNormalizedEdgeRightMatrix(rs.get(m))).mmul(i_hetesim(m, rs.size()-1, false));
+            }
         }
     }
 
@@ -142,6 +147,10 @@ public class RelationalSearch {
             this.from = from;
             this.to = to;
             this.hetesim = hetesim;
+        }
+
+        public void print() {
+            System.out.println(from.getValue() + " - " + to.getValue() + " - " + String.valueOf(hetesim));
         }
     }
 }

@@ -8,15 +8,11 @@ public class RelationStructure extends ArrayList<Relation> {
 	public RelationStructure(NodeType from, ArrayList<Relation> r, NodeType to) throws RelationStructureException {
 		super(r);
 		if(size() == 0) {
-			throw new RelationStructureException(RelationStructureError.EMPTY_STRUCTURE);
+			throw new RelationStructureException(RelationStructureException.Error.EMPTY_STRUCTURE);
 		}
         if(!setOrder(from, 0, to)) {
-            throw new RelationStructureException(RelationStructureError.MALFORMED_STRUCTURE);
+            throw new RelationStructureException(RelationStructureException.Error.MALFORMED_STRUCTURE);
         }
-	}
-
-	public RelationStructure(NodeType from, Relation[] r, NodeType to) throws RelationStructureException {
-		this(from, (ArrayList<Relation>)Arrays.asList(r), to);
 	}
 
     public RelationStructure(Graph graph, NodeType from, int[] ids, NodeType to) throws RelationStructureException {
@@ -31,7 +27,7 @@ public class RelationStructure extends ArrayList<Relation> {
             if(from == relation.getNodeTypeA()) {
                 return setOrder(relation.getNodeTypeB(), i+1, to);
             } else if(from == relation.getNodeTypeB()) {
-                boolean aux = setOrder(relation.getNodeTypeB(), i+1, to);
+                boolean aux = setOrder(relation.getNodeTypeA(), i+1, to);
                 relation.setNodeTypeB(relation.getNodeTypeA());
                 relation.setNodeTypeA(from);
                 return aux;
@@ -48,7 +44,7 @@ public class RelationStructure extends ArrayList<Relation> {
                 relations.add(graph.getRelation(ids[i]));
             } catch (GraphException e) {
                 e.printStackTrace();
-                throw new RelationStructureException(RelationStructureError.DOESNT_EXIST_RELATION);
+                throw new RelationStructureException(RelationStructureException.Error.DOESNT_EXIST_RELATION);
             }
         }
         return relations;

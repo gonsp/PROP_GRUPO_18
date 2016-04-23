@@ -83,19 +83,19 @@ public class Graph {
         return getEdges(relationID, getNode(type, id));
     }
 
-    public void addEdge(int relationID, Node a, Node b) {
+    public void addEdge(int relationID, Node a, Node b) throws GraphException {
         a.addEdge(relationID, b.getId());
         b.addEdge(relationID, a.getId());
     }
 
     public void addEdge(int relationID, NodeType typeA, int idA, NodeType typeB, int idB) throws GraphException {
         if(typeA == typeB && idA == idB) {
-            throw new GraphException(GraphExceptionError.ID_EQUAL);
+            throw new GraphException(GraphException.Error.ID_EQUAL);
         }
         addEdge(relationID, getNodeContainer(typeA).getElement(idA), getNodeContainer(typeB).getElement(idB));
     }
 
-    public void removeEdge(int relationID, Node a, Node b) {
+    public void removeEdge(int relationID, Node a, Node b) throws GraphException {
         a.removeEdge(relationID, b.getId());
         b.removeEdge(relationID, a.getId());
     }

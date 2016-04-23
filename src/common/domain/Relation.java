@@ -6,6 +6,12 @@ public class Relation extends Element{
 	private NodeType B;
 	
 	//Constructors
+	public Relation(NodeType A, NodeType B, String name) {
+		super(name);
+		this.A = A;
+		this.B = B;
+	}
+
 	public Relation(NodeType A, NodeType B, String name, int id) {
         super(id, name);
 		this.A = A;
