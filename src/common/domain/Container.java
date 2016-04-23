@@ -14,7 +14,7 @@ public class Container<T extends  Element> {
     //Constructors
     protected Container() {
         elements = new HashMap<Integer, T>();
-        lastID = 1;
+        lastID = 0;
     }
 
     //Set & Get
@@ -79,7 +79,7 @@ public class Container<T extends  Element> {
     }
 
     private boolean checkID(int ID) {
-    	return ID > 0 && ID < lastID;
+    	return ID >= 0 && ID < lastID;
     }
     
     private boolean checkNewID(int ID) {
