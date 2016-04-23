@@ -33,6 +33,7 @@ public class EdgeSerializer implements Serializable {
             int node1Id = node1.getId();
             int node2Id = node2.getId();
             data = Integer.toString(node1Id) + "\t" + Integer.toString(node2Id);
+
         }
     }
 
