@@ -52,8 +52,9 @@ public class Matrix {
         for(int i = 0; i < this.n; ++i) {
             for(int j = 0; j < mat.m; ++j) {
                 double value = 0;
-                for(int k = 0; k < this.m; ++k) {
-                    value += this.get(i, k) * mat.get(k, j);
+                for(int k = 0; k < this.rows[i].size(); ++k) {
+                    Cell aux = this.rows[i].get(k);
+                    value += aux.value * mat.get(aux.column, j);
                 }
                 res.put(i, j, value);
             }
