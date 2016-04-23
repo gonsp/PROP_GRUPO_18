@@ -24,10 +24,10 @@ public class Main {
         //pc.importEdges("data/paper_conf.txt", NodeType.PAPER, NodeType.CONFERENCE);
         //pc.importEdges("data/paper_label.txt", NodeType.PAPER, NodeType.LABEL);
         //pc.importEdges("data/paper_term.txt", NodeType.PAPER, NodeType.TERM);
-        pc.exportNodes("out/");
+        //pc.exportNodes("out/");
 
-        /*
-        Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");
+
+        /*Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");
         Author a2 = (Author) g.createNode(NodeType.AUTHOR, "a2");
         Author a3 = (Author) g.createNode(NodeType.AUTHOR, "a3");
 
@@ -35,8 +35,6 @@ public class Main {
         Paper p2 = (Paper) g.createNode(NodeType.PAPER, "p2");
         Paper p3 = (Paper) g.createNode(NodeType.PAPER, "p3");
         Paper p4 = (Paper) g.createNode(NodeType.PAPER, "p4");
-
-        Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
 
         g.addNode(a1);
         g.addNode(a2);
@@ -55,7 +53,10 @@ public class Main {
         g.addEdge(AP.getId(), a2, p2);
         g.addEdge(AP.getId(), a2, p3);
         g.addEdge(AP.getId(), a2, p4);
-        g.addEdge(AP.getId(), a3, p4);
+        g.addEdge(AP.getId(), a3, p4);*/
+
+        Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
+
 
         try {
             ArrayList<Relation> aux = new ArrayList<Relation>();
@@ -71,7 +72,7 @@ public class Main {
         } catch (RelationStructureException e) {
             e.printStackTrace();
         }
-        */
+
 
 
         //TODO implementar relation nula en medio de relationStructure cuando es impar
