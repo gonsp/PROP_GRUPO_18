@@ -1,0 +1,33 @@
+package common.persistence.tests;
+
+import java.util.Scanner;
+
+
+public class MainTest {
+
+    public static void main(String[] args) {
+        int menu = 0;
+        while(menu != 5) {
+            Scanner keyboard = new Scanner(System.in);
+            System.out.println("CHOOSE A CLASS TO TEST:");
+            System.out.println("1. Edge Serializer");
+            System.out.println("2. Label Serializer");
+            System.out.println("3. Node Serializer");
+            System.out.println("4. Persistence Controller");
+            System.out.println("5. Exit");
+            menu = keyboard.nextInt();
+            switch (menu) {
+                case 1:
+
+                case 2:
+
+                case 3:
+                    DriverNodeSerializer d = new DriverNodeSerializer();
+                    d.main();
+                    break;
+                case 4:
+            }
+            System.out.println(" ");
+        }
+    }
+}
