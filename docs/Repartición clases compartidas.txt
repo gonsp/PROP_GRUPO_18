@@ -17,8 +17,12 @@
  Grupo 3: Clases relacionadas con la persistencia
     Controlador de persistancia: Pau
     Serializador Nodos: Pau
-    Serializador Aristas: Víctor
+    Serializador Aristas: Pau
     Serializador Etiquetas: Víctor
+    Driver Controlador: Víctor
+    Driver Nodos: Víctor
+    Driver Aristas: Víctor
+    Driver Etiquetas: Víctor
  
  Grupo 3bis: Clases relacionadas con las búsquedas (2)
     Búsqueda relacional: Gonzalo    
