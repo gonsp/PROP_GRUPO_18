@@ -56,6 +56,7 @@ public class DriverPersistenceController {
         g.addNode(n1,id1);
         Node n2 = g.createNode(NodeType.AUTHOR, "Harry Potter");
         g.addNode(n2, id2);
+        g.addEdge(0,n1,n2);
         controller.exportGraph(path);
     }
 
