@@ -150,101 +150,87 @@ public class PersistenceController {
     public void exportEdges(String path) throws GraphException {
         for (NodeType n : NodeType.values()) {
             if (n != LABEL && n != TERM) {
-                List<String> strings = new ArrayList<>();
-                String filename = null;
+                List<String> strings;
+                String filepath = null;
                 Container<Node>.ContainerIterator it = graph.getNodeIterator(n);
                 while (it.hasNext()) {
                     EdgeSerializer serializer = null;
                     ArrayList<Node> relation;
                     Node node1 = it.next();
-                    int size;
                     if (n == AUTHOR) {
+                        strings = new ArrayList<>();
                         relation = graph.getEdges(3, node1);
-                        size = relation.size();
-                        if (size != 0) {
-                            for (int i = 0; i < size; ++i) {
-                                Node node2 = relation.get(i);
-                                serializer = new EdgeSerializer(node1, node2, "author_label");
-                                String d = serializer.getData();
-                                strings.add(d);
-                            }
+                        for (int i = 0; i < relation.size(); ++i) {
+                            Node node2 = relation.get(i);
+                            serializer = new EdgeSerializer(node1, node2, "author_label");
+                            String d = serializer.getData();
+                            strings.add(d);
                         }
-                        filename = "author_label";
-                        String filepath = path + filename + ".txt";
+                        filepath = path + "author_label" + ".txt";
                         writeFile(filepath, strings);
                     } else if (n == CONF) {
+                        strings = new ArrayList<>();
                         relation = graph.getEdges(5, node1);
-                        size = relation.size();
-                        if (size != 0) {
-                            for (int i = 0; i < size; ++i) {
-                                Node node2 = relation.get(i);
-                                serializer = new EdgeSerializer(node1, node2, "conf_label");
-                                String d = serializer.getData();
-                                strings.add(d);
-                            }
+                        for (int i = 0; i < relation.size(); ++i) {
+                            Node node2 = relation.get(i);
+                            serializer = new EdgeSerializer(node1, node2, "conf_label");
+                            String d = serializer.getData();
+                            strings.add(d);
                         }
-                        filename = "conf_label";
-                        String filepath = path + filename + ".txt";
+                        filepath = path + "conf_label" + ".txt";
                         writeFile(filepath, strings);
                     } else if (n == PAPER) {
+                        strings = new ArrayList<>();
                         relation = graph.getEdges(0, node1);
-                        size = relation.size();
-                        if (size != 0) {
-                            for (int i = 0; i < size; ++i) {
-                                Node node2 = relation.get(i);
-                                serializer = new EdgeSerializer(node1, node2, "paper_author");
-                                filename = "paper_author";
-                                String d = serializer.getData();
-                                String filepath = path + filename + ".txt";
-                                strings.add(d);
-                            }
+                        for (int i = 0; i < relation.size(); ++i) {
+                            Node node2 = relation.get(i);
+                            serializer = new EdgeSerializer(node1, node2, "paper_author");
+                            String d = serializer.getData();
+                            strings.add(d);
                         }
+                        filepath = path + "paper_author" + ".txt";
+                        writeFile(filepath, strings);
+                        strings = new ArrayList<>();
                         relation = graph.getEdges(1, node1);
-                        size = relation.size();
-                        if (size != 0) {
-                            for (int i = 0; i < size; ++i) {
-                                Node node2 = relation.get(i);
-                                serializer = new EdgeSerializer(node1, node2, "paper_conf");
-                                filename = "paper_conf";
-                                String d = serializer.getData();
-                                String filepath = path + filename + ".txt";
-                                strings.add(d);
-                            }
+                        for (int i = 0; i < relation.size(); ++i) {
+                            Node node2 = relation.get(i);
+                            serializer = new EdgeSerializer(node1, node2, "paper_conf");
+                            String d = serializer.getData();
+                            strings.add(d);
                         }
+                        filepath = path + "paper_conf" + ".txt";
+                        writeFile(filepath, strings);
+                        strings = new ArrayList<>();
                         relation = graph.getEdges(4, node1);
-                        size = relation.size();
-                        if (size != 0) {
-                            for (int i = 0; i < size; ++i) {
-                                Node node2 = relation.get(i);
-                                serializer = new EdgeSerializer(node1, node2, "paper_label");
-                                filename = "paper_label";
-                                String d = serializer.getData();
-
-                                strings.add(d);
-                            }
+                        for (int i = 0; i < relation.size(); ++i) {
+                            Node node2 = relation.get(i);
+                            serializer = new EdgeSerializer(node1, node2, "paper_label");
+                            String d = serializer.getData();
+                            strings.add(d);
                         }
+                        filepath = path + "paper_label" + ".txt";
+                        writeFile(filepath, strings);
+                        strings = new ArrayList<>();
                         relation = graph.getEdges(2, node1);
-                        size = relation.size();
-                        if (size != 0) {
-                            for (int i = 0; i < size; ++i) {
-                                Node node2 = relation.get(i);
-                                serializer = new EdgeSerializer(node1, node2, "paper_term");
-                                filename = "paper_term";
-                                String d = serializer.getData();
-                                String filepath = path + filename + ".txt";
-                                strings.add(d);
-                            }
+                        for (int i = 0; i < relation.size(); ++i) {
+                            Node node2 = relation.get(i);
+                            serializer = new EdgeSerializer(node1, node2, "paper_term");
+                            String d = serializer.getData();
+                            strings.add(d);
                         }
+                        filepath = path + "paper_term" + ".txt";
+                        writeFile(filepath, strings);
                     }
                 }
-                String filepath = path + filename + ".txt";
             }
         }
     }
 
     public void exportGraph(String path) throws GraphException {
+        System.out.println("Exporting nodes");
         exportNodes(path);
-        //exportEdges(path);
+        System.out.println("Exporting edges");
+        exportEdges(path);
     }
 
 }
