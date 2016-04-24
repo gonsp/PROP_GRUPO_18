@@ -20,14 +20,16 @@ public class MainTest {
                 case 1:
 
                 case 2:
-
+                    DriverLabelSerializer dl = new DriverLabelSerializer();
+                    dl.main();
+                    break;
                 case 3:
-                    DriverNodeSerializer d = new DriverNodeSerializer();
-                    d.main();
+                    DriverNodeSerializer dn = new DriverNodeSerializer();
+                    dn.main();
                     break;
                 case 4:
+
             }
-            System.out.println(" ");
         }
     }
 }

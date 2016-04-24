@@ -1,8 +1,6 @@
 package common.persistence.tests;
 
-import common.domain.Node;
 import common.persistence.NodeSerializer;
-
 import java.util.Scanner;
 
 
