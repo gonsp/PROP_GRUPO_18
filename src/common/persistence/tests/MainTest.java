@@ -1,11 +1,13 @@
 package common.persistence.tests;
 
+import common.domain.GraphException;
+
 import java.util.Scanner;
 
 
 public class MainTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws GraphException {
         int menu = 0;
         while(menu != 5) {
             Scanner keyboard = new Scanner(System.in);
@@ -30,7 +32,9 @@ public class MainTest {
                     dn.main();
                     break;
                 case 4:
-
+                    DriverPersistenceController dp = new DriverPersistenceController();
+                    dp.main();
+                    break;
             }
         }
     }
