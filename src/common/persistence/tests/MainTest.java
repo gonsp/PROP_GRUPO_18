@@ -18,7 +18,9 @@ public class MainTest {
             menu = keyboard.nextInt();
             switch (menu) {
                 case 1:
-
+                    DriverEdgeSerializer de = new DriverEdgeSerializer();
+                    de.main();
+                    break;
                 case 2:
                     DriverLabelSerializer dl = new DriverLabelSerializer();
                     dl.main();
