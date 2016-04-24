@@ -19,7 +19,7 @@ public class DriverRelationalSearch {
         else return NodeType.PAPER;
     }
 
-    public void main() {
+    public static void main(String[] args) {
         System.out.println("SimpleSearch class test.");
         int nodtype;
         System.out.println("Enter node type: (1 - Author, 2 - Conference, 3 - Term, 4 - Paper,  0 - EXIT)");
