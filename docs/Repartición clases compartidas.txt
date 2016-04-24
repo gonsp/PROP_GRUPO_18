@@ -1,13 +1,20 @@
  Grupo 1: Clases relacionadas con las búsquedas (1)
-    Estructura de relaciones: Adrià i Joel
-    Búsqueda: David
-    Búsqueda simple: Marc
+    GraphSearch:
+    Result:
+    SimpleSearch:
+    RelationStructureException:
+    Relation:
+    AuthorLabel:
+    AuthorPaper:
+    ConferenceLabel:
+    ConferencePaper:
+    PaperLabel:
+    TermPaper:
 
-
-    
  Grupo 2: Clases relacionadas con grafo
     Graph:
     Container:
+    NodeType:
     Element:
     Node:
     Author:
@@ -15,35 +22,18 @@
     Paper:
     Label:
     Term:
-    Relation:
-    NodeType:
     GraphException:
 
-    Grafo: Guillermo  
-    Nodo: Sergi
-    Autor: Sergi
-    Paper: Sergi
-    Temática: Sergi
-    Conferencia: Sergi
-    Term: Sergi
-    Relación: Javier
-    Arista: Gerard
- 
  Grupo 3: Clases relacionadas con la persistencia
-    Controlador de persistancia: Pau
-    Serializador Nodos: Pau
-    Serializador Aristas: Pau
-    Serializador Etiquetas: Víctor
-    Driver Controlador: Víctor
-    Driver Nodos: Víctor
-    Driver Aristas: Víctor
-    Driver Etiquetas: Víctor
+    PersistenceController:
+    EdgeSerializer:
+    LabelSerializer;
+    NodeSerializer;
  
  Grupo 3bis: Clases relacionadas con las búsquedas (2)
-    Búsqueda relacional: Gonzalo    
-    BúsquedaOrigen: David
-    BúsquedaOrigenDestino: Magí
-    BúsquedaLibre: Daniel
- 
- 
- De forma muy colaborativa realizaremos la clase Grafo, ya que es el núcleo de todo.
+    RelationalSearch: GONZALO, Daniel
+    Matrix: GONZALO
+    RelationStructure: DANIEL, Gonzalo
+    FreeSearch: DANIEL, Gonzalo, David
+    OriginSearch: DAVID
+    OriginDestination: MAGI
