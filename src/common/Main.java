@@ -70,10 +70,14 @@ public class Main {
             aux.add(g.getRelation(0));
             aux.add(g.getRelation(0));
             aux.add(g.getRelation(0));
-
+            aux.add(g.getRelation(0));
+            aux.add(g.getRelation(0));
+            aux.add(g.getRelation(0));
+            aux.add(g.getRelation(0));
+            aux.add(g.getRelation(0));
             //aux.add(AP);
             //aux.add(AP);
-            RelationStructure rs = new RelationStructure(NodeType.AUTHOR, aux, NodeType.AUTHOR);
+            RelationStructure rs = new RelationStructure(NodeType.AUTHOR, aux, NodeType.PAPER);
             GraphSearch s = new FreeSearch(g, rs);
             s.search();
             ArrayList<GraphSearch.Result> results = s.getResults();
