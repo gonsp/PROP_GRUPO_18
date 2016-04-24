@@ -1,6 +1,7 @@
 package common.persistence.tests;
 
 import common.domain.Graph;
+import common.domain.GraphException;
 import common.domain.Node;
 import common.domain.NodeType;
 import common.persistence.NodeSerializer;
@@ -12,19 +13,20 @@ public class DriverNodeSerializer {
     NodeSerializer serializer = null;
 
     public void testConstructor1() {
-        System.out.println("Write an int (id) and String (data)");
+        System.out.println("Write an int (id) and String (name)");
         Scanner keyboard = new Scanner(System.in);
         String data = keyboard.nextLine();
         serializer = new NodeSerializer(data);
     }
 
-    public void testConstructor2() {
-        System.out.println("Write an int (id) and String (data)");
+    public void testConstructor2() throws GraphException {
+        System.out.println("Write an int (id) String (name)");
         Scanner keyboard = new Scanner(System.in);
         int id = keyboard.nextInt();
         String data = keyboard.nextLine();
         Graph g = new Graph();
-        Node n = g.createNode(NodeType.AUTHOR,id,data);
+        Node n = g.createNode(NodeType.AUTHOR,data);
+        g.addNode(n,id);
         serializer = new NodeSerializer(n);
     }
 
@@ -40,7 +42,7 @@ public class DriverNodeSerializer {
         System.out.println(serializer.getName());
     }
 
-    public void main(){
+    public void main() throws GraphException {
         int menu = 0;
         while (menu != 3) {
             System.out.println("CHOOSE A METHOD TO TEST:");
