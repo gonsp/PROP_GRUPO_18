@@ -50,10 +50,6 @@ public class Graph {
         getNodeContainer(getNodeType(node)).addElement(node);
     }
 
-    public void addNode(Node node, int id) throws GraphException {
-        getNodeContainer(getNodeType(node)).addElement(node, id);
-    }
-
     public Node createNode(NodeType type, int nodeID, String value) {
         Node node;
         if(type == NodeType.AUTHOR) {
