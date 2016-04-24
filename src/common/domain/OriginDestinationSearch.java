@@ -11,6 +11,11 @@ public class OriginDestinationSearch extends OriginSearch {
 
     @Override
     protected void generateResults(Matrix matrix) {
-
+        super.generateResults(matrix);
+        for(int i = 0; i < results.size(); ++i) {
+            if(results.get(i).to.getId() != to.getId()) {
+                results.remove(i);
+            }
+        }
     }
 }

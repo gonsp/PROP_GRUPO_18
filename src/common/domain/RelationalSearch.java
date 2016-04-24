@@ -10,6 +10,7 @@ public abstract class RelationalSearch extends GraphSearch {
     protected RelationStructure rs;
     private HashMap<String, Integer> edgesID;
     private boolean firstMatrix;
+    private int free_j_edgeMatrix;
 
     public RelationalSearch(Graph graph, RelationStructure rs) {
         super(graph);
@@ -102,6 +103,7 @@ public abstract class RelationalSearch extends GraphSearch {
                     edgeMatrixA.put(i, j, 1./nodeA.getSizeEdges(edgeRelation.getId()));
                     ++j;
                 }
+                free_j_edgeMatrix = j;
                 ++i;
             }
         } catch (GraphException e) {
@@ -111,21 +113,27 @@ public abstract class RelationalSearch extends GraphSearch {
     }
 
     private Matrix getNormalizedEdgeRightMatrix(Relation edgeRelation) {
-        Matrix edgeMatrixB = new Matrix(edgesID.size(), graph.getSize(edgeRelation.getNodeTypeB()));
+        Matrix edgeMatrixB = new Matrix(getColumnsEdgeMatrix(edgeRelation), graph.getSize(edgeRelation.getNodeTypeB()));
         try {
             Container<Node>.ContainerIterator iteratorB = graph.getNodeIterator(edgeRelation.getNodeTypeB());
             int j = 0;
             while(iteratorB.hasNext()) {
                 Node nodeB = iteratorB.next();
                 ArrayList<Node> connected;
-                if(firstMatrix) {
+                /*if(firstMatrix) {
                     connected = getEdgesNodeTo(edgeRelation, nodeB);
                 } else {
-                    connected = graph.getEdges(edgeRelation.getId(), nodeB);
-                }
+                }*/
+                connected = graph.getEdges(edgeRelation.getId(), nodeB);
                 for(int iteratorA = 0; iteratorA < connected.size(); ++iteratorA) {
                     Node nodeA = connected.get(iteratorA);
-                    edgeMatrixB.put(edgesID.get(String.valueOf(nodeA.getId()).concat(String.valueOf(nodeB.getId()))), j, 1./nodeB.getSizeEdges(edgeRelation.getId()));
+                    int i;
+                    if(edgesID.containsKey(String.valueOf(nodeA.getId()).concat(String.valueOf(nodeB.getId())))) {
+                        i = edgesID.get(String.valueOf(nodeA.getId()).concat(String.valueOf(nodeB.getId())));
+                    } else {
+                        i = free_j_edgeMatrix++;
+                    }
+                    edgeMatrixB.put(i, j, 1./nodeB.getSizeEdges(edgeRelation.getId()));
                 }
                 ++j;
             }
@@ -138,11 +146,12 @@ public abstract class RelationalSearch extends GraphSearch {
     protected int getColumnsEdgeMatrix(Relation edgeRelation) {
         int columns = 0;
         Iterator<Node> iterator;
-        if(firstMatrix) {
+        /*if(firstMatrix) {
             iterator = getIteratorFirstMatrix();
         } else {
             iterator = graph.getNodeIterator(edgeRelation.getNodeTypeA());
-        }
+        }*/
+        iterator = graph.getNodeIterator(edgeRelation.getNodeTypeA());
         while(iterator.hasNext()) {
             Node node = iterator.next();
             columns += node.getSizeEdges(edgeRelation.getId());

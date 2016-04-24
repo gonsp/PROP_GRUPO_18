@@ -19,8 +19,8 @@ public class Matrix {
             rows[i] = new ArrayList<Cell>();
         }
         euclidean = new double[m];
-        for(int i = 0; i < m; ++i) {
-            euclidean[i] = 0;
+        for(int j = 0; j < m; ++j) {
+            euclidean[j] = 0;
         }
     }
 

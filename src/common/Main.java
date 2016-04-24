@@ -14,7 +14,7 @@ public class Main {
         Graph g = new Graph();
 
         PersistenceController pc = new PersistenceController(g);
-        /*pc.importNodes("data/author.txt", NodeType.AUTHOR);
+        pc.importNodes("data/author.txt", NodeType.AUTHOR);
         pc.importNodes("data/conf.txt", NodeType.CONF);
         pc.importNodes("data/paper.txt", NodeType.PAPER);
         pc.importNodes("data/term.txt", NodeType.TERM);
@@ -24,11 +24,11 @@ public class Main {
         pc.importEdges("data/paper_conf.txt", NodeType.PAPER, NodeType.CONF);
         pc.importEdges("data/paper_label.txt", NodeType.PAPER, NodeType.LABEL);
         pc.importEdges("data/paper_term.txt", NodeType.PAPER, NodeType.TERM);
-        pc.exportGraph("out/");*/
+        pc.exportGraph("out/");
 
         System.out.println("Starts search");
 
-        Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
+        /*Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
         g.addRelation(AP);
 
         Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");
@@ -53,15 +53,16 @@ public class Main {
         g.addEdge(AP.getId(), a2, p2);
         g.addEdge(AP.getId(), a2, p3);
         g.addEdge(AP.getId(), a2, p4);
-        g.addEdge(AP.getId(), a3, p4);
+        g.addEdge(AP.getId(), a3, p4);*/
 
         try {
             ArrayList<Relation> aux = new ArrayList<Relation>();
+            aux.add(g.getRelation(0));
             //aux.add(g.getRelation(0));
-            //aux.add(g.getRelation(0));
-            aux.add(AP);
+            //aux.add(AP);
+            //aux.add(AP);
             RelationStructure rs = new RelationStructure(NodeType.AUTHOR, aux, NodeType.PAPER);
-            GraphSearch s = new OriginSearch(g, rs, a1);
+            GraphSearch s = new FreeSearch(g, rs);
             s.search();
             ArrayList<GraphSearch.Result> results = s.getResults();
             for(int i = 0; i < results.size(); ++i) {
