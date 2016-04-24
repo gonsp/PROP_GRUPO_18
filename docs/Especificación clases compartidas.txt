@@ -236,37 +236,8 @@ Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
 Atributos: Ninguno.
 Relaciones: Ninguna.
 
-
-Nombre: Serializador Conferencia
-Descripción: Implementación específica para el tipo de datos Conferencia. 
-Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
-Atributos: Ninguno.
-Relaciones: Ninguna.
-
-
-Nombre: Serializador Término
-Descripción: Implementación específica para el tipo de datos Término. 
-Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
-Atributos: Ninguno.
-Relaciones: Ninguna.
-
-
-Nombre: Serializador Autor
-Descripción: Implementación específica para el tipo de datos Autor. 
-Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
-Atributos: Ninguno.
-Relaciones: Ninguna.
-
-
-Nombre: Serializador Paper
-Descripción: Implementación específica para el tipo de datos Paper. 
-Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
-Atributos: Ninguno.
-Relaciones: Ninguna.
-
-
-Nombre: Serializador Temática
-Descripción: Implementación específica para el tipo de datos Temática. 
+Nombre: Serializador Etiqueta
+Descripción: Implementación específica de la relación Aresta que permite leer/escribir las etiquetas.
 Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
 Atributos: Ninguno.
 Relaciones: Ninguna.
