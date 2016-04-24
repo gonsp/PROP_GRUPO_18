@@ -8,4 +8,9 @@ public class OriginDestinationSearch extends OriginSearch {
         super(graph, rs, from);
         this.to = to;
     }
+
+    @Override
+    protected void generateResults(Matrix matrix) {
+
+    }
 }

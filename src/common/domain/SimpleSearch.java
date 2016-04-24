@@ -1,6 +1,6 @@
 package common.domain;
 
-import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class SimpleSearch extends GraphSearch {
@@ -23,5 +23,6 @@ public class SimpleSearch extends GraphSearch {
                 results.add(new Result(aux, null, 0));
             }
         }
+        Collections.sort(results);
     }
 }
