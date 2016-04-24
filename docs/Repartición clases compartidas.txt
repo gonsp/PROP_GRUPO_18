@@ -2,8 +2,23 @@
     Estructura de relaciones: Adrià i Joel
     Búsqueda: David
     Búsqueda simple: Marc
+
+
     
  Grupo 2: Clases relacionadas con grafo
+    Graph:
+    Container:
+    Element:
+    Node:
+    Author:
+    Conference:
+    Paper:
+    Label:
+    Term:
+    Relation:
+    NodeType:
+    GraphException:
+
     Grafo: Guillermo  
     Nodo: Sergi
     Autor: Sergi

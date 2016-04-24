@@ -146,10 +146,10 @@ public class PersistenceController {
     public PersistenceController(Graph graph) {
         this.graph = graph;
         try {
-            graph.addNode(graph.createNode(LABEL, 0, "Database"));
-            graph.addNode(graph.createNode(LABEL, 1, "Data Mining"));
-            graph.addNode(graph.createNode(LABEL, 2, "AI"));
-            graph.addNode(graph.createNode(LABEL, 3, "Information Retreival"));
+            graph.addNode(graph.createNode(LABEL, "Database"), 0);
+            graph.addNode(graph.createNode(LABEL, "Data Mining"), 1);
+            graph.addNode(graph.createNode(LABEL, "AI"), 2);
+            graph.addNode(graph.createNode(LABEL, "Information Retreival"), 3);
         } catch (GraphException e) {
             e.printStackTrace();
         }
@@ -159,7 +159,7 @@ public class PersistenceController {
         List<String> strings = readFile(path);
         for (String s : strings) {
             NodeSerializer serializer = new NodeSerializer(s);
-            Node node = graph.createNode(type, serializer.getId(), serializer.getName());
+            Node node = graph.createNode(type, serializer.getName());
             try {
                 graph.addNode(node, serializer.getId());
             } catch (GraphException e) {
