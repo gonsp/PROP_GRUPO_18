@@ -32,7 +32,6 @@ public class DriverEdgeSerializer {
         System.out.println("Write a two integers");
         id1 = keyboard.nextInt();
         id2 = keyboard.nextInt();
-        String data = Integer.toString(id1) + "\t" + Integer.toString(id2);
         Node n1 = g.createNode(NodeType.AUTHOR,"Harry Potter");
         Node n2 = g.createNode(NodeType.PAPER, "Gollum");
         g.addNode(n1,id1);

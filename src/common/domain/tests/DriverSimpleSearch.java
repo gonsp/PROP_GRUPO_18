@@ -1,4 +1,4 @@
-package common.domain.tests;
+/*package common.domain.tests;
 
 import common.domain.*;
 import java.util.Scanner;
@@ -8,13 +8,13 @@ public class DriverRelationalSearch {
     private Graph g;
 
     public void DriverRelationalSearch() {
-        StrubGraph sb = new StubGraph();
+        StubGraph sb = new StubGraph();
         g = sb.getGraph();
     }
 
     private NodeType getNodeType(int nt) {
         if (nt == 1) return NodeType.AUTHOR;
-        else if (nt == 2) return NodeType.CONFERENCE;
+        else if (nt == 2) return NodeType.CONF;
         else if (nt == 3) return NodeType.TERM;
         else return NodeType.PAPER;
     }
@@ -43,4 +43,4 @@ public class DriverRelationalSearch {
         }
     }
 
-}
+}*/
