@@ -217,13 +217,6 @@ Método para importar los datos del fichero zip
 Método para guardar los datos en un fichero zip
 
 
-Nombre: Serializador
-Descripción: Clase abstracta que implementa los métodos básicos para serializar (interpretar) los datos en los dos sentidos (exportación e importación). 
-Cardinalidad: Muchos. Al haber varios tipos de datos, se usará un tipo de serializador específico para cada uno de ellos.
-Atributos: Nnguno
-Relaciones: Ninguna.
-
-
 Nombre: Serializador Nodos
 Descripción: Clase abstracta que implementa los métodos para serializar un nodo genérico.
 Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
