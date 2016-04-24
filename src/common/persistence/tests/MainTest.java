@@ -30,7 +30,9 @@ public class MainTest {
                     dn.main();
                     break;
                 case 4:
-
+                    DriverPersistenceController dp = new DriverPersistenceController();
+                    dp.main();
+                    break;
             }
         }
     }
