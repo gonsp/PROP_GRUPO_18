@@ -3,6 +3,13 @@
     Result:
     SimpleSearch:
     RelationStructureException:
+    Relation:
+    AuthorLabel:
+    AuthorPaper:
+    ConferenceLabel:
+    ConferencePaper:
+    PaperLabel:
+    TermPaper:
 
  Grupo 2: Clases relacionadas con grafo
     Graph:
@@ -15,13 +22,6 @@
     Paper:
     Label:
     Term:
-    Relation:
-    AuthorLabel:
-    AuthorPaper:
-    ConferenceLabel:
-    ConferencePaper:
-    PaperLabel:
-    TermPaper:
     GraphException:
 
  Grupo 3: Clases relacionadas con la persistencia
