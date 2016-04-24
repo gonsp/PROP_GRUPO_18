@@ -16,18 +16,18 @@ public class Main {
         PersistenceController pc = new PersistenceController(g);
 
         System.out.println("Importing nodes...");
-        pc.importNodes("data/author.txt", NodeType.AUTHOR);
-        pc.importNodes("data/conf.txt", NodeType.CONF);
-        pc.importNodes("data/paper.txt", NodeType.PAPER);
-        pc.importNodes("data/term.txt", NodeType.TERM);
+        pc.importNodes("data/GraphForTesting/author.txt", NodeType.AUTHOR);
+        pc.importNodes("data/GraphForTesting/conf.txt", NodeType.CONF);
+        pc.importNodes("data/GraphForTesting/paper.txt", NodeType.PAPER);
+        pc.importNodes("data/GraphForTesting/term.txt", NodeType.TERM);
 
         System.out.println("Importing edges...");
-        pc.importEdges("data/author_label.txt", NodeType.AUTHOR, NodeType.LABEL);
-        pc.importEdges("data/conf_label.txt", NodeType.CONF, NodeType.LABEL);
-        pc.importEdges("data/paper_author.txt", NodeType.PAPER, NodeType.AUTHOR);
-        pc.importEdges("data/paper_conf.txt", NodeType.PAPER, NodeType.CONF);
-        pc.importEdges("data/paper_label.txt", NodeType.PAPER, NodeType.LABEL);
-        pc.importEdges("data/paper_term.txt", NodeType.PAPER, NodeType.TERM);
+        pc.importEdges("data/GraphForTesting/author_label.txt", NodeType.AUTHOR, NodeType.LABEL);
+        pc.importEdges("data/GraphForTesting/conf_label.txt", NodeType.CONF, NodeType.LABEL);
+        pc.importEdges("data/GraphForTesting/paper_author.txt", NodeType.PAPER, NodeType.AUTHOR);
+        pc.importEdges("data/GraphForTesting/paper_conf.txt", NodeType.PAPER, NodeType.CONF);
+        pc.importEdges("data/GraphForTesting/paper_label.txt", NodeType.PAPER, NodeType.LABEL);
+        pc.importEdges("data/GraphForTesting/paper_term.txt", NodeType.PAPER, NodeType.TERM);
 
         pc.exportGraph("out/");
 
@@ -67,10 +67,13 @@ public class Main {
         try {
             ArrayList<Relation> aux = new ArrayList<Relation>();
             aux.add(g.getRelation(0));
-            //aux.add(g.getRelation(0));
+            aux.add(g.getRelation(0));
+            aux.add(g.getRelation(0));
+            aux.add(g.getRelation(0));
+
             //aux.add(AP);
             //aux.add(AP);
-            RelationStructure rs = new RelationStructure(NodeType.AUTHOR, aux, NodeType.PAPER);
+            RelationStructure rs = new RelationStructure(NodeType.AUTHOR, aux, NodeType.AUTHOR);
             GraphSearch s = new FreeSearch(g, rs);
             s.search();
             ArrayList<GraphSearch.Result> results = s.getResults();

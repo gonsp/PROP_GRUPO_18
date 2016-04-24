@@ -23,8 +23,8 @@ public abstract class RelationalSearch extends GraphSearch {
         if(i >= j) {
             return getNormalizedMatrix(rs.get(i), normalize_rows);
         } else {
-            int m = (j-i+1)/2;
-            return i_hetesim(0, m-1, normalize_rows).mul(i_hetesim(m, rs.size()-1, normalize_rows));
+            int m = (j+i)/2;
+            return i_hetesim(i, m-1, normalize_rows).mul(i_hetesim(m, j, normalize_rows));
         }
     }
 
