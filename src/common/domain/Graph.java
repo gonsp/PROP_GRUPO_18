@@ -50,18 +50,22 @@ public class Graph {
         getNodeContainer(getNodeType(node)).addElement(node);
     }
 
-    public Node createNode(NodeType type, int nodeID, String value) {
+    public void addNode(Node node, int id) throws GraphException {
+        getNodeContainer(getNodeType(node)).addElement(node, id);
+    }
+
+    public Node createNode(NodeType type, String value) {
         Node node;
         if(type == NodeType.AUTHOR) {
-            node = new Author(nodeID, value);
+            node = new Author(value);
         } else if(type == NodeType.CONF) {
-            node = new Conference(nodeID, value);
+            node = new Conference(value);
         } else if(type == NodeType.PAPER) {
-            node = new Paper(nodeID, value);
+            node = new Paper(value);
         } else if(type == NodeType.TERM) {
-            node = new Term(nodeID, value);
+            node = new Term(value);
         } else {
-            node = new Label(nodeID, value);
+            node = new Label(value);
         }
         Container<Relation>.ContainerIterator iterator = relations.getIterator();
         while(iterator.hasNext()) {
@@ -71,10 +75,6 @@ public class Graph {
             }
         }
         return node;
-    }
-
-    public Node createNode(NodeType type, String value) {
-        return createNode(type, -1, value);
     }
 
     public void removeNode(NodeType type, int id) throws GraphException {
