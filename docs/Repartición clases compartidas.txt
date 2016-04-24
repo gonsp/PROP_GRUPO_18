@@ -16,14 +16,9 @@
  
  Grupo 3: Clases relacionadas con la persistencia
     Controlador de persistancia: Pau
-    Serializador: Pau
-    Serializador Nodos: Carlos
-    Serializador Aristas: Carlos 
-    Serializador Paper: Víctor
-    Serializador Temática: Víctor
-    Serializador Conferencia: Víctor
-    Serializador Term: Carlota
-    Serializador Autor: Carlota
+    Serializador Nodos: Pau
+    Serializador Aristas: Víctor
+    Serializador Etiquetas: Víctor
  
  Grupo 3bis: Clases relacionadas con las búsquedas (2)
     Búsqueda relacional: Gonzalo    

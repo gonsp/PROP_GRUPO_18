@@ -205,68 +205,73 @@ Especificación de clases de persistencia
 Nombre: PersistenceController
 Descripción: Capa intermedia entre la memoria y el disco. Se comunica con el resto del programa para la importación/exportación de datos y usa los serializadores para convertir los mismos.
 Cardinalidad: 1 por sesión del programa.
-Atributos: Grago graph, String path
+Atributos: Grago graph
 Relaciones: 
-* Agregación con la clase Serializador.
+* Agregación con la clase Serializador Nodos y Serializador Arestas.
 Métodos:
 -PersistenceController(Grafo graph)
 Constructor inicial de la clase, que la asocia a un grafo.
--Void import(String path)
-Método para importar los datos del fichero zip
--Void export(String path)
-Método para guardar los datos en un fichero zip
-
-
-Nombre: Serializador
-Descripción: Clase abstracta que implementa los métodos básicos para serializar (interpretar) los datos en los dos sentidos (exportación e importación). 
-Cardinalidad: Muchos. Al haber varios tipos de datos, se usará un tipo de serializador específico para cada uno de ellos.
-Atributos: Nnguno
-Relaciones: Ninguna.
-
+-Void importNodes(String path, NodeType type)
+Método para importar los nodos, de un fichero txt.
+-Void importEdges(String path, NodeType type1, NodeType type2)
+Método para importar las relaciones, de un fichero txt.
+-exportGraph(String path)
+Método para guardar el grafo con todos sus nodos y relaciones en ficheros txt.
 
 Nombre: Serializador Nodos
-Descripción: Clase abstracta que implementa los métodos para serializar un nodo genérico.
+Descripción: Serializa los nodos. Es capaz de serialitzar cualquier tipo de nodo.
 Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
-Atributos: Ninguno.
+Atributos: Node node, String data, int nodeId, String name
 Relaciones: Ninguna.
+Métodos:
+-NodeSerializer(Node node)
+Constructor de la clase a partir de un nodo.
+-NodeSerializer(String data)
+Constructor de la clase a partir de un String.
+-Void inflate()
+Método para importar un nodo a partir de un String.
+-Void deflate()
+Método para exportar el nodo en un String.
+-String getData()
+Método para obtener el String de un nodo.
+-int getId()
+Método para obtener el id de un nodo.
+-String getName()
+Método para obtener el nombre del objeto (Author,paper,conference,term)
 
 Nombre: Serializador Arestas
 Descripción: Serializa las relaciones "arestas". Es capaz de serializar tanto los tipos predefinidos como los especificados por los usuarios.
 Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
-Atributos: Ninguno.
+Atributos: String data, Graph graph, NodeType ntype1, NodeType ntype2, Node node1, Node node2
 Relaciones: Ninguna.
+-EdgeSerializer(Graph graph, String data, NodeType ntype1, NodeType ntype2)
+Constructor de la clase a partir de un grafo el String y dos tipos de nodo.
+-EdgeSerializer(Node node1, Node node2)
+Constructor de la clase a partir de dos nodos.
+-Void inflate()
+Método para importar el String, y obtener dos Object nodo.
+-Void deflate()
+Método para exportar los dos Objects en un String.
+-Node getNode1()
+Método para obtener el primer nodo de la relación.
+-Node getNode2()
+Método para obtener el segundo nodo de la relación
+-String getData()
+Método para obtener el String de los dos nodos relacionados.
 
 
-Nombre: Serializador Conferencia
-Descripción: Implementación específica para el tipo de datos Conferencia. 
+Nombre: Serializador Etiqueta
+Descripción: Implementación específica de la relación Aresta que permite leer/escribir las etiquetas.
 Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
 Atributos: Ninguno.
 Relaciones: Ninguna.
+Métodos:
+-LabelSerializer(Graph graph, String data, NodeType ntype1, NodeType ntype2)
+Constructor de la clase a partir de un grafo, el String y los dos tipos de nodos del String.
+-LabelSerializer(Node node1, Node node2)
+Constructor de la clase a partir de dos nodos.
+-Void inflate()
+Método para importar el String, y obtener dos Object nodo.
+-Void deflate()
+Método para exportar los dos Objects en un String.
 
-
-Nombre: Serializador Término
-Descripción: Implementación específica para el tipo de datos Término. 
-Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
-Atributos: Ninguno.
-Relaciones: Ninguna.
-
-
-Nombre: Serializador Autor
-Descripción: Implementación específica para el tipo de datos Autor. 
-Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
-Atributos: Ninguno.
-Relaciones: Ninguna.
-
-
-Nombre: Serializador Paper
-Descripción: Implementación específica para el tipo de datos Paper. 
-Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
-Atributos: Ninguno.
-Relaciones: Ninguna.
-
-
-Nombre: Serializador Temática
-Descripción: Implementación específica para el tipo de datos Temática. 
-Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
-Atributos: Ninguno.
-Relaciones: Ninguna.
