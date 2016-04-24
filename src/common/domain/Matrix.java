@@ -7,16 +7,21 @@ import java.util.ArrayList;
 public class Matrix {
 
     private ArrayList<Cell>[] rows;
+    private double[] euclidean;
     private int n;
     private int m;
 
     public Matrix(int n, int m) {
+        this.n = n;
+        this.m = m;
         rows = new ArrayList[n];
         for(int i = 0; i < n; ++i) {
             rows[i] = new ArrayList<Cell>();
         }
-        this.n = n;
-        this.m = m;
+        euclidean = new double[m];
+        for(int i = 0; i < m; ++i) {
+            euclidean[i] = 0;
+        }
     }
 
     public double get(int i, int j) {
@@ -34,6 +39,10 @@ public class Matrix {
 
     public void put(int i, int j, double value) {
         if(checkPos(i, j) && value != 0) {
+            double prev = get(i, j);
+            if(prev != 0) {
+                euclidean[j] -= prev * prev;
+            }
             ArrayList<Cell> row = rows[i];
             Pair<Boolean, Integer> res = binarySearch(row, j);
             if(!res.getKey()) {
@@ -41,10 +50,13 @@ public class Matrix {
             } else {
                 row.get(res.getValue()).value = value;
             }
+            if(value != 0) {
+                euclidean[j] += value*value;
+            }
         }
     }
 
-    public Matrix mul(Matrix mat) {
+    private Matrix i_mul(Matrix mat, boolean normalize) {
         if(this.m != mat.n) {
             return null;
         }
@@ -52,14 +64,33 @@ public class Matrix {
         for(int i = 0; i < this.n; ++i) {
             for(int j = 0; j < mat.m; ++j) {
                 double value = 0;
+                double euclideanA = 0;
                 for(int k = 0; k < this.rows[i].size(); ++k) {
                     Cell aux = this.rows[i].get(k);
                     value += aux.value * mat.get(aux.column, j);
+                    euclideanA += aux.value * aux.value;
+                }
+                euclideanA = Math.sqrt(euclideanA);
+                double euclideanB = Math.sqrt(mat.getEuclidean(j));
+                if(normalize) {
+                    value = value/(euclideanA * euclideanB);
                 }
                 res.put(i, j, value);
             }
         }
         return res;
+    }
+
+    private double getEuclidean(int j) {
+        return euclidean[j];
+    }
+
+    public Matrix mul(Matrix mat) {
+        return i_mul(mat, false);
+    }
+
+    public Matrix mul_norm(Matrix mat) {
+        return i_mul(mat, true);
     }
 
     public int getRows() {

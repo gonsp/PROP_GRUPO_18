@@ -30,12 +30,12 @@ public abstract class RelationalSearch extends GraphSearch {
     private Matrix hetesim() {
         int m = rs.size()/2;
         if(rs.size()%2 == 0) {
-            return i_hetesim(0, m-1, true).mul(i_hetesim(m, rs.size()-1, false));
+            return i_hetesim(0, m-1, true).mul_norm(i_hetesim(m, rs.size()-1, false));
         } else {
             if(rs.size() == 1) {
-                return getNormalizedEdgeLeftMatrix(rs.get(m)).mul(getNormalizedEdgeRightMatrix(rs.get(m)));
+                return getNormalizedEdgeLeftMatrix(rs.get(m)).mul_norm(getNormalizedEdgeRightMatrix(rs.get(m)));
             } else {
-                return i_hetesim(0, m-1, true).mul(getNormalizedEdgeLeftMatrix(rs.get(m))).mul(getNormalizedEdgeRightMatrix(rs.get(m))).mul(i_hetesim(m, rs.size()-1, false));
+                return i_hetesim(0, m-1, true).mul(getNormalizedEdgeLeftMatrix(rs.get(m))).mul_norm(getNormalizedEdgeRightMatrix(rs.get(m)).mul(i_hetesim(m+1, rs.size()-1, false)));
             }
         }
     }
@@ -45,7 +45,6 @@ public abstract class RelationalSearch extends GraphSearch {
         if(!executed) {
             executed = true;
             Matrix matrix = hetesim();
-            //matrix.normalize(); //TODO implement this
             generateResults(matrix);
         }
     }
