@@ -244,6 +244,9 @@ Descripción: Serializa las relaciones "arestas". Es capaz de serializar tanto l
 Cardinalidad: Muchos. Se instanciará uno por cada fichero a importar/exportar.
 Atributos: String data, Graph graph, NodeType ntype1, NodeType ntype2, Node node1, Node node2
 Relaciones: Ninguna.
+
+Nombre: Serializador Etiqueta
+Descripción: Implementación específica de la relación Aresta que permite leer/escribir las etiquetas.
 Métodos:
 -EdgeSerializer(Graph graph, String data, NodeType ntype1, NodeType ntype2)
 Constructor de la clase a partir de un grafo el String y dos tipos de nodo.
