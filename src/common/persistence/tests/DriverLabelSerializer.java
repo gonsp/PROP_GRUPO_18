@@ -20,10 +20,10 @@ public class DriverLabelSerializer {
         id2 = keyboard.nextInt();
         String data = Integer.toString(id1) + "\t" + Integer.toString(id2);
         Node n1 = g.createNode(NodeType.PAPER,"Harry Potter");
-        Node n2 = g.createNode(NodeType.CONF, "Gollum");
+        Node n2 = g.createNode(NodeType.LABEL, "Gollum");
         g.addNode(n1,id1);
         g.addNode(n2,id2);
-        serializer = new LabelSerializer(g, data, NodeType.PAPER,NodeType.CONF);
+        serializer = new LabelSerializer(g, data, NodeType.PAPER,NodeType.LABEL);
     }
 
     public void constructor2() throws GraphException {
@@ -33,7 +33,7 @@ public class DriverLabelSerializer {
         id1 = keyboard.nextInt();
         id2 = keyboard.nextInt();
         Node n1 = g.createNode(NodeType.PAPER,"Harry Potter");
-        Node n2 = g.createNode(NodeType.CONF, "Gollum");
+        Node n2 = g.createNode(NodeType.LABEL, "Gollum");
         g.addNode(n1,id1);
         g.addNode(n2,id2);
         serializer = new LabelSerializer(n1,n2);

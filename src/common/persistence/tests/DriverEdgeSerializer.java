@@ -55,7 +55,7 @@ public class DriverEdgeSerializer {
         int menu = 0;
         while (menu != 3) {
             System.out.println("CHOOSE A METHOD TO TEST:");
-            System.out.println("1. EdgeSerializer(Node node1, Node node2) + getData()" );
+            System.out.println("1. EdgeSerializer(Node node1, Node node2) + getData()");
             System.out.println("2. EdgeSerializer(Graph graph, String data, NodeType ntype1, NodeType ntype2) + int getNode1() + String getNode2()");
             System.out.println("3. Return Main Menu");
             Scanner keyboard = new Scanner(System.in);
