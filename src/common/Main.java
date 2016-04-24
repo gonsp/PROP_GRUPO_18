@@ -14,7 +14,7 @@ public class Main {
         Graph g = new Graph();
 
         PersistenceController pc = new PersistenceController(g);
-        pc.importNodes("data/author.txt", NodeType.AUTHOR);
+       /* pc.importNodes("data/author.txt", NodeType.AUTHOR);
         pc.importNodes("data/conf.txt", NodeType.CONF);
         pc.importNodes("data/paper.txt", NodeType.PAPER);
         pc.importNodes("data/term.txt", NodeType.TERM);
@@ -24,7 +24,7 @@ public class Main {
         pc.importEdges("data/paper_conf.txt", NodeType.PAPER, NodeType.CONF);
         pc.importEdges("data/paper_label.txt", NodeType.PAPER, NodeType.LABEL);
         pc.importEdges("data/paper_term.txt", NodeType.PAPER, NodeType.TERM);
-        pc.exportGraph("out/");
+        pc.exportGraph("out/");*/
 
         System.out.println("Finish inicialization");
         System.out.println("Starts search");
@@ -56,21 +56,20 @@ public class Main {
         g.addEdge(AP.getId(), a2, p3);
         g.addEdge(AP.getId(), a2, p4);
         g.addEdge(AP.getId(), a3, p4);
-/*
+
         try {
             ArrayList<Relation> aux = new ArrayList<Relation>();
             //aux.add(g.getRelation(0));
             aux.add(AP);
             RelationStructure rs = new RelationStructure(NodeType.AUTHOR, aux, NodeType.PAPER);
-            RelationalSearch relationalSearch = new RelationalSearch(g, rs);
-            relationalSearch.search();
-            ArrayList<GraphSearch.Result> results = relationalSearch.getResults();
+            OriginSearch s = new OriginSearch(g, rs, a1);
+            s.search();
+            ArrayList<GraphSearch.Result> results = s.getResults();
             for(int i = 0; i < results.size(); ++i) {
                 results.get(i).print();
             }
         } catch (RelationStructureException e) {
             e.printStackTrace();
         }
-        */
     }
 }

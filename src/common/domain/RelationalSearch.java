@@ -6,13 +6,15 @@ import java.util.Iterator;
 
 public abstract class RelationalSearch extends GraphSearch {
 
-    private RelationStructure rs;
+    protected RelationStructure rs;
     private HashMap<String, Integer> edgesID;
+    private boolean firstMatrix;
 
     public RelationalSearch(Graph graph, RelationStructure rs) {
         super(graph);
         this.rs = rs;
         edgesID = new HashMap<String, Integer>();
+        firstMatrix = true;
     }
 
     private Matrix i_hetesim(int i, int j, boolean normalize_rows) {
@@ -44,7 +46,7 @@ public abstract class RelationalSearch extends GraphSearch {
             //TODO normalize hetesim
             //TODO order results
             //TODO implement subclasses
-            Container<Node>.ContainerIterator iteratorA = graph.getNodeIterator(rs.get(0).getNodeTypeA());
+            Iterator<Node> iteratorA = getIteratorFirstMatrix();
             for(int i = 0; i < matrix.getRows(); ++i) {
                 Node nodeA = iteratorA.next();
                 Container<Node>.ContainerIterator iteratorB = graph.getNodeIterator(rs.get(rs.size()-1).getNodeTypeB());
@@ -60,7 +62,13 @@ public abstract class RelationalSearch extends GraphSearch {
 
     private Matrix getNormalizedMatrix(Relation relation, boolean normalize_rows) {
         Matrix matrix = new Matrix(graph.getSize(relation.getNodeTypeA()), graph.getSize(relation.getNodeTypeB()));
-        Container<Node>.ContainerIterator iteratorA = graph.getNodeIterator(relation.getNodeTypeA());
+        Iterator<Node> iteratorA;
+        if(firstMatrix) {
+            iteratorA = getIteratorFirstMatrix();
+            firstMatrix = false;
+        } else {
+            iteratorA = graph.getNodeIterator(relation.getNodeTypeA());
+        }
         Container<Node>.ContainerIterator iteratorB;
         for(int i = 0; i < matrix.getRows(); ++i) {
             Node a = iteratorA.next();
@@ -86,7 +94,12 @@ public abstract class RelationalSearch extends GraphSearch {
         try {
             int i = 0;
             int j = 0;
-            Container<Node>.ContainerIterator iteratorA = graph.getNodeIterator(edgeRelation.getNodeTypeA());
+            Iterator<Node> iteratorA;
+            if(firstMatrix) {
+                iteratorA = getIteratorFirstMatrix();
+            } else {
+                iteratorA = graph.getNodeIterator(edgeRelation.getNodeTypeA());
+            }
             while(iteratorA.hasNext()) {
                 Node nodeA = iteratorA.next();
                 ArrayList<Node> connected = graph.getEdges(edgeRelation.getId(), nodeA);
@@ -111,14 +124,15 @@ public abstract class RelationalSearch extends GraphSearch {
             int j = 0;
             while(iteratorB.hasNext()) {
                 Node nodeB = iteratorB.next();
-                ArrayList<Node> connected = graph.getEdges(edgeRelation.getId(), nodeB);
-                for(int iteratorA = 0; iteratorA < nodeB.getSizeEdges(edgeRelation.getId()); ++iteratorA) {
+                ArrayList<Node> connected = getEdgesNodeFrom(edgeRelation, nodeB);
+                for(int iteratorA = 0; iteratorA < connected.size(); ++iteratorA) {
                     Node nodeA = connected.get(iteratorA);
+                    int test = edgesID.get(String.valueOf(nodeA.getId()).concat(String.valueOf(nodeB.getId())));
                     edgeMatrixB.put(edgesID.get(String.valueOf(nodeA.getId()).concat(String.valueOf(nodeB.getId()))), j, 1./nodeB.getSizeEdges(edgeRelation.getId()));
                 }
                 ++j;
             }
-        } catch(GraphException e) {
+        } catch (GraphException e) {
             e.printStackTrace();
         }
         return edgeMatrixB;
@@ -126,11 +140,15 @@ public abstract class RelationalSearch extends GraphSearch {
 
     private int getColumnsEdgeMatrix(Relation edgeRelation) {
         int columns = 0;
-        Container<Node>.ContainerIterator iterator = graph.getNodeIterator(edgeRelation.getNodeTypeA());
+        Iterator<Node> iterator = getIteratorFirstMatrix();
         while(iterator.hasNext()) {
             Node node = iterator.next();
             columns += node.getSizeEdges(edgeRelation.getId());
         }
         return columns;
     }
+
+    protected abstract Iterator getIteratorFirstMatrix();
+
+    protected abstract ArrayList<Node> getEdgesNodeFrom(Relation edgeRelation, Node nodeB) throws GraphException;
 }
