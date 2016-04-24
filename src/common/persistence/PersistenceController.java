@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import common.domain.*;
-
 import static common.domain.NodeType.*;
 
 
@@ -166,26 +165,8 @@ public class PersistenceController {
     public void importNodes(String path, NodeType type) {
         List<String> strings = readFile(path);
         for (String s : strings) {
-            NodeSerializer serializer = null;
-            Node node = null;
-            switch (type) {
-                case AUTHOR:
-                    serializer = new AuthorSerializer(s);
-                    node = (Author) graph.createNode(type, serializer.getId(), serializer.getName());
-                    break;
-                case CONF:
-                    serializer = new ConferenceSerializer(s);
-                    node = (Conference) graph.createNode(type, serializer.getId(), serializer.getName());
-                    break;
-                case PAPER:
-                    serializer = new PaperSerializer(s);
-                    node = (Paper) graph.createNode(type, serializer.getId(), serializer.getName());
-                    break;
-                case TERM:
-                    serializer = new TermSerializer(s);
-                    node = (Term) graph.createNode(type, serializer.getId(), serializer.getName());
-                    break;
-            }
+            NodeSerializer serializer = new NodeSerializer(s);
+            Node node = graph.createNode(type, serializer.getId(), serializer.getName());
             try {
                 graph.addNode(node, serializer.getId());
             } catch (GraphException e) {
