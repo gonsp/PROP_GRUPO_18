@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) throws GraphException {
 
-        System.out.println("Starts inicialization");
+        System.out.println("Starts initialization");
         Graph g = new Graph();
 
         PersistenceController pc = new PersistenceController(g);
@@ -26,9 +26,7 @@ public class Main {
         pc.importEdges("data/paper_term.txt", NodeType.PAPER, NodeType.TERM);
         pc.exportGraph("out/");
 
-        System.out.println("Finish inicialization");
         System.out.println("Starts search");
-
 
         Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
         g.addRelation(AP);

@@ -162,7 +162,7 @@ public class PersistenceController {
                         relation = graph.getEdges(3, node1);
                         for (int i = 0; i < relation.size(); ++i) {
                             Node node2 = relation.get(i);
-                            serializer = new EdgeSerializer(node1, node2, "author_label");
+                            serializer = new LabelSerializer(node1, node2);
                             String d = serializer.getData();
                             strings.add(d);
                         }
@@ -173,7 +173,7 @@ public class PersistenceController {
                         relation = graph.getEdges(5, node1);
                         for (int i = 0; i < relation.size(); ++i) {
                             Node node2 = relation.get(i);
-                            serializer = new EdgeSerializer(node1, node2, "conf_label");
+                            serializer = new LabelSerializer(node1, node2);
                             String d = serializer.getData();
                             strings.add(d);
                         }
@@ -184,7 +184,7 @@ public class PersistenceController {
                         relation = graph.getEdges(0, node1);
                         for (int i = 0; i < relation.size(); ++i) {
                             Node node2 = relation.get(i);
-                            serializer = new EdgeSerializer(node1, node2, "paper_author");
+                            serializer = new EdgeSerializer(node1, node2);
                             String d = serializer.getData();
                             strings.add(d);
                         }
@@ -194,7 +194,7 @@ public class PersistenceController {
                         relation = graph.getEdges(1, node1);
                         for (int i = 0; i < relation.size(); ++i) {
                             Node node2 = relation.get(i);
-                            serializer = new EdgeSerializer(node1, node2, "paper_conf");
+                            serializer = new EdgeSerializer(node1, node2);
                             String d = serializer.getData();
                             strings.add(d);
                         }
@@ -204,7 +204,7 @@ public class PersistenceController {
                         relation = graph.getEdges(4, node1);
                         for (int i = 0; i < relation.size(); ++i) {
                             Node node2 = relation.get(i);
-                            serializer = new EdgeSerializer(node1, node2, "paper_label");
+                            serializer = new LabelSerializer(node1, node2);
                             String d = serializer.getData();
                             strings.add(d);
                         }
@@ -214,7 +214,7 @@ public class PersistenceController {
                         relation = graph.getEdges(2, node1);
                         for (int i = 0; i < relation.size(); ++i) {
                             Node node2 = relation.get(i);
-                            serializer = new EdgeSerializer(node1, node2, "paper_term");
+                            serializer = new EdgeSerializer(node1, node2);
                             String d = serializer.getData();
                             strings.add(d);
                         }

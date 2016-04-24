@@ -14,7 +14,7 @@ public class NodeSerializer implements Serializable {
     protected String name;
 
     protected void inflate() {
-        if (node == null && data != null) {
+        if (node == null) {
             int m = data.indexOf("\t");
             if (m == -1) {
                 m = data.indexOf(" ");
@@ -25,7 +25,7 @@ public class NodeSerializer implements Serializable {
     }
 
     protected void deflate() {
-        if (data == null && node != null) {
+        if (data == null) {
             nodeId = node.getId();
             name = node.getValue();
             data = Integer.toString(nodeId) + "\t" + name;
