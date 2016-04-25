@@ -15,7 +15,7 @@
     Graph: Guillermo
     Relation: Javier
     NodeType: Guillermo
-    Element:
+    Element: Gerard
     Node: Sergi
     Author: Sergi
     Conference: Sergi
