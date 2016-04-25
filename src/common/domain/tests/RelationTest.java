@@ -1,4 +1,6 @@
-package common.domain;
+package common.domain.tests;
+
+import common.domain.*;
 
 import java.io.IOException;
 import java.util.Scanner;
