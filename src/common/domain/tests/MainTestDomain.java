@@ -11,6 +11,7 @@ public class MainTestDomain {
         System.out.println("3 - FreeSearch");
         System.out.println("4 - OriginSearch");
         System.out.println("5 - OriginDestinationSearch");
+        System.out.println("6 - Matrix");
 
         Scanner s = new Scanner(System.in);
         int testclass = s.nextInt();
@@ -35,6 +36,10 @@ public class MainTestDomain {
             case 5:
                 DriverOriginDestinationSearch dods = new DriverOriginDestinationSearch();
                 dods.main();
+                break;
+            case 6:
+                DriverMatrix dm = new DriverMatrix();
+                dm.main();
                 break;
         }
 
