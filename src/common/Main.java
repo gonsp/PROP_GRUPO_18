@@ -69,16 +69,9 @@ public class Main {
             ArrayList<Relation> aux = new ArrayList<Relation>();
             aux.add(g.getRelation(0));
             aux.add(g.getRelation(0));
-            aux.add(g.getRelation(0));
-            aux.add(g.getRelation(0));
-            aux.add(g.getRelation(0));
-            aux.add(g.getRelation(0));
-            aux.add(g.getRelation(0));
-            aux.add(g.getRelation(0));
-            aux.add(g.getRelation(0));
             //aux.add(AP);
             //aux.add(AP);
-            RelationStructure rs = new RelationStructure(NodeType.AUTHOR, aux, NodeType.PAPER);
+            RelationStructure rs = new RelationStructure(NodeType.AUTHOR, aux, NodeType.AUTHOR);
             GraphSearch s = new FreeSearch(g, rs);
             s.search();
             ArrayList<GraphSearch.Result> results = s.getResults();

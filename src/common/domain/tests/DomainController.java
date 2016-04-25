@@ -55,8 +55,10 @@ public class DomainController {
         }
     }
 
-    public void addRelation(NodeType A, NodeType B, String name) {
-        graph.addRelation(new Relation(A, B, name));
+    public int addRelation(NodeType A, NodeType B, String name) {
+        Relation relation = new Relation(A, B, name);
+        graph.addRelation(relation);
+        return relation.getId();
     }
 
     public void removeRelation(int id) {

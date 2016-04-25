@@ -140,64 +140,159 @@ Métodos:
 Constructor de la clase que obtiene el filtro con el que realizará la búsqueda simple.
 
 
-Nombre: Búsqueda de relaciones
-Descripción: Subclase abstracta de la clase Búsqueda. Representa una búsqueda que sigue una estructura de relación determinada. Dependiendo de si se especifica un nodo de origen y destino, tenemos otras 3 subclases.
+Nombre: Búsqueda de relaciones(RelationalSearch)
+Descripción: Representa una búsqueda que sigue una estructura de relación determinada. Dependiendo de si se especifica un nodo de origen y destino, tenemos otras 3 subclases.
 Cardinalidad: Al ser abstracta, 0.
-Atributos: EstructuraRelaciones estructura
-Relaciones: 
-* Dependencia con la clase HeteSim. La utilizará para calcular el nivel de relación entre los elementos del grafo al que está relacionada.
+Atributos:
+* rs (estructura de relación de la que se tiene que realizar la búsqueda, no static).
+* EdgesID(hashmap para relacionar los nodos con sus IDs, no static).
+* FirstMatrix(variable auxiliar para saber si se ha creado ya la primera matriz, no static).
+* Free_j_edgeMatrix(variable para saber qué columnas quedan libres al hacer una búsqueda con nodo de origen en la cual la primera relación del RelationStructure es una edgeRelation(tiene nodos imaginarios en el medio). Es una variable para un cálculo muy particular, no static).
+Relaciones:
+* Dependencia con la clase Matrix. La utilizará para calcular el hetesim entre los elementos del grafo.
 * Asociación con la clase Estructura de relaciones. Será lo que defina qué estructura de relación seguirá al buscar los elementos.
 Métodos:
--BusquedaRelacional(EstructuraRelaciones estructura)
-Constructor de una búsqueda relacional, a la que se le pasa la estructura de relaciones.
+* RelationalSearch(Graph graph, RelationStructure rs)
+Constructor de una búsqueda relacional, a la que se le pasa la estructura de relaciones y el grafo donde realizar la búsqueda.
+* Search()
+Método que realiza la búsqueda.
+* Hetesim()
+Retorna la matriz con los valores de hetesim.
+* i_hetesim(int i, int j, boolean normalize_rows)
+Método auxiliar (función de inmersión) para los cálculos de hetesim.
+* getNormalizedMatrix(Relation relation, boolean normalize_rows)
+Devuelve la matriz normalizada a partir de la relación.
+* getNormalizedEdgeLeftMatrix(Relation edgeRelation)
+Devuelve la matriz normalizada de la parte izquierda de la edgeRelation (relación del medio con nodos imaginarios).
+* getNormalizedEdgeRightMatrix(Relation edgeRelation)
+Devuelve la matriz normalizada de la parte izquierda de la edgeRelation (relación del medio con nodos imaginarios).
+* getColumnsEdgeMatrix(Relation edgeRelation)
+        Devuelve las columnas/filas de las matrices normalizadas de la edgeRelation
+* generateResults(Matrix matrix)
+Método abstracto que tienen que implementar las subclases para seleccionar y presentar los resultados
+* createFirstMatrix(Relation relation)
+Método abstracto que tienen que implementar las subclases para crear la primera matriz, ya que
+para optimizar las búsquedas con nodo fijo, no se realiza el cálculo del resto de nodos
+* createFirstEdgeMatrix(Relation edgeRelation)
+Método abstracto que tienen que implementar las subclases para crear la edgeMatrix en el caso que sea la primera matriz.
+* getIteratorFirstMatrix(Matrix matrix)
+Método abstracto que tienen que implementar las subclases para iterar sobre la primera matriz
 
-Nombre: Búsqueda libre
+
+Nombre: Búsqueda libre(FreeSearch)
 Descripción: Subclase de la clase Búsqueda por relaciones. Representa una búsqueda en la que no se especifica desde qué elemento sale la relación definida por una Estructura de relaciones. Buscará todos los elementos del último tipo de la estructura relacionados con todos los elementos del primero.
 Cardinalidad: 1. Se instanciará cada vez que se realice una búsqueda libre.
 Atributos: Ninguno.
-Relaciones: Ninguna.
+Relaciones:
+* Dependencia de Matrix.
+Métodos:
+* FreeSearch(Graph graph, RelationStructure rs)
+Constructor de una búsqueda libre, a la que se le pasa la estructura de relaciones y el grafo donde realizar la búsqueda.
+* getIteratorFirstMatrix(Matrix matrix)
+* createFirstMatrix(Relation relation)
+* createFirstEdgeMatrix(Relation edgeRelation)
 
 
-Nombre: Búsqueda origen
+Nombre: Búsqueda origen(OriginSearch)
 Descripción: Subclase de Búsqueda por relaciones. Representa una búsqueda en la que se especifica un nodo de origen. Esto significa que buscará todos los nodos que estén relacionados con el de origen que cumplan con la Estructura de relaciones y condiciones de la búsqueda.
 Cardinalidad: 1. Se instanciará cada vez que se realice una búsqueda con origen fijado.
-Atributos: Node from.
-Relaciones: 
+Atributos:
+* Node from(nodo origen de la búsqueda relacional, no static)
+Relaciones:
 * Asociación con la clase Nodo. Indica de qué instancia parte la Estructura de relaciones.
 Métodos:
--BusquedaOrigen(EstructuraRelaciones estructura, Nodo from)
-Llama al constructor de la super clase pasándole la estructura y guarda desde qué nodo sale la búsqueda.
+* OriginSearch(Graph graph, RelationStructure rs, Node From)
+Constructor de una búsqueda con nodo origen establecido, a la que se le pasa la estructura de relaciones, el grafo donde realizar la búsqueda y el nodo origen de la búsqueda relacional.
+* getIteratorFirstMatrix(Matrix matrix)
+* createFirstMatrix(Relation relation)
+* createFirstEdgeMatrix(Relation edgeRelation)
 
 
-Nombre: Búsqueda origen destino
+Nombre: Búsqueda origen destino(OriginDestinationSearch)
 Descripción: Subclase de Búsqueda por relaciones. Representa una búsqueda en la que se especifica un nodo de origen y otro de destino. Básicamente encuentra el nivel de relación entre los dos elementos especificados (HeteSim) en el grafo en el que se busca.
 Cardinalidad: 1. Se instanciará cada vez que se realice una búsqueda con origen y destino fijados.
-Atributos: Nodo from, Nodo to.
+Atributos:
+* Node from (nodo origen de la estructura de relación,no static)
+* Node to (nodo destino de la estrucutra de relación, no static).
 Relaciones:
 * Asociación con la clase Nodo. Indica de qué instancia parte la Estructura de relaciones.
 * Asociación con la clase Nodo. Indica en qué instancia termina la Estructura de relaciones.
 Métodos:
--BúsquedaOrigenDestino(EstructuraRelaciones estructura, Nodo from, Nodo to)
+* BúsquedaOrigenDestino(Graph graph, RelationStructure rs, Nodo from, Nodo to)
+Constructor de una búsqueda con nodo origen y destino establecidos, a la que se le pasa la estructura de relaciones, el grafo donde realizar la búsqueda y el nodo origen y destino de la búsqueda relacional.
+* generateResults(Matrix matrix)
 
-Nombre: Result
-Descripción: Clase que representa un ítem de la salida de una búsqueda. Es decir, representa a un elemento que cumple con la busqueda realizada.
-Cardinalidad: Muchos por cada resultado de una búsqueda.
-Atributos: int id_from, int id_to, int hetesim.
-Cardinalidad:
-* Agregación con la clase Búsqueda
 
-Nombre: Estructura de relaciones
-Descripción: Clase que representa una secuencia de tipos de nodos y relaciones en la que se basará la mayoría de tipos de búsqueda. Será la forma de especificar la estructura de relaciones del grafo que se quiere contemplar en una búsqueda por relaciones. También se encarga de insertar un tipo de nodo "nulo" en el medi de estructuras pares para poder realizar búsquedas relacionales sobre el hetesim.
+Nombre: Estructura de relaciones(RelationalStructure)
+Descripción: Clase que representa una secuencia de tipos de nodos y relaciones en la que se basará la mayoría de tipos de búsqueda. Será la forma de especificar la estructura de relaciones del grafo que se quiere contemplar en una búsqueda por relaciones.
 Cardinalidad: 1 por búsqueda por relaciones.
-Atributos: ArrayList<Relacion> estructura
+Atributos: Ninguno
 Relaciones:
 * Agregación con la clase Relación. Las relaciones agregadas y su ordenación indicará la estructura con la que se realizará una búsqueda.
 Llama al constructor de la super clase pasándole la estructura y guarda desde qué nodo sale y acaba la búsqueda.
 Métodos:
--EstructuraRelaciones(ArrayList<Relacion>)
+* RelationStructure(NodeType From, ArrayList<Relation> r, NodeType to)
 Constructor de la clase. Inserta el tipo "nulo" en medio de las estructuras pares.
--Relacion getRelation(int i)
-Devuelve la relación en la posición i
+* RelationStructure(Graph graph, NodeType from, int[] ids, NodeType to)
+Constructor de la clase. Usa el primer constructor, transformando els grafo y las ids en una arraylist de relaciones.
+* cloneArrayList(ArrayList<Relation> r)
+Método que sirve para clonar una arraylist.
+* setOrder(NodeType from, int i, NodeType to)
+Método para comprobar si el orden de una relación es el correcto para poder hacer hetesim posteriormente, si no es el correcto se encarga de corregirlo.
+* getArrayList(Graph graph, int[] ids)
+Devuelve una arraylist de las relaciones que tienen los ids en el grafo, ambos son párametros necesarios de la función.
+
+
+Nombre: Matriz(Matrix)
+Descripción: Clase que se utiliza para el cálculo de HeteSim, a partir de matrices de adyecendcia.
+Cardinalidad: 1 por cada vez que se calcule HeteSim.
+Atributos:
+* rows(arraylist de las filas de la matriz, no static)
+* euclidean(array que mantiene la media euclidiana de las columnas, para optimizar su cálulo al normalizar la matriz)
+* n(número de filas de la matriz)
+* m(número de columnas de la matriz)
+Relaciones: Ninguna
+Métodos:
+* Matrix(int n, int m)
+Constructor de la clase. Crea una matriz n*m.
+* Get(int i, int j)
+Nos devuelve el valor de la posición (i,j).
+* Put(int i, int j, double value)
+Pone el valor (value), en la posición (i,j) de la matriz.
+* Mul(Matrix mat)
+Retorna la matriz resultante de multiplicar dos matrices.
+* GetRows()
+Retorna el numero de filas de la matriz.
+* GetColumns()
+Retorna el numero de columnas de la matriz.
+* i_mul(Matrix mat, boolean normalize)
+Método auxiliar de mul.
+* getEuclidean(int j)
+Devuelve la media euclidiana de la columna j.
+* mul_norm(Matrix mat)
+Retorna la matriz hetesim normalizada resultante de multiplicar dos matrices.
+* binarySearch(ArrayList<Cell> row, int j)
+Realiza una búsqueda binaria para encontrar la celda de la columna j, si existe. Devuelve false si no existe.
+* i_binarySearch(ArrayList<Cell> row, int l, intr, int j)
+Función de inmersión de binarysearch.
+* checkPos(int i, int j)
+Método que retorna si una posición es válida.
+
+
+Nombre: Estructura de relaciones exception(RelationalStructureException)
+Descripción: Clase para controlar los errores de la estrucutura de relación.
+Cardinalidad: 1 por cada relación de estrucutura que se crea.
+Atributos:
+* Error (error que lanzamos cuando de produce un fallo, no static).
+Relaciones: Ninguna
+Métodos:
+* RelationStructureExcpetion(Error error)
+Constructor de la clase.
+* GetError()
+Devuelve el error provocado.
+* PrintStackTrace()
+Método que lanza mensajes de error, dependiendo que que tipo de error lanza un mensaje distinto.
+
 
 Especificación de clases de persistencia
 
