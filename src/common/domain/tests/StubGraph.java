@@ -10,7 +10,7 @@ import common.persistence.*;
 class StubGraph {
     private Graph g;
 
-    public void StubGraph() {
+    public StubGraph() {
         g = new Graph();
 
         PersistenceController pc = new PersistenceController(g);

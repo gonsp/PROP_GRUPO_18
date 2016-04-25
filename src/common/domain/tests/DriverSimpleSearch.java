@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class DriverSimpleSearch {
     private Graph g;
 
-    public void DriverSimpleSearch() {
+    public DriverSimpleSearch() {
         StubGraph sb = new StubGraph();
         g = sb.getGraph();
     }
@@ -19,7 +19,7 @@ public class DriverSimpleSearch {
         else return NodeType.PAPER;
     }
 
-    public static void main(String[] args) {
+    public void main() throws GraphException {
         System.out.println("SimpleSearch class test.");
         int nodtype;
         System.out.println("Enter node type: (1 - Author, 2 - Conference, 3 - Term, 4 - Paper,  0 - EXIT)");
@@ -42,5 +42,4 @@ public class DriverSimpleSearch {
             nodtype = input.nextInt();
         }
     }
-
 }
