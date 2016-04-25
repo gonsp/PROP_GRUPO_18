@@ -16,13 +16,14 @@ public class DriverSimpleSearch {
         if (nt == 1) return NodeType.AUTHOR;
         else if (nt == 2) return NodeType.CONF;
         else if (nt == 3) return NodeType.TERM;
-        else return NodeType.PAPER;
+        else if (nt == 4) return NodeType.PAPER;
+        else return NodeType.LABEL;
     }
 
     public void main() throws GraphException {
         System.out.println("SimpleSearch class test.");
         int nodtype;
-        System.out.println("Enter node type: (1 - Author, 2 - Conference, 3 - Term, 4 - Paper,  0 - EXIT)");
+        System.out.println("Enter node type: (1 - Author, 2 - Conference, 3 - Term, 4 - Paper, 5 - Label,  0 - EXIT)");
         Scanner input = new Scanner(System.in);
         nodtype = input.nextInt();
         while (nodtype != 0) {

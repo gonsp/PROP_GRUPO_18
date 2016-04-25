@@ -7,5 +7,6 @@ public class DriverRelationalSearch {
     private RelationStructure rs;
     private RelationalSearch rsearch;
 
+    public void main() { }
 
 }
