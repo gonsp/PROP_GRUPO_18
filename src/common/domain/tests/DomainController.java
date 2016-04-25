@@ -42,12 +42,12 @@ public class DomainController {
         }
     }
 
-    public void addElement(NodeType type, String value) {
+    public void addNode(NodeType type, String value) {
         Node node = graph.createNode(type, value);
         graph.addNode(node);
     }
 
-    public void removeElement(NodeType type, int id) {
+    public void removeNode(NodeType type, int id) {
         try {
             graph.removeNode(type, id);
         } catch (GraphException e) {
@@ -87,5 +87,48 @@ public class DomainController {
         SimpleSearch simpleSearch = new SimpleSearch(graph, type, filter);
         simpleSearch.search();
         return simpleSearch.getResults();
+    }
+
+    public ArrayList<GraphSearch.Result> freeSearch(NodeType typeA, ArrayList<Integer> relationStructure, NodeType typeB) {
+        try {
+            FreeSearch freeSearch = new FreeSearch(graph, generateRelationStructure(typeA, relationStructure, typeB));
+            freeSearch.search();
+            return freeSearch.getResults();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public ArrayList<GraphSearch.Result> originSearch(NodeType typeA, int nodeFrom, ArrayList<Integer> rs, NodeType typeB) {
+        try {
+            RelationStructure relationStructure = generateRelationStructure(typeA, rs, typeB);
+            OriginSearch originSearch = new OriginSearch(graph, relationStructure, graph.getNode(typeA, nodeFrom));
+            originSearch.search();
+            return originSearch.getResults();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public ArrayList<GraphSearch.Result> originDestinationSearch(NodeType typeA, int nodeFrom, ArrayList<Integer> rs, NodeType typeB, int nodeTo) {
+        try {
+            RelationStructure relationStructure = generateRelationStructure(typeA, rs, typeB);
+            OriginDestinationSearch originDestinationSearch = new OriginDestinationSearch(graph, relationStructure, graph.getNode(typeA, nodeFrom), graph.getNode(typeB, nodeTo));
+            originDestinationSearch.search();
+            return originDestinationSearch.getResults();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    private RelationStructure generateRelationStructure(NodeType typeA, ArrayList<Integer> relationPath, NodeType typeB) throws RelationStructureException, GraphException {
+        ArrayList<Relation> rs = new ArrayList<Relation>();
+        for(int i = 0; i < relationPath.size(); ++i) {
+            rs.add(graph.getRelation(relationPath.get(i)));
+        }
+        return new RelationStructure(typeA, rs, typeB);
     }
 }
