@@ -120,10 +120,6 @@ public abstract class RelationalSearch extends GraphSearch {
             while(iteratorB.hasNext()) {
                 Node nodeB = iteratorB.next();
                 ArrayList<Node> connected;
-                /*if(firstMatrix) {
-                    connected = getEdgesNodeTo(edgeRelation, nodeB);
-                } else {
-                }*/
                 connected = graph.getEdges(edgeRelation.getId(), nodeB);
                 for(int iteratorA = 0; iteratorA < connected.size(); ++iteratorA) {
                     Node nodeA = connected.get(iteratorA);
@@ -146,11 +142,6 @@ public abstract class RelationalSearch extends GraphSearch {
     protected int getColumnsEdgeMatrix(Relation edgeRelation) {
         int columns = 0;
         Iterator<Node> iterator;
-        /*if(firstMatrix) {
-            iterator = getIteratorFirstMatrix();
-        } else {
-            iterator = graph.getNodeIterator(edgeRelation.getNodeTypeA());
-        }*/
         iterator = graph.getNodeIterator(edgeRelation.getNodeTypeA());
         while(iterator.hasNext()) {
             Node node = iterator.next();
@@ -175,8 +166,6 @@ public abstract class RelationalSearch extends GraphSearch {
     }
 
     protected abstract Iterator getIteratorFirstMatrix();
-
-    protected abstract ArrayList<Node> getEdgesNodeTo(Relation edgeRelation, Node nodeB) throws GraphException;
 
     protected abstract Matrix createFirstMatrix(Relation relation);
 

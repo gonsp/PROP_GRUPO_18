@@ -15,11 +15,6 @@ public class FreeSearch extends RelationalSearch {
     }
 
     @Override
-    protected ArrayList<Node> getEdgesNodeTo(Relation edgeRelation, Node nodeB) throws GraphException {
-        return graph.getEdges(edgeRelation.getId(), nodeB);
-    }
-
-    @Override
     protected Matrix createFirstMatrix(Relation relation) {
         return new Matrix(graph.getSize(relation.getNodeTypeA()), graph.getSize(relation.getNodeTypeB()));
     }

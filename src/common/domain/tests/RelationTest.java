@@ -1,4 +1,4 @@
-package common.domain.tests;
+/*package common.domain.tests;
 
 import common.domain.*;
 
@@ -319,3 +319,4 @@ public class RelationTest {
 }
 
   
+*/

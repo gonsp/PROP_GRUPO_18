@@ -16,20 +16,19 @@ public class Main {
         PersistenceController pc = new PersistenceController(g);
 
         System.out.println("Importing nodes...");
-        pc.importNodes("data/GraphForTesting/author.txt", NodeType.AUTHOR);
-        pc.importNodes("data/GraphForTesting/conf.txt", NodeType.CONF);
-        pc.importNodes("data/GraphForTesting/paper.txt", NodeType.PAPER);
-        pc.importNodes("data/GraphForTesting/term.txt", NodeType.TERM);
+        pc.importNodes("data/author.txt", NodeType.AUTHOR);
+        pc.importNodes("data/conf.txt", NodeType.CONF);
+        pc.importNodes("data/paper.txt", NodeType.PAPER);
+        pc.importNodes("data/term.txt", NodeType.TERM);
 
         System.out.println("Importing edges...");
-        pc.importEdges("data/GraphForTesting/author_label.txt", NodeType.AUTHOR, NodeType.LABEL);
-        pc.importEdges("data/GraphForTesting/conf_label.txt", NodeType.CONF, NodeType.LABEL);
-        pc.importEdges("data/GraphForTesting/paper_author.txt", NodeType.PAPER, NodeType.AUTHOR);
-        pc.importEdges("data/GraphForTesting/paper_conf.txt", NodeType.PAPER, NodeType.CONF);
-        pc.importEdges("data/GraphForTesting/paper_label.txt", NodeType.PAPER, NodeType.LABEL);
-        pc.importEdges("data/GraphForTesting/paper_term.txt", NodeType.PAPER, NodeType.TERM);
+        pc.importEdges("data/author_label.txt", NodeType.AUTHOR, NodeType.LABEL);
+        pc.importEdges("data/conf_label.txt", NodeType.CONF, NodeType.LABEL);
+        pc.importEdges("data/paper_author.txt", NodeType.PAPER, NodeType.AUTHOR);
+        pc.importEdges("data/paper_conf.txt", NodeType.PAPER, NodeType.CONF);
+        pc.importEdges("data/paper_label.txt", NodeType.PAPER, NodeType.LABEL);
+        pc.importEdges("data/paper_term.txt", NodeType.PAPER, NodeType.TERM);
 
-        pc.exportGraph("out/");
 
         System.out.println("Exporting graph...");
         pc.exportGraph("out/");
@@ -37,7 +36,7 @@ public class Main {
 
         System.out.println("Starts search");
 
-        /*Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
+        Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
         g.addRelation(AP);
 
         Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");
@@ -62,7 +61,9 @@ public class Main {
         g.addEdge(AP.getId(), a2, p2);
         g.addEdge(AP.getId(), a2, p3);
         g.addEdge(AP.getId(), a2, p4);
-        g.addEdge(AP.getId(), a3, p4);*/
+        g.addEdge(AP.getId(), a3, p4);
+
+        pc.exportGraph("out/");
 
         try {
             ArrayList<Relation> aux = new ArrayList<Relation>();

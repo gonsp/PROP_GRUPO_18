@@ -46,7 +46,7 @@ public class Graph {
     }
 
     //Graph Edition
-    public void addNode(Node node) throws GraphException {
+    public void addNode(Node node) {
         getNodeContainer(getNodeType(node)).addElement(node);
     }
 

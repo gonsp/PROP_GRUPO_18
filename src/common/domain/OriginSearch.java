@@ -21,15 +21,6 @@ public class OriginSearch extends RelationalSearch {
     }
 
     @Override
-    protected ArrayList<Node> getEdgesNodeTo(Relation edgeRelation, Node nodeB) throws GraphException {
-        ArrayList<Node> aux = new ArrayList<Node>();
-        if(nodeB.isRelated(edgeRelation.getId(), from)) {
-            aux.add(from);
-        }
-        return aux;
-    }
-
-    @Override
     protected Matrix createFirstMatrix(Relation relation) {
         return new Matrix(1, graph.getSize(relation.getNodeTypeB()));
     }
