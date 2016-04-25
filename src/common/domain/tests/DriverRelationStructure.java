@@ -7,27 +7,7 @@ import java.util.Scanner;
 
 public class DriverRelationStructure {
 
-    private ArrayList<Relation> relationList;
-    private NodeType from, to;
-    boolean error;
-
-    public DriverRelationStructure () {
-        relationList = new ArrayList<Relation>();
-    }
-
-    private void parseRelation(String seq) {
-        char[] ch_array = seq.toCharArray();
-        from = this.getNodeType(ch_array[0]);
-        to = this.getNodeType(ch_array[ch_array.length-1]);
-        Relation r = new Relation(from, this.getNodeType(ch_array[1]), "");
-        relationList.add(r);
-        NodeType last = this.getNodeType(ch_array[1]);
-        for(int i = 2; i < ch_array.length; ++i) {
-            r = new Relation(last, this.getNodeType(ch_array[i]), "");
-            relationList.add(r);
-            last = this.getNodeType(ch_array[i]);
-        }
-    }
+    private Graph g;
 
     private NodeType getNodeType(char c) {
         NodeType n;
@@ -51,23 +31,60 @@ public class DriverRelationStructure {
         return n;
     }
 
+    public DriverRelationStructure() {
+        g = new Graph();
+    }
+
     public void main() {
         System.out.println("RelationStructure Test:");
-        System.out.println("Enter a sequence of NodeTypes or quit:");
+        System.out.println("Insert new relation ID:");
         Scanner s = new Scanner(System.in);
-        String seq = s.next();
-        while(!seq.equals("quit") && seq.length() >= 2) {
-            error = false;
-            this.parseRelation(seq);
-            try {
-                RelationStructure rs = new RelationStructure(from, relationList, to);
-            } catch (RelationStructureException rse) {
-                error = true;
+        int rid = s.nextInt();
+        while(rid >= 0) {
+            System.out.println("Insert relation name:");
+            String name = s.next();
+            System.out.println("Insert type of the first node (A, C, T, L, P):");
+            NodeType first = getNodeType(s.next().toUpperCase().toCharArray()[0]);
+            System.out.println("Insert type of the second node (A, C, T, L, P):");
+            NodeType second = getNodeType(s.next().toUpperCase().toCharArray()[0]);
+            Relation r = new Relation(first, second, name, rid);
+            g.addRelation(r);
+            System.out.println("Relation added. Insert new relation ID or -1 co continue:");
+            rid = s.nextInt();
+        }
+        System.out.println("Specify a origin node type for the Relation Structure (A, C, T, L, P) or quit:");
+        String st = s.next();
+        while(!st.equals("quit")) {
+            NodeType origin = getNodeType(st.toUpperCase().toCharArray()[0]);
+            System.out.println("Specify a destiny node type for the Relation Structure (A, C, T, L, P) or quit:");
+            NodeType destiny = getNodeType(s.next().toUpperCase().toCharArray()[0]);
+            System.out.println("Now write the relation IDs to go trough, one per line. End with -1.");
+            ArrayList<Integer> intlist = new ArrayList<>();
+            rid = s.nextInt();
+            while (rid >= 0) {
+                try {
+                    g.getRelation(rid);
+                    intlist.add(rid);
+                } catch (GraphException ge) {
+                    System.out.println("Invalid Relation ID!");
+                }
+                rid = s.nextInt();
             }
-            if (error) System.out.println("Incorrect relation structure (exception)");
-            else System.out.println("Correct relation structure");
-            seq = s.next();
+            System.out.println("Validating Relation Structure...");
+            try {
+                int[] indices = new int[intlist.size()];
+                for(int i = 0; i < intlist.size(); ++i) indices[i] = intlist.get(i).intValue();
+                RelationStructure rs = new RelationStructure(g, origin, indices, destiny);
+                System.out.println("Valid Relation Structure!");
+            } catch (RelationStructureException rse) {
+                rse.printStackTrace();
+                System.out.println("Invalid Relation Structure!");
+            }
+            System.out.println("Specify a origin node type for the Relation Structure (A, C, T, L, P) or quit:");
+            st = s.next();
         }
     }
+
+
 
 }

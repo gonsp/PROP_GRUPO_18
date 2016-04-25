@@ -34,7 +34,7 @@ public class DriverSimpleSearch {
                 ss.search();
                 ArrayList<GraphSearch.Result> res = ss.getResults();
                 for (int i = 0; i < res.size(); i++) {
-                    System.out.println("Node: " + res.get(i).from.getValue());
+                    System.out.println("Node: " + res.get(i).from.getValue() + " ID: " + res.get(i).from.getId());
                 }
                 System.out.println("Enter patter to search: (or quit to go back)");
                 pattern = input.next();
