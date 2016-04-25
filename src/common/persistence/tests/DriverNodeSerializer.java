@@ -5,6 +5,7 @@ import common.domain.GraphException;
 import common.domain.Node;
 import common.domain.NodeType;
 import common.persistence.NodeSerializer;
+
 import java.util.Scanner;
 
 
@@ -25,12 +26,12 @@ public class DriverNodeSerializer {
         int id = keyboard.nextInt();
         String data = keyboard.nextLine();
         Graph g = new Graph();
-        Node n = g.createNode(NodeType.AUTHOR,data);
-        g.addNode(n,id);
+        Node n = g.createNode(NodeType.AUTHOR, data);
+        g.addNode(n, id);
         serializer = new NodeSerializer(n);
     }
 
-    public void testGetData(){
+    public void testGetData() {
         System.out.println(serializer.getData());
     }
 
