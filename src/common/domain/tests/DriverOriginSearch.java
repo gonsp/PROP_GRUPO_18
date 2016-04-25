@@ -19,16 +19,16 @@ public class DriverOriginSearch extends DriverRelationalSearch {
 
         while(!parse.equals("quit") && parse.length() >= 2) {
             relationList.clear();
-            this.parseRelation(parse);
             System.out.println("Please insert the origin NodeId: ");
             int nodeid = s.nextInt();
             try {
+                this.parseRelation(parse);
                 RelationStructure rs = new RelationStructure(from, relationList, to);
                 OriginSearch os = new OriginSearch(g, rs, g.getNode(from, nodeid));
                 os.search();
                 System.out.println("Search done. Printing results");
                 ArrayList<GraphSearch.Result> results = os.getResults();
-                for(int i = 0; i < results.size() && i < 15; ++i) {
+                for(int i = 0; i < results.size(); ++i) {
                     results.get(i).print();
                 }
             } catch (RelationStructureException rse) {
