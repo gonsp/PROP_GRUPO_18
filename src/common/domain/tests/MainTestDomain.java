@@ -8,6 +8,9 @@ public class MainTestDomain {
         System.out.println("Select class to test:");
         System.out.println("1 - SimpleSearch");
         System.out.println("2 - RelationStructure");
+        System.out.println("3 - FreeSearch");
+        System.out.println("4 - OriginSearch");
+        System.out.println("5 - OriginDestinationSearch");
 
         Scanner s = new Scanner(System.in);
         int testclass = s.nextInt();
@@ -22,8 +25,16 @@ public class MainTestDomain {
                 drs.main();
                 break;
             case 3:
-                DriverRelationalSearch drsearch = new DriverRelationalSearch();
-                drsearch.main();
+                DriverFreeSearch dfs = new DriverFreeSearch();
+                dfs.main();
+                break;
+            case 4:
+                DriverOriginSearch dos = new DriverOriginSearch();
+                dos.main();
+                break;
+            case 5:
+                DriverOriginDestinationSearch dods = new DriverOriginDestinationSearch();
+                dods.main();
                 break;
         }
 
