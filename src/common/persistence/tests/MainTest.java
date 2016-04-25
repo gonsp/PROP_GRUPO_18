@@ -9,7 +9,7 @@ public class MainTest {
 
     public static void main(String[] args) throws GraphException {
         int menu = 0;
-        while(menu != 5) {
+        while (menu != 5) {
             Scanner keyboard = new Scanner(System.in);
             System.out.println("CHOOSE A CLASS TO TEST:");
             System.out.println("1. Edge Serializer");

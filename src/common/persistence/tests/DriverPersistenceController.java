@@ -15,11 +15,11 @@ public class DriverPersistenceController {
     PersistenceController controller = null;
     Graph g = new Graph();
 
-    public void constructor(){
+    public void constructor() {
         controller = new PersistenceController(g);
     }
 
-    public void testImportNodes(){
+    public void testImportNodes() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Write a path to import");
         String path = keyboard.nextLine();
@@ -36,11 +36,11 @@ public class DriverPersistenceController {
         int id1 = keyboard.nextInt();
         int id2 = keyboard.nextInt();
         Node n1 = g.createNode(NodeType.PAPER, "Piedra Filosofal");
-        g.addNode(n1,id1);
+        g.addNode(n1, id1);
         Node n2 = g.createNode(NodeType.AUTHOR, "Harry Potter");
         g.addNode(n2, id2);
         controller.importEdges(path, NodeType.PAPER, NodeType.AUTHOR);
-        ArrayList<Node> a = g.getEdges(0,n1);
+        ArrayList<Node> a = g.getEdges(0, n1);
         System.out.println(a.get(0).getId());
         System.out.println(a.get(0).getValue());
     }
@@ -53,10 +53,10 @@ public class DriverPersistenceController {
         int id1 = keyboard.nextInt();
         int id2 = keyboard.nextInt();
         Node n1 = g.createNode(NodeType.PAPER, "Piedra Filosofal");
-        g.addNode(n1,id1);
+        g.addNode(n1, id1);
         Node n2 = g.createNode(NodeType.AUTHOR, "Harry Potter");
         g.addNode(n2, id2);
-        g.addEdge(0,n1,n2);
+        g.addEdge(0, n1, n2);
         controller.exportGraph(path);
     }
 

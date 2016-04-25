@@ -4,6 +4,7 @@ package common.persistence.tests;
 import common.domain.*;
 import common.persistence.EdgeSerializer;
 import common.persistence.LabelSerializer;
+
 import java.util.Scanner;
 
 public class DriverEdgeSerializer {
@@ -19,11 +20,11 @@ public class DriverEdgeSerializer {
         id1 = keyboard.nextInt();
         id2 = keyboard.nextInt();
         String data = Integer.toString(id1) + "\t" + Integer.toString(id2);
-        Node n1 = g.createNode(NodeType.AUTHOR,"Harry Potter");
+        Node n1 = g.createNode(NodeType.AUTHOR, "Harry Potter");
         Node n2 = g.createNode(NodeType.PAPER, "Gollum");
-        g.addNode(n1,id1);
-        g.addNode(n2,id2);
-        serializer = new EdgeSerializer(g, data, NodeType.AUTHOR,NodeType.PAPER);
+        g.addNode(n1, id1);
+        g.addNode(n2, id2);
+        serializer = new EdgeSerializer(g, data, NodeType.AUTHOR, NodeType.PAPER);
     }
 
     public void constructor2() throws GraphException {
@@ -32,14 +33,14 @@ public class DriverEdgeSerializer {
         System.out.println("Write a two integers");
         id1 = keyboard.nextInt();
         id2 = keyboard.nextInt();
-        Node n1 = g.createNode(NodeType.AUTHOR,"Harry Potter");
+        Node n1 = g.createNode(NodeType.AUTHOR, "Harry Potter");
         Node n2 = g.createNode(NodeType.PAPER, "Gollum");
-        g.addNode(n1,id1);
-        g.addNode(n2,id2);
-        serializer = new EdgeSerializer(n1,n2);
+        g.addNode(n1, id1);
+        g.addNode(n2, id2);
+        serializer = new EdgeSerializer(n1, n2);
     }
 
-    public void testGetData(){
+    public void testGetData() {
         System.out.println(serializer.getData());
     }
 

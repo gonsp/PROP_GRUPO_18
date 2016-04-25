@@ -4,6 +4,7 @@ package common.persistence.tests;
 import common.domain.*;
 import common.persistence.EdgeSerializer;
 import common.persistence.LabelSerializer;
+
 import java.util.Scanner;
 
 public class DriverLabelSerializer {
@@ -19,11 +20,11 @@ public class DriverLabelSerializer {
         id1 = keyboard.nextInt();
         id2 = keyboard.nextInt();
         String data = Integer.toString(id1) + "\t" + Integer.toString(id2);
-        Node n1 = g.createNode(NodeType.PAPER,"Harry Potter");
+        Node n1 = g.createNode(NodeType.PAPER, "Harry Potter");
         Node n2 = g.createNode(NodeType.LABEL, "Gollum");
-        g.addNode(n1,id1);
-        g.addNode(n2,id2);
-        serializer = new LabelSerializer(g, data, NodeType.PAPER,NodeType.LABEL);
+        g.addNode(n1, id1);
+        g.addNode(n2, id2);
+        serializer = new LabelSerializer(g, data, NodeType.PAPER, NodeType.LABEL);
     }
 
     public void constructor2() throws GraphException {
@@ -32,14 +33,14 @@ public class DriverLabelSerializer {
         System.out.println("Write two integers (The second one between 0-3)");
         id1 = keyboard.nextInt();
         id2 = keyboard.nextInt();
-        Node n1 = g.createNode(NodeType.PAPER,"Harry Potter");
+        Node n1 = g.createNode(NodeType.PAPER, "Harry Potter");
         Node n2 = g.createNode(NodeType.LABEL, "Gollum");
-        g.addNode(n1,id1);
-        g.addNode(n2,id2);
-        serializer = new LabelSerializer(n1,n2);
+        g.addNode(n1, id1);
+        g.addNode(n2, id2);
+        serializer = new LabelSerializer(n1, n2);
     }
 
-    public void testGetData(){
+    public void testGetData() {
         System.out.println(serializer.getData());
     }
 
@@ -55,7 +56,7 @@ public class DriverLabelSerializer {
         int menu = 0;
         while (menu != 3) {
             System.out.println("CHOOSE A METHOD TO TEST:");
-            System.out.println("1.LabelSerializer(Graph graph, String data, NodeType ntype1, NodeType ntype2) + int getNode1() + String getNode2()" );
+            System.out.println("1.LabelSerializer(Graph graph, String data, NodeType ntype1, NodeType ntype2) + int getNode1() + String getNode2()");
             System.out.println("2.LabelSerializer(Node node1, Node node2) + getData()");
             System.out.println("3. Return Main Menu");
             Scanner keyboard = new Scanner(System.in);
