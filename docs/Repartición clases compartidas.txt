@@ -1,9 +1,9 @@
  Grupo 1: Clases relacionadas con las búsquedas (1)
     GraphSearch:
+    Container:
     Result:
     SimpleSearch:
     RelationStructureException:
-    Relation:
     AuthorLabel:
     AuthorPaper:
     ConferenceLabel:
@@ -12,17 +12,17 @@
     TermPaper:
 
  Grupo 2: Clases relacionadas con grafo
-    Graph:
-    Container:
-    NodeType:
+    Graph: Guillermo
+    Relation: Javier
+    NodeType: Guillermo
     Element:
-    Node:
-    Author:
-    Conference:
-    Paper:
-    Label:
-    Term:
-    GraphException:
+    Node: Sergi
+    Author: Sergi
+    Conference: Sergi
+    Paper: Sergi
+    Label: Sergi
+    Term: Sergi
+    GraphException: Guillermo
 
  Grupo 3: Clases relacionadas con la persistencia
     PersistenceController:
