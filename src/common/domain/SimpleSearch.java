@@ -8,7 +8,7 @@ public class SimpleSearch extends GraphSearch {
     private String filter;
     private NodeType type;
 
-    public SimpleSearch(Graph graph, NodeType type, String filter) throws GraphException {
+    public SimpleSearch(Graph graph, NodeType type, String filter) {
         super(graph);
         this.filter = filter.toLowerCase();
         this.type = type;
