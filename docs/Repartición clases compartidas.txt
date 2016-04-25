@@ -1,15 +1,15 @@
  Grupo 1: Clases relacionadas con las búsquedas (1)
-    GraphSearch:
-    Container:
-    Result:
-    SimpleSearch:
-    RelationStructureException:
-    AuthorLabel:
-    AuthorPaper:
-    ConferenceLabel:
-    ConferencePaper:
-    PaperLabel:
-    TermPaper:
+    GraphSearch: David
+    Container: Adrià
+    Result: Marc
+    SimpleSearch: Marc
+    RelationStructureException: Adrià
+    AuthorLabel: Joel
+    AuthorPaper: Joel 
+    ConferenceLabel: Joel
+    ConferencePaper: Joel
+    PaperLabel: Joel
+    TermPaper: Joel
 
  Grupo 2: Clases relacionadas con grafo
     Graph: Guillermo
