@@ -1,5 +1,6 @@
  Grupo 1: Clases relacionadas con las búsquedas (1)
     GraphSearch:
+    Container:
     Result:
     SimpleSearch:
     RelationStructureException:
@@ -13,7 +14,6 @@
  Grupo 2: Clases relacionadas con grafo
     Graph: Guillermo
     Relation: Javier
-    Container: 
     NodeType: Guillermo
     Element:
     Node: Sergi
