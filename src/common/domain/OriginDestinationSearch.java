@@ -1,5 +1,8 @@
 package common.domain;
 
+import java.util.Iterator;
+import java.util.function.Predicate;
+
 public class OriginDestinationSearch extends OriginSearch {
 
     private Node to;
@@ -9,13 +12,24 @@ public class OriginDestinationSearch extends OriginSearch {
         this.to = to;
     }
 
+    protected class Pred implements Predicate<Result> {
+        int nodeid;
+
+        public Pred(int idfilter) {
+            nodeid = idfilter;
+        }
+        
+        public boolean test(Result test_res) {
+            if(test_res.to.getId() != nodeid) return true;
+            return false;
+        }
+    }
+
     @Override
     protected void generateResults(Matrix matrix) {
         super.generateResults(matrix);
-        for(int i = 0; i < results.size(); ++i) {
-            if(results.get(i).to.getId() != to.getId()) {
-                results.remove(i);
-            }
-        }
+        // Aquí la cagó Gon.
+        Pred filter = new Pred(to.getId());
+        results.removeIf(filter);
     }
 }
