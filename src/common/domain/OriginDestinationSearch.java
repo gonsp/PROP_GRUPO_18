@@ -23,5 +23,9 @@ public class OriginDestinationSearch extends OriginSearch {
                 found = true;
             }
         }
+        if(!found) {
+            results = new ArrayList<Result>();
+            results.add(new Result(from, to, 0));
+        }
     }
 }
