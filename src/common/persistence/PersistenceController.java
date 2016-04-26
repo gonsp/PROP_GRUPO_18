@@ -202,6 +202,19 @@ public class PersistenceController {
         }
     }
 
+    public void importGraph(String path){
+        importNodes(path + "author.txt", NodeType.AUTHOR);
+        importNodes(path + "conf.txt", NodeType.CONF);
+        importNodes(path + "paper.txt", NodeType.PAPER);
+        importNodes(path + "term.txt", NodeType.TERM);
+        importEdges(path + "author_label.txt", NodeType.AUTHOR, NodeType.LABEL);
+        importEdges(path + "conf_label.txt", NodeType.CONF, NodeType.LABEL);
+        importEdges(path + "paper_author.txt", NodeType.PAPER, NodeType.AUTHOR);
+        importEdges(path + "paper_conf.txt", NodeType.PAPER, NodeType.CONF);
+        importEdges(path + "paper_label.txt", NodeType.PAPER, NodeType.LABEL);
+        importEdges(path + "paper_term.txt", NodeType.PAPER, NodeType.TERM);
+    }
+
     public void exportGraph(String path) {
         clearDir(path);
         try {
