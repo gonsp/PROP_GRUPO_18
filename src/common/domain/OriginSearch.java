@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 public class OriginSearch extends RelationalSearch {
 
-    private Node from;
+    protected Node from;
 
     public OriginSearch(Graph graph, RelationStructure rs, Node from) {
         super(graph, rs);

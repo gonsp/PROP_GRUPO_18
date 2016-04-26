@@ -72,6 +72,15 @@ public class DomainController {
         }
     }
 
+    public ArrayList<Node> getEdges(int relationID, Node node) {
+        try {
+            return graph.getEdges(relationID, node);
+        } catch (GraphException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public ArrayList<GraphSearch.Result> simpleSearch(NodeType type, String filter) {
         SimpleSearch simpleSearch = new SimpleSearch(graph, type, filter);
         simpleSearch.search();

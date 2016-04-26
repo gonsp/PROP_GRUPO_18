@@ -25,7 +25,7 @@ public abstract class GraphSearch {
         public Node to;
         public double hetesim;
 
-        Result(Node from, Node to, double hetesim) {
+        protected Result(Node from, Node to, double hetesim) {
             this.from = from;
             this.to = to;
             this.hetesim = hetesim;
