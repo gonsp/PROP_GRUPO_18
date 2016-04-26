@@ -35,11 +35,7 @@ public class DomainController {
     }
 
     public void exportDB(String path) {
-        try {
-            persistenceController.exportGraph(path);
-        } catch (GraphException e) {
-            e.printStackTrace();
-        }
+        persistenceController.exportGraph(path);
     }
 
     public void addNode(NodeType type, String value) {
