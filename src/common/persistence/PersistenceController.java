@@ -202,10 +202,15 @@ public class PersistenceController {
         }
     }
 
-    public void exportGraph(String path) throws GraphException {
+    public void exportGraph(String path) {
         clearDir(path);
-        exportNodes(path);
-        exportEdges(path);
+        try {
+            exportNodes(path);
+            exportEdges(path);
+        } catch (GraphException e){
+            e.printStackTrace();
+        }
+
     }
 
 }

@@ -5,7 +5,7 @@ import common.domain.GraphException;
 import java.util.Scanner;
 
 
-public class MainTest {
+public class MainPersistenceTest {
 
     public static void main(String[] args) throws GraphException {
         int menu = 0;
