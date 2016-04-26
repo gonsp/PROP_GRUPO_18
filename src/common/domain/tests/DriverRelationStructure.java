@@ -3,11 +3,13 @@ package common.domain.tests;
 import common.domain.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class DriverRelationStructure {
 
     private Graph g;
+    private HashMap<Integer, Integer> relationids;
 
     private NodeType getNodeType(char c) {
         NodeType n;
@@ -22,6 +24,7 @@ public class DriverRelationStructure {
                 n = NodeType.LABEL;
                 break;
             case 'P':
+                System.out.println("Paper");
                 n = NodeType.PAPER;
                 break;
             default:
@@ -31,8 +34,13 @@ public class DriverRelationStructure {
         return n;
     }
 
+    private int translateId(Integer id) {
+        return relationids.get(id).intValue();
+    }
+
     public DriverRelationStructure() {
         g = new Graph();
+        relationids = new HashMap<>();
     }
 
     public void main() {
@@ -49,6 +57,7 @@ public class DriverRelationStructure {
             NodeType second = getNodeType(s.next().toUpperCase().toCharArray()[0]);
             Relation r = new Relation(first, second, name, rid);
             g.addRelation(r);
+            relationids.put(rid, r.getId());
             System.out.println("Relation added. Insert new relation ID or -1 co continue:");
             rid = s.nextInt();
         }
@@ -62,18 +71,13 @@ public class DriverRelationStructure {
             ArrayList<Integer> intlist = new ArrayList<>();
             rid = s.nextInt();
             while (rid >= 0) {
-                try {
-                    g.getRelation(rid);
-                    intlist.add(rid);
-                } catch (GraphException ge) {
-                    System.out.println("Invalid Relation ID!");
-                }
+                intlist.add(rid);
                 rid = s.nextInt();
             }
             System.out.println("Validating Relation Structure...");
             try {
                 int[] indices = new int[intlist.size()];
-                for(int i = 0; i < intlist.size(); ++i) indices[i] = intlist.get(i).intValue();
+                for(int i = 0; i < intlist.size(); ++i) indices[i] = translateId(intlist.get(i));
                 RelationStructure rs = new RelationStructure(g, origin, indices, destiny);
                 System.out.println("Valid Relation Structure!");
             } catch (RelationStructureException rse) {
