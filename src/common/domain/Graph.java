@@ -137,6 +137,10 @@ public class Graph {
         return getNodeContainer(type).getIterator();
     }
 
+    public Container<Relation>.ContainerIterator getRelationIterator() {
+        return relations.getIterator();
+    }
+
     private void i_addRelation(Relation relation, NodeType type) {
         Container<Node>.ContainerIterator iterator = getNodeIterator(type);
         while(iterator.hasNext()) {

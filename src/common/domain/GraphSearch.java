@@ -33,7 +33,7 @@ public abstract class GraphSearch {
 
         public void print() {
             if(to == null) {
-                System.out.println(from.getValue());
+                System.out.println(from.getValue() + " - id: " + from.getId());
             } else {
                 System.out.println(from.getValue() + " - " + to.getValue() + " - " + String.valueOf(hetesim));
             }
