@@ -25,10 +25,12 @@
     GraphException: Guillermo
 
  Grupo 3: Clases relacionadas con la persistencia
-    PersistenceController:
-    EdgeSerializer:
-    LabelSerializer;
-    NodeSerializer;
+    PersistenceController: Pau
+    EdgeSerializer: Pau
+    LabelSerializer Victor, Pau
+    NodeSerializer Pau
+    Testing: Victor
+    
  
  Grupo 3bis: Clases relacionadas con las búsquedas (2)
     RelationalSearch: GONZALO, Daniel
