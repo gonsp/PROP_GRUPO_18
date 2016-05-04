@@ -30,7 +30,7 @@ public class Relation extends Element {
         return value;
     }
 
-    protected boolean isDefault() {
+    public boolean isDefault() {
         return isDefault;
     }
 
