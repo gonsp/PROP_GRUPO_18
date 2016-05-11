@@ -12,11 +12,6 @@ public class Graph {
 
     //Constructors
     public Graph() {
-        this("-1");
-    }
-
-    public Graph(String name) {
-        this.name = name;
         nodeContainers = new HashMap<NodeType, Container<Node>>();
         nodeContainers.put(NodeType.AUTHOR, new Container<Node>());
         nodeContainers.put(NodeType.PAPER, new Container<Node>());
