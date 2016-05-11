@@ -142,7 +142,7 @@ public abstract class RelationalSearch extends GraphSearch {
     protected int getColumnsEdgeMatrix(Relation edgeRelation) {
         int columns = 0;
         Iterator<Node> iterator;
-        iterator = graph.g etNodeIterator(edgeRelation.getNodeTypeA());
+        iterator = graph.getNodeIterator(edgeRelation.getNodeTypeA());
         while(iterator.hasNext()) {
             Node node = iterator.next();
             columns += node.getSizeEdges(edgeRelation.getId());
