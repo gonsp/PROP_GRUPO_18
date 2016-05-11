@@ -16,14 +16,14 @@ public class Main {
         PersistenceController pc = new PersistenceController(g);
         pc.importGraph("data/");
 
+        Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
+        g.addRelation(AP);
+
         System.out.println("Exporting graph...");
         pc.exportGraph("out/");
 
-
+        /*
         System.out.println("Starts search");
-
-        Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
-        g.addRelation(AP);
 
         Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");
         Author a2 = (Author) g.createNode(NodeType.AUTHOR, "a2");
@@ -67,5 +67,8 @@ public class Main {
         } catch (RelationStructureException e) {
             e.printStackTrace();
         }
+
+        */
+
     }
 }
