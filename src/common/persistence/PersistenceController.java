@@ -73,6 +73,7 @@ public class PersistenceController {
                     strings.add(serializer.getData());
                 }
                 String filepath = path + n.toString().toLowerCase() + ".txt";
+                Collections.sort(strings);
                 writeFile(filepath, strings);
             }
         }
@@ -87,72 +88,72 @@ public class PersistenceController {
         strings.put("paper_label", new ArrayList<>());
         strings.put("paper_term", new ArrayList<>());
 
-        for (NodeType n : NodeType.values()) {
-            if (n != LABEL && n != TERM) {
-                Container<Node>.ContainerIterator it = graph.getNodeIterator(n);
-                while (it.hasNext()) {
-                    EdgeSerializer serializer = null;
-                    ArrayList<Node> relation;
-                    Node node1 = it.next();
-                    if (n == AUTHOR) {
-                        relation = graph.getEdges(3, node1);
-                        for (int i = 0; i < relation.size(); ++i) {
-                            Node node2 = relation.get(i);
-                            serializer = new LabelSerializer(node1, node2);
-                            strings.get("author_label").add(serializer.getData());
-                        }
-                    } else if (n == CONF) {
-                        relation = graph.getEdges(5, node1);
-                        for (int i = 0; i < relation.size(); ++i) {
-                            Node node2 = relation.get(i);
-                            serializer = new LabelSerializer(node1, node2);
-                            strings.get("author_label").add(serializer.getData());
-                        }
-                    } else if (n == PAPER) {
-                        relation = graph.getEdges(0, node1);
-                        for (int i = 0; i < relation.size(); ++i) {
-                            Node node2 = relation.get(i);
-                            serializer = new EdgeSerializer(node1, node2);
-                            strings.get("paper_author").add(serializer.getData());
-                        }
-                        relation = graph.getEdges(1, node1);
-                        for (int i = 0; i < relation.size(); ++i) {
-                            Node node2 = relation.get(i);
-                            serializer = new EdgeSerializer(node1, node2);
-                            strings.get("paper_conf").add(serializer.getData());
-                        }
-                        relation = graph.getEdges(4, node1);
-                        for (int i = 0; i < relation.size(); ++i) {
-                            Node node2 = relation.get(i);
-                            serializer = new LabelSerializer(node1, node2);
-                            strings.get("paper_label").add(serializer.getData());
-                        }
-                        relation = graph.getEdges(2, node1);
-                        for (int i = 0; i < relation.size(); ++i) {
-                            Node node2 = relation.get(i);
-                            serializer = new EdgeSerializer(node1, node2);
-                            strings.get("paper_term").add(serializer.getData());
-                        }
-                    }
-                }
-            }
-        }
-        writeFile(path + "author_label.txt", strings.get("author_label"));
-        writeFile(path + "conf_label.txt", strings.get("conf_label"));
-        writeFile(path + "paper_author.txt", strings.get("paper_author"));
-        writeFile(path + "paper_conf.txt", strings.get("paper_conf"));
-        writeFile(path + "paper_label.txt", strings.get("paper_label"));
-        writeFile(path + "paper_term.txt", strings.get("paper_term"));
-
         /*
-        Iterator it = graph.getRelationIterator();
-        while(it.hasNext()){
-            Relation r = (Relation) it.next();
+        Iterator iter = graph.getRelationIterator();
+        while(iter.hasNext()){
+            Relation r = (Relation) iter.next();
             if(!r.isDefault()){
+                strings.put(r.getName(), new ArrayList<>());
                 System.out.println(r.getName());
             }
         }
         */
+
+        for (NodeType n : NodeType.values()) {
+            Container<Node>.ContainerIterator it = graph.getNodeIterator(n);
+            while (it.hasNext()) {
+                EdgeSerializer serializer = null;
+                ArrayList<Node> relation;
+                Node node1 = it.next();
+                if (n == AUTHOR) {
+                    relation = graph.getEdges(3, node1);
+                    for (int i = 0; i < relation.size(); ++i) {
+                        Node node2 = relation.get(i);
+                        serializer = new LabelSerializer(node1, node2);
+                        strings.get("author_label").add(serializer.getData());
+                    }
+                } else if (n == CONF) {
+                    relation = graph.getEdges(5, node1);
+                    for (int i = 0; i < relation.size(); ++i) {
+                        Node node2 = relation.get(i);
+                        serializer = new LabelSerializer(node1, node2);
+                        strings.get("conf_label").add(serializer.getData());
+                    }
+                } else if (n == PAPER) {
+                    relation = graph.getEdges(0, node1);
+                    for (int i = 0; i < relation.size(); ++i) {
+                        Node node2 = relation.get(i);
+                        serializer = new EdgeSerializer(node1, node2);
+                        strings.get("paper_author").add(serializer.getData());
+                    }
+                    relation = graph.getEdges(1, node1);
+                    for (int i = 0; i < relation.size(); ++i) {
+                        Node node2 = relation.get(i);
+                        serializer = new EdgeSerializer(node1, node2);
+                        strings.get("paper_conf").add(serializer.getData());
+                    }
+                    relation = graph.getEdges(4, node1);
+                    for (int i = 0; i < relation.size(); ++i) {
+                        Node node2 = relation.get(i);
+                        serializer = new LabelSerializer(node1, node2);
+                        strings.get("paper_label").add(serializer.getData());
+                    }
+                    relation = graph.getEdges(2, node1);
+                    for (int i = 0; i < relation.size(); ++i) {
+                        Node node2 = relation.get(i);
+                        serializer = new EdgeSerializer(node1, node2);
+                        strings.get("paper_term").add(serializer.getData());
+                    }
+                }
+            }
+        }
+
+        Iterator it = strings.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            Collections.sort(strings.get(pair.getKey()));
+            writeFile(path + pair.getKey() + ".txt", (List<String>) pair.getValue());
+        }
 
     }
 
