@@ -54,11 +54,11 @@ public class Main {
         try {
             ArrayList<Relation> aux = new ArrayList<Relation>();
             aux.add(g.getRelation(0));
-            //aux.add(g.getRelation(0));
+            aux.add(g.getRelation(0));
             //aux.add(AP);
             //aux.add(AP);
-            RelationStructure rs = new RelationStructure(NodeType.AUTHOR, aux, NodeType.PAPER);
-            GraphSearch s = new OriginSearch(g, rs, g.getNode(NodeType.AUTHOR, 50116));
+            RelationStructure rs = new RelationStructure(NodeType.AUTHOR, aux, NodeType.AUTHOR);
+            GraphSearch s = new OriginDestinationSearch(g, rs, g.getNode(NodeType.AUTHOR, 15971), g.getNode(NodeType.AUTHOR, 1399));
             s.search();
             ArrayList<GraphSearch.Result> results = s.getResults();
             for(int i = 0; i < results.size(); ++i) {
