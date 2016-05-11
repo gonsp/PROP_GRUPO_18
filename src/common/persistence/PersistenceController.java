@@ -13,6 +13,17 @@ public class PersistenceController {
 
     private Graph graph;
 
+    Comparator<String> custom_comparator = new Comparator<String>() {
+        @Override
+        public int compare(String o1, String o2) {
+            Scanner line = new Scanner(o1);
+            int i1 = line.nextInt();
+            line = new Scanner(o2);
+            int i2 = line.nextInt();
+            return i1 - i2;
+        }
+    };
+
     private List<String> readFile(String path) {
         List<String> toReturn = new ArrayList<>();
         BufferedReader br = null;
@@ -73,7 +84,7 @@ public class PersistenceController {
                     strings.add(serializer.getData());
                 }
                 String filepath = path + n.toString().toLowerCase() + ".txt";
-                Collections.sort(strings);
+                Collections.sort(strings, custom_comparator);
                 writeFile(filepath, strings);
             }
         }
@@ -151,7 +162,7 @@ public class PersistenceController {
         Iterator it = strings.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry)it.next();
-            Collections.sort(strings.get(pair.getKey()));
+            Collections.sort(strings.get(pair.getKey()), custom_comparator);
             writeFile(path + pair.getKey() + ".txt", (List<String>) pair.getValue());
         }
 

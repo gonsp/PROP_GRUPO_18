@@ -14,7 +14,7 @@ public class Main {
         Graph g = new Graph();
 
         PersistenceController pc = new PersistenceController(g);
-        pc.importGraph("data/");
+        pc.importGraph("out/");
 
         Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
         g.addRelation(AP);
