@@ -83,7 +83,8 @@ public class Container<T extends  Element> {
     }
     
     private boolean checkNewID(int ID) {
-    	return ID >= lastID;
+    	//return ID >= lastID;
+        return true;
     }
 
     public class ContainerIterator implements Iterator {

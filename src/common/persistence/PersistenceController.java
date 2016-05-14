@@ -38,6 +38,7 @@ public class PersistenceController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //Collections.sort(toReturn, custom_comparator);
         return toReturn;
     }
 
@@ -84,7 +85,6 @@ public class PersistenceController {
                     strings.add(serializer.getData());
                 }
                 String filepath = path + n.toString().toLowerCase() + ".txt";
-                Collections.sort(strings, custom_comparator);
                 writeFile(filepath, strings);
             }
         }
@@ -162,7 +162,6 @@ public class PersistenceController {
         Iterator it = strings.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry)it.next();
-            Collections.sort(strings.get(pair.getKey()), custom_comparator);
             writeFile(path + pair.getKey() + ".txt", (List<String>) pair.getValue());
         }
 
