@@ -178,12 +178,25 @@ public class Graph {
         return relations.getElement(relationID);
     }
 
-    public ArrayList<Relation> getRelationsForType(NodeType nt){
+    public Relation getOrCreateRelation(NodeType typeA, NodeType typeB, String name){
+        Iterator it = relations.getIterator();
+        while(it.hasNext()){
+            Relation r = (Relation) it.next();
+            if(r.getNodeTypeA().equals(typeA) && r.getNodeTypeB().equals(typeB)){
+                return r;
+            }
+        }
+        Relation r = new Relation(typeA, typeB, name);
+        addRelation(r);
+        return r;
+    }
+
+    public ArrayList<Relation> getRelationsForType(NodeType type){
         ArrayList<Relation> toReturn = new ArrayList<>();
         Iterator it = relations.getIterator();
         while (it.hasNext()) {
             Relation r = (Relation) it.next();
-            if(r.getNodeTypeA() == nt){
+            if(r.getNodeTypeA() == type){
                 toReturn.add(r);
             }
         }

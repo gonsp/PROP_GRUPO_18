@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
+
 public abstract class Node extends Element {
     //Attributes
     private HashMap<Integer, HashSet<Integer>> relations;
@@ -22,11 +23,11 @@ public abstract class Node extends Element {
 
     public Node(Node n) {
         super(n);
-        relations = (HashMap<Integer, HashSet<Integer> >) n.relations.clone();
+        relations = (HashMap<Integer, HashSet<Integer>>) n.relations.clone();
     }
 
     protected void addEdge(int relationID, int nodeID) throws GraphException {
-        if(!relations.containsKey(relationID)) {
+        if (!relations.containsKey(relationID)) {
             throw new GraphException(GraphException.Error.ID_RELATION_NONEXISTENT);
         } else {
             relations.get(relationID).add(nodeID);
@@ -34,7 +35,7 @@ public abstract class Node extends Element {
     }
 
     protected void removeEdge(int relationID, int nodeID) throws GraphException {
-        if(!relations.containsKey(relationID)) {
+        if (!relations.containsKey(relationID)) {
             throw new GraphException(GraphException.Error.ID_RELATION_NONEXISTENT);
         } else {
             relations.get(relationID).remove(nodeID);
@@ -66,6 +67,7 @@ public abstract class Node extends Element {
     protected void removeRelation(Relation relation) {
         relations.remove(relation.getId());
     }
+
 }
 
 

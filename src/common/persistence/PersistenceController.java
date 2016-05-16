@@ -1,65 +1,15 @@
 package common.persistence;
 
-import java.io.*;
 import java.util.*;
 
 import common.domain.*;
-
 import static common.domain.NodeType.*;
+import static common.persistence.FileHandler.*;
 
 
 public class PersistenceController {
 
     private Graph graph;
-
-    private List<String> readFile(String path) {
-        List<String> toReturn = new ArrayList<>();
-        BufferedReader br = null;
-        try {
-            String sCurrentLine;
-            String absolutePath = new File(path).getAbsolutePath();
-            FileReader fr = new FileReader(absolutePath);
-            br = new BufferedReader(fr);
-            while ((sCurrentLine = br.readLine()) != null) {
-                toReturn.add(sCurrentLine);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return toReturn;
-    }
-
-    private void writeFile(String path, List<String> strings) {
-        try {
-            String absolutePath = new File(path).getAbsolutePath();
-            File file = new File(absolutePath);
-            file.createNewFile();
-            FileWriter fw = new FileWriter(file, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter out = new PrintWriter(bw);
-            for (String s : strings) {
-                out.println(s);
-            }
-            out.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void clearDir(String path) {
-        String absolutePath = new File(path).getAbsolutePath();
-        File folder = new File(absolutePath);
-        if (!folder.exists()) {
-            folder.mkdir();
-        }
-        File flist[] = folder.listFiles();
-        for (int i = 0; i < flist.length; i++) {
-            String pes = flist[i].getName();
-            if (pes.endsWith(".txt")) {
-                flist[i].delete();
-            }
-        }
-    }
 
     private void exportNodes(String path) {
         for (NodeType n : NodeType.values()) {
@@ -77,7 +27,7 @@ public class PersistenceController {
         }
     }
 
-    private void exportEdges(String path) throws GraphException {
+    private void exportEdges(String path) {
         Map<String, ArrayList<String>> strings = new HashMap<String, ArrayList<String>>();
 
         Iterator iter = graph.getRelationIterator();
@@ -92,16 +42,20 @@ public class PersistenceController {
             while (it.hasNext()) {
                 Node node1 = it.next();
                 for (Relation rel : rs) {
-                    ArrayList<Node> node_list = graph.getEdges(rel.getId(), node1);
-                    for (int i = 0; i < node_list.size(); ++i) {
-                        Node node2 = node_list.get(i);
-                        EdgeSerializer serializer;
-                        if(rel.containsLabel()){
-                            serializer = new LabelSerializer(node1, node2);
-                        } else {
-                            serializer = new EdgeSerializer(node1, node2);
+                    try {
+                        ArrayList<Node> node_list = graph.getEdges(rel.getId(), node1);
+                        for (int i = 0; i < node_list.size(); ++i) {
+                            Node node2 = node_list.get(i);
+                            EdgeSerializer serializer;
+                            if (rel.containsLabel()) {
+                                serializer = new LabelSerializer(node1, node2);
+                            } else {
+                                serializer = new EdgeSerializer(node1, node2);
+                            }
+                            strings.get(rel.getName()).add(serializer.getData());
                         }
-                        strings.get(rel.getName()).add(serializer.getData());
+                    } catch (GraphException e) {
+                        e.printStackTrace();
                     }
                 }
             }
@@ -113,6 +67,50 @@ public class PersistenceController {
             writeFile(path + pair.getKey() + ".txt", (List<String>) pair.getValue());
         }
 
+    }
+
+    private void importNodes(String path) {
+        for (NodeType n : NodeType.values()) {
+            if (n != LABEL) {
+                String filepath = path + n.toString().toLowerCase() + ".txt";
+                List<String> strings = readFile(filepath);
+                for (String s : strings) {
+                    NodeSerializer serializer = new NodeSerializer(s);
+                    Node node = graph.createNode(n, serializer.getName());
+                    try {
+                        graph.addNode(node, serializer.getId());
+                    } catch (GraphException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+    }
+
+    private void importEdges(String path) {
+        List<String> files = readDir(path);
+        for (String f : files) {
+            if (f.matches("(.*)_(.*)")) {
+                List<String> strings = readFile(path + f);
+                String[] parts = f.split("_");
+                NodeType typeA = NodeType.valueOf(parts[0].toUpperCase());
+                NodeType typeB = NodeType.valueOf(parts[1].substring(0, parts[1].length() - 4).toUpperCase());
+                Relation r = graph.getOrCreateRelation(typeA, typeB, f.substring(0, f.length() - 4).toLowerCase());
+                for (String s : strings) {
+                    EdgeSerializer serializer = null;
+                    if (r.containsLabel()) {
+                        serializer = new LabelSerializer(graph, s, typeA, typeB);
+                    } else {
+                        serializer = new EdgeSerializer(graph, s, typeA, typeB);
+                    }
+                    try {
+                        graph.addEdge(r.getId(), serializer.getNode1(), serializer.getNode2());
+                    } catch (GraphException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
     }
 
     public PersistenceController(Graph graph) {
@@ -127,75 +125,15 @@ public class PersistenceController {
         }
     }
 
-    public void importNodes(String path, NodeType type) {
-        List<String> strings = readFile(path);
-        for (String s : strings) {
-            NodeSerializer serializer = new NodeSerializer(s);
-            Node node = graph.createNode(type, serializer.getName());
-            try {
-                graph.addNode(node, serializer.getId());
-            } catch (GraphException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public void importEdges(String path, NodeType type1, NodeType type2) {
-        List<String> strings = readFile(path);
-        for (String s : strings) {
-            int relId = -1;
-            EdgeSerializer serializer = null;
-            if (type1.equals(AUTHOR) && type2.equals(NodeType.LABEL)) {
-                relId = 3;
-                serializer = new LabelSerializer(graph, s, type1, type2);
-            } else if (type1.equals(NodeType.CONF) && type2.equals(NodeType.LABEL)) {
-                relId = 5;
-                serializer = new LabelSerializer(graph, s, type1, type2);
-            } else if (type1.equals(NodeType.PAPER) && type2.equals(AUTHOR)) {
-                relId = 0;
-                serializer = new EdgeSerializer(graph, s, type1, type2);
-            } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.CONF)) {
-                relId = 1;
-                serializer = new EdgeSerializer(graph, s, type1, type2);
-            } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.LABEL)) {
-                relId = 4;
-                serializer = new LabelSerializer(graph, s, type1, type2);
-            } else if (type1.equals(NodeType.PAPER) && type2.equals(NodeType.TERM)) {
-                relId = 2;
-                serializer = new EdgeSerializer(graph, s, type1, type2);
-            }
-            try {
-                Node node1 = serializer.getNode1();
-                Node node2 = serializer.getNode2();
-                graph.addEdge(relId, node1, node2);
-            } catch (GraphException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
     public void importGraph(String path) {
-        importNodes(path + "author.txt", NodeType.AUTHOR);
-        importNodes(path + "conf.txt", NodeType.CONF);
-        importNodes(path + "paper.txt", NodeType.PAPER);
-        importNodes(path + "term.txt", NodeType.TERM);
-        importEdges(path + "author_label.txt", NodeType.AUTHOR, NodeType.LABEL);
-        importEdges(path + "conf_label.txt", NodeType.CONF, NodeType.LABEL);
-        importEdges(path + "paper_author.txt", NodeType.PAPER, NodeType.AUTHOR);
-        importEdges(path + "paper_conf.txt", NodeType.PAPER, NodeType.CONF);
-        importEdges(path + "paper_label.txt", NodeType.PAPER, NodeType.LABEL);
-        importEdges(path + "paper_term.txt", NodeType.PAPER, NodeType.TERM);
+        importNodes(path);
+        importEdges(path);
     }
 
     public void exportGraph(String path) {
         clearDir(path);
-        try {
-            exportNodes(path);
-            exportEdges(path);
-        } catch (GraphException e) {
-            e.printStackTrace();
-        }
-
+        exportNodes(path);
+        exportEdges(path);
     }
 
 }

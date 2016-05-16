@@ -10,16 +10,16 @@ public class Main {
 
     public static void main(String[] args) throws GraphException {
 
-        System.out.println("Starts initialization");
+        System.out.println("Starts initialization...");
         Graph g = new Graph();
 
         PersistenceController pc = new PersistenceController(g);
-        pc.importGraph("data/");
+        pc.importGraph("out/");
 
         Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
         g.addRelation(AP);
 
-        System.out.println("Starts search");
+        System.out.println("Starts search...");
 
         Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");
         Author a2 = (Author) g.createNode(NodeType.AUTHOR, "a2");
