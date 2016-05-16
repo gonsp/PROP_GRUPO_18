@@ -49,4 +49,10 @@ public class Relation extends Element {
     protected void setNodeTypeB(NodeType B) {
         this.B = B;
     }
+
+    // Helpers
+    public boolean containsLabel(){
+        return A == NodeType.LABEL || B == NodeType.LABEL;
+    }
+
 }

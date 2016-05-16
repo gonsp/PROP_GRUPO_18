@@ -1,7 +1,6 @@
 package common.persistence;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.*;
 
 import common.domain.*;
@@ -12,17 +11,6 @@ import static common.domain.NodeType.*;
 public class PersistenceController {
 
     private Graph graph;
-
-    Comparator<String> custom_comparator = new Comparator<String>() {
-        @Override
-        public int compare(String o1, String o2) {
-            Scanner line = new Scanner(o1);
-            int i1 = line.nextInt();
-            line = new Scanner(o2);
-            int i2 = line.nextInt();
-            return i1 - i2;
-        }
-    };
 
     private List<String> readFile(String path) {
         List<String> toReturn = new ArrayList<>();
@@ -84,7 +72,6 @@ public class PersistenceController {
                     strings.add(serializer.getData());
                 }
                 String filepath = path + n.toString().toLowerCase() + ".txt";
-                Collections.sort(strings, custom_comparator);
                 writeFile(filepath, strings);
             }
         }
@@ -92,68 +79,29 @@ public class PersistenceController {
 
     private void exportEdges(String path) throws GraphException {
         Map<String, ArrayList<String>> strings = new HashMap<String, ArrayList<String>>();
-        strings.put("author_label", new ArrayList<>());
-        strings.put("conf_label", new ArrayList<>());
-        strings.put("paper_author", new ArrayList<>());
-        strings.put("paper_conf", new ArrayList<>());
-        strings.put("paper_label", new ArrayList<>());
-        strings.put("paper_term", new ArrayList<>());
 
-        /*
         Iterator iter = graph.getRelationIterator();
-        while(iter.hasNext()){
+        while (iter.hasNext()) {
             Relation r = (Relation) iter.next();
-            if(!r.isDefault()){
-                strings.put(r.getName(), new ArrayList<>());
-                System.out.println(r.getName());
-            }
+            strings.put(r.getName(), new ArrayList<>());
         }
-        */
 
         for (NodeType n : NodeType.values()) {
             Container<Node>.ContainerIterator it = graph.getNodeIterator(n);
+            ArrayList<Relation> rs = graph.getRelationsForType(n);
             while (it.hasNext()) {
-                EdgeSerializer serializer = null;
-                ArrayList<Node> relation;
                 Node node1 = it.next();
-                if (n == AUTHOR) {
-                    relation = graph.getEdges(3, node1);
-                    for (int i = 0; i < relation.size(); ++i) {
-                        Node node2 = relation.get(i);
-                        serializer = new LabelSerializer(node1, node2);
-                        strings.get("author_label").add(serializer.getData());
-                    }
-                } else if (n == CONF) {
-                    relation = graph.getEdges(5, node1);
-                    for (int i = 0; i < relation.size(); ++i) {
-                        Node node2 = relation.get(i);
-                        serializer = new LabelSerializer(node1, node2);
-                        strings.get("conf_label").add(serializer.getData());
-                    }
-                } else if (n == PAPER) {
-                    relation = graph.getEdges(0, node1);
-                    for (int i = 0; i < relation.size(); ++i) {
-                        Node node2 = relation.get(i);
-                        serializer = new EdgeSerializer(node1, node2);
-                        strings.get("paper_author").add(serializer.getData());
-                    }
-                    relation = graph.getEdges(1, node1);
-                    for (int i = 0; i < relation.size(); ++i) {
-                        Node node2 = relation.get(i);
-                        serializer = new EdgeSerializer(node1, node2);
-                        strings.get("paper_conf").add(serializer.getData());
-                    }
-                    relation = graph.getEdges(4, node1);
-                    for (int i = 0; i < relation.size(); ++i) {
-                        Node node2 = relation.get(i);
-                        serializer = new LabelSerializer(node1, node2);
-                        strings.get("paper_label").add(serializer.getData());
-                    }
-                    relation = graph.getEdges(2, node1);
-                    for (int i = 0; i < relation.size(); ++i) {
-                        Node node2 = relation.get(i);
-                        serializer = new EdgeSerializer(node1, node2);
-                        strings.get("paper_term").add(serializer.getData());
+                for (Relation rel : rs) {
+                    ArrayList<Node> node_list = graph.getEdges(rel.getId(), node1);
+                    for (int i = 0; i < node_list.size(); ++i) {
+                        Node node2 = node_list.get(i);
+                        EdgeSerializer serializer;
+                        if(rel.containsLabel()){
+                            serializer = new LabelSerializer(node1, node2);
+                        } else {
+                            serializer = new EdgeSerializer(node1, node2);
+                        }
+                        strings.get(rel.getName()).add(serializer.getData());
                     }
                 }
             }
@@ -161,8 +109,7 @@ public class PersistenceController {
 
         Iterator it = strings.entrySet().iterator();
         while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry)it.next();
-            Collections.sort(strings.get(pair.getKey()), custom_comparator);
+            Map.Entry pair = (Map.Entry) it.next();
             writeFile(path + pair.getKey() + ".txt", (List<String>) pair.getValue());
         }
 
@@ -227,7 +174,7 @@ public class PersistenceController {
         }
     }
 
-    public void importGraph(String path){
+    public void importGraph(String path) {
         importNodes(path + "author.txt", NodeType.AUTHOR);
         importNodes(path + "conf.txt", NodeType.CONF);
         importNodes(path + "paper.txt", NodeType.PAPER);
@@ -245,7 +192,7 @@ public class PersistenceController {
         try {
             exportNodes(path);
             exportEdges(path);
-        } catch (GraphException e){
+        } catch (GraphException e) {
             e.printStackTrace();
         }
 

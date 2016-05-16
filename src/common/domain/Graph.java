@@ -3,6 +3,7 @@ package common.domain;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class Graph {
     //Attributes
@@ -19,9 +20,9 @@ public class Graph {
         nodeContainers.put(NodeType.CONF, new Container<Node>());
         nodeContainers.put(NodeType.TERM, new Container<Node>());
         relations = new Container<Relation>();
-        addRelation(new AuthorPaper());
-        addRelation(new ConferencePaper());
-        addRelation(new TermPaper());
+        addRelation(new PaperAuthor());
+        addRelation(new PaperConference());
+        addRelation(new PaperTerm());
         addRelation(new AuthorLabel());
         addRelation(new PaperLabel());
         addRelation(new ConferenceLabel());
@@ -175,6 +176,18 @@ public class Graph {
 
     public Relation getRelation(int relationID) throws GraphException {
         return relations.getElement(relationID);
+    }
+
+    public ArrayList<Relation> getRelationsForType(NodeType nt){
+        ArrayList<Relation> toReturn = new ArrayList<>();
+        Iterator it = relations.getIterator();
+        while (it.hasNext()) {
+            Relation r = (Relation) it.next();
+            if(r.getNodeTypeA() == nt){
+                toReturn.add(r);
+            }
+        }
+        return toReturn;
     }
 
     private NodeType getNodeType(Node node) {

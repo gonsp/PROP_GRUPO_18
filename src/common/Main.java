@@ -19,10 +19,6 @@ public class Main {
         Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
         g.addRelation(AP);
 
-        System.out.println("Exporting graph...");
-        pc.exportGraph("out/");
-
-        /*
         System.out.println("Starts search");
 
         Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");
@@ -49,8 +45,6 @@ public class Main {
         g.addEdge(AP.getId(), a2, p4);
         g.addEdge(AP.getId(), a3, p4);
 
-        pc.exportGraph("out/");
-
         try {
             ArrayList<Relation> aux = new ArrayList<Relation>();
             aux.add(g.getRelation(0));
@@ -68,7 +62,8 @@ public class Main {
             e.printStackTrace();
         }
 
-        */
+        System.out.println("Exporting graph...");
+        pc.exportGraph("out/");
 
     }
 }
