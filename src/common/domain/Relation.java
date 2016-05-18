@@ -34,7 +34,7 @@ public class Relation extends Element {
         return isDefault;
     }
 
-    protected NodeType getNodeTypeA() {
+    public NodeType getNodeTypeA() {
         return A;
     }
 
@@ -42,7 +42,7 @@ public class Relation extends Element {
         this.A = A;
     }
 
-    protected NodeType getNodeTypeB() {
+    public NodeType getNodeTypeB() {
         return B;
     }
 
