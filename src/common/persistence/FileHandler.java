@@ -1,13 +1,13 @@
 package common.persistence;
 
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public final class FileHandler {
 
-    public static List<String> readFile(String path) {
+    protected static List<String> readFile(String path) {
         List<String> toReturn = new ArrayList<>();
         try {
             String absolutePath = new File(path).getAbsolutePath();
@@ -23,7 +23,7 @@ public final class FileHandler {
         return toReturn;
     }
 
-    public static void writeFile(String path, List<String> strings) {
+    protected static void writeFile(String path, List<String> strings) {
         try {
             String absolutePath = new File(path).getAbsolutePath();
             File file = new File(absolutePath);
@@ -40,7 +40,7 @@ public final class FileHandler {
         }
     }
 
-    public static List<String> readDir(String path) {
+    protected static List<String> readDir(String path) {
         List<String> toReturn = new ArrayList<>();
         String absolutePath = new File(path).getAbsolutePath();
         File folder = new File(absolutePath);
@@ -53,7 +53,7 @@ public final class FileHandler {
         return toReturn;
     }
 
-    public static void clearDir(String path) {
+    protected static void clearDir(String path) {
         String absolutePath = new File(path).getAbsolutePath();
         File folder = new File(absolutePath);
         if (!folder.exists()) {
