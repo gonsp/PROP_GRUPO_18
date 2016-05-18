@@ -182,7 +182,7 @@ public class Graph {
         Iterator it = relations.getIterator();
         while(it.hasNext()){
             Relation r = (Relation) it.next();
-            if(r.getNodeTypeA().equals(typeA) && r.getNodeTypeB().equals(typeB)){
+            if(r.getNodeTypeA().equals(typeA) && r.getNodeTypeB().equals(typeB) && r.getName().equals(name)){
                 return r;
             }
         }

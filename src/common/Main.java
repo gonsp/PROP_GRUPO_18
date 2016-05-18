@@ -43,8 +43,6 @@ public class Main {
         g.addEdge(AP.getId(), a2, p4);
         g.addEdge(AP.getId(), a3, p4);
 
-        /*
-
         System.out.println("Starts search...");
 
         try {
@@ -63,7 +61,6 @@ public class Main {
         } catch (RelationStructureException e) {
             e.printStackTrace();
         }
-        */
 
         System.out.println("Exporting graph...");
         pc.exportGraph("out/");

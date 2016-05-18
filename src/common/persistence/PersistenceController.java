@@ -11,6 +11,7 @@ import static common.persistence.FileHandler.*;
 public class PersistenceController {
 
     private String TXT_REGEX = "(.*)_(.*)";
+    private String DOUBLE_TXT_REGEX = "(.*)_(.*)_(.*)";
     private Graph graph;
 
     private void exportNodes(String path) {
@@ -101,24 +102,36 @@ public class PersistenceController {
     private void importEdges(String path) {
         List<String> files = readDir(path);
         for (String f : files) {
-            if (f.matches(TXT_REGEX)) {
-                List<String> strings = readFile(path + f);
+            String relation_name = null;
+            Relation r = null;
+            NodeType typeA = null;
+            NodeType typeB = null;
+            if (f.matches(DOUBLE_TXT_REGEX)) {
                 String[] parts = f.split("_");
-                NodeType typeA = NodeType.valueOf(parts[0].toUpperCase());
-                NodeType typeB = NodeType.valueOf(parts[1].substring(0, parts[1].length() - 4).toUpperCase());
-                Relation r = graph.getOrCreateRelation(typeA, typeB, f.substring(0, f.length() - 4).toLowerCase());
-                for (String s : strings) {
-                    EdgeSerializer serializer;
-                    if (r.containsLabel()) {
-                        serializer = new LabelSerializer(graph, s, typeA, typeB);
-                    } else {
-                        serializer = new EdgeSerializer(graph, s, typeA, typeB);
-                    }
-                    try {
-                        graph.addEdge(r.getId(), serializer.getNode1(), serializer.getNode2());
-                    } catch (GraphException e) {
-                        e.printStackTrace();
-                    }
+                typeA = NodeType.valueOf(parts[0].toUpperCase());
+                typeB = NodeType.valueOf(parts[1].toUpperCase());
+                relation_name = parts[2].substring(0, parts[2].length() - 4);
+            } else if (f.matches(TXT_REGEX)) {
+                String[] parts = f.split("_");
+                typeA = NodeType.valueOf(parts[0].toUpperCase());
+                typeB = NodeType.valueOf(parts[1].substring(0, parts[1].length() - 4).toUpperCase());
+                relation_name = f.substring(0, f.length() - 4).toLowerCase();
+            } else {
+                continue;
+            }
+            r = graph.getOrCreateRelation(typeA, typeB, relation_name);
+            List<String> strings = readFile(path + f);
+            for (String s : strings) {
+                EdgeSerializer serializer;
+                if (r.containsLabel()) {
+                    serializer = new LabelSerializer(graph, s, typeA, typeB);
+                } else {
+                    serializer = new EdgeSerializer(graph, s, typeA, typeB);
+                }
+                try {
+                    graph.addEdge(r.getId(), serializer.getNode1(), serializer.getNode2());
+                } catch (GraphException e) {
+                    e.printStackTrace();
                 }
             }
         }
