@@ -151,11 +151,13 @@ public class PersistenceController {
     }
 
     public void importGraph(String path) {
+        path = handlePath(path);
         importNodes(path);
         importEdges(path);
     }
 
     public void exportGraph(String path) {
+        path = handlePath(path);
         clearDir(path);
         exportNodes(path);
         exportEdges(path);
