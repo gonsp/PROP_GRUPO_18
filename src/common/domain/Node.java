@@ -50,9 +50,8 @@ public abstract class Node extends Element {
         return relations.get(relationID).contains(node.getId());
     }
 
-    protected ArrayList<Integer> getEdges(int relationID) { //TODO sustituir esto por getIterator(). Más eficiente
-        ArrayList<Integer> result = new ArrayList<Integer>();
-        result.addAll(relations.get(relationID));
+    protected ArrayList<Integer> getEdges(int relationID) {
+        ArrayList<Integer> result = new ArrayList<Integer>(relations.get(relationID));
         return result;
     }
 

@@ -16,6 +16,8 @@ public class Main {
         PersistenceController pc = new PersistenceController(g);
         pc.importGraph("data/");
 
+        System.out.println("HELLOUUUUUT: " + String.valueOf(g.getEdges(0, NodeType.AUTHOR, 15153).size()));
+
         Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
         g.addRelation(AP);
 
