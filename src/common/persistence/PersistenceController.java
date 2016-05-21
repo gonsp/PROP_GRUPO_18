@@ -14,22 +14,39 @@ public class PersistenceController {
     private String DOUBLE_TXT_REGEX = "(.*)_(.*)_(.*)";
     private Graph graph;
 
-    private void exportNodes(String path) {
+    public PersistenceController(Graph graph) {
+        this.graph = graph;
+        try {
+            // Adding implicit Label nodes
+            graph.addNode(graph.createNode(LABEL, "Database"), 0);
+            graph.addNode(graph.createNode(LABEL, "Data Mining"), 1);
+            graph.addNode(graph.createNode(LABEL, "AI"), 2);
+            graph.addNode(graph.createNode(LABEL, "Information Retreival"), 3);
+        } catch (GraphException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void exportNode(String path, NodeType n){
+        List<String> strings = new ArrayList<>();
+        Container<Node>.ContainerIterator it = graph.getNodeIterator(n);
+        while (it.hasNext()) {
+            NodeSerializer serializer = new NodeSerializer(it.next());
+            strings.add(serializer.getData());
+        }
+        writeFile(path, strings);
+    }
+
+    public void exportNodes(String path) {
         for (NodeType n : NodeType.values()) {
             if (n != LABEL) {
-                List<String> strings = new ArrayList<>();
-                Container<Node>.ContainerIterator it = graph.getNodeIterator(n);
-                while (it.hasNext()) {
-                    NodeSerializer serializer = new NodeSerializer(it.next());
-                    strings.add(serializer.getData());
-                }
                 String filepath = path + n.toString().toLowerCase() + ".txt";
-                writeFile(filepath, strings);
+                exportNode(filepath, n);
             }
         }
     }
 
-    private void exportEdges(String path) {
+    public void exportEdges(String path) {
         Map<String, ArrayList<String>> strings = new HashMap<String, ArrayList<String>>();
 
         Iterator iter = graph.getRelationIterator();
@@ -81,7 +98,7 @@ public class PersistenceController {
 
     }
 
-    private void importNodes(String path) {
+    public void importNodes(String path) {
         for (NodeType n : NodeType.values()) {
             if (n != LABEL) {
                 String filepath = path + n.toString().toLowerCase() + ".txt";
@@ -99,7 +116,7 @@ public class PersistenceController {
         }
     }
 
-    private void importEdges(String path) {
+    public void importEdges(String path) {
         List<String> files = readDir(path);
         for (String f : files) {
             String relation_name = null;
@@ -134,19 +151,6 @@ public class PersistenceController {
                     e.printStackTrace();
                 }
             }
-        }
-    }
-
-    public PersistenceController(Graph graph) {
-        this.graph = graph;
-        try {
-            // Adding implicit Label nodes
-            graph.addNode(graph.createNode(LABEL, "Database"), 0);
-            graph.addNode(graph.createNode(LABEL, "Data Mining"), 1);
-            graph.addNode(graph.createNode(LABEL, "AI"), 2);
-            graph.addNode(graph.createNode(LABEL, "Information Retreival"), 3);
-        } catch (GraphException e) {
-            e.printStackTrace();
         }
     }
 

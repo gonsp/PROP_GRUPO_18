@@ -71,7 +71,7 @@ public final class FileHandler {
     protected static String handlePath(String path){
         int last = path.length() - 1;
         if(last > -1){
-            if(!path.substring(last, last).equals("/")){
+            if(!path.substring(last).equals("/")){
                 return path + "/";
             }
         } else {
