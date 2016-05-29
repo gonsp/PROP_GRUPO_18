@@ -30,8 +30,7 @@ public final class FileHandler {
             FileWriter fw = new FileWriter(file, append);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter out = new PrintWriter(bw);
-            for (String s : strings)
-                out.println(s);
+            strings.forEach(out::println);
             out.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -55,7 +54,7 @@ public final class FileHandler {
         if (!folder.exists()) {
             folder.mkdir();
         }
-        File flist[] = folder.listFiles();
+        File[] flist = folder.listFiles();
         for (File aFlist : flist) {
             String pes = aFlist.getName();
             if (pes.endsWith(".txt"))

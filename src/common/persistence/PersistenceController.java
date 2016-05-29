@@ -44,7 +44,7 @@ public class PersistenceController {
 
     public void exportEdges(String path) {
         path = handlePath(path);
-        Map<String, ArrayList<String>> strings = new HashMap<String, ArrayList<String>>();
+        Map<String, ArrayList<String>> strings = new HashMap<>();
 
         Iterator iter = graph.getRelationIterator();
         while (iter.hasNext()) {
@@ -65,8 +65,7 @@ public class PersistenceController {
                 for (Relation rel : rs) {
                     try {
                         ArrayList<Node> node_list = graph.getEdges(rel.getId(), node1);
-                        for (int i = 0; i < node_list.size(); ++i) {
-                            Node node2 = node_list.get(i);
+                        for (Node node2 : node_list) {
                             EdgeSerializer serializer;
                             if (rel.containsLabel())
                                 serializer = new LabelSerializer(node1, node2);
@@ -86,9 +85,8 @@ public class PersistenceController {
             }
         }
 
-        Iterator it = strings.entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry) it.next();
+        for (Object o : strings.entrySet()) {
+            Map.Entry pair = (Map.Entry) o;
             writeFile(path + pair.getKey() + ".txt", (List<String>) pair.getValue(), true);
         }
 
