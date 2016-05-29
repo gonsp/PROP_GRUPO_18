@@ -29,6 +29,7 @@ public class Main {
         Paper p4 = (Paper) g.createNode(NodeType.PAPER, "p4");
 
         g.addNode(a1);
+        g.removeNode(NodeType.AUTHOR, a1.getId());
         g.addNode(a2);
         g.addNode(a3);
         g.addNode(p1);

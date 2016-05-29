@@ -51,7 +51,11 @@ public abstract class Node extends Element {
     }
 
     protected ArrayList<Integer> getEdges(int relationID) {
-        ArrayList<Integer> result = new ArrayList<Integer>(relations.get(relationID));
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        HashSet<Integer> edges = relations.get(relationID);
+        for(int nodeTo : edges) {
+            result.add(nodeTo);
+        }
         return result;
     }
 

@@ -78,9 +78,10 @@ public class Graph {
         Container<Relation>.ContainerIterator iterator = relations.getIterator();
         while(iterator.hasNext()) {
             Relation relation = iterator.next();
-            ArrayList<Node> connected = getEdges(relation.getId(), node);
-            for(int i = 0; i < connected.size(); ++i) {
-                removeEdge(relation.getId(), node, connected.get(i));
+            if(relation.getNodeTypeA() == type || relation.getNodeTypeB() == type) {
+                for(Node to : getEdges(relation.getId(), node)) {
+                    removeEdge(relation.getId(), node, to);
+                }
             }
         }
         getNodeContainer(type).removeElement(id);
