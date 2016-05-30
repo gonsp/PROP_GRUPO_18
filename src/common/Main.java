@@ -1,9 +1,10 @@
 package common;
 
-import common.domain.*;
+import common.domain.Graph;
+import common.domain.GraphException;
+import common.domain.NodeType;
+import common.domain.Relation;
 import common.persistence.PersistenceController;
-
-import java.util.ArrayList;
 
 
 public class Main {
@@ -19,7 +20,7 @@ public class Main {
         Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
         g.addRelation(AP);
 
-        Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");
+       /* Author a1 = (Author) g.createNode(NodeType.AUTHOR, "a1");
         Author a2 = (Author) g.createNode(NodeType.AUTHOR, "a2");
         Author a3 = (Author) g.createNode(NodeType.AUTHOR, "a3");
 
@@ -42,7 +43,7 @@ public class Main {
         g.addEdge(AP.getId(), a2, p2);
         g.addEdge(AP.getId(), a2, p3);
         g.addEdge(AP.getId(), a2, p4);
-        g.addEdge(AP.getId(), a3, p4);
+        g.addEdge(AP.getId(), a3, p4);*/
 
         System.out.println("Starts search...");
 
