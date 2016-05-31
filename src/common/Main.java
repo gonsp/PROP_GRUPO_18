@@ -15,7 +15,7 @@ public class Main {
         Graph g = new Graph();
 
         PersistenceController pc = new PersistenceController(g);
-        pc.importGraph("data/");
+        pc.importGraph("out/");
 
         Relation AP = new Relation(NodeType.PAPER, NodeType.AUTHOR, "AP");
         g.addRelation(AP);
@@ -43,7 +43,7 @@ public class Main {
         g.addEdge(AP.getId(), a2, p2);
         g.addEdge(AP.getId(), a2, p3);
         g.addEdge(AP.getId(), a2, p4);
-        g.addEdge(AP.getId(), a3, p4);*/
+        g.addEdge(AP.getId(), a3, p4);
 
         System.out.println("Starts search...");
 
@@ -63,6 +63,7 @@ public class Main {
         } catch (RelationStructureException e) {
             e.printStackTrace();
         }
+        */
 
         System.out.println("Exporting graph...");
         pc.exportGraph("out/");

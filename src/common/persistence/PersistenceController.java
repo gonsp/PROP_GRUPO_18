@@ -29,16 +29,14 @@ public class PersistenceController {
     public void exportNodes(String path) {
         path = handlePath(path);
         for (NodeType n : NodeType.values()) {
-            if (n != LABEL) {
-                String filepath = path + n.toString().toLowerCase() + ".txt";
-                List<String> strings = new ArrayList<>();
-                Container<Node>.ContainerIterator it = graph.getNodeIterator(n);
-                while (it.hasNext()) {
-                    NodeSerializer serializer = new NodeSerializer(it.next());
-                    strings.add(serializer.getData());
-                }
-                writeFile(filepath, strings, true);
+            String filepath = path + n.toString().toLowerCase() + ".txt";
+            List<String> strings = new ArrayList<>();
+            Container<Node>.ContainerIterator it = graph.getNodeIterator(n);
+            while (it.hasNext()) {
+                NodeSerializer serializer = new NodeSerializer(it.next());
+                strings.add(serializer.getData());
             }
+            writeFile(filepath, strings, true);
         }
     }
 
